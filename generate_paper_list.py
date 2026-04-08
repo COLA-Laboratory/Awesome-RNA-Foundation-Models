@@ -320,12 +320,13 @@ def format_entry(name, title, paper_url, year_month, github_url, hf_url, abstrac
     if hf_url:
         summary += f' <a href="{hf_url}"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow" alt="HuggingFace"></a>'
     lines = [
-        f'- <details>',
-        f'  <summary>{summary}</summary>',
+        f'<details>',
+        f'<summary>{summary}</summary>',
         f'',
-        f'  > {abstract}',
+        f'> {abstract}',
         f'',
-        f'  </details>',
+        f'</details>',
+        f'',
     ]
     return '\n'.join(lines)
 
