@@ -13,8 +13,7 @@ A curated, comprehensive, and up-to-date collection of **RNA Sequence Foundation
 
 ## Table of Contents
 
-- [Awesome RNA Foundation Models ](#awesome-rna-foundation-models-)
-  - [Table of Contents](#table-of-contents)
+- [Model Tables](#model-tables)
   - [RNA Sequence Foundation Models](#rna-sequence-foundation-models)
     - [ncRNA Foundation Models](#ncrna-foundation-models)
     - [mRNA / CDS Foundation Models](#mrna--cds-foundation-models)
@@ -27,18 +26,20 @@ A curated, comprehensive, and up-to-date collection of **RNA Sequence Foundation
   - [Expression-based Foundation Models](#expression-based-foundation-models)
   - [Benchmarks \& Evaluations](#benchmarks--evaluations)
   - [Surveys \& Reviews](#surveys--reviews)
-  - [Paper List](#paper-list)
-    - [Foundation Models](#foundation-models)
-    - [Benchmarks \& Evaluations](#benchmarks--evaluations-1)
-    - [Surveys \& Reviews](#surveys--reviews-1)
-  - [Contributing](#contributing)
-  - [Abbreviations](#abbreviations)
+- [Paper List](#paper-list)
+  - [Foundation Models](#foundation-models)
+  - [Benchmarks \& Evaluations](#benchmarks--evaluations-1)
+  - [Surveys \& Reviews](#surveys--reviews-1)
+- [Contributing](#contributing)
+- [Abbreviations](#abbreviations)
 
 ---
 
-## RNA Sequence Foundation Models
+## Model Tables
 
-### ncRNA Foundation Models
+### RNA Sequence Foundation Models
+
+#### ncRNA Foundation Models
 
 Models primarily pre-trained on non-coding RNA sequences (from RNAcentral, Rfam, etc.).
 
@@ -60,7 +61,7 @@ Models primarily pre-trained on non-coding RNA sequences (from RNAcentral, Rfam,
 | <nobr>**HydraRNA**</nobr> | <nobr>[Paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7)</nobr> | <nobr>[Code](https://github.com/GuipengLi/HydraRNA)</nobr> | <nobr>2025.03</nobr> | <nobr>Encoder-only</nobr> | <nobr>84M</nobr> | <nobr>28.1M RNAs (ncRNA + coding)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**RNAElectra**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.15.711950v1.full)</nobr> | - | <nobr>2026.03</nobr> | <nobr>Encoder-only</nobr> | - | <nobr>RNAcentral ncRNAs</nobr> | <nobr>SNT</nobr> |
 
-### mRNA / CDS Foundation Models
+#### mRNA / CDS Foundation Models
 
 Models pre-trained on messenger RNA coding sequences, codon-level representations.
 
@@ -78,7 +79,7 @@ Models pre-trained on messenger RNA coding sequences, codon-level representation
 | <nobr>**mRNA-GPT (full-length)**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1)</nobr> | - | <nobr>2026.03</nobr> | <nobr>Decoder-only</nobr> | - | <nobr>30M full-length mRNAs (5'UTR+CDS+3'UTR)</nobr> | <nobr>Nucleotide</nobr> |
 | <nobr>**CodonMoE**</nobr> | <nobr>[Paper](https://openreview.net/forum?id=TOUrnb1EaG)</nobr> | - | <nobr>2026.01</nobr> | <nobr>MoE adapter</nobr> | - | <nobr>DNA FM + RNA adaptation</nobr> | <nobr>Codon-aware</nobr> |
 
-### UTR Foundation Models
+#### UTR Foundation Models
 
 Models focused on untranslated regions (5'UTR, 3'UTR).
 
@@ -87,7 +88,7 @@ Models focused on untranslated regions (5'UTR, 3'UTR).
 | <nobr>**UTR-LM**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00823-9)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/utrlm-te_el)</nobr> | <nobr>2024.04</nobr> | <nobr>Encoder-only</nobr> | <nobr>1M</nobr> | <nobr>Ensembl 5'UTR (>214K seqs + synthetic)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**3UTRBert**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2023.09.08.556883)</nobr> | <nobr>[Code](https://github.com/yangyn533/3UTRBERT)</nobr> | <nobr>2024.07</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>GENCODE 3'UTR (20K seqs)</nobr> | <nobr>3-mer</nobr> |
 
-### Specific RNA Type Models
+#### Specific RNA Type Models
 
 Models targeting specific RNA types or species (splicing, lncRNA, G-quadruplex, plant RNA, RNA families).
 
@@ -99,7 +100,7 @@ Models targeting specific RNA types or species (splicing, lncRNA, G-quadruplex, 
 | <nobr>**LncRNA-BERT**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1)</nobr> | <nobr>[Code](https://github.com/luukromeijn/lncRNA-Py)</nobr> | <nobr>2025.01</nobr> | <nobr>Encoder-only</nobr> | - | <nobr>GENCODE + RefSeq + NONCODE (536K seqs)</nobr> | <nobr>CSE / k-mer / nt</nobr> |
 | <nobr>**G4mer**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-65020-7)</nobr> | <nobr>[Code](https://huggingface.co/Biociphers/g4mer)</nobr> | <nobr>2025.12</nobr> | <nobr>Encoder-only</nobr> | <nobr>46M</nobr> | <nobr>Human transcriptome (G-quadruplex)</nobr> | <nobr>SNT</nobr> |
 
-### Structure-aware RNA Models
+#### Structure-aware RNA Models
 
 Models incorporating RNA secondary or tertiary structure information during pre-training.
 
@@ -112,7 +113,7 @@ Models incorporating RNA secondary or tertiary structure information during pre-
 | <nobr>**RNA-TorsionBERT**</nobr> | <nobr>[Paper](https://doi.org/10.1093/bioinformatics/btaf004)</nobr> | <nobr>[Code](https://huggingface.co/sayby/rna_torsionBERT)</nobr> | <nobr>2025.01</nobr> | <nobr>Encoder-only</nobr> | <nobr>86.9M</nobr> | <nobr>PDB RNA 3D structures</nobr> | <nobr>SNT</nobr> |
 | <nobr>**StructRFM**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1)</nobr> | <nobr>[Code](https://github.com/heqin-zhu/structRFM)</nobr> | <nobr>2025.08</nobr> | <nobr>Encoder-only</nobr> | - | <nobr>21M seq-structure pairs</nobr> | <nobr>SNT</nobr> |
 
-### RNA Generative Models
+#### RNA Generative Models
 
 Models focused on RNA sequence generation (autoregressive, diffusion-based, etc.).
 
@@ -124,7 +125,7 @@ Models focused on RNA sequence generation (autoregressive, diffusion-based, etc.
 | <nobr>**RNAtranslator**</nobr> | <nobr>[Paper](https://doi.org/10.1371/journal.pcbi.1013541)</nobr> | <nobr>[Code](https://huggingface.co/SobhanShukueian/rnatranslator)</nobr> | <nobr>2025.03</nobr> | <nobr>Encoder-decoder</nobr> | <nobr>41.4M</nobr> | <nobr>RNAInter (26M interaction pairs)</nobr> | <nobr>Nucleotide + AA</nobr> |
 | <nobr>**EVA**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)</nobr> | - | <nobr>2026.03</nobr> | <nobr>Decoder-only (MoE)</nobr> | - | <nobr>114M+ full-length RNA seqs</nobr> | - |
 
-### General RNA Models
+#### General RNA Models
 
 General-purpose RNA models covering multiple RNA types.
 
@@ -135,7 +136,7 @@ General-purpose RNA models covering multiple RNA types.
 
 ---
 
-## DNA+RNA Foundation Models
+### DNA+RNA Foundation Models
 
 Models pre-trained on **both DNA and RNA sequences**. These are not pure RNA FMs but their pre-training data includes RNA sequences and they can be applied to RNA downstream tasks.
 
@@ -154,7 +155,7 @@ Models pre-trained on **both DNA and RNA sequences**. These are not pure RNA FMs
 
 ---
 
-## Expression-based Foundation Models
+### Expression-based Foundation Models
 
 Models operating on RNA-seq **gene expression profiles** (not raw nucleotide sequences). Listed for completeness.
 
@@ -165,7 +166,7 @@ Models operating on RNA-seq **gene expression profiles** (not raw nucleotide seq
 
 ---
 
-## Benchmarks & Evaluations
+### Benchmarks & Evaluations
 
 Benchmark datasets and systematic evaluations of RNA / nucleotide foundation models.
 
@@ -186,7 +187,7 @@ Benchmark datasets and systematic evaluations of RNA / nucleotide foundation mod
 
 ---
 
-## Surveys & Reviews
+### Surveys & Reviews
 
 | Title <img width=350/> | Paper <img width=120/> | Year <img width=70/> | Scope <img width=400/> |
 |:------|:-----:|:----:|:------|
