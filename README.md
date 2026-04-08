@@ -50,6 +50,8 @@ A complete list of all papers included in this survey. Three classification view
 <details open>
 <summary><b>View 1: Classified by RNA Type</b></summary>
 
+<blockquote>
+
 <details open>
 <summary><b>ncRNA Foundation Models (15)</b></summary>
 
@@ -327,10 +329,14 @@ A complete list of all papers included in this survey. Three classification view
 
 </details>
 
+</blockquote>
+
 </details>
 
 <details>
 <summary><b>View 2: Classified by Architecture</b></summary>
+
+<blockquote>
 
 <details open>
 <summary><b>Encoder-only (BERT-family) (30)</b></summary>
@@ -589,10 +595,14 @@ A complete list of all papers included in this survey. Three classification view
 
 </details>
 
+</blockquote>
+
 </details>
 
 <details>
 <summary><b>View 3: Classified by Tokenization Strategy</b></summary>
+
+<blockquote>
 
 <details open>
 <summary><b>Single Nucleotide Token (SNT) (31)</b></summary>
@@ -855,6 +865,8 @@ A complete list of all papers included in this survey. Three classification view
   > Introduces MOJO, a 52.3M-parameter multimodal encoder pre-trained on TCGA RNA-seq expression and DNA methylation data, enabling joint multi-omics analysis for cancer subtyping and biomarker discovery.
 
 </details>
+
+</blockquote>
 
 </details>
 
