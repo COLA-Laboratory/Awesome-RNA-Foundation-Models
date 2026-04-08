@@ -315,19 +315,24 @@ surveys = [
 ]
 
 def format_entry(name, title, paper_url, year_month, github_url, hf_url, abstract):
-    """Format a paper entry with abstract blockquote."""
-    line = f'- [{title}]({paper_url}) ({year_month})'
-    # abs badge
-    line += f' [![abs](https://img.shields.io/badge/abs-{year_month}-b31b1b.svg)]({paper_url})'
-    # github badge
+    """Format a paper entry as a collapsible <details> block."""
+    # Build summary line with badges
+    summary = f'[{title}]({paper_url}) ({year_month})'
+    summary += f' [![abs](https://img.shields.io/badge/abs-{year_month}-b31b1b.svg)]({paper_url})'
     if github_url:
-        line += f' [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)]({github_url})'
-    # hf badge
+        summary += f' [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)]({github_url})'
     if hf_url:
-        line += f' [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)]({hf_url})'
-    # abstract as blockquote
-    line += f'\n\n  > {abstract}\n'
-    return line
+        summary += f' [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)]({hf_url})'
+    # Collapsible block
+    lines = [
+        f'<details>',
+        f'<summary>{summary}</summary>',
+        f'',
+        f'> {abstract}',
+        f'',
+        f'</details>',
+    ]
+    return '\n'.join(lines)
 
 # Group papers by category
 from collections import OrderedDict
