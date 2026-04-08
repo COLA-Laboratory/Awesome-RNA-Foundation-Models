@@ -195,10 +195,6 @@ papers = [
      "https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1", "2025.07", "https://github.com/oomics/RNALens", None, "General RNA FM",
      "Introduces RNALens, a 469M-parameter multi-task RNA foundation model pre-trained on multispecies genomic and 5'UTR sequences using BPE tokenization, supporting diverse RNA analysis tasks within a unified framework."),
 
-    ("OPED", "OPED: Transformer-based pegRNA Editing Efficiency Prediction",
-     "https://www.nature.com/articles/s42256-023-00739-w", "2023.10", "https://github.com/wenjiegroup/OPED", None, "General RNA FM",
-     "Develops OPED, a transformer-based model for predicting prime editing efficiency of pegRNA sequences, trained on 38K editing outcome pairs to guide optimal pegRNA design for precision genome editing."),
-
     # === DNA+RNA FMs ===
     ("Evo", "Sequence Modeling and Design from Molecular to Genome Scale with Evo",
      "https://www.science.org/doi/10.1126/science.ado9336", "2024.02", "https://github.com/evo-design/evo", None, "DNA+RNA FM",
@@ -324,12 +320,12 @@ def format_entry(name, title, paper_url, year_month, github_url, hf_url, abstrac
     if hf_url:
         summary += f' <a href="{hf_url}"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow" alt="HuggingFace"></a>'
     lines = [
-        f'<details>',
-        f'<summary>{summary}</summary>',
+        f'- <details>',
+        f'  <summary>{summary}</summary>',
         f'',
-        f'> {abstract}',
+        f'  > {abstract}',
         f'',
-        f'</details>',
+        f'  </details>',
     ]
     return '\n'.join(lines)
 
