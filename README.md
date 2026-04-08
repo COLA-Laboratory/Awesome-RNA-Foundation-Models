@@ -1138,17 +1138,6 @@ Benchmark datasets and systematic evaluations of RNA / nucleotide foundation mod
 
 ---
 
-## Contributing
-
-Contributions are welcome! If you find a missing RNA foundation model, benchmark, or survey paper, please:
-
-1. Open an issue with the model/paper details
-2. Or submit a pull request following the existing table format
-
-**What to include**: RNA sequence foundation models (pre-trained on A/U/C/G sequences), DNA+RNA models, and relevant benchmarks.
-
-**What NOT to include**: Single-cell foundation models (scGPT, Geneformer, etc.), protein-only models, or purely DNA models (unless they are widely evaluated on RNA tasks).
-
 ## Abbreviations
 
 | Abbreviation <img width=120/> | Meaning <img width=400/> |
@@ -1163,5 +1152,18 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 | <nobr>**ncRNA**</nobr> | <nobr>Non-coding RNA</nobr> |
 
 ---
+
+## Contributing
+
+Contributions are welcome! If you find a missing RNA foundation model, benchmark, or survey paper, please:
+
+1. Open an issue with the model/paper details
+2. Or submit a pull request following the existing table format
+
+**What to include**: RNA sequence foundation models (pre-trained on A/U/C/G sequences), DNA+RNA models, and relevant benchmarks.
+
+**What NOT to include**: Single-cell foundation models (scGPT, Geneformer, etc.), protein-only models, or purely DNA models (unless they are widely evaluated on RNA tasks).
+
+
 
 *Last updated: April 2026*
