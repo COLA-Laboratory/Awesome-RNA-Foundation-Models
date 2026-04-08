@@ -1,4 +1,4 @@
-# Awesome RNA Foundation Models [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# ✨✨ Awesome RNA Foundation Models [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/)
