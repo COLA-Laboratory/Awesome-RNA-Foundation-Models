@@ -201,13 +201,16 @@ Benchmark datasets and systematic evaluations of RNA / nucleotide foundation mod
 
 ---
 
+---
+
 ## Paper List
 
 A complete chronological list of all papers included in this survey.
 
 ### Foundation Models
 
-**ncRNA Foundation Models**
+<details open>
+<summary><b>ncRNA Foundation Models</b></summary>
 
 <details>
 <summary><a href="https://doi.org/10.1093/nargab/lqac012">Informative RNA-base embedding for RNA structural alignment and clustering by a representation learning framework</a> (2022.02) <a href="https://doi.org/10.1093/nargab/lqac012"><img src="https://img.shields.io/badge/abs-2022.02-b31b1b.svg" alt="abs"></a> <a href="https://github.com/mana438/RNABERT"><img src="https://img.shields.io/badge/GitHub-black?logo=github" alt="GitHub"></a></summary>
@@ -314,8 +317,10 @@ A complete chronological list of all papers included in this survey.
 
 </details>
 
+</details>
 
-**mRNA / CDS Foundation Models**
+<details open>
+<summary><b>mRNA / CDS Foundation Models</b></summary>
 
 <details>
 <summary><a href="https://doi.org/10.1177/10943420231201154">GenSLMs: Genome-scale Language Models Reveal SARS-CoV-2 Evolutionary Dynamics</a> (2023.01) <a href="https://doi.org/10.1177/10943420231201154"><img src="https://img.shields.io/badge/abs-2023.01-b31b1b.svg" alt="abs"></a></summary>
@@ -394,8 +399,10 @@ A complete chronological list of all papers included in this survey.
 
 </details>
 
+</details>
 
-**UTR Foundation Models**
+<details open>
+<summary><b>UTR Foundation Models</b></summary>
 
 <details>
 <summary><a href="https://www.nature.com/articles/s42256-024-00823-9">UTR-LM: A 5' UTR Language Model for Predicting Translation Efficiency</a> (2024.04) <a href="https://www.nature.com/articles/s42256-024-00823-9"><img src="https://img.shields.io/badge/abs-2024.04-b31b1b.svg" alt="abs"></a> <a href="https://huggingface.co/multimolecule/utrlm-te_el"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow" alt="HuggingFace"></a></summary>
@@ -411,8 +418,10 @@ A complete chronological list of all papers included in this survey.
 
 </details>
 
+</details>
 
-**Specific RNA Type Models**
+<details open>
+<summary><b>Specific RNA Type Models</b></summary>
 
 <details>
 <summary><a href="https://doi.org/10.1093/bib/bbae163">SpliceBERT: A Pre-trained Model for Self-supervised Learning of Pre-mRNA Splicing</a> (2023.01) <a href="https://doi.org/10.1093/bib/bbae163"><img src="https://img.shields.io/badge/abs-2023.01-b31b1b.svg" alt="abs"></a> <a href="https://github.com/chenkenbio/SpliceBERT"><img src="https://img.shields.io/badge/GitHub-black?logo=github" alt="GitHub"></a></summary>
@@ -449,8 +458,10 @@ A complete chronological list of all papers included in this survey.
 
 </details>
 
+</details>
 
-**Structure-aware RNA Models**
+<details open>
+<summary><b>Structure-aware RNA Models</b></summary>
 
 <details>
 <summary><a href="https://doi.org/10.1101/2023.12.13.571579">ATOM-1: Augmented Transformer with Structure-aware Chemical Mapping</a> (2023.12) <a href="https://doi.org/10.1101/2023.12.13.571579"><img src="https://img.shields.io/badge/abs-2023.12-b31b1b.svg" alt="abs"></a></summary>
@@ -494,8 +505,10 @@ A complete chronological list of all papers included in this survey.
 
 </details>
 
+</details>
 
-**RNA Generative Models**
+<details open>
+<summary><b>RNA Generative Models</b></summary>
 
 <details>
 <summary><a href="https://doi.org/10.1101/2024.08.26.609813">LoRNA: A Long-read RNA Foundation Model</a> (2024.08) <a href="https://doi.org/10.1101/2024.08.26.609813"><img src="https://img.shields.io/badge/abs-2024.08-b31b1b.svg" alt="abs"></a></summary>
@@ -532,8 +545,10 @@ A complete chronological list of all papers included in this survey.
 
 </details>
 
+</details>
 
-**General / Other RNA Models**
+<details open>
+<summary><b>General / Other RNA Models</b></summary>
 
 <details>
 <summary><a href="https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1">Uni-RNA: Universal Pre-trained Models for RNA across Species</a> (2023.07) <a href="https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1"><img src="https://img.shields.io/badge/abs-2023.07-b31b1b.svg" alt="abs"></a> <a href="https://github.com/ComDec/unirna_tf"><img src="https://img.shields.io/badge/GitHub-black?logo=github" alt="GitHub"></a></summary>
@@ -549,8 +564,10 @@ A complete chronological list of all papers included in this survey.
 
 </details>
 
+</details>
 
-**DNA+RNA Foundation Models**
+<details open>
+<summary><b>DNA+RNA Foundation Models</b></summary>
 
 <details>
 <summary><a href="https://www.science.org/doi/10.1126/science.ado9336">Sequence Modeling and Design from Molecular to Genome Scale with Evo</a> (2024.02) <a href="https://www.science.org/doi/10.1126/science.ado9336"><img src="https://img.shields.io/badge/abs-2024.02-b31b1b.svg" alt="abs"></a> <a href="https://github.com/evo-design/evo"><img src="https://img.shields.io/badge/GitHub-black?logo=github" alt="GitHub"></a></summary>
@@ -622,8 +639,10 @@ A complete chronological list of all papers included in this survey.
 
 </details>
 
+</details>
 
-**Expression-based Foundation Models**
+<details open>
+<summary><b>Expression-based Foundation Models</b></summary>
 
 <details>
 <summary><a href="https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2">BulkRNABert: A Pre-trained Model for Bulk RNA-seq Expression Data</a> (2024.06) <a href="https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2"><img src="https://img.shields.io/badge/abs-2024.06-b31b1b.svg" alt="abs"></a> <a href="https://huggingface.co/InstaDeepAI/BulkRNABert"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow" alt="HuggingFace"></a></summary>
@@ -639,6 +658,7 @@ A complete chronological list of all papers included in this survey.
 
 </details>
 
+</details>
 
 ### Benchmarks & Evaluations
 

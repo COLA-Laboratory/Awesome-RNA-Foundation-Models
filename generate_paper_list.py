@@ -365,12 +365,13 @@ cat_labels = {
 
 for cat, entries in categories.items():
     label = cat_labels.get(cat, cat)
-    lines.append(f"**{label}**")
+    lines.append(f'<details open>')
+    lines.append(f'<summary><b>{label}</b></summary>')
     lines.append("")
-    # Sort by year_month
     entries.sort(key=lambda x: x[3])
     for name, title, url, ym, gh, hf, abstract in entries:
         lines.append(format_entry(name, title, url, ym, gh, hf, abstract))
+    lines.append("</details>")
     lines.append("")
 
 # Benchmarks
