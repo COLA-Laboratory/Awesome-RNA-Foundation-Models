@@ -11,6 +11,12 @@ A curated, comprehensive, and up-to-date collection of **RNA Sequence Foundation
 
 ---
 
+<p align="center">
+  <img src="assets/image.png" alt="Taxonomy of RNA Foundation Models" width="100%">
+</p>
+
+---
+
 ## Table of Contents
 
 - [Model Tables](#model-tables)
