@@ -45,21 +45,21 @@ Models primarily pre-trained on non-coding RNA sequences (from RNAcentral, Rfam,
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **RNABert** | [Paper](https://doi.org/10.1093/nargab/lqac012) | [Code](https://github.com/mana438/RNABERT) | 2022.02 | Encoder-only | 0.5M | Rfam seed alignments + ncRNA | SNT |
-| **RNAFM** | [Paper](https://arxiv.org/abs/2204.00300) | [Code](https://huggingface.co/multimolecule/rnafm) | 2022.08 | Encoder-only | 100M | RNAcentral (23M seqs) | SNT |
-| **RNAMSM** | [Paper](https://doi.org/10.1093/nar/gkad1031) | [Code](https://github.com/yikunpku/RNA-MSM) | 2023.12 | Encoder-only | 95M | Rfam families + MSA homologs | SNT |
-| **RNA-km** | [Paper](https://doi.org/10.1101/2024.01.27.577533) | [Code](https://github.com/gongtiansu/RNA-km) | 2024.01 | Encoder-only | 152M | RNAcentral (23M ncRNA seqs) | K-mer |
-| **RNAErnie** | [Paper](https://www.nature.com/articles/s42256-024-00836-4) | [Code](https://huggingface.co/LLM-EDA/RNAErnie) | 2024.05 | Encoder-only | 105M | RNAcentral (23M seqs) | Nucleotide + motif |
-| **ERNIE-RNA** | [Paper](https://doi.org/10.1101/2024.03.17.585376) | [Code](https://huggingface.co/multimolecule/ernierna-ss) | 2024.10 | Encoder-only | 86M | RNAcentral (20.4M seqs) | SNT |
-| **DGRNA** | [Paper](https://doi.org/10.1101/2024.10.31.621427) | - | 2024.10 | Encoder-like | 100M | MARS (100M RNA seqs) | SNT |
-| **ChaRNABERT** | [Paper](https://arxiv.org/abs/2411.11808) | - | 2024.11 | Encoder-only | 8M-650M | RNAcentral + NCBI (62M seqs) | Learnable (GBST) |
-| **AIDO.RNA** | [Paper](https://doi.org/10.1101/2024.11.28.625345) | [Code](https://huggingface.co/genbio-ai/AIDO.RNA-1.6B) | 2024.11 | Encoder-only | 650M / 1.6B | RNAcentral (42M seqs, ~30B nt) | SNT |
-| **BiRNA-BERT** | [Paper](https://doi.org/10.1101/2024.07.02.601703) | [Code](https://github.com/buetnlpbio/BiRNA-BERT) | 2025.08 | Encoder-only | 117M | RNAcentral (36M seqs, ~26.4B nt) | Dual (NUC + BPE) |
-| **RNA-BERTa** | [Paper](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) | [Code](https://huggingface.co/IlPakoZ/RNA-BERTa9700) | 2025.09 | Encoder-only | 55.9M | Public RNA collections (9.76M seqs) | SNT |
-| **RiNALMo** | [Paper](https://arxiv.org/abs/2403.00043) | [Code](https://github.com/lbcb-sci/RiNALMo) | 2025.07 | Encoder-only | 135M-650M | RNAcentral (36M ncRNA seqs) | SNT |
-| **RNAGenesis** | [Paper](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) | [Code](https://huggingface.co/Zaixi/RNAGenesis) | 2024.12 | Encoder + Diffusion | 1B | RNAcentral clustered ncRNA | Hybrid N-gram |
-| **HydraRNA** | [Paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) | [Code](https://github.com/GuipengLi/HydraRNA) | 2025 | Encoder-only | 84M | 28.1M RNAs (ncRNA + coding) | SNT |
-| **RNAElectra** | [Paper](https://www.biorxiv.org/content/10.64898/2026.03.15.711950v1.full) | - | 2026.03 | Encoder-only | - | RNAcentral ncRNAs | SNT |
+| <nobr>**RNABert**</nobr> | <nobr>[Paper](https://doi.org/10.1093/nargab/lqac012)</nobr> | <nobr>[Code](https://github.com/mana438/RNABERT)</nobr> | <nobr>2022.02</nobr> | <nobr>Encoder-only</nobr> | <nobr>0.5M</nobr> | <nobr>Rfam seed alignments + ncRNA</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RNAFM**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2204.00300)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/rnafm)</nobr> | <nobr>2022.08</nobr> | <nobr>Encoder-only</nobr> | <nobr>100M</nobr> | <nobr>RNAcentral (23M seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RNAMSM**</nobr> | <nobr>[Paper](https://doi.org/10.1093/nar/gkad1031)</nobr> | <nobr>[Code](https://github.com/yikunpku/RNA-MSM)</nobr> | <nobr>2023.12</nobr> | <nobr>Encoder-only</nobr> | <nobr>95M</nobr> | <nobr>Rfam families + MSA homologs</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RNA-km**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.01.27.577533)</nobr> | <nobr>[Code](https://github.com/gongtiansu/RNA-km)</nobr> | <nobr>2024.01</nobr> | <nobr>Encoder-only</nobr> | <nobr>152M</nobr> | <nobr>RNAcentral (23M ncRNA seqs)</nobr> | <nobr>K-mer</nobr> |
+| <nobr>**RNAErnie**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00836-4)</nobr> | <nobr>[Code](https://huggingface.co/LLM-EDA/RNAErnie)</nobr> | <nobr>2024.05</nobr> | <nobr>Encoder-only</nobr> | <nobr>105M</nobr> | <nobr>RNAcentral (23M seqs)</nobr> | <nobr>Nucleotide + motif</nobr> |
+| <nobr>**ERNIE-RNA**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.03.17.585376)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/ernierna-ss)</nobr> | <nobr>2024.10</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>RNAcentral (20.4M seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**DGRNA**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.10.31.621427)</nobr> | - | <nobr>2024.10</nobr> | <nobr>Encoder-like</nobr> | <nobr>100M</nobr> | <nobr>MARS (100M RNA seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**ChaRNABERT**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2411.11808)</nobr> | - | <nobr>2024.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>8M-650M</nobr> | <nobr>RNAcentral + NCBI (62M seqs)</nobr> | <nobr>Learnable (GBST)</nobr> |
+| <nobr>**AIDO.RNA**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.11.28.625345)</nobr> | <nobr>[Code](https://huggingface.co/genbio-ai/AIDO.RNA-1.6B)</nobr> | <nobr>2024.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>650M / 1.6B</nobr> | <nobr>RNAcentral (42M seqs, ~30B nt)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**BiRNA-BERT**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.07.02.601703)</nobr> | <nobr>[Code](https://github.com/buetnlpbio/BiRNA-BERT)</nobr> | <nobr>2025.08</nobr> | <nobr>Encoder-only</nobr> | <nobr>117M</nobr> | <nobr>RNAcentral (36M seqs, ~26.4B nt)</nobr> | <nobr>Dual (NUC + BPE)</nobr> |
+| <nobr>**RNA-BERTa**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1)</nobr> | <nobr>[Code](https://huggingface.co/IlPakoZ/RNA-BERTa9700)</nobr> | <nobr>2025.09</nobr> | <nobr>Encoder-only</nobr> | <nobr>55.9M</nobr> | <nobr>Public RNA collections (9.76M seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RiNALMo**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2403.00043)</nobr> | <nobr>[Code](https://github.com/lbcb-sci/RiNALMo)</nobr> | <nobr>2025.07</nobr> | <nobr>Encoder-only</nobr> | <nobr>135M-650M</nobr> | <nobr>RNAcentral (36M ncRNA seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RNAGenesis**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2)</nobr> | <nobr>[Code](https://huggingface.co/Zaixi/RNAGenesis)</nobr> | <nobr>2024.12</nobr> | <nobr>Encoder + Diffusion</nobr> | <nobr>1B</nobr> | <nobr>RNAcentral clustered ncRNA</nobr> | <nobr>Hybrid N-gram</nobr> |
+| <nobr>**HydraRNA**</nobr> | <nobr>[Paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7)</nobr> | <nobr>[Code](https://github.com/GuipengLi/HydraRNA)</nobr> | <nobr>2025.03</nobr> | <nobr>Encoder-only</nobr> | <nobr>84M</nobr> | <nobr>28.1M RNAs (ncRNA + coding)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RNAElectra**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.15.711950v1.full)</nobr> | - | <nobr>2026.03</nobr> | <nobr>Encoder-only</nobr> | - | <nobr>RNAcentral ncRNAs</nobr> | <nobr>SNT</nobr> |
 
 ### mRNA / CDS Foundation Models
 
@@ -67,17 +67,17 @@ Models pre-trained on messenger RNA coding sequences, codon-level representation
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **CodonBERT** | [Paper](https://www.biorxiv.org/content/10.1101/2023.09.09.556981v1) | [Code](https://github.com/Sanofi-Public/CodonBERT) | 2023.09 | Encoder-only | 110M | NCBI (10M mRNA CDS) | Codon-aware |
-| **CaLM** | [Paper](https://www.nature.com/articles/s42256-024-00791-0) | [Code](https://github.com/oxpig/CaLM) | 2024 | Encoder-only | 86M | ~9M non-redundant CDS | Codon-level (triplet) |
-| **HELM** | [Paper](https://arxiv.org/abs/2410.12459) | - | 2025 | Encoder / Decoder | - | mRNA coding sequences | Codon-hierarchical |
-| **Helix-mRNA** | [Paper](https://arxiv.org/abs/2502.13785) | [Code](https://huggingface.co/helical-ai/helix-mRNA) | 2025 | Hybrid (Mamba2+Attn) | Compact | mRNA sequences | SNT + codon markers |
-| **GEMORNA** | [Paper](https://www.science.org/doi/10.1126/science.adr8470) | [Code](https://github.com/RainaBio/GEMORNA) | 2025 | Enc-Dec + Dec | - | mRNA CDS + UTR | Codon / nucleotide |
-| **GenSLM** | [Paper](https://doi.org/10.1177/10943420231201154) | - | 2023 | Decoder-only | 2.5B-25B | 110M+ gene seqs + 1.5M SARS-CoV-2 genomes | Codon-level |
-| **mRNABERT** | [Paper](https://www.nature.com/articles/s41467-025-65340-8) | [Code](https://huggingface.co/Taykhoom/mRNABERT-no-flashattention) | 2025.11 | Encoder-only | 114M | 18M mRNA seqs (NCBI, MG-RAST, GWH, MGnify) | Dual tokenization |
-| **mRNA-GPT** | [Paper](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1) | [Code](https://github.com/ZHymLumine/mRNA-GPT/) | 2025.12 | Decoder-only | 302M | NCBI CDS (80M bact. + 83M euk. + 2M arch.) | Codon / nucleotide |
-| **NUWA** | [Paper](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3) | [Code](https://github.com/zysxmu/NUWA) | 2026.02 | Encoder-only | - | Multi-species mRNA CDS (115M seqs) | Codon tokens |
-| **mRNA-GPT (full-length)** | [Paper](https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1) | - | 2026.03 | Decoder-only | - | 30M full-length mRNAs (5'UTR+CDS+3'UTR) | Nucleotide |
-| **CodonMoE** | [Paper](https://openreview.net/forum?id=TOUrnb1EaG) | - | 2026 | MoE adapter | - | DNA FM + RNA adaptation | Codon-aware |
+| <nobr>**CodonBERT**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2023.09.09.556981v1)</nobr> | <nobr>[Code](https://github.com/Sanofi-Public/CodonBERT)</nobr> | <nobr>2023.09</nobr> | <nobr>Encoder-only</nobr> | <nobr>110M</nobr> | <nobr>NCBI (10M mRNA CDS)</nobr> | <nobr>Codon-aware</nobr> |
+| <nobr>**CaLM**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00791-0)</nobr> | <nobr>[Code](https://github.com/oxpig/CaLM)</nobr> | <nobr>2024.02</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>~9M non-redundant CDS</nobr> | <nobr>Codon-level (triplet)</nobr> |
+| <nobr>**HELM**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2410.12459)</nobr> | - | <nobr>2025.01</nobr> | <nobr>Encoder / Decoder</nobr> | - | <nobr>mRNA coding sequences</nobr> | <nobr>Codon-hierarchical</nobr> |
+| <nobr>**Helix-mRNA**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2502.13785)</nobr> | <nobr>[Code](https://huggingface.co/helical-ai/helix-mRNA)</nobr> | <nobr>2025.02</nobr> | <nobr>Hybrid (Mamba2+Attn)</nobr> | <nobr>Compact</nobr> | <nobr>mRNA sequences</nobr> | <nobr>SNT + codon markers</nobr> |
+| <nobr>**GEMORNA**</nobr> | <nobr>[Paper](https://www.science.org/doi/10.1126/science.adr8470)</nobr> | <nobr>[Code](https://github.com/RainaBio/GEMORNA)</nobr> | <nobr>2025.05</nobr> | <nobr>Enc-Dec + Dec</nobr> | - | <nobr>mRNA CDS + UTR</nobr> | <nobr>Codon / nucleotide</nobr> |
+| <nobr>**GenSLM**</nobr> | <nobr>[Paper](https://doi.org/10.1177/10943420231201154)</nobr> | - | <nobr>2023.01</nobr> | <nobr>Decoder-only</nobr> | <nobr>2.5B-25B</nobr> | <nobr>110M+ gene seqs + 1.5M SARS-CoV-2 genomes</nobr> | <nobr>Codon-level</nobr> |
+| <nobr>**mRNABERT**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-65340-8)</nobr> | <nobr>[Code](https://huggingface.co/Taykhoom/mRNABERT-no-flashattention)</nobr> | <nobr>2025.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>114M</nobr> | <nobr>18M mRNA seqs (NCBI, MG-RAST, GWH, MGnify)</nobr> | <nobr>Dual tokenization</nobr> |
+| <nobr>**mRNA-GPT**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1)</nobr> | <nobr>[Code](https://github.com/ZHymLumine/mRNA-GPT/)</nobr> | <nobr>2025.12</nobr> | <nobr>Decoder-only</nobr> | <nobr>302M</nobr> | <nobr>NCBI CDS (80M bact. + 83M euk. + 2M arch.)</nobr> | <nobr>Codon / nucleotide</nobr> |
+| <nobr>**NUWA**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3)</nobr> | <nobr>[Code](https://github.com/zysxmu/NUWA)</nobr> | <nobr>2026.02</nobr> | <nobr>Encoder-only</nobr> | - | <nobr>Multi-species mRNA CDS (115M seqs)</nobr> | <nobr>Codon tokens</nobr> |
+| <nobr>**mRNA-GPT (full-length)**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1)</nobr> | - | <nobr>2026.03</nobr> | <nobr>Decoder-only</nobr> | - | <nobr>30M full-length mRNAs (5'UTR+CDS+3'UTR)</nobr> | <nobr>Nucleotide</nobr> |
+| <nobr>**CodonMoE**</nobr> | <nobr>[Paper](https://openreview.net/forum?id=TOUrnb1EaG)</nobr> | - | <nobr>2026.01</nobr> | <nobr>MoE adapter</nobr> | - | <nobr>DNA FM + RNA adaptation</nobr> | <nobr>Codon-aware</nobr> |
 
 ### UTR Foundation Models
 
@@ -85,8 +85,8 @@ Models focused on untranslated regions (5'UTR, 3'UTR).
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **UTR-LM** | [Paper](https://www.nature.com/articles/s42256-024-00823-9) | [Code](https://huggingface.co/multimolecule/utrlm-te_el) | 2024.04 | Encoder-only | 1M | Ensembl 5'UTR (>214K seqs + synthetic) | SNT |
-| **3UTRBert** | [Paper](https://doi.org/10.1101/2023.09.08.556883) | [Code](https://github.com/yangyn533/3UTRBERT) | 2024.07 | Encoder-only | 86M | GENCODE 3'UTR (20K seqs) | 3-mer |
+| <nobr>**UTR-LM**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00823-9)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/utrlm-te_el)</nobr> | <nobr>2024.04</nobr> | <nobr>Encoder-only</nobr> | <nobr>1M</nobr> | <nobr>Ensembl 5'UTR (>214K seqs + synthetic)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**3UTRBert**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2023.09.08.556883)</nobr> | <nobr>[Code](https://github.com/yangyn533/3UTRBERT)</nobr> | <nobr>2024.07</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>GENCODE 3'UTR (20K seqs)</nobr> | <nobr>3-mer</nobr> |
 
 ### Specific RNA Type Models
 
@@ -94,11 +94,11 @@ Models targeting specific RNA types or species (splicing, lncRNA, G-quadruplex, 
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **SpliceBERT** | [Paper](https://doi.org/10.1093/bib/bbae163) | [Code](https://github.com/chenkenbio/SpliceBERT) | 2023.01 | Encoder-only | 20M | UCSC pre-mRNA (72 species, >2M seqs) | SNT |
-| **RFamLlama** | [Paper](https://openreview.net/forum?id=dXnQedxEJD) | [Code](https://huggingface.co/jinyuan22/RFamLlama-base) | 2024.08 | Decoder-only | 13-88M | Rfam (>4,000 families, 0.6M seqs) | Nucleotide + family |
-| **PlantRNA-FM** | [Paper](https://www.nature.com/articles/s42256-024-00946-z) | [Code](https://huggingface.co/yangheng/PlantRNA-FM) | 2024.12 | Encoder-only | 35M | OneKP (1,124 plant species transcriptomes) | SNT |
-| **LncRNA-BERT** | [Paper](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1) | [Code](https://github.com/luukromeijn/lncRNA-Py) | 2025.01 | Encoder-only | - | GENCODE + RefSeq + NONCODE (536K seqs) | CSE / k-mer / nt |
-| **G4mer** | [Paper](https://www.nature.com/articles/s41467-025-65020-7) | [Code](https://huggingface.co/Biociphers/g4mer) | 2025.12 | Encoder-only | 46M | Human transcriptome (G-quadruplex) | SNT |
+| <nobr>**SpliceBERT**</nobr> | <nobr>[Paper](https://doi.org/10.1093/bib/bbae163)</nobr> | <nobr>[Code](https://github.com/chenkenbio/SpliceBERT)</nobr> | <nobr>2023.01</nobr> | <nobr>Encoder-only</nobr> | <nobr>20M</nobr> | <nobr>UCSC pre-mRNA (72 species, >2M seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RFamLlama**</nobr> | <nobr>[Paper](https://openreview.net/forum?id=dXnQedxEJD)</nobr> | <nobr>[Code](https://huggingface.co/jinyuan22/RFamLlama-base)</nobr> | <nobr>2024.08</nobr> | <nobr>Decoder-only</nobr> | <nobr>13-88M</nobr> | <nobr>Rfam (>4,000 families, 0.6M seqs)</nobr> | <nobr>Nucleotide + family</nobr> |
+| <nobr>**PlantRNA-FM**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00946-z)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/PlantRNA-FM)</nobr> | <nobr>2024.12</nobr> | <nobr>Encoder-only</nobr> | <nobr>35M</nobr> | <nobr>OneKP (1,124 plant species transcriptomes)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**LncRNA-BERT**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1)</nobr> | <nobr>[Code](https://github.com/luukromeijn/lncRNA-Py)</nobr> | <nobr>2025.01</nobr> | <nobr>Encoder-only</nobr> | - | <nobr>GENCODE + RefSeq + NONCODE (536K seqs)</nobr> | <nobr>CSE / k-mer / nt</nobr> |
+| <nobr>**G4mer**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-65020-7)</nobr> | <nobr>[Code](https://huggingface.co/Biociphers/g4mer)</nobr> | <nobr>2025.12</nobr> | <nobr>Encoder-only</nobr> | <nobr>46M</nobr> | <nobr>Human transcriptome (G-quadruplex)</nobr> | <nobr>SNT</nobr> |
 
 ### Structure-aware RNA Models
 
@@ -106,12 +106,12 @@ Models incorporating RNA secondary or tertiary structure information during pre-
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **ATOM-1** | [Paper](https://doi.org/10.1101/2023.12.13.571579) | - | 2023.12 | Encoder-decoder | - | Chemical mapping sequencing data | SNT |
-| **Ribonanza** | [Paper](https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1) | [Code](https://github.com/Shujun-He/RibonanzaNet) | 2024.02 | Deep neural network | - | Eterna + Rfam + PDB (2M seqs) | - |
-| **OmniGenome** | [Paper](https://arxiv.org/abs/2407.11242) | [Code](https://huggingface.co/yangheng/OmniGenome-186M) | 2024.07 | Encoder-only | 52M / 186M | OneKP (seq-structure pairs) | SNT |
-| **MP-RNA** | [Paper](https://aclanthology.org/2024.findings-emnlp.304/) | [Code](https://huggingface.co/yangheng/MP-RNA) | 2024.11 | Encoder-style | 52-186M | OneKP (seq + structure) | SNT |
-| **RNA-TorsionBERT** | [Paper](https://doi.org/10.1093/bioinformatics/btaf004) | [Code](https://huggingface.co/sayby/rna_torsionBERT) | 2025.01 | Encoder-only | 86.9M | PDB RNA 3D structures | SNT |
-| **StructRFM** | [Paper](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) | [Code](https://github.com/heqin-zhu/structRFM) | 2025 | Encoder-only | - | 21M seq-structure pairs | SNT |
+| <nobr>**ATOM-1**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2023.12.13.571579)</nobr> | - | <nobr>2023.12</nobr> | <nobr>Encoder-decoder</nobr> | - | <nobr>Chemical mapping sequencing data</nobr> | <nobr>SNT</nobr> |
+| <nobr>**Ribonanza**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1)</nobr> | <nobr>[Code](https://github.com/Shujun-He/RibonanzaNet)</nobr> | <nobr>2024.02</nobr> | <nobr>Deep neural network</nobr> | - | <nobr>Eterna + Rfam + PDB (2M seqs)</nobr> | - |
+| <nobr>**OmniGenome**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2407.11242)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/OmniGenome-186M)</nobr> | <nobr>2024.07</nobr> | <nobr>Encoder-only</nobr> | <nobr>52M / 186M</nobr> | <nobr>OneKP (seq-structure pairs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**MP-RNA**</nobr> | <nobr>[Paper](https://aclanthology.org/2024.findings-emnlp.304/)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/MP-RNA)</nobr> | <nobr>2024.11</nobr> | <nobr>Encoder-style</nobr> | <nobr>52-186M</nobr> | <nobr>OneKP (seq + structure)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RNA-TorsionBERT**</nobr> | <nobr>[Paper](https://doi.org/10.1093/bioinformatics/btaf004)</nobr> | <nobr>[Code](https://huggingface.co/sayby/rna_torsionBERT)</nobr> | <nobr>2025.01</nobr> | <nobr>Encoder-only</nobr> | <nobr>86.9M</nobr> | <nobr>PDB RNA 3D structures</nobr> | <nobr>SNT</nobr> |
+| <nobr>**StructRFM**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1)</nobr> | <nobr>[Code](https://github.com/heqin-zhu/structRFM)</nobr> | <nobr>2025.08</nobr> | <nobr>Encoder-only</nobr> | - | <nobr>21M seq-structure pairs</nobr> | <nobr>SNT</nobr> |
 
 ### RNA Generative Models
 
@@ -119,11 +119,11 @@ Models focused on RNA sequence generation (autoregressive, diffusion-based, etc.
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **LoRNA** | [Paper](https://doi.org/10.1101/2024.08.26.609813) | - | 2024.08 | Decoder-style | 6.5M | IsoSeq long-read (~100M reads, 7B tokens) | Specialized nt + region |
-| **GenerRNA** | [Paper](https://doi.org/10.1371/journal.pone.0310814) | [Code](https://huggingface.co/pfnet/GenerRNA) | 2024.10 | Decoder-only | 350M | RNAcentral (16.09M seqs, ~17.4B nt) | BPE |
-| **GARNET** | [Paper](https://www.nature.com/articles/s41467-024-54812-y) | [Code](https://github.com/Doudna-lab/GARNET_DL) | 2024.12 | Decoder + GNN | - | GTDB (30M seqs, 17B nt, 400K genomes) | Overlapping triplet |
-| **RNAtranslator** | [Paper](https://doi.org/10.1371/journal.pcbi.1013541) | [Code](https://huggingface.co/SobhanShukueian/rnatranslator) | 2025.03 | Encoder-decoder | 41.4M | RNAInter (26M interaction pairs) | Nucleotide + AA |
-| **EVA** | [Paper](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) | - | 2026.03 | Decoder-only (MoE) | - | 114M+ full-length RNA seqs | - |
+| <nobr>**LoRNA**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.08.26.609813)</nobr> | - | <nobr>2024.08</nobr> | <nobr>Decoder-style</nobr> | <nobr>6.5M</nobr> | <nobr>IsoSeq long-read (~100M reads, 7B tokens)</nobr> | <nobr>Specialized nt + region</nobr> |
+| <nobr>**GenerRNA**</nobr> | <nobr>[Paper](https://doi.org/10.1371/journal.pone.0310814)</nobr> | <nobr>[Code](https://huggingface.co/pfnet/GenerRNA)</nobr> | <nobr>2024.10</nobr> | <nobr>Decoder-only</nobr> | <nobr>350M</nobr> | <nobr>RNAcentral (16.09M seqs, ~17.4B nt)</nobr> | <nobr>BPE</nobr> |
+| <nobr>**GARNET**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-024-54812-y)</nobr> | <nobr>[Code](https://github.com/Doudna-lab/GARNET_DL)</nobr> | <nobr>2024.12</nobr> | <nobr>Decoder + GNN</nobr> | - | <nobr>GTDB (30M seqs, 17B nt, 400K genomes)</nobr> | <nobr>Overlapping triplet</nobr> |
+| <nobr>**RNAtranslator**</nobr> | <nobr>[Paper](https://doi.org/10.1371/journal.pcbi.1013541)</nobr> | <nobr>[Code](https://huggingface.co/SobhanShukueian/rnatranslator)</nobr> | <nobr>2025.03</nobr> | <nobr>Encoder-decoder</nobr> | <nobr>41.4M</nobr> | <nobr>RNAInter (26M interaction pairs)</nobr> | <nobr>Nucleotide + AA</nobr> |
+| <nobr>**EVA**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)</nobr> | - | <nobr>2026.03</nobr> | <nobr>Decoder-only (MoE)</nobr> | - | <nobr>114M+ full-length RNA seqs</nobr> | - |
 
 ### General RNA Models
 
@@ -131,14 +131,14 @@ General-purpose RNA models covering multiple RNA types.
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **Uni-RNA** | [Paper](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1) | [Code](https://github.com/ComDec/unirna_tf) | 2023.07 | Encoder-only | 400M | RNAcentral + MG-RAST + MGnify (1B seqs) | SNT |
-| **RNALens** | [Paper](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1) | [Code](https://github.com/oomics/RNALens) | 2025.07 | Encoder-only | 469M | Multispecies genomic + 5'UTR sequences | BPE |
+| <nobr>**Uni-RNA**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1)</nobr> | <nobr>[Code](https://github.com/ComDec/unirna_tf)</nobr> | <nobr>2023.07</nobr> | <nobr>Encoder-only</nobr> | <nobr>400M</nobr> | <nobr>RNAcentral + MG-RAST + MGnify (1B seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RNALens**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1)</nobr> | <nobr>[Code](https://github.com/oomics/RNALens)</nobr> | <nobr>2025.07</nobr> | <nobr>Encoder-only</nobr> | <nobr>469M</nobr> | <nobr>Multispecies genomic + 5'UTR sequences</nobr> | <nobr>BPE</nobr> |
 
 ### Other RNA-related Models
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **OPED** | [Paper](https://www.nature.com/articles/s42256-023-00739-w) | [Code](https://github.com/wenjiegroup/OPED) | 2023.10 | Encoder-decoder | - | pegRNA editing datasets (38K pairs) | SNT |
+| <nobr>**OPED**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-023-00739-w)</nobr> | <nobr>[Code](https://github.com/wenjiegroup/OPED)</nobr> | <nobr>2023.10</nobr> | <nobr>Encoder-decoder</nobr> | - | <nobr>pegRNA editing datasets (38K pairs)</nobr> | <nobr>SNT</nobr> |
 
 ---
 
@@ -148,16 +148,16 @@ Models pre-trained on **both DNA and RNA sequences**. These are not pure RNA FMs
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **Evo** | [Paper](https://www.science.org/doi/10.1126/science.ado9336) | [Code](https://github.com/evo-design/evo) | 2024 | Decoder-only | 7B | OpenGenome (2.7M prokaryotic + phage genomes) | SNT |
-| **LucaOne** | [Paper](https://www.nature.com/articles/s42256-025-01044-4) | [Code](https://github.com/LucaOne/LucaOne) | 2024 | Encoder-only | 1.8B | RefSeq + UniProt/PDB (800B tokens) | SNT / amino acid |
-| **BSM** | [Paper](https://arxiv.org/abs/2410.11499) | - | 2024 | Decoder-only | 110M / 270M | RefSeq + web bio-seqs (DNA+RNA+Prot) | Mixed |
-| **LAMAR** | [Paper](https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1) | [Code](https://github.com/zhw-e8/LAMAR) | 2024.10 | Encoder-only | 150M | Genome + transcriptome (225 mammals, 15M) | SNT |
-| **Orthrus** | [Paper](https://www.biorxiv.org/content/10.1101/2024.10.10.617658v3) | [Code](https://huggingface.co/quietflamingo/orthrus-large-4-track) | 2024.10 | Encoder-only | 1.3M / 10.1M | GENCODE + RefSeq + Zoonomia (32M transcripts) | SNT |
-| **METAGENE-1** | [Paper](https://arxiv.org/abs/2501.02045) | [Code](https://huggingface.co/metagene-ai/METAGENE-1) | 2025.01 | Decoder-only | 7B | Wastewater metagenomic DNA/RNA (>1.5T bp) | BPE |
-| **Life-Code** | [Paper](https://arxiv.org/abs/2502.07299) | - | 2025 | Hybrid encoder | - | Multi-omics (DNA/RNA/Prot unified) | Codon |
-| **Evo 2** | [Paper](https://www.nature.com/articles/s41586-026-10176-5) | [Code](https://github.com/ArcInstitute/evo2) | 2025/2026 | Decoder-only | 7B / 40B | OpenGenome2 (9T nt, 128K genomes) | SNT |
-| **OmniNA** | [Paper](https://academic.oup.com/nar/article/54/6/gkag083/8528802) | - | 2026 | Generative FM | - | 91.7M seqs + annotations (1076B bases) | - |
-| **EDEN** | [Paper](https://www.biorxiv.org/content/10.64898/2026.01.12.699009v1) | - | 2026.01 | Generative FM | 28B | 9.7T biological tokens (DNA+RNA+Protein) | - |
+| <nobr>**Evo**</nobr> | <nobr>[Paper](https://www.science.org/doi/10.1126/science.ado9336)</nobr> | <nobr>[Code](https://github.com/evo-design/evo)</nobr> | <nobr>2024.02</nobr> | <nobr>Decoder-only</nobr> | <nobr>7B</nobr> | <nobr>OpenGenome (2.7M prokaryotic + phage genomes)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**LucaOne**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-025-01044-4)</nobr> | <nobr>[Code](https://github.com/LucaOne/LucaOne)</nobr> | <nobr>2024.05</nobr> | <nobr>Encoder-only</nobr> | <nobr>1.8B</nobr> | <nobr>RefSeq + UniProt/PDB (800B tokens)</nobr> | <nobr>SNT / amino acid</nobr> |
+| <nobr>**BSM**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2410.11499)</nobr> | - | <nobr>2024.10</nobr> | <nobr>Decoder-only</nobr> | <nobr>110M / 270M</nobr> | <nobr>RefSeq + web bio-seqs (DNA+RNA+Prot)</nobr> | <nobr>Mixed</nobr> |
+| <nobr>**LAMAR**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1)</nobr> | <nobr>[Code](https://github.com/zhw-e8/LAMAR)</nobr> | <nobr>2024.10</nobr> | <nobr>Encoder-only</nobr> | <nobr>150M</nobr> | <nobr>Genome + transcriptome (225 mammals, 15M)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**Orthrus**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.10.10.617658v3)</nobr> | <nobr>[Code](https://huggingface.co/quietflamingo/orthrus-large-4-track)</nobr> | <nobr>2024.10</nobr> | <nobr>Encoder-only</nobr> | <nobr>1.3M / 10.1M</nobr> | <nobr>GENCODE + RefSeq + Zoonomia (32M transcripts)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**METAGENE-1**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2501.02045)</nobr> | <nobr>[Code](https://huggingface.co/metagene-ai/METAGENE-1)</nobr> | <nobr>2025.01</nobr> | <nobr>Decoder-only</nobr> | <nobr>7B</nobr> | <nobr>Wastewater metagenomic DNA/RNA (>1.5T bp)</nobr> | <nobr>BPE</nobr> |
+| <nobr>**Life-Code**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2502.07299)</nobr> | - | <nobr>2025.02</nobr> | <nobr>Hybrid encoder</nobr> | - | <nobr>Multi-omics (DNA/RNA/Prot unified)</nobr> | <nobr>Codon</nobr> |
+| <nobr>**Evo 2**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41586-026-10176-5)</nobr> | <nobr>[Code](https://github.com/ArcInstitute/evo2)</nobr> | <nobr>2026.02</nobr> | <nobr>Decoder-only</nobr> | <nobr>7B / 40B</nobr> | <nobr>OpenGenome2 (9T nt, 128K genomes)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**OmniNA**</nobr> | <nobr>[Paper](https://academic.oup.com/nar/article/54/6/gkag083/8528802)</nobr> | - | <nobr>2026.01</nobr> | <nobr>Generative FM</nobr> | - | <nobr>91.7M seqs + annotations (1076B bases)</nobr> | - |
+| <nobr>**EDEN**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.01.12.699009v1)</nobr> | - | <nobr>2026.01</nobr> | <nobr>Generative FM</nobr> | <nobr>28B</nobr> | <nobr>9.7T biological tokens (DNA+RNA+Protein)</nobr> | - |
 
 ---
 
@@ -167,8 +167,8 @@ Models operating on RNA-seq **gene expression profiles** (not raw nucleotide seq
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
-| **BulkRNABert** | [Paper](https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2) | [Code](https://huggingface.co/InstaDeepAI/BulkRNABert) | 2024.06 | Encoder-only | 6.01M | TCGA + GTEx + ENCODE (RNA-seq expr.) | Expression bin tokens |
-| **MOJO** | [Paper](https://www.biorxiv.org/content/10.1101/2025.06.25.661237v1) | [Code](https://huggingface.co/InstaDeepAI/MOJO) | 2025.06 | Encoder (multimodal) | 52.3M | TCGA (RNA-seq + DNA methylation) | Expression bin tokens |
+| <nobr>**BulkRNABert**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2)</nobr> | <nobr>[Code](https://huggingface.co/InstaDeepAI/BulkRNABert)</nobr> | <nobr>2024.06</nobr> | <nobr>Encoder-only</nobr> | <nobr>6.01M</nobr> | <nobr>TCGA + GTEx + ENCODE (RNA-seq expr.)</nobr> | <nobr>Expression bin tokens</nobr> |
+| <nobr>**MOJO**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.06.25.661237v1)</nobr> | <nobr>[Code](https://huggingface.co/InstaDeepAI/MOJO)</nobr> | <nobr>2025.06</nobr> | <nobr>Encoder (multimodal)</nobr> | <nobr>52.3M</nobr> | <nobr>TCGA (RNA-seq + DNA methylation)</nobr> | <nobr>Expression bin tokens</nobr> |
 
 ---
 
@@ -178,18 +178,18 @@ Benchmark datasets and systematic evaluations of RNA / nucleotide foundation mod
 
 | Benchmark <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Focus <img width=300/> | Scale <img width=220/> |
 |:----------|:-----:|:----:|:----:|:------|:------|
-| **BEACON** | [Paper](https://arxiv.org/abs/2406.10391) | [Code](https://github.com/terry-r123/RNABenchmark) | 2024 | RNA (structural, functional, engineering) | 13 tasks |
-| **BEND** | [Paper](https://arxiv.org/abs/2311.12570) | [Code](https://github.com/frederikkemarin/BEND) | 2024 | DNA LM biologically meaningful tasks | Multiple tasks |
-| **RNA LLM Folding** | [Paper](https://arxiv.org/abs/2410.16212) | [Code](https://github.com/sinc-lab/rna-llm-folding) | 2024/2025 | RNA secondary structure prediction | 6 RNA LLMs, 4 datasets |
-| **GUE** | [Paper](https://arxiv.org/abs/2306.15006) | - | 2023 | Genome understanding evaluation | 36 datasets, 9 tasks |
-| **RNAGym** | [Paper](https://www.biorxiv.org/content/10.1101/2025.06.16.660049v1) | - | 2025 | RNA fitness & structure prediction (2D/3D) | Fitness + structure tasks |
-| **RNAscope** | [Paper](https://openreview.net/forum?id=zYAuJxcl2E) | - | 2025 | RNA (structure, interaction, function) | 15 tasks, 1,253 experiments |
-| **mRNABench** | [Paper](https://www.biorxiv.org/content/10.1101/2025.07.05.662870v1) | [Code](https://github.com/morrislab/mRNABench) | 2025 | Mature mRNA prediction tasks | 10 datasets, 59 tasks, 135K experiments |
-| **NABench** | [Paper](https://arxiv.org/html/2511.02888v1) | - | 2025 | Nucleic acid fitness prediction | 2.6M+ mutated seqs, 160+ experiments |
-| **RNA 3D Benchmark** | [Paper](https://arxiv.org/abs/2503.21681) | - | 2025 | RNA 3D structure-function | 7 tasks, 9 datasets |
-| **Genomic LM RNA Eval** | [Paper](https://www.nature.com/articles/s41467-025-66899-y) | - | 2025 | RNA processes (ncRNA, m6A, splicing, TE) | 11 genomic LMs, 4 RNA tasks |
-| **DNA FM Benchmark** | [Paper](https://www.nature.com/articles/s41467-025-65823-8) | - | 2025 | Genomic & genetic tasks (incl. RNA-relevant) | Multiple tasks |
-| **DNALongBench** | [Paper](https://www.nature.com/articles/s41467-025-65077-4) | - | 2025 | Long-range genomic tasks | 5 tasks, up to 1M bp |
+| <nobr>**BEACON**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2406.10391)</nobr> | <nobr>[Code](https://github.com/terry-r123/RNABenchmark)</nobr> | <nobr>2024.06</nobr> | <nobr>RNA (structural, functional, engineering)</nobr> | <nobr>13 tasks</nobr> |
+| <nobr>**BEND**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2311.12570)</nobr> | <nobr>[Code](https://github.com/frederikkemarin/BEND)</nobr> | <nobr>2024.01</nobr> | <nobr>DNA LM biologically meaningful tasks</nobr> | <nobr>Multiple tasks</nobr> |
+| <nobr>**RNA LLM Folding**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2410.16212)</nobr> | <nobr>[Code](https://github.com/sinc-lab/rna-llm-folding)</nobr> | <nobr>2024.10</nobr> | <nobr>RNA secondary structure prediction</nobr> | <nobr>6 RNA LLMs, 4 datasets</nobr> |
+| <nobr>**GUE**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2306.15006)</nobr> | - | <nobr>2023.06</nobr> | <nobr>Genome understanding evaluation</nobr> | <nobr>36 datasets, 9 tasks</nobr> |
+| <nobr>**RNAGym**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.06.16.660049v1)</nobr> | - | <nobr>2025.06</nobr> | <nobr>RNA fitness & structure prediction (2D/3D)</nobr> | <nobr>Fitness + structure tasks</nobr> |
+| <nobr>**RNAscope**</nobr> | <nobr>[Paper](https://openreview.net/forum?id=zYAuJxcl2E)</nobr> | - | <nobr>2025.10</nobr> | <nobr>RNA (structure, interaction, function)</nobr> | <nobr>15 tasks, 1,253 experiments</nobr> |
+| <nobr>**mRNABench**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.07.05.662870v1)</nobr> | <nobr>[Code](https://github.com/morrislab/mRNABench)</nobr> | <nobr>2025.07</nobr> | <nobr>Mature mRNA prediction tasks</nobr> | <nobr>10 datasets, 59 tasks, 135K experiments</nobr> |
+| <nobr>**NABench**</nobr> | <nobr>[Paper](https://arxiv.org/html/2511.02888v1)</nobr> | - | <nobr>2025.11</nobr> | <nobr>Nucleic acid fitness prediction</nobr> | <nobr>2.6M+ mutated seqs, 160+ experiments</nobr> |
+| <nobr>**RNA 3D Benchmark**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2503.21681)</nobr> | - | <nobr>2025.03</nobr> | <nobr>RNA 3D structure-function</nobr> | <nobr>7 tasks, 9 datasets</nobr> |
+| <nobr>**Genomic LM RNA Eval**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-66899-y)</nobr> | - | <nobr>2025.08</nobr> | <nobr>RNA processes (ncRNA, m6A, splicing, TE)</nobr> | <nobr>11 genomic LMs, 4 RNA tasks</nobr> |
+| <nobr>**DNA FM Benchmark**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-65823-8)</nobr> | - | <nobr>2025.07</nobr> | <nobr>Genomic & genetic tasks (incl. RNA-relevant)</nobr> | <nobr>Multiple tasks</nobr> |
+| <nobr>**DNALongBench**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-65077-4)</nobr> | - | <nobr>2025.06</nobr> | <nobr>Long-range genomic tasks</nobr> | <nobr>5 tasks, up to 1M bp</nobr> |
 
 ---
 
@@ -197,9 +197,9 @@ Benchmark datasets and systematic evaluations of RNA / nucleotide foundation mod
 
 | Title <img width=350/> | Paper <img width=120/> | Year <img width=70/> | Scope <img width=400/> |
 |:------|:-----:|:----:|:------|
-| **A Comparative Review of RNA Language Models** | [Paper](https://arxiv.org/abs/2505.09087) | 2025 | Compares 13 RNA LMs + 3 DNA LMs + 1 protein LM |
-| **Comprehensive Survey of Genome Language Models** | [Paper](https://academic.oup.com/bib/article/27/1/bbaf724/8426124) | 2026.01 | DNA/RNA genome LMs: limitations, long-range modeling |
-| **LLMs in Bioinformatics: A Survey** | [Paper](https://arxiv.org/abs/2503.04490) | 2026.03 | LLMs for DNA, RNA, proteins (ACL 2025 Findings, updated 2026) |
+| <nobr>**A Comparative Review of RNA Language Models**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2505.09087)</nobr> | <nobr>2025.05</nobr> | <nobr>Compares 13 RNA LMs + 3 DNA LMs + 1 protein LM</nobr> |
+| <nobr>**Comprehensive Survey of Genome Language Models**</nobr> | <nobr>[Paper](https://academic.oup.com/bib/article/27/1/bbaf724/8426124)</nobr> | <nobr>2026.01</nobr> | <nobr>DNA/RNA genome LMs: limitations, long-range modeling</nobr> |
+| <nobr>**LLMs in Bioinformatics: A Survey**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2503.04490)</nobr> | <nobr>2026.03</nobr> | <nobr>LLMs for DNA, RNA, proteins (ACL 2025 Findings, updated 2026)</nobr> |
 
 ---
 
@@ -334,14 +334,14 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 
 | Abbreviation <img width=120/> | Meaning <img width=400/> |
 |:-------------|:--------|
-| **SNT** | Single Nucleotide Tokenization (A/U/C/G or A/T/C/G) |
-| **MLM** | Masked Language Modeling |
-| **BPE** | Byte Pair Encoding |
-| **MoE** | Mixture of Experts |
-| **SSM** | State Space Model |
-| **CDS** | Coding Sequence |
-| **UTR** | Untranslated Region |
-| **ncRNA** | Non-coding RNA |
+| <nobr>**SNT**</nobr> | <nobr>Single Nucleotide Tokenization (A/U/C/G or A/T/C/G)</nobr> |
+| <nobr>**MLM**</nobr> | <nobr>Masked Language Modeling</nobr> |
+| <nobr>**BPE**</nobr> | <nobr>Byte Pair Encoding</nobr> |
+| <nobr>**MoE**</nobr> | <nobr>Mixture of Experts</nobr> |
+| <nobr>**SSM**</nobr> | <nobr>State Space Model</nobr> |
+| <nobr>**CDS**</nobr> | <nobr>Coding Sequence</nobr> |
+| <nobr>**UTR**</nobr> | <nobr>Untranslated Region</nobr> |
+| <nobr>**ncRNA**</nobr> | <nobr>Non-coding RNA</nobr> |
 
 ---
 
