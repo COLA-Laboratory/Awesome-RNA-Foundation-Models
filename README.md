@@ -30,7 +30,10 @@ A curated, comprehensive, and up-to-date collection of **RNA Sequence Foundation
 
 A complete list of all papers included in this survey. Three classification views are provided below — click to expand/collapse each view.
 
-### Foundation Models
+<details open>
+<summary><b>Foundation Models</b></summary>
+
+<blockquote>
 
 <details open>
 <summary><b>View 1: Classified by RNA Type</b></summary>
@@ -855,6 +858,10 @@ A complete list of all papers included in this survey. Three classification view
 
 </details>
 
+</blockquote>
+
+</details>
+
 <details open>
 <summary><b>Other Materials</b></summary>
 
@@ -935,7 +942,7 @@ A complete list of all papers included in this survey. Three classification view
 </details>
 
 
-## Model Tables
+## Detailed Tables
 
 <details open>
 <summary><b>RNA Sequence Foundation Models</b></summary>

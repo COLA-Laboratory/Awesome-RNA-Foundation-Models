@@ -470,7 +470,11 @@ lines.append("")
 lines.append("A complete list of all papers included in this survey. Three classification views are provided below — click to expand/collapse each view.")
 lines.append("")
 
-lines.append("### Foundation Models")
+# Foundation Models (collapsible wrapper with 3 views inside)
+lines.append('<details open>')
+lines.append('<summary><b>Foundation Models</b></summary>')
+lines.append("")
+lines.append("<blockquote>")
 lines.append("")
 
 # --- View 1: By RNA Type ---
@@ -512,7 +516,12 @@ lines.append("")
 lines.append("</details>")
 lines.append("")
 
-# Other Materials (wrapper for Benchmarks + Surveys)
+lines.append("</blockquote>")
+lines.append("")
+lines.append("</details>")
+lines.append("")
+
+# Other Materials (sibling of Foundation Models)
 lines.append('<details open>')
 lines.append('<summary><b>Other Materials</b></summary>')
 lines.append("")
@@ -551,9 +560,9 @@ print(output)
 with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
-# Find and replace existing Paper List section (stop at Model Tables, or Contributing)
+# Find and replace existing Paper List section (stop at Detailed Tables, or Contributing)
 paper_list_start = readme.find("\n## Paper List")
-model_tables_start = readme.find("\n## Model Tables")
+model_tables_start = readme.find("\n## Detailed Tables")
 contributing_start = readme.find("\n## Contributing")
 
 # Replace Paper List up to the next major section
