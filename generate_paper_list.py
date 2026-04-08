@@ -513,19 +513,23 @@ lines.append("</details>")
 lines.append("")
 
 # Benchmarks
-lines.append("### Benchmarks & Evaluations")
+lines.append('<details open>')
+lines.append(f'<summary><b>Benchmarks & Evaluations ({len(benchmarks)})</b></summary>')
 lines.append("")
 benchmarks.sort(key=lambda x: x[3])
 for name, title, url, ym, gh, hf, abstract in benchmarks:
     lines.append(format_entry(name, title, url, ym, gh, hf, abstract))
+lines.append("</details>")
 lines.append("")
 
 # Surveys
-lines.append("### Surveys & Reviews")
+lines.append('<details open>')
+lines.append(f'<summary><b>Surveys & Reviews ({len(surveys)})</b></summary>')
 lines.append("")
 surveys.sort(key=lambda x: x[3])
 for name, title, url, ym, gh, hf, abstract in surveys:
     lines.append(format_entry(name, title, url, ym, gh, hf, abstract))
+lines.append("</details>")
 lines.append("")
 
 output = "\n".join(lines)
