@@ -11,16 +11,16 @@ A curated, comprehensive, and up-to-date collection of **RNA Sequence Foundation
 
 ---
 
-<p align="center">
+<!-- <p align="center">
   <img src="assets/image.png" alt="Taxonomy of RNA Foundation Models" width="100%">
-</p>
+</p> -->
 
----
+<!-- --- -->
 
 ## Table of Contents
 
 - [Paper List](#paper-list) — Foundation Models (3 views), Benchmarks, Surveys
-- [Model Tables](#model-tables) — Detailed tables for all 58 FMs, 12 benchmarks, 3 surveys
+- [Detailed Tables](#detailed-tables) — Detailed tables for all 58 FMs, 12 benchmarks, 3 surveys
 - [Contributing](#contributing)
 - [Abbreviations](#abbreviations)
 
@@ -856,6 +856,11 @@ A complete list of all papers included in this survey. Three classification view
 </details>
 
 <details open>
+<summary><b>Other Materials</b></summary>
+
+<blockquote>
+
+<details open>
 <summary><b>Benchmarks & Evaluations (12)</b></summary>
 
 - [DNABERT-2: Efficient Foundation Model and Benchmark for Multi-Species Genome](https://arxiv.org/abs/2306.15006) (2023.06) [![abs](https://img.shields.io/badge/abs-2023.06-b31b1b.svg)](https://arxiv.org/abs/2306.15006)
@@ -922,6 +927,10 @@ A complete list of all papers included in this survey. Three classification view
 - [Large Language Models in Bioinformatics: A Survey](https://arxiv.org/abs/2503.04490) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://arxiv.org/abs/2503.04490)
 
   > Comprehensive survey of large language models applied to bioinformatics including DNA, RNA, and protein domains, covering model architectures, training paradigms, and applications across biological sequences.
+
+</details>
+
+</blockquote>
 
 </details>
 
@@ -1086,6 +1095,11 @@ Models operating on RNA-seq **gene expression profiles** (not raw nucleotide seq
 </details>
 
 <details open>
+<summary><b>Other Materials</b></summary>
+
+<blockquote>
+
+<details open>
 <summary><b>Benchmarks & Evaluations</b></summary>
 
 Benchmark datasets and systematic evaluations of RNA / nucleotide foundation models.
@@ -1118,7 +1132,13 @@ Benchmark datasets and systematic evaluations of RNA / nucleotide foundation mod
 
 </details>
 
+</blockquote>
+
+</details>
+
 ---
+
+## Contributing
 
 Contributions are welcome! If you find a missing RNA foundation model, benchmark, or survey paper, please:
 
@@ -1128,10 +1148,6 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 **What to include**: RNA sequence foundation models (pre-trained on A/U/C/G sequences), DNA+RNA models, and relevant benchmarks.
 
 **What NOT to include**: Single-cell foundation models (scGPT, Geneformer, etc.), protein-only models, or purely DNA models (unless they are widely evaluated on RNA tasks).
-
----
-
-## Contributing
 
 ## Abbreviations
 

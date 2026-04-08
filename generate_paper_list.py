@@ -512,6 +512,13 @@ lines.append("")
 lines.append("</details>")
 lines.append("")
 
+# Other Materials (wrapper for Benchmarks + Surveys)
+lines.append('<details open>')
+lines.append('<summary><b>Other Materials</b></summary>')
+lines.append("")
+lines.append("<blockquote>")
+lines.append("")
+
 # Benchmarks
 lines.append('<details open>')
 lines.append(f'<summary><b>Benchmarks & Evaluations ({len(benchmarks)})</b></summary>')
@@ -529,6 +536,11 @@ lines.append("")
 surveys.sort(key=lambda x: x[3])
 for name, title, url, ym, gh, hf, abstract in surveys:
     lines.append(format_entry(name, title, url, ym, gh, hf, abstract))
+lines.append("</details>")
+lines.append("")
+
+lines.append("</blockquote>")
+lines.append("")
 lines.append("</details>")
 lines.append("")
 
