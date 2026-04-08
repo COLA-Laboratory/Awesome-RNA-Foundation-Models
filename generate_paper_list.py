@@ -311,24 +311,15 @@ surveys = [
 ]
 
 def format_entry(name, title, paper_url, year_month, github_url, hf_url, abstract):
-    """Format a paper entry as a collapsible <details> block with HTML summary."""
-    # Build summary in HTML (markdown doesn't render inside <summary>)
-    summary = f'<a href="{paper_url}">{title}</a> ({year_month})'
-    summary += f' <a href="{paper_url}"><img src="https://img.shields.io/badge/abs-{year_month}-b31b1b.svg" alt="abs"></a>'
+    """Format a paper entry as a bullet list item with badges."""
+    line = f'- [{title}]({paper_url}) ({year_month})'
+    line += f' [![abs](https://img.shields.io/badge/abs-{year_month}-b31b1b.svg)]({paper_url})'
     if github_url:
-        summary += f' <a href="{github_url}"><img src="https://img.shields.io/badge/GitHub-black?logo=github" alt="GitHub"></a>'
+        line += f' [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)]({github_url})'
     if hf_url:
-        summary += f' <a href="{hf_url}"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow" alt="HuggingFace"></a>'
-    lines = [
-        f'<details>',
-        f'<summary>{summary}</summary>',
-        f'',
-        f'> {abstract}',
-        f'',
-        f'</details>',
-        f'',
-    ]
-    return '\n'.join(lines)
+        line += f' [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)]({hf_url})'
+    line += f'\n\n  > {abstract}\n'
+    return line
 
 # Group papers by category
 from collections import OrderedDict
