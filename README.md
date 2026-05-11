@@ -3,7 +3,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/)
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-[![Last Update](https://img.shields.io/badge/Last_Update-2026.04-blue.svg)]()
+[![Last Update](https://img.shields.io/badge/Last_Update-2026.05-blue.svg)]()
 
 A curated, comprehensive, and up-to-date collection of **RNA sequence foundation models and related resources**, covering pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware models, generative models, DNA+RNA multi-modal models, expression-profile models, and related benchmarks.
 
@@ -1195,4 +1195,4 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 
 
 
-*Last updated: April 2026*
+*Last updated: May 2026*
