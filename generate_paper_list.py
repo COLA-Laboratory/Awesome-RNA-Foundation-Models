@@ -596,7 +596,7 @@ scope_by_name = {
     "RiboDiffusion": "task_design",
     "RhoDesign": "task_design",
     "RNAtranslator": "task_design",
-    "codonGPT": "task_design",
+    "codonGPT": "adapted_derived",
     "UTR-Insight": "task_design",
     "Evo": "related_nucleotide",
     "LucaOne": "related_nucleotide",
@@ -610,6 +610,59 @@ scope_by_name = {
     "BulkRNABert": "expression_profile",
     "MOJO": "expression_profile",
 }
+
+
+strict_model_names = {
+    "RNAFM",
+    "Uni-RNA",
+    "RNAErnie",
+    "DGRNA",
+    "HELM",
+    "GenerRNA",
+    "AIDO.RNA",
+    "ChaRNABERT",
+    "Helix-mRNA",
+    "RiNALMo",
+    "RNALens",
+    "RNA-BERTa",
+    "CodonFM",
+    "ERNIE-RNA",
+    "BiRNA-BERT",
+    "HydraRNA",
+    "mRNABERT",
+    "mRNA-GPT",
+    "NUWA",
+    "RNAElectra",
+    "RNAret",
+    "EVA",
+    "RNABert",
+    "GenSLM",
+    "ATOM-1",
+    "RNAMSM",
+    "RNA-km",
+    "CaLM",
+    "SpliceBERT",
+    "UTR-LM",
+    "RFamLlama",
+    "OmniGenome",
+    "CodonBERT",
+    "LoRNA SH",
+    "3UTRBERT",
+    "MP-RNA",
+    "PlantRNA-FM",
+    "LncRNA-BERT",
+    "StructRFM",
+    "G4mer",
+    "Orthrus",
+    "mRNA-FM",
+    "RNAGenesis",
+    "ProtRNA",
+    "codonGPT",
+}
+missing_strict_models = strict_model_names - {paper[0] for paper in papers}
+if missing_strict_models:
+    raise KeyError(f"Strict model names missing from papers: {sorted(missing_strict_models)}")
+papers = [paper for paper in papers if paper[0] in strict_model_names]
 
 
 def scope_key(paper):
@@ -951,7 +1004,7 @@ lines = []
 lines.append("")
 lines.append("## Paper List")
 lines.append("")
-lines.append("A complete list of model papers and related resources included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.")
+lines.append("A strict list of RNA foundation models included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.")
 lines.append("")
 lines.append("> **Date convention**: Dates shown in this section use the official publication or conference month when available; otherwise they use the linked preprint month and are marked `preprint`. Workshop-only entries are marked `workshop`.")
 lines.append("")
@@ -969,9 +1022,8 @@ lines.append('<summary><b>Classification Rules</b></summary>')
 lines.append("")
 lines.append("- **Core RNA Foundation Models**: reusable RNA or mRNA sequence backbones pre-trained on raw nucleotide sequences for broad downstream transfer or generation.")
 lines.append("- **Specialized RNA Foundation Models**: RNA-specific pre-trained models whose scope is limited to a subtype, species, structural modality, or narrow biological question.")
-lines.append("- **Adapted / Derived RNA Models**: models that mainly adapt, extend, fine-tune, or compose existing foundation models / pre-trained components for RNA tasks.")
-lines.append("- **Task-specific / Design-oriented RNA Models**: predictors or designers for a specific RNA task, useful to RNA FM research but not primarily general reusable backbones.")
-lines.append("- **RNA-related Nucleotide / Multi-omics FMs** and **Expression-profile Related Models**: related resources whose pre-training data are not pure raw RNA sequence.")
+lines.append("- **Adapted / Derived RNA Models**: models that adapt, extend, or transfer existing pre-trained components but still yield a reusable RNA language model.")
+lines.append("- **Excluded from this strict model list**: downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, and expression-profile models.")
 lines.append("")
 lines.append("</details>")
 lines.append("")
@@ -1085,14 +1137,52 @@ if paper_list_start != -1 and next_section != -1:
 elif next_section != -1:
     new_readme = readme[:next_section] + output + "\n" + readme[next_section:]
 else:
-    print("ERROR: Could not find insertion point")
-    new_readme = readme
+    header = f"""# ✨✨ Awesome RNA Foundation Models [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/)
+[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+[![Last Update](https://img.shields.io/badge/Last_Update-2026.05-blue.svg)]()
+
+A curated, strict, and up-to-date collection of **RNA sequence foundation models**, covering reusable pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware RNA representations, and generative RNA sequence modeling.
+
+> **Scope**: This README includes models that introduce or release a reusable RNA/mRNA/CDS/UTR sequence backbone or checkpoint. Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile models, and single-cell foundation models (e.g., scGPT, Geneformer) are **excluded**.
+
+---
+
+## Table of Contents
+
+- [Paper List](#paper-list) — Strict RNA foundation models (4 views), Benchmarks, Surveys
+- [Detailed Tables](#detailed-tables) — Detailed tables for all {len(papers)} model entries, {len(benchmarks)} benchmarks, {len(surveys)} surveys
+- [Abbreviations](#abbreviations)
+- [Contributing](#contributing)
+
+---
+
+"""
+    footer = """
+## Contributing
+
+Contributions are welcome! If you find a missing RNA foundation model, benchmark, or survey paper, please:
+
+1. Open an issue with the model/paper details
+2. Or submit a pull request following the existing table format
+
+**What to include**: RNA sequence foundation models with reusable pre-trained RNA/mRNA/CDS/UTR backbones or checkpoints.
+
+**What NOT to include**: Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile models, single-cell foundation models, protein-only models, or purely DNA models.
+
+
+*Last updated: May 2026*
+"""
+    new_readme = header + output.lstrip("\n") + "\n" + footer
 
 new_readme = re.sub(
     r"Detailed tables for all \d+ model entries, \d+ benchmarks, \d+ surveys",
     f"Detailed tables for all {len(papers)} model entries, {len(benchmarks)} benchmarks, {len(surveys)} surveys",
     new_readme,
 )
+new_readme = new_readme.replace("\n---\n## Paper List", "\n---\n\n## Paper List")
 
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(new_readme)
