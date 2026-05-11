@@ -14,7 +14,7 @@ A curated, comprehensive, and up-to-date collection of **RNA sequence foundation
 ## Table of Contents
 
 - [Paper List](#paper-list) — Models and related resources (4 views), Benchmarks, Surveys
-- [Detailed Tables](#detailed-tables) — Detailed tables for all 58 model entries, 12 benchmarks, 3 surveys
+- [Detailed Tables](#detailed-tables) — Detailed tables for all 68 model entries, 12 benchmarks, 3 surveys
 - [Abbreviations](#abbreviations)
 - [Contributing](#contributing)
 
@@ -48,7 +48,7 @@ A complete list of model papers and related resources included in this survey. E
 <blockquote>
 
 <details open>
-<summary><b>Core RNA Foundation Models (20)</b></summary>
+<summary><b>Core RNA Foundation Models (22)</b></summary>
 
 Primary contribution is a reusable RNA or mRNA sequence foundation model pre-trained on raw nucleotide sequences and intended for broad downstream transfer or generation.
 
@@ -100,6 +100,10 @@ Primary contribution is a reusable RNA or mRNA sequence foundation model pre-tra
 
   > Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations, applied to RNA-drug binding affinity prediction with downstream fine-tuning.
 
+- **CodonFM** — [Introducing the CodonFM Open Model for RNA Design and Analysis](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/) (2025.10) [![abs](https://img.shields.io/badge/abs-2025.10-b31b1b.svg)](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NVIDIA-Digital-Bio/CodonFM) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/nvidia/NV-CodonFM-Encodon-1B-v1)
+
+  > Releases NVIDIA CodonFM / Encodon, a family of codon-level masked language models trained on 131M RefSeq protein-coding sequences for mRNA design, codon optimization, and synonymous or missense variant interpretation.
+
 - **ERNIE-RNA** — [ERNIE-RNA: an RNA language model with structure-enhanced representations](https://www.nature.com/articles/s41467-025-64972-0) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-64972-0) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/ernierna-ss)
 
   > Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs, improving structure and function prediction tasks.
@@ -127,6 +131,10 @@ Primary contribution is a reusable RNA or mRNA sequence foundation model pre-tra
 - **RNAElectra** — [RNAElectra: An ELECTRA-Style RNA Foundation Model for RNA Regulatory Inference](https://doi.org/10.64898/2026.03.15.711950) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://doi.org/10.64898/2026.03.15.711950) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.03.15.711950)
 
   > Proposes RNAElectra, applying the ELECTRA-style replaced token detection pre-training objective to RNA sequences, offering more sample-efficient pre-training compared to masked language modeling approaches.
+
+- **RNAret** — [Retentive Network promotes efficient RNA language modeling of long sequences](https://www.nature.com/articles/s42003-026-09757-x) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s42003-026-09757-x) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/DrBlackZJU/RNAret/)
+
+  > Introduces RNAret, a Retentive Network-based RNA language model pre-trained with masked language modeling on 29.8M RNAcentral sequences, enabling efficient long-sequence RNA representation learning across interaction, structure, and classification tasks.
 
 - **EVA** — [EVA: Evolutionary Versatile Architect for Long-context RNA Generation](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)
 
@@ -222,9 +230,13 @@ RNA-specific pre-training is present, but the scope is constrained by RNA subtyp
 </details>
 
 <details open>
-<summary><b>Adapted / Derived RNA Models (3)</b></summary>
+<summary><b>Adapted / Derived RNA Models (6)</b></summary>
 
 The work mainly adapts, extends, or composes existing foundation models / pre-trained components for RNA-specific analysis or design, rather than introducing a fully new RNA backbone.
+
+- **mRNA-FM** — [RNA-FM: The RNA Foundation Model](https://github.com/ml4bio/RNA-FM) (2024.03) [![abs](https://img.shields.io/badge/abs-2024.03-b31b1b.svg)](https://github.com/ml4bio/RNA-FM) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RNA-FM) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/mrnafm)
+
+  > Adds mRNA-FM as the coding-sequence extension of RNA-FM, pre-trained on 45M mRNA CDS sequences to provide contextual embeddings for mRNA and protein-related downstream tasks.
 
 - **CodonMoE** — [DNA Language Models for RNA Analyses](https://openreview.net/forum?id=TOUrnb1EaG) (2024.09, preprint) [![abs](https://img.shields.io/badge/abs-2024.09-b31b1b.svg)](https://openreview.net/forum?id=TOUrnb1EaG) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://openreview.net/forum?id=TOUrnb1EaG)
 
@@ -234,14 +246,22 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 
   > Proposes RNAGenesis, a 1B-parameter generative RNA model that integrates sequence representation, structure prediction, and de novo functional design, listed here as an adapted / derived RNA design model rather than a core ncRNA pre-training-only FM.
 
+- **ProtRNA** — [ProtRNA: A protein-derived RNA language model by cross-modality transfer learning](https://www.sciencedirect.com/science/article/pii/S2405471225002042) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.sciencedirect.com/science/article/pii/S2405471225002042) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/roxie-zhang/ProtRNA)
+
+  > Adapts the protein language model ESM-2 to RNA through cross-modality transfer learning on 6M RNAcentral sequences, providing a parameter- and data-efficient RNA language model.
+
 - **mRNA-GPT (full-length)** — [mRNA-GPT: Full-Length mRNA Design via Autoregressive Generation with PPO](https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1)
 
   > Extends mRNA-GPT to full-length mRNA design (5'UTR+CDS+3'UTR) using autoregressive generation with PPO-based reinforcement learning to optimize translation efficiency and stability of generated mRNA sequences.
 
+- **Pro2RNA** — [Designing mRNA coding sequence via multimodal reverse translation language modeling with Pro2RNA](https://doi.org/10.64898/2026.03.18.712790) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://doi.org/10.64898/2026.03.18.712790) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.03.18.712790)
+
+  > Presents Pro2RNA, a multimodal reverse-translation framework that composes protein, taxonomy, and generative RNA language models to generate host-adapted mRNA coding sequences from protein sequences.
+
 </details>
 
 <details open>
-<summary><b>Task-specific / Design-oriented RNA Models (4)</b></summary>
+<summary><b>Task-specific / Design-oriented RNA Models (9)</b></summary>
 
 Useful RNA models whose main deliverable is a predictor or designer for a specific task, rather than a general reusable foundation-model backbone.
 
@@ -249,9 +269,25 @@ Useful RNA models whose main deliverable is a predictor or designer for a specif
 
   > Presents RibonanzaNet, a deep neural network trained on 2M RNA sequences with experimental chemical mapping data from Eterna, Rfam, and PDB, predicting RNA chemical reactivity profiles for structure determination.
 
+- **RiboDiffusion** — [RiboDiffusion: tertiary structure-based RNA inverse folding with generative diffusion models](https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903) (2024.06) [![abs](https://img.shields.io/badge/abs-2024.06-b31b1b.svg)](https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RiboDiffusion)
+
+  > Introduces RiboDiffusion, a generative diffusion model for RNA inverse folding that learns sequence distributions conditioned on RNA tertiary backbone structures.
+
+- **RhoFold+** — [Accurate RNA 3D structure prediction using a language model-based deep learning approach](https://www.nature.com/articles/s41592-024-02487-0) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://www.nature.com/articles/s41592-024-02487-0) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RhoFold) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/cuhkaih/rhofold)
+
+  > Presents RhoFold+, an RNA-FM-based deep learning pipeline for automated RNA 3D structure prediction, combining pre-trained RNA language-model embeddings, MSA features, and geometry-aware structure modules.
+
+- **RhoDesign** — [Deep generative design of RNA aptamers using structural predictions](https://www.nature.com/articles/s43588-024-00720-6) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://www.nature.com/articles/s43588-024-00720-6) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RhoDesign)
+
+  > Presents RhoDesign, a structure-to-sequence deep generative platform that uses RNA 3D structural predictions to design novel aptamer sequences with experimentally validated fluorescence activity.
+
 - **GARNET** — [GARNET: A Generative RNA Design Model from Microbial Genomes](https://www.nature.com/articles/s41467-024-54812-y) (2024.12) [![abs](https://img.shields.io/badge/abs-2024.12-b31b1b.svg)](https://www.nature.com/articles/s41467-024-54812-y) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/Doudna-lab/GARNET_DL)
 
   > Develops GARNET, a generative model combining a decoder with a GNN, trained on 30M microbial genome sequences (17B nucleotides) from GTDB for designing novel functional RNA sequences with desired structural properties.
+
+- **UTR-Insight** — [UTR-Insight: integrating deep learning for efficient 5′ UTR discovery and design](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7) (2025.02) [![abs](https://img.shields.io/badge/abs-2025.02-b31b1b.svg)](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7)
+
+  > Develops UTR-Insight, a 5'UTR discovery and design model that combines a pre-trained UTR language model encoder with a CNN-Transformer decoder to predict mean ribosome loading and design high-expression 5'UTRs.
 
 - **RNAtranslator** — [RNAtranslator: Modeling protein-conditional RNA design as sequence-to-sequence natural language translation](https://doi.org/10.1371/journal.pcbi.1013541) (2025.10) [![abs](https://img.shields.io/badge/abs-2025.10-b31b1b.svg)](https://doi.org/10.1371/journal.pcbi.1013541) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/SobhanShukueian/rnatranslator)
 
@@ -260,6 +296,10 @@ Useful RNA models whose main deliverable is a predictor or designer for a specif
 - **GEMORNA** — [Deep generative models design mRNA sequences with enhanced translational capacity and stability](https://www.science.org/doi/10.1126/science.adr8470) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.science.org/doi/10.1126/science.adr8470) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/RainaBio/GEMORNA)
 
   > Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.
+
+- **codonGPT** — [codonGPT: reinforcement learning on a generative language model enables scalable mRNA design](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) (2025.12) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NanilTx/codonGPT_pub) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/naniltx/codonGPT)
+
+  > Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.
 
 </details>
 
@@ -331,7 +371,7 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 <blockquote>
 
 <details open>
-<summary><b>ncRNA Sequence Models (14)</b></summary>
+<summary><b>ncRNA Sequence Models (16)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -373,6 +413,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations, applied to RNA-drug binding affinity prediction with downstream fine-tuning.
 
+- **ProtRNA** — [ProtRNA: A protein-derived RNA language model by cross-modality transfer learning](https://www.sciencedirect.com/science/article/pii/S2405471225002042) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.sciencedirect.com/science/article/pii/S2405471225002042) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/roxie-zhang/ProtRNA)
+
+  > Adapts the protein language model ESM-2 to RNA through cross-modality transfer learning on 6M RNAcentral sequences, providing a parameter- and data-efficient RNA language model.
+
 - **ERNIE-RNA** — [ERNIE-RNA: an RNA language model with structure-enhanced representations](https://www.nature.com/articles/s41467-025-64972-0) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-64972-0) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/ernierna-ss)
 
   > Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs, improving structure and function prediction tasks.
@@ -389,10 +433,14 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Proposes RNAElectra, applying the ELECTRA-style replaced token detection pre-training objective to RNA sequences, offering more sample-efficient pre-training compared to masked language modeling approaches.
 
+- **RNAret** — [Retentive Network promotes efficient RNA language modeling of long sequences](https://www.nature.com/articles/s42003-026-09757-x) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s42003-026-09757-x) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/DrBlackZJU/RNAret/)
+
+  > Introduces RNAret, a Retentive Network-based RNA language model pre-trained with masked language modeling on 29.8M RNAcentral sequences, enabling efficient long-sequence RNA representation learning across interaction, structure, and classification tasks.
+
 </details>
 
 <details open>
-<summary><b>mRNA / CDS Sequence Models (11)</b></summary>
+<summary><b>mRNA / CDS Sequence Models (15)</b></summary>
 
 - **GenSLM** — [GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics](https://doi.org/10.1177/10943420231201154) (2023.11) [![abs](https://img.shields.io/badge/abs-2023.11-b31b1b.svg)](https://doi.org/10.1177/10943420231201154)
 
@@ -401,6 +449,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 - **CaLM** — [Codon language embeddings provide strong signals for use in protein engineering](https://www.nature.com/articles/s42256-024-00791-0) (2024.02) [![abs](https://img.shields.io/badge/abs-2024.02-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00791-0) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/oxpig/CaLM)
 
   > Introduces CaLM, a codon-level language model trained on ~9M non-redundant coding sequences for predicting and optimizing codon usage, enabling rational mRNA therapeutic design with improved translation efficiency.
+
+- **mRNA-FM** — [RNA-FM: The RNA Foundation Model](https://github.com/ml4bio/RNA-FM) (2024.03) [![abs](https://img.shields.io/badge/abs-2024.03-b31b1b.svg)](https://github.com/ml4bio/RNA-FM) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RNA-FM) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/mrnafm)
+
+  > Adds mRNA-FM as the coding-sequence extension of RNA-FM, pre-trained on 45M mRNA CDS sequences to provide contextual embeddings for mRNA and protein-related downstream tasks.
 
 - **CodonBERT** — [CodonBERT large language model for mRNA vaccines](https://doi.org/10.1101/gr.278870.123) (2024.08) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/gr.278870.123) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/Sanofi-Public/CodonBERT)
 
@@ -418,6 +470,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Presents Helix-mRNA, a compact hybrid model combining Mamba2 state space layers with attention mechanisms for efficient mRNA sequence modeling, targeting mRNA stability and translation efficiency prediction.
 
+- **CodonFM** — [Introducing the CodonFM Open Model for RNA Design and Analysis](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/) (2025.10) [![abs](https://img.shields.io/badge/abs-2025.10-b31b1b.svg)](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NVIDIA-Digital-Bio/CodonFM) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/nvidia/NV-CodonFM-Encodon-1B-v1)
+
+  > Releases NVIDIA CodonFM / Encodon, a family of codon-level masked language models trained on 131M RefSeq protein-coding sequences for mRNA design, codon optimization, and synonymous or missense variant interpretation.
+
 - **GEMORNA** — [Deep generative models design mRNA sequences with enhanced translational capacity and stability](https://www.science.org/doi/10.1126/science.adr8470) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.science.org/doi/10.1126/science.adr8470) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/RainaBio/GEMORNA)
 
   > Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.
@@ -430,6 +486,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Presents mRNA-GPT, a 302M-parameter autoregressive model pre-trained on 80M bacterial, 83M eukaryotic, and 2M archaeal CDS sequences with codon/nucleotide tokenization for cross-species mRNA understanding and generation.
 
+- **codonGPT** — [codonGPT: reinforcement learning on a generative language model enables scalable mRNA design](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) (2025.12) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NanilTx/codonGPT_pub) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/naniltx/codonGPT)
+
+  > Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.
+
 - **NUWA** — [Large mRNA language foundation modeling with NUWA for unified sequence perception and generation](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3) (2026.02, preprint) [![abs](https://img.shields.io/badge/abs-2026.02-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/zysxmu/NUWA)
 
   > Proposes NUWA, a large mRNA foundation model pre-trained on 115M multi-species coding sequences for unified mRNA sequence perception and generation.
@@ -438,10 +498,14 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Extends mRNA-GPT to full-length mRNA design (5'UTR+CDS+3'UTR) using autoregressive generation with PPO-based reinforcement learning to optimize translation efficiency and stability of generated mRNA sequences.
 
+- **Pro2RNA** — [Designing mRNA coding sequence via multimodal reverse translation language modeling with Pro2RNA](https://doi.org/10.64898/2026.03.18.712790) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://doi.org/10.64898/2026.03.18.712790) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.03.18.712790)
+
+  > Presents Pro2RNA, a multimodal reverse-translation framework that composes protein, taxonomy, and generative RNA language models to generate host-adapted mRNA coding sequences from protein sequences.
+
 </details>
 
 <details open>
-<summary><b>UTR Sequence Models (2)</b></summary>
+<summary><b>UTR Sequence Models (3)</b></summary>
 
 - **UTR-LM** — [A 5′ UTR language model for decoding untranslated regions of mRNA and function predictions](https://www.nature.com/articles/s42256-024-00823-9) (2024.04) [![abs](https://img.shields.io/badge/abs-2024.04-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00823-9) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/utrlm-te_el)
 
@@ -450,6 +514,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 - **3UTRBERT** — [Deciphering 3'UTR Mediated Gene Regulation Using Interpretable Deep Representation Learning](https://doi.org/10.1002/advs.202407013) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1002/advs.202407013) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/yangyn533/3UTRBERT)
 
   > Presents 3UTRBERT, a BERT model pre-trained on GENCODE 3'UTR sequences using 3-mer tokenization, capturing regulatory motifs for predicting mRNA stability, polyadenylation, and subcellular localization.
+
+- **UTR-Insight** — [UTR-Insight: integrating deep learning for efficient 5′ UTR discovery and design](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7) (2025.02) [![abs](https://img.shields.io/badge/abs-2025.02-b31b1b.svg)](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7)
+
+  > Develops UTR-Insight, a 5'UTR discovery and design model that combines a pre-trained UTR language model encoder with a CNN-Transformer decoder to predict mean ribosome loading and design high-expression 5'UTRs.
 
 </details>
 
@@ -483,7 +551,7 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 </details>
 
 <details open>
-<summary><b>Structure-aware RNA Models (6)</b></summary>
+<summary><b>Structure-aware RNA Models (7)</b></summary>
 
 - **ATOM-1** — [ATOM-1: A Foundation Model for RNA Structure and Function Built on Chemical Mapping Data](https://doi.org/10.1101/2023.12.13.571579) (2023.12, preprint) [![abs](https://img.shields.io/badge/abs-2023.12-b31b1b.svg)](https://doi.org/10.1101/2023.12.13.571579) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2023.12.13.571579)
 
@@ -501,6 +569,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Develops MP-RNA, a multi-purpose RNA foundation model that integrates sequence and structure information through joint pre-training on the OneKP dataset, supporting diverse RNA tasks within a unified framework.
 
+- **RhoFold+** — [Accurate RNA 3D structure prediction using a language model-based deep learning approach](https://www.nature.com/articles/s41592-024-02487-0) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://www.nature.com/articles/s41592-024-02487-0) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RhoFold) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/cuhkaih/rhofold)
+
+  > Presents RhoFold+, an RNA-FM-based deep learning pipeline for automated RNA 3D structure prediction, combining pre-trained RNA language-model embeddings, MSA features, and geometry-aware structure modules.
+
 - **RNA-TorsionBERT** — [RNA-TorsionBERT: leveraging language models for RNA 3D torsion angles prediction](https://doi.org/10.1093/bioinformatics/btaf004) (2024.12) [![abs](https://img.shields.io/badge/abs-2024.12-b31b1b.svg)](https://doi.org/10.1093/bioinformatics/btaf004) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/sayby/rna_torsionBERT)
 
   > Proposes RNA-TorsionBERT, a BERT model pre-trained on PDB RNA 3D structures to predict backbone torsion angles directly from RNA sequences, enabling rapid assessment of RNA 3D structural properties.
@@ -512,11 +584,19 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 </details>
 
 <details open>
-<summary><b>RNA Generative Models (5)</b></summary>
+<summary><b>RNA Generative Models (7)</b></summary>
+
+- **RiboDiffusion** — [RiboDiffusion: tertiary structure-based RNA inverse folding with generative diffusion models](https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903) (2024.06) [![abs](https://img.shields.io/badge/abs-2024.06-b31b1b.svg)](https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RiboDiffusion)
+
+  > Introduces RiboDiffusion, a generative diffusion model for RNA inverse folding that learns sequence distributions conditioned on RNA tertiary backbone structures.
 
 - **GenerRNA** — [GenerRNA: A generative pre-trained language model for de novo RNA design](https://doi.org/10.1371/journal.pone.0310814) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1371/journal.pone.0310814) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/pfnet/GenerRNA)
 
   > Presents GenerRNA, a 350M-parameter autoregressive language model pre-trained on 16M RNAcentral sequences (~17.4B nucleotides) using BPE tokenization for de novo RNA sequence generation with controllable properties.
+
+- **RhoDesign** — [Deep generative design of RNA aptamers using structural predictions](https://www.nature.com/articles/s43588-024-00720-6) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://www.nature.com/articles/s43588-024-00720-6) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RhoDesign)
+
+  > Presents RhoDesign, a structure-to-sequence deep generative platform that uses RNA 3D structural predictions to design novel aptamer sequences with experimentally validated fluorescence activity.
 
 - **RNAGenesis** — [RNAGenesis: A Generalist Foundation Model for Functional RNA Therapeutics](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) (2024.12, preprint) [![abs](https://img.shields.io/badge/abs-2024.12-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/Zaixi/RNAGenesis)
 
@@ -617,7 +697,7 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 <blockquote>
 
 <details open>
-<summary><b>Encoder-only (BERT-family) (30)</b></summary>
+<summary><b>Encoder-only (BERT-family) (33)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -642,6 +722,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 - **CaLM** — [Codon language embeddings provide strong signals for use in protein engineering](https://www.nature.com/articles/s42256-024-00791-0) (2024.02) [![abs](https://img.shields.io/badge/abs-2024.02-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00791-0) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/oxpig/CaLM)
 
   > Introduces CaLM, a codon-level language model trained on ~9M non-redundant coding sequences for predicting and optimizing codon usage, enabling rational mRNA therapeutic design with improved translation efficiency.
+
+- **mRNA-FM** — [RNA-FM: The RNA Foundation Model](https://github.com/ml4bio/RNA-FM) (2024.03) [![abs](https://img.shields.io/badge/abs-2024.03-b31b1b.svg)](https://github.com/ml4bio/RNA-FM) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RNA-FM) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/mrnafm)
+
+  > Adds mRNA-FM as the coding-sequence extension of RNA-FM, pre-trained on 45M mRNA CDS sequences to provide contextual embeddings for mRNA and protein-related downstream tasks.
 
 - **SpliceBERT** — [Self-supervised learning on millions of primary RNA sequences from 72 vertebrates improves sequence-based RNA splicing prediction](https://doi.org/10.1093/bib/bbae163) (2024.03) [![abs](https://img.shields.io/badge/abs-2024.03-b31b1b.svg)](https://doi.org/10.1093/bib/bbae163) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/chenkenbio/SpliceBERT)
 
@@ -715,6 +799,14 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations, applied to RNA-drug binding affinity prediction with downstream fine-tuning.
 
+- **ProtRNA** — [ProtRNA: A protein-derived RNA language model by cross-modality transfer learning](https://www.sciencedirect.com/science/article/pii/S2405471225002042) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.sciencedirect.com/science/article/pii/S2405471225002042) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/roxie-zhang/ProtRNA)
+
+  > Adapts the protein language model ESM-2 to RNA through cross-modality transfer learning on 6M RNAcentral sequences, providing a parameter- and data-efficient RNA language model.
+
+- **CodonFM** — [Introducing the CodonFM Open Model for RNA Design and Analysis](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/) (2025.10) [![abs](https://img.shields.io/badge/abs-2025.10-b31b1b.svg)](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NVIDIA-Digital-Bio/CodonFM) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/nvidia/NV-CodonFM-Encodon-1B-v1)
+
+  > Releases NVIDIA CodonFM / Encodon, a family of codon-level masked language models trained on 131M RefSeq protein-coding sequences for mRNA design, codon optimization, and synonymous or missense variant interpretation.
+
 - **ERNIE-RNA** — [ERNIE-RNA: an RNA language model with structure-enhanced representations](https://www.nature.com/articles/s41467-025-64972-0) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-64972-0) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/ernierna-ss)
 
   > Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs, improving structure and function prediction tasks.
@@ -742,7 +834,7 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 </details>
 
 <details open>
-<summary><b>Decoder-only (GPT-family) (8)</b></summary>
+<summary><b>Decoder-only (GPT-family) (9)</b></summary>
 
 - **GenSLM** — [GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics](https://doi.org/10.1177/10943420231201154) (2023.11) [![abs](https://img.shields.io/badge/abs-2023.11-b31b1b.svg)](https://doi.org/10.1177/10943420231201154)
 
@@ -764,6 +856,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Presents mRNA-GPT, a 302M-parameter autoregressive model pre-trained on 80M bacterial, 83M eukaryotic, and 2M archaeal CDS sequences with codon/nucleotide tokenization for cross-species mRNA understanding and generation.
 
+- **codonGPT** — [codonGPT: reinforcement learning on a generative language model enables scalable mRNA design](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) (2025.12) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NanilTx/codonGPT_pub) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/naniltx/codonGPT)
+
+  > Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.
+
 - **OmniNA** — [OmniNA: A Foundation Model for Nucleotide Sequences and Annotations](https://academic.oup.com/nar/article/54/6/gkag083/8528802) (2026.01) [![abs](https://img.shields.io/badge/abs-2026.01-b31b1b.svg)](https://academic.oup.com/nar/article/54/6/gkag083/8528802)
 
   > Introduces OmniNA, a generative foundation model pre-trained on 91.7M nucleotide sequences with annotations (1076B bases), jointly modeling sequences and functional annotations for unified nucleotide analysis.
@@ -779,7 +875,7 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 </details>
 
 <details open>
-<summary><b>Encoder-Decoder (Seq2Seq) (3)</b></summary>
+<summary><b>Encoder-Decoder (Seq2Seq) (5)</b></summary>
 
 - **ATOM-1** — [ATOM-1: A Foundation Model for RNA Structure and Function Built on Chemical Mapping Data](https://doi.org/10.1101/2023.12.13.571579) (2023.12, preprint) [![abs](https://img.shields.io/badge/abs-2023.12-b31b1b.svg)](https://doi.org/10.1101/2023.12.13.571579) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2023.12.13.571579)
 
@@ -789,14 +885,22 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Proposes HELM, a hierarchical encoding approach for mRNA language modeling that captures both nucleotide-level and codon-level information through a multi-scale architecture for improved mRNA property prediction.
 
+- **RhoDesign** — [Deep generative design of RNA aptamers using structural predictions](https://www.nature.com/articles/s43588-024-00720-6) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://www.nature.com/articles/s43588-024-00720-6) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RhoDesign)
+
+  > Presents RhoDesign, a structure-to-sequence deep generative platform that uses RNA 3D structural predictions to design novel aptamer sequences with experimentally validated fluorescence activity.
+
 - **RNAtranslator** — [RNAtranslator: Modeling protein-conditional RNA design as sequence-to-sequence natural language translation](https://doi.org/10.1371/journal.pcbi.1013541) (2025.10) [![abs](https://img.shields.io/badge/abs-2025.10-b31b1b.svg)](https://doi.org/10.1371/journal.pcbi.1013541) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/SobhanShukueian/rnatranslator)
 
   > Proposes RNAtranslator, a 41.4M-parameter encoder-decoder model trained on 26M RNA-protein interaction pairs for generating RNA sequences conditioned on protein binding partners, enabling rational RNA aptamer design.
 
+- **Pro2RNA** — [Designing mRNA coding sequence via multimodal reverse translation language modeling with Pro2RNA](https://doi.org/10.64898/2026.03.18.712790) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://doi.org/10.64898/2026.03.18.712790) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.03.18.712790)
+
+  > Presents Pro2RNA, a multimodal reverse-translation framework that composes protein, taxonomy, and generative RNA language models to generate host-adapted mRNA coding sequences from protein sequences.
+
 </details>
 
 <details open>
-<summary><b>Hybrid / SSM (Mamba, StripedHyena) (8)</b></summary>
+<summary><b>Hybrid / SSM (Mamba, StripedHyena) (9)</b></summary>
 
 - **LoRNA SH** — [A long-context RNA foundation model for predicting transcriptome architecture](https://doi.org/10.1101/2024.08.26.609813) (2024.08, preprint) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/2024.08.26.609813) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2024.08.26.609813)
 
@@ -822,6 +926,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Introduces HydraRNA, a full-length RNA language model using a hybrid bidirectional state space and attention architecture for both coding and non-coding RNA tasks.
 
+- **RNAret** — [Retentive Network promotes efficient RNA language modeling of long sequences](https://www.nature.com/articles/s42003-026-09757-x) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s42003-026-09757-x) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/DrBlackZJU/RNAret/)
+
+  > Introduces RNAret, a Retentive Network-based RNA language model pre-trained with masked language modeling on 29.8M RNAcentral sequences, enabling efficient long-sequence RNA representation learning across interaction, structure, and classification tasks.
+
 - **Evo 2** — [Genome Modeling and Design Across All Domains of Life with Evo 2](https://www.nature.com/articles/s41586-026-10176-5) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s41586-026-10176-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ArcInstitute/evo2)
 
   > Presents Evo 2 (7B/40B parameters), a next-generation genomic foundation model trained on 9 trillion nucleotides from 128K genomes spanning all domains of life, enabling genome-scale modeling, understanding, and design.
@@ -833,11 +941,15 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 </details>
 
 <details open>
-<summary><b>Specialized (Diffusion, MoE, GNN, Multimodal) (9)</b></summary>
+<summary><b>Specialized (Diffusion, MoE, GNN, Multimodal) (12)</b></summary>
 
 - **RibonanzaNet** — [Ribonanza: deep learning of RNA structure through dual crowdsourcing](https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1) (2024.02, preprint) [![abs](https://img.shields.io/badge/abs-2024.02-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/Shujun-He/RibonanzaNet)
 
   > Presents RibonanzaNet, a deep neural network trained on 2M RNA sequences with experimental chemical mapping data from Eterna, Rfam, and PDB, predicting RNA chemical reactivity profiles for structure determination.
+
+- **RiboDiffusion** — [RiboDiffusion: tertiary structure-based RNA inverse folding with generative diffusion models](https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903) (2024.06) [![abs](https://img.shields.io/badge/abs-2024.06-b31b1b.svg)](https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RiboDiffusion)
+
+  > Introduces RiboDiffusion, a generative diffusion model for RNA inverse folding that learns sequence distributions conditioned on RNA tertiary backbone structures.
 
 - **BulkRNABert** — [BulkRNABert: A Pre-trained Model for Bulk RNA-seq Expression Data](https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2) (2024.06, preprint) [![abs](https://img.shields.io/badge/abs-2024.06-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/InstaDeepAI/BulkRNABert)
 
@@ -851,6 +963,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Proposes BSM (110M/270M parameters), a biological sequence model with mixed-modal pre-training on DNA, RNA, and protein sequences from RefSeq and web-collected biological data for unified sequence representation.
 
+- **RhoFold+** — [Accurate RNA 3D structure prediction using a language model-based deep learning approach](https://www.nature.com/articles/s41592-024-02487-0) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://www.nature.com/articles/s41592-024-02487-0) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RhoFold) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/cuhkaih/rhofold)
+
+  > Presents RhoFold+, an RNA-FM-based deep learning pipeline for automated RNA 3D structure prediction, combining pre-trained RNA language-model embeddings, MSA features, and geometry-aware structure modules.
+
 - **RNAGenesis** — [RNAGenesis: A Generalist Foundation Model for Functional RNA Therapeutics](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) (2024.12, preprint) [![abs](https://img.shields.io/badge/abs-2024.12-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/Zaixi/RNAGenesis)
 
   > Proposes RNAGenesis, a 1B-parameter generative RNA model that integrates sequence representation, structure prediction, and de novo functional design, listed here as an adapted / derived RNA design model rather than a core ncRNA pre-training-only FM.
@@ -858,6 +974,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 - **GARNET** — [GARNET: A Generative RNA Design Model from Microbial Genomes](https://www.nature.com/articles/s41467-024-54812-y) (2024.12) [![abs](https://img.shields.io/badge/abs-2024.12-b31b1b.svg)](https://www.nature.com/articles/s41467-024-54812-y) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/Doudna-lab/GARNET_DL)
 
   > Develops GARNET, a generative model combining a decoder with a GNN, trained on 30M microbial genome sequences (17B nucleotides) from GTDB for designing novel functional RNA sequences with desired structural properties.
+
+- **UTR-Insight** — [UTR-Insight: integrating deep learning for efficient 5′ UTR discovery and design](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7) (2025.02) [![abs](https://img.shields.io/badge/abs-2025.02-b31b1b.svg)](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7)
+
+  > Develops UTR-Insight, a 5'UTR discovery and design model that combines a pre-trained UTR language model encoder with a CNN-Transformer decoder to predict mean ribosome loading and design high-expression 5'UTRs.
 
 - **MOJO** — [MOJO: A Multi-omics Foundation Model for RNA-seq and Methylation](https://www.biorxiv.org/content/10.1101/2025.06.25.661237v1) (2025.06, preprint) [![abs](https://img.shields.io/badge/abs-2025.06-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.06.25.661237v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2025.06.25.661237v1) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/InstaDeepAI/MOJO)
 
@@ -883,7 +1003,7 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 <blockquote>
 
 <details open>
-<summary><b>Single Nucleotide Token (SNT) (33)</b></summary>
+<summary><b>Single Nucleotide Token (SNT) (39)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -913,6 +1033,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Presents RibonanzaNet, a deep neural network trained on 2M RNA sequences with experimental chemical mapping data from Eterna, Rfam, and PDB, predicting RNA chemical reactivity profiles for structure determination.
 
+- **mRNA-FM** — [RNA-FM: The RNA Foundation Model](https://github.com/ml4bio/RNA-FM) (2024.03) [![abs](https://img.shields.io/badge/abs-2024.03-b31b1b.svg)](https://github.com/ml4bio/RNA-FM) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RNA-FM) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/mrnafm)
+
+  > Adds mRNA-FM as the coding-sequence extension of RNA-FM, pre-trained on 45M mRNA CDS sequences to provide contextual embeddings for mRNA and protein-related downstream tasks.
+
 - **SpliceBERT** — [Self-supervised learning on millions of primary RNA sequences from 72 vertebrates improves sequence-based RNA splicing prediction](https://doi.org/10.1093/bib/bbae163) (2024.03) [![abs](https://img.shields.io/badge/abs-2024.03-b31b1b.svg)](https://doi.org/10.1093/bib/bbae163) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/chenkenbio/SpliceBERT)
 
   > Develops SpliceBERT, a 20M-parameter BERT model pre-trained on pre-mRNA sequences from 72 vertebrate species for self-supervised learning of splicing patterns, improving splice site prediction and branchpoint detection.
@@ -928,6 +1052,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 - **RFamLlama** — [RFamLlama: an efficient conditional language model for RNA sequence generation across diverse structural families](https://openreview.net/forum?id=dXnQedxEJD) (2024.06, workshop) [![abs](https://img.shields.io/badge/abs-2024.06-b31b1b.svg)](https://openreview.net/forum?id=dXnQedxEJD) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/jinyuan22/RFamLlama-base)
 
   > Proposes RFamLlama, a Llama-based autoregressive model for conditional RNA sequence generation conditioned on RNA family labels, generating novel functional ncRNA sequences belonging to over 4,000 Rfam families.
+
+- **RiboDiffusion** — [RiboDiffusion: tertiary structure-based RNA inverse folding with generative diffusion models](https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903) (2024.06) [![abs](https://img.shields.io/badge/abs-2024.06-b31b1b.svg)](https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RiboDiffusion)
+
+  > Introduces RiboDiffusion, a generative diffusion model for RNA inverse folding that learns sequence distributions conditioned on RNA tertiary backbone structures.
 
 - **OmniGenome** — [Bridging Sequence-Structure Alignment in RNA Foundation Models](https://arxiv.org/abs/2407.11242) (2024.07, preprint) [![abs](https://img.shields.io/badge/abs-2024.07-b31b1b.svg)](https://arxiv.org/abs/2407.11242) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2407.11242) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/OmniGenome-186M)
 
@@ -957,6 +1085,14 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Develops MP-RNA, a multi-purpose RNA foundation model that integrates sequence and structure information through joint pre-training on the OneKP dataset, supporting diverse RNA tasks within a unified framework.
 
+- **RhoFold+** — [Accurate RNA 3D structure prediction using a language model-based deep learning approach](https://www.nature.com/articles/s41592-024-02487-0) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://www.nature.com/articles/s41592-024-02487-0) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RhoFold) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/cuhkaih/rhofold)
+
+  > Presents RhoFold+, an RNA-FM-based deep learning pipeline for automated RNA 3D structure prediction, combining pre-trained RNA language-model embeddings, MSA features, and geometry-aware structure modules.
+
+- **RhoDesign** — [Deep generative design of RNA aptamers using structural predictions](https://www.nature.com/articles/s43588-024-00720-6) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://www.nature.com/articles/s43588-024-00720-6) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ml4bio/RhoDesign)
+
+  > Presents RhoDesign, a structure-to-sequence deep generative platform that uses RNA 3D structural predictions to design novel aptamer sequences with experimentally validated fluorescence activity.
+
 - **Evo** — [Sequence Modeling and Design from Molecular to Genome Scale with Evo](https://www.science.org/doi/10.1126/science.ado9336) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://www.science.org/doi/10.1126/science.ado9336) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/evo-design/evo)
 
   > Presents Evo, a 7B-parameter genomic foundation model using StripedHyena architecture, pre-trained on 2.7M prokaryotic and phage genomes at single-nucleotide resolution, enabling sequence modeling and design from molecular to genome scale.
@@ -977,6 +1113,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Develops GARNET, a generative model combining a decoder with a GNN, trained on 30M microbial genome sequences (17B nucleotides) from GTDB for designing novel functional RNA sequences with desired structural properties.
 
+- **UTR-Insight** — [UTR-Insight: integrating deep learning for efficient 5′ UTR discovery and design](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7) (2025.02) [![abs](https://img.shields.io/badge/abs-2025.02-b31b1b.svg)](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7)
+
+  > Develops UTR-Insight, a 5'UTR discovery and design model that combines a pre-trained UTR language model encoder with a CNN-Transformer decoder to predict mean ribosome loading and design high-expression 5'UTRs.
+
 - **LucaOne** — [Generalized biological foundation model with unified nucleic acid and protein language](https://www.nature.com/articles/s42256-025-01044-4) (2025.06) [![abs](https://img.shields.io/badge/abs-2025.06-b31b1b.svg)](https://www.nature.com/articles/s42256-025-01044-4) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/LucaOne/LucaOne)
 
   > Introduces LucaOne, a 1.8B-parameter unified model pre-trained on 800B tokens from RefSeq, UniProt, and PDB, jointly modeling DNA, RNA, and protein sequences for cross-modal biological sequence understanding.
@@ -988,6 +1128,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 - **StructRFM** — [StructRFM: Structure-guided RNA Foundation Model](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) (2025.08, preprint) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/heqin-zhu/structRFM)
 
   > Presents StructRFM, a structure-guided RNA foundation model pre-trained on 21M sequence-structure pairs, integrating predicted secondary structure information during pre-training for enhanced RNA representation learning.
+
+- **ProtRNA** — [ProtRNA: A protein-derived RNA language model by cross-modality transfer learning](https://www.sciencedirect.com/science/article/pii/S2405471225002042) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.sciencedirect.com/science/article/pii/S2405471225002042) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/roxie-zhang/ProtRNA)
+
+  > Adapts the protein language model ESM-2 to RNA through cross-modality transfer learning on 6M RNAcentral sequences, providing a parameter- and data-efficient RNA language model.
 
 - **RNAtranslator** — [RNAtranslator: Modeling protein-conditional RNA design as sequence-to-sequence natural language translation](https://doi.org/10.1371/journal.pcbi.1013541) (2025.10) [![abs](https://img.shields.io/badge/abs-2025.10-b31b1b.svg)](https://doi.org/10.1371/journal.pcbi.1013541) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/SobhanShukueian/rnatranslator)
 
@@ -1020,7 +1164,7 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 </details>
 
 <details open>
-<summary><b>Codon-level Tokenization (11)</b></summary>
+<summary><b>Codon-level Tokenization (14)</b></summary>
 
 - **GenSLM** — [GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics](https://doi.org/10.1177/10943420231201154) (2023.11) [![abs](https://img.shields.io/badge/abs-2023.11-b31b1b.svg)](https://doi.org/10.1177/10943420231201154)
 
@@ -1050,6 +1194,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Presents Helix-mRNA, a compact hybrid model combining Mamba2 state space layers with attention mechanisms for efficient mRNA sequence modeling, targeting mRNA stability and translation efficiency prediction.
 
+- **CodonFM** — [Introducing the CodonFM Open Model for RNA Design and Analysis](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/) (2025.10) [![abs](https://img.shields.io/badge/abs-2025.10-b31b1b.svg)](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NVIDIA-Digital-Bio/CodonFM) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/nvidia/NV-CodonFM-Encodon-1B-v1)
+
+  > Releases NVIDIA CodonFM / Encodon, a family of codon-level masked language models trained on 131M RefSeq protein-coding sequences for mRNA design, codon optimization, and synonymous or missense variant interpretation.
+
 - **GEMORNA** — [Deep generative models design mRNA sequences with enhanced translational capacity and stability](https://www.science.org/doi/10.1126/science.adr8470) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.science.org/doi/10.1126/science.adr8470) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/RainaBio/GEMORNA)
 
   > Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.
@@ -1057,6 +1205,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 - **mRNA-GPT** — [Large generative mRNA language foundation model for efficient coding sequence generation and design with mRNA-GPT](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1) (2025.12, preprint) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ZHymLumine/mRNA-GPT/)
 
   > Presents mRNA-GPT, a 302M-parameter autoregressive model pre-trained on 80M bacterial, 83M eukaryotic, and 2M archaeal CDS sequences with codon/nucleotide tokenization for cross-species mRNA understanding and generation.
+
+- **codonGPT** — [codonGPT: reinforcement learning on a generative language model enables scalable mRNA design](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) (2025.12) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NanilTx/codonGPT_pub) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/naniltx/codonGPT)
+
+  > Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.
 
 - **NUWA** — [Large mRNA language foundation modeling with NUWA for unified sequence perception and generation](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3) (2026.02, preprint) [![abs](https://img.shields.io/badge/abs-2026.02-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/zysxmu/NUWA)
 
@@ -1066,10 +1218,14 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 
   > Extends mRNA-GPT to full-length mRNA design (5'UTR+CDS+3'UTR) using autoregressive generation with PPO-based reinforcement learning to optimize translation efficiency and stability of generated mRNA sequences.
 
+- **Pro2RNA** — [Designing mRNA coding sequence via multimodal reverse translation language modeling with Pro2RNA](https://doi.org/10.64898/2026.03.18.712790) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://doi.org/10.64898/2026.03.18.712790) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.03.18.712790)
+
+  > Presents Pro2RNA, a multimodal reverse-translation framework that composes protein, taxonomy, and generative RNA language models to generate host-adapted mRNA coding sequences from protein sequences.
+
 </details>
 
 <details open>
-<summary><b>K-mer Tokenization (2)</b></summary>
+<summary><b>K-mer Tokenization (3)</b></summary>
 
 - **3UTRBERT** — [Deciphering 3'UTR Mediated Gene Regulation Using Interpretable Deep Representation Learning](https://doi.org/10.1002/advs.202407013) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1002/advs.202407013) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/yangyn533/3UTRBERT)
 
@@ -1078,6 +1234,10 @@ Models over RNA-seq expression profiles or multi-omics expression features, not 
 - **LncRNA-BERT** — [LncRNA-BERT: A BERT-based Model for Long Non-coding RNA Classification](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1) (2025.01, preprint) [![abs](https://img.shields.io/badge/abs-2025.01-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/luukromeijn/lncRNA-Py)
 
   > Introduces LncRNA-BERT, a BERT model pre-trained on 536K long non-coding RNA sequences from GENCODE, RefSeq, and NONCODE for lncRNA classification, subcellular localization, and functional prediction.
+
+- **RNAret** — [Retentive Network promotes efficient RNA language modeling of long sequences](https://www.nature.com/articles/s42003-026-09757-x) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s42003-026-09757-x) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/DrBlackZJU/RNAret/)
+
+  > Introduces RNAret, a Retentive Network-based RNA language model pre-trained with masked language modeling on 29.8M RNAcentral sequences, enabling efficient long-sequence RNA representation learning across interaction, structure, and classification tasks.
 
 </details>
 
@@ -1255,10 +1415,12 @@ Models primarily focused on non-coding RNA sequences (from RNAcentral, Rfam, etc
 | <nobr>**ChaRNABERT**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://openreview.net/forum?id=cAiECLDjzF)</nobr> | - | <nobr>2025.03<br><sub>workshop</sub></nobr> | <nobr>Encoder-only</nobr> | <nobr>8M-650M</nobr> | <nobr>RNAcentral + NCBI (62M seqs)</nobr> | <nobr>Learnable (GBST)</nobr> |
 | <nobr>**RiNALMo**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-60872-5)</nobr> | <nobr>[Code](https://github.com/lbcb-sci/RiNALMo)</nobr> | <nobr>2025.07</nobr> | <nobr>Encoder-only</nobr> | <nobr>135M-650M</nobr> | <nobr>RNAcentral (36M ncRNA seqs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**RNA-BERTa**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1)</nobr> | <nobr>[Code](https://huggingface.co/IlPakoZ/RNA-BERTa9700)</nobr> | <nobr>2025.09<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | <nobr>55.9M</nobr> | <nobr>Public RNA collections (9.76M seqs)</nobr> | <nobr>BPE</nobr> |
+| <nobr>**ProtRNA**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>[Paper](https://www.sciencedirect.com/science/article/pii/S2405471225002042)</nobr> | <nobr>[Code](https://github.com/roxie-zhang/ProtRNA)</nobr> | <nobr>2025.09</nobr> | <nobr>Encoder-only</nobr> | <nobr>ESM-2 derived</nobr> | <nobr>RNAcentral (6M representative seqs)</nobr> | <nobr>RNA tokens</nobr> |
 | <nobr>**ERNIE-RNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-64972-0)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/ernierna-ss)</nobr> | <nobr>2025.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>RNAcentral (20.4M seqs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**BiRNA-BERT**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42003-025-08982-0)</nobr> | <nobr>[Code](https://github.com/buetnlpbio/BiRNA-BERT)</nobr> | <nobr>2025.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>117M</nobr> | <nobr>RNAcentral (36M seqs, ~26.4B nt)</nobr> | <nobr>Dual (NUC + BPE)</nobr> |
 | <nobr>**HydraRNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7)</nobr> | <nobr>[Code](https://github.com/GuipengLi/HydraRNA)</nobr> | <nobr>2025.11</nobr> | <nobr>Hybrid (SSM+Attention)</nobr> | <nobr>84M</nobr> | <nobr>28.1M RNAs (ncRNA + coding)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**RNAElectra**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.64898/2026.03.15.711950)</nobr> | - | <nobr>2026.03<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | - | <nobr>RNAcentral ncRNAs</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RNAret**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42003-026-09757-x)</nobr> | <nobr>[Code](https://github.com/DrBlackZJU/RNAret/)</nobr> | <nobr>2026.03</nobr> | <nobr>Hybrid (RetNet)</nobr> | <nobr>12M</nobr> | <nobr>RNAcentral (29.8M ncRNA seqs)</nobr> | <nobr>1/3/5-mer</nobr> |
 
 </details>
 
@@ -1271,15 +1433,19 @@ Models focused on messenger RNA coding sequences or full mRNA sequences.
 |:------|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
 | <nobr>**GenSLM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1177/10943420231201154)</nobr> | - | <nobr>2023.11</nobr> | <nobr>Decoder-only</nobr> | <nobr>2.5B-25B</nobr> | <nobr>110M+ gene seqs + 1.5M SARS-CoV-2 genomes</nobr> | <nobr>Codon-level</nobr> |
 | <nobr>**CaLM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00791-0)</nobr> | <nobr>[Code](https://github.com/oxpig/CaLM)</nobr> | <nobr>2024.02</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>~9M non-redundant CDS</nobr> | <nobr>Codon-level (triplet)</nobr> |
+| <nobr>**mRNA-FM**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>[Paper](https://github.com/ml4bio/RNA-FM)</nobr> | <nobr>[Code](https://github.com/ml4bio/RNA-FM)</nobr> | <nobr>2024.03</nobr> | <nobr>Encoder-only</nobr> | <nobr>239M</nobr> | <nobr>mRNA CDS (45M seqs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**CodonBERT**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1101/gr.278870.123)</nobr> | <nobr>[Code](https://github.com/Sanofi-Public/CodonBERT)</nobr> | <nobr>2024.08</nobr> | <nobr>Encoder-only</nobr> | <nobr>110M</nobr> | <nobr>NCBI (10M mRNA CDS)</nobr> | <nobr>Codon-aware</nobr> |
 | <nobr>**CodonMoE**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>[Paper](https://openreview.net/forum?id=TOUrnb1EaG)</nobr> | - | <nobr>2024.09<br><sub>preprint</sub></nobr> | <nobr>Decoder-only (MoE)</nobr> | - | <nobr>DNA FM + RNA adaptation</nobr> | <nobr>Codon-aware</nobr> |
 | <nobr>**HELM**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://arxiv.org/abs/2410.12459)</nobr> | - | <nobr>2024.10<br><sub>preprint</sub></nobr> | <nobr>Encoder-Decoder</nobr> | - | <nobr>mRNA coding sequences</nobr> | <nobr>Codon-hierarchical</nobr> |
 | <nobr>**Helix-mRNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://openreview.net/forum?id=Ky0CkFiVhu)</nobr> | <nobr>[Code](https://huggingface.co/helical-ai/helix-mRNA)</nobr> | <nobr>2025.03<br><sub>workshop</sub></nobr> | <nobr>Hybrid (SSM+Attention)</nobr> | <nobr>Compact</nobr> | <nobr>mRNA sequences</nobr> | <nobr>SNT + codon markers</nobr> |
+| <nobr>**CodonFM**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/)</nobr> | <nobr>[Code](https://github.com/NVIDIA-Digital-Bio/CodonFM)</nobr> | <nobr>2025.10</nobr> | <nobr>Encoder-only</nobr> | <nobr>80M / 600M / 1B</nobr> | <nobr>RefSeq CDS (131M seqs, 22K+ species)</nobr> | <nobr>Codon-level</nobr> |
 | <nobr>**GEMORNA**</nobr> | <nobr>Task-specific / Design-oriented RNA Models</nobr> | <nobr>[Paper](https://www.science.org/doi/10.1126/science.adr8470)</nobr> | <nobr>[Code](https://github.com/RainaBio/GEMORNA)</nobr> | <nobr>2025.11</nobr> | <nobr>Specialized generative</nobr> | - | <nobr>mRNA CDS + UTR</nobr> | <nobr>Codon / nucleotide</nobr> |
 | <nobr>**mRNABERT**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-65340-8)</nobr> | <nobr>[Code](https://huggingface.co/Taykhoom/mRNABERT-no-flashattention)</nobr> | <nobr>2025.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>114M</nobr> | <nobr>18M mRNA seqs (NCBI, MG-RAST, GWH, MGnify)</nobr> | <nobr>Dual tokenization</nobr> |
 | <nobr>**mRNA-GPT**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1)</nobr> | <nobr>[Code](https://github.com/ZHymLumine/mRNA-GPT/)</nobr> | <nobr>2025.12<br><sub>preprint</sub></nobr> | <nobr>Decoder-only</nobr> | <nobr>302M</nobr> | <nobr>NCBI CDS (80M bact. + 83M euk. + 2M arch.)</nobr> | <nobr>Codon / nucleotide</nobr> |
+| <nobr>**codonGPT**</nobr> | <nobr>Task-specific / Design-oriented RNA Models</nobr> | <nobr>[Paper](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118)</nobr> | <nobr>[Code](https://github.com/NanilTx/codonGPT_pub)</nobr> | <nobr>2025.12</nobr> | <nobr>Decoder-only</nobr> | <nobr>GPT-2 based</nobr> | <nobr>Model-organism CDS (338K seqs)</nobr> | <nobr>Codon-level</nobr> |
 | <nobr>**NUWA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3)</nobr> | <nobr>[Code](https://github.com/zysxmu/NUWA)</nobr> | <nobr>2026.02<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | - | <nobr>Multi-species mRNA CDS (115M seqs)</nobr> | <nobr>Codon tokens</nobr> |
 | <nobr>**mRNA-GPT (full-length)**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1)</nobr> | - | <nobr>2026.03<br><sub>preprint</sub></nobr> | <nobr>Decoder-only</nobr> | - | <nobr>30M full-length mRNAs (5'UTR+CDS+3'UTR)</nobr> | <nobr>Nucleotide</nobr> |
+| <nobr>**Pro2RNA**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>[Paper](https://doi.org/10.64898/2026.03.18.712790)</nobr> | - | <nobr>2026.03<br><sub>preprint</sub></nobr> | <nobr>Multimodal encoder-decoder</nobr> | - | <nobr>mRNA-protein pairs (0.55M euk. + 1M bact.)</nobr> | <nobr>Codon-level</nobr> |
 
 </details>
 
@@ -1292,6 +1458,7 @@ Models focused on untranslated regions (5'UTR, 3'UTR).
 |:------|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
 | <nobr>**UTR-LM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00823-9)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/utrlm-te_el)</nobr> | <nobr>2024.04</nobr> | <nobr>Encoder-only</nobr> | <nobr>1M</nobr> | <nobr>Ensembl 5'UTR (>214K seqs + synthetic)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**3UTRBERT**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1002/advs.202407013)</nobr> | <nobr>[Code](https://github.com/yangyn533/3UTRBERT)</nobr> | <nobr>2024.10</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>GENCODE 3'UTR (20K seqs)</nobr> | <nobr>3-mer</nobr> |
+| <nobr>**UTR-Insight**</nobr> | <nobr>Task-specific / Design-oriented RNA Models</nobr> | <nobr>[Paper](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7)</nobr> | - | <nobr>2025.02</nobr> | <nobr>UTR-LM + CNN-Transformer</nobr> | - | <nobr>5'UTR reporter + endogenous UTR data</nobr> | <nobr>SNT</nobr> |
 
 </details>
 
@@ -1322,6 +1489,7 @@ Models incorporating RNA secondary or tertiary structure information during pre-
 | <nobr>**RibonanzaNet**</nobr> | <nobr>Task-specific / Design-oriented RNA Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1)</nobr> | <nobr>[Code](https://github.com/Shujun-He/RibonanzaNet)</nobr> | <nobr>2024.02<br><sub>preprint</sub></nobr> | <nobr>CNN + Attention</nobr> | - | <nobr>Eterna + Rfam + PDB (2M seqs)</nobr> | - |
 | <nobr>**OmniGenome**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://arxiv.org/abs/2407.11242)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/OmniGenome-186M)</nobr> | <nobr>2024.07<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | <nobr>52M / 186M</nobr> | <nobr>OneKP (seq-structure pairs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**MP-RNA**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://aclanthology.org/2024.findings-emnlp.304/)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/MP-RNA)</nobr> | <nobr>2024.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>52-186M</nobr> | <nobr>OneKP (seq + structure)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**RhoFold+**</nobr> | <nobr>Task-specific / Design-oriented RNA Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41592-024-02487-0)</nobr> | <nobr>[Code](https://github.com/ml4bio/RhoFold)</nobr> | <nobr>2024.11</nobr> | <nobr>RNA-FM + geometry module</nobr> | - | <nobr>PDB RNA 3D + RNA-FM embeddings</nobr> | <nobr>SNT</nobr> |
 | <nobr>**RNA-TorsionBERT**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1093/bioinformatics/btaf004)</nobr> | <nobr>[Code](https://huggingface.co/sayby/rna_torsionBERT)</nobr> | <nobr>2024.12</nobr> | <nobr>Encoder-only</nobr> | <nobr>86.9M</nobr> | <nobr>PDB RNA 3D structures</nobr> | <nobr>SNT</nobr> |
 | <nobr>**StructRFM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1)</nobr> | <nobr>[Code](https://github.com/heqin-zhu/structRFM)</nobr> | <nobr>2025.08<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | - | <nobr>21M seq-structure pairs</nobr> | <nobr>SNT</nobr> |
 
@@ -1334,7 +1502,9 @@ Models focused on RNA sequence generation or generative transcript modeling.
 
 | Model <img width=180/> | Scope <img width=190/> | Paper <img width=110/> | Code <img width=110/> | Date / Status <img width=90/> | Architecture <img width=150/> | Params <img width=90/> | Pre-training Data <img width=240/> | Tokenization <img width=130/> |
 |:------|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
+| <nobr>**RiboDiffusion**</nobr> | <nobr>Task-specific / Design-oriented RNA Models</nobr> | <nobr>[Paper](https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903)</nobr> | <nobr>[Code](https://github.com/ml4bio/RiboDiffusion)</nobr> | <nobr>2024.06</nobr> | <nobr>Diffusion + GNN/Transformer</nobr> | - | <nobr>PDB RNA 3D + predicted structures</nobr> | <nobr>SNT</nobr> |
 | <nobr>**GenerRNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1371/journal.pone.0310814)</nobr> | <nobr>[Code](https://huggingface.co/pfnet/GenerRNA)</nobr> | <nobr>2024.10</nobr> | <nobr>Decoder-only</nobr> | <nobr>350M</nobr> | <nobr>RNAcentral (16.09M seqs, ~17.4B nt)</nobr> | <nobr>BPE</nobr> |
+| <nobr>**RhoDesign**</nobr> | <nobr>Task-specific / Design-oriented RNA Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s43588-024-00720-6)</nobr> | <nobr>[Code](https://github.com/ml4bio/RhoDesign)</nobr> | <nobr>2024.11</nobr> | <nobr>GVP + Transformer</nobr> | - | <nobr>PDB RNA 3D + RhoFold-predicted structures</nobr> | <nobr>SNT</nobr> |
 | <nobr>**RNAGenesis**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2)</nobr> | <nobr>[Code](https://huggingface.co/Zaixi/RNAGenesis)</nobr> | <nobr>2024.12<br><sub>preprint</sub></nobr> | <nobr>Encoder + Diffusion</nobr> | <nobr>1B</nobr> | <nobr>RNAcentral clustered ncRNA</nobr> | <nobr>Hybrid N-gram</nobr> |
 | <nobr>**GARNET**</nobr> | <nobr>Task-specific / Design-oriented RNA Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-024-54812-y)</nobr> | <nobr>[Code](https://github.com/Doudna-lab/GARNET_DL)</nobr> | <nobr>2024.12</nobr> | <nobr>Decoder + GNN</nobr> | - | <nobr>GTDB (30M seqs, 17B nt, 400K genomes)</nobr> | <nobr>Overlapping triplet</nobr> |
 | <nobr>**RNAtranslator**</nobr> | <nobr>Task-specific / Design-oriented RNA Models</nobr> | <nobr>[Paper](https://doi.org/10.1371/journal.pcbi.1013541)</nobr> | <nobr>[Code](https://huggingface.co/SobhanShukueian/rnatranslator)</nobr> | <nobr>2025.10</nobr> | <nobr>Encoder-decoder</nobr> | <nobr>41.4M</nobr> | <nobr>RNAInter (26M interaction pairs)</nobr> | <nobr>Nucleotide + AA</nobr> |

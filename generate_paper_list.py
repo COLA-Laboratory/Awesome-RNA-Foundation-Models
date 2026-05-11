@@ -3,6 +3,7 @@ Four classification views: by foundation-model scope, RNA/data focus, architectu
 and tokenization strategy."""
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+import re
 from collections import OrderedDict
 
 # Fields: (name, title, url, date, github_url, hf_url, category, abstract, architecture, tokenization)
@@ -86,6 +87,16 @@ papers = [
      "Proposes RNAElectra, applying the ELECTRA-style replaced token detection pre-training objective to RNA sequences, offering more sample-efficient pre-training compared to masked language modeling approaches.",
      "Encoder-only", "SNT"),
 
+    ("RNAret", "Retentive Network promotes efficient RNA language modeling of long sequences",
+     "https://www.nature.com/articles/s42003-026-09757-x", "2026.03", "https://github.com/DrBlackZJU/RNAret/", None, "ncRNA FM",
+     "Introduces RNAret, a Retentive Network-based RNA language model pre-trained with masked language modeling on 29.8M RNAcentral sequences, enabling efficient long-sequence RNA representation learning across interaction, structure, and classification tasks.",
+     "Hybrid/SSM", "K-mer"),
+
+    ("ProtRNA", "ProtRNA: A protein-derived RNA language model by cross-modality transfer learning",
+     "https://www.sciencedirect.com/science/article/pii/S2405471225002042", "2025.09", "https://github.com/roxie-zhang/ProtRNA", None, "ncRNA FM",
+     "Adapts the protein language model ESM-2 to RNA through cross-modality transfer learning on 6M RNAcentral sequences, providing a parameter- and data-efficient RNA language model.",
+     "Encoder-only", "SNT"),
+
     # === mRNA/CDS FMs ===
     ("CodonBERT", "CodonBERT large language model for mRNA vaccines",
      "https://doi.org/10.1101/gr.278870.123", "2024.08", "https://github.com/Sanofi-Public/CodonBERT", None, "mRNA/CDS FM",
@@ -96,6 +107,11 @@ papers = [
      "https://www.nature.com/articles/s42256-024-00791-0", "2024.02", "https://github.com/oxpig/CaLM", None, "mRNA/CDS FM",
      "Introduces CaLM, a codon-level language model trained on ~9M non-redundant coding sequences for predicting and optimizing codon usage, enabling rational mRNA therapeutic design with improved translation efficiency.",
      "Encoder-only", "Codon"),
+
+    ("mRNA-FM", "RNA-FM: The RNA Foundation Model",
+     "https://github.com/ml4bio/RNA-FM", "2024.03", "https://github.com/ml4bio/RNA-FM", "https://huggingface.co/multimolecule/mrnafm", "mRNA/CDS FM",
+     "Adds mRNA-FM as the coding-sequence extension of RNA-FM, pre-trained on 45M mRNA CDS sequences to provide contextual embeddings for mRNA and protein-related downstream tasks.",
+     "Encoder-only", "SNT"),
 
     ("HELM", "HELM: Hierarchical Encoding for mRNA Language Modeling",
      "https://arxiv.org/abs/2410.12459", "2024.10", None, None, "mRNA/CDS FM",
@@ -111,6 +127,11 @@ papers = [
      "https://www.science.org/doi/10.1126/science.adr8470", "2025.11", "https://github.com/RainaBio/GEMORNA", None, "mRNA/CDS FM",
      "Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.",
      "Specialized", "Codon"),
+
+    ("CodonFM", "Introducing the CodonFM Open Model for RNA Design and Analysis",
+     "https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/", "2025.10", "https://github.com/NVIDIA-Digital-Bio/CodonFM", "https://huggingface.co/nvidia/NV-CodonFM-Encodon-1B-v1", "mRNA/CDS FM",
+     "Releases NVIDIA CodonFM / Encodon, a family of codon-level masked language models trained on 131M RefSeq protein-coding sequences for mRNA design, codon optimization, and synonymous or missense variant interpretation.",
+     "Encoder-only", "Codon"),
 
     ("GenSLM", "GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics",
      "https://doi.org/10.1177/10943420231201154", "2023.11", None, None, "mRNA/CDS FM",
@@ -137,6 +158,16 @@ papers = [
      "Extends mRNA-GPT to full-length mRNA design (5'UTR+CDS+3'UTR) using autoregressive generation with PPO-based reinforcement learning to optimize translation efficiency and stability of generated mRNA sequences.",
      "Decoder-only", "Codon"),
 
+    ("codonGPT", "codonGPT: reinforcement learning on a generative language model enables scalable mRNA design",
+     "https://academic.oup.com/nar/article/53/22/gkaf1345/8384118", "2025.12", "https://github.com/NanilTx/codonGPT_pub", "https://huggingface.co/naniltx/codonGPT", "mRNA/CDS FM",
+     "Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.",
+     "Decoder-only", "Codon"),
+
+    ("Pro2RNA", "Designing mRNA coding sequence via multimodal reverse translation language modeling with Pro2RNA",
+     "https://doi.org/10.64898/2026.03.18.712790", "2026.03", None, None, "mRNA/CDS FM",
+     "Presents Pro2RNA, a multimodal reverse-translation framework that composes protein, taxonomy, and generative RNA language models to generate host-adapted mRNA coding sequences from protein sequences.",
+     "Encoder-Decoder", "Codon"),
+
     ("CodonMoE", "DNA Language Models for RNA Analyses",
      "https://openreview.net/forum?id=TOUrnb1EaG", "2024.09", None, None, "mRNA/CDS FM",
      "Proposes CodonMoE, a parameter-efficient approach to adapt pre-trained DNA foundation models for RNA tasks using Mixture-of-Experts adapters with codon-aware routing for improved mRNA property prediction.",
@@ -152,6 +183,11 @@ papers = [
      "https://doi.org/10.1002/advs.202407013", "2024.10", "https://github.com/yangyn533/3UTRBERT", None, "UTR FM",
      "Presents 3UTRBERT, a BERT model pre-trained on GENCODE 3'UTR sequences using 3-mer tokenization, capturing regulatory motifs for predicting mRNA stability, polyadenylation, and subcellular localization.",
      "Encoder-only", "K-mer"),
+
+    ("UTR-Insight", "UTR-Insight: integrating deep learning for efficient 5′ UTR discovery and design",
+     "https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7", "2025.02", None, None, "UTR FM",
+     "Develops UTR-Insight, a 5'UTR discovery and design model that combines a pre-trained UTR language model encoder with a CNN-Transformer decoder to predict mean ribosome loading and design high-expression 5'UTRs.",
+     "Specialized", "SNT"),
 
     # === Specific RNA FMs ===
     ("SpliceBERT", "Self-supervised learning on millions of primary RNA sequences from 72 vertebrates improves sequence-based RNA splicing prediction",
@@ -210,6 +246,11 @@ papers = [
      "Presents StructRFM, a structure-guided RNA foundation model pre-trained on 21M sequence-structure pairs, integrating predicted secondary structure information during pre-training for enhanced RNA representation learning.",
      "Encoder-only", "SNT"),
 
+    ("RhoFold+", "Accurate RNA 3D structure prediction using a language model-based deep learning approach",
+     "https://www.nature.com/articles/s41592-024-02487-0", "2024.11", "https://github.com/ml4bio/RhoFold", "https://huggingface.co/cuhkaih/rhofold", "Structure-aware FM",
+     "Presents RhoFold+, an RNA-FM-based deep learning pipeline for automated RNA 3D structure prediction, combining pre-trained RNA language-model embeddings, MSA features, and geometry-aware structure modules.",
+     "Specialized", "SNT"),
+
     # === Generative FMs ===
     ("LoRNA SH", "A long-context RNA foundation model for predicting transcriptome architecture",
      "https://doi.org/10.1101/2024.08.26.609813", "2024.08", None, None, "General RNA FM",
@@ -235,6 +276,16 @@ papers = [
      "https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2", "2026.03", None, None, "Generative FM",
      "Introduces EVA, a Mixture-of-Experts decoder model for long-context RNA sequence generation, trained on 114M+ full-length RNA sequences for generating diverse functional RNA molecules at unprecedented lengths.",
      "Specialized", "BPE"),
+
+    ("RiboDiffusion", "RiboDiffusion: tertiary structure-based RNA inverse folding with generative diffusion models",
+     "https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903", "2024.06", "https://github.com/ml4bio/RiboDiffusion", None, "Generative FM",
+     "Introduces RiboDiffusion, a generative diffusion model for RNA inverse folding that learns sequence distributions conditioned on RNA tertiary backbone structures.",
+     "Specialized", "SNT"),
+
+    ("RhoDesign", "Deep generative design of RNA aptamers using structural predictions",
+     "https://www.nature.com/articles/s43588-024-00720-6", "2024.11", "https://github.com/ml4bio/RhoDesign", None, "Generative FM",
+     "Presents RhoDesign, a structure-to-sequence deep generative platform that uses RNA 3D structural predictions to design novel aptamer sequences with experimentally validated fluorescence activity.",
+     "Encoder-Decoder", "SNT"),
 
     # === General / Other ===
     ("Uni-RNA", "Uni-RNA: Universal Pre-trained Models for RNA across Species",
@@ -504,10 +555,12 @@ scope_by_name = {
     "RiNALMo": "core_rna_fm",
     "HydraRNA": "core_rna_fm",
     "RNAElectra": "core_rna_fm",
+    "RNAret": "core_rna_fm",
     "CodonBERT": "specialized_rna_fm",
     "CaLM": "specialized_rna_fm",
     "HELM": "core_rna_fm",
     "Helix-mRNA": "core_rna_fm",
+    "CodonFM": "core_rna_fm",
     "GenSLM": "specialized_rna_fm",
     "mRNABERT": "core_rna_fm",
     "mRNA-GPT": "core_rna_fm",
@@ -530,13 +583,21 @@ scope_by_name = {
     "StructRFM": "specialized_rna_fm",
     "LoRNA SH": "specialized_rna_fm",
     "Orthrus": "specialized_rna_fm",
+    "mRNA-FM": "adapted_derived",
+    "ProtRNA": "adapted_derived",
     "RNAGenesis": "adapted_derived",
     "CodonMoE": "adapted_derived",
     "mRNA-GPT (full-length)": "adapted_derived",
+    "Pro2RNA": "adapted_derived",
     "GEMORNA": "task_design",
     "RibonanzaNet": "task_design",
+    "RhoFold+": "task_design",
     "GARNET": "task_design",
+    "RiboDiffusion": "task_design",
+    "RhoDesign": "task_design",
     "RNAtranslator": "task_design",
+    "codonGPT": "task_design",
+    "UTR-Insight": "task_design",
     "Evo": "related_nucleotide",
     "LucaOne": "related_nucleotide",
     "BSM": "related_nucleotide",
@@ -620,19 +681,26 @@ model_details = {
     "RNAGenesis": {"params": "1B", "data": "RNAcentral clustered ncRNA", "arch": "Encoder + Diffusion", "token": "Hybrid N-gram"},
     "HydraRNA": {"params": "84M", "data": "28.1M RNAs (ncRNA + coding)", "arch": "Hybrid (SSM+Attention)"},
     "RNAElectra": {"params": "-", "data": "RNAcentral ncRNAs"},
+    "RNAret": {"params": "12M", "data": "RNAcentral (29.8M ncRNA seqs)", "arch": "Hybrid (RetNet)", "token": "1/3/5-mer"},
+    "ProtRNA": {"params": "ESM-2 derived", "data": "RNAcentral (6M representative seqs)", "token": "RNA tokens"},
     "CodonBERT": {"params": "110M", "data": "NCBI (10M mRNA CDS)", "token": "Codon-aware"},
     "CaLM": {"params": "86M", "data": "~9M non-redundant CDS", "token": "Codon-level (triplet)"},
+    "mRNA-FM": {"params": "239M", "data": "mRNA CDS (45M seqs)", "token": "SNT"},
     "HELM": {"params": "-", "data": "mRNA coding sequences", "token": "Codon-hierarchical"},
     "Helix-mRNA": {"params": "Compact", "data": "mRNA sequences", "arch": "Hybrid (SSM+Attention)", "token": "SNT + codon markers"},
     "GEMORNA": {"params": "-", "data": "mRNA CDS + UTR", "arch": "Specialized generative", "token": "Codon / nucleotide"},
+    "CodonFM": {"params": "80M / 600M / 1B", "data": "RefSeq CDS (131M seqs, 22K+ species)", "token": "Codon-level"},
     "GenSLM": {"params": "2.5B-25B", "data": "110M+ gene seqs + 1.5M SARS-CoV-2 genomes", "token": "Codon-level"},
     "mRNABERT": {"params": "114M", "data": "18M mRNA seqs (NCBI, MG-RAST, GWH, MGnify)", "token": "Dual tokenization"},
     "mRNA-GPT": {"params": "302M", "data": "NCBI CDS (80M bact. + 83M euk. + 2M arch.)", "token": "Codon / nucleotide"},
     "NUWA": {"params": "-", "data": "Multi-species mRNA CDS (115M seqs)", "token": "Codon tokens"},
     "mRNA-GPT (full-length)": {"params": "-", "data": "30M full-length mRNAs (5'UTR+CDS+3'UTR)", "token": "Nucleotide"},
+    "codonGPT": {"params": "GPT-2 based", "data": "Model-organism CDS (338K seqs)", "token": "Codon-level"},
+    "Pro2RNA": {"params": "-", "data": "mRNA-protein pairs (0.55M euk. + 1M bact.)", "arch": "Multimodal encoder-decoder", "token": "Codon-level"},
     "CodonMoE": {"params": "-", "data": "DNA FM + RNA adaptation", "arch": "Decoder-only (MoE)", "token": "Codon-aware"},
     "UTR-LM": {"params": "1M", "data": "Ensembl 5'UTR (>214K seqs + synthetic)"},
     "3UTRBERT": {"params": "86M", "data": "GENCODE 3'UTR (20K seqs)", "token": "3-mer"},
+    "UTR-Insight": {"params": "-", "data": "5'UTR reporter + endogenous UTR data", "arch": "UTR-LM + CNN-Transformer"},
     "SpliceBERT": {"params": "20M", "data": "UCSC pre-mRNA (72 species, >2M seqs)"},
     "RFamLlama": {"params": "13-88M", "data": "Rfam (>4,000 families, 0.6M seqs)", "token": "Nucleotide + family"},
     "PlantRNA-FM": {"params": "35M", "data": "OneKP (1,124 plant species transcriptomes)"},
@@ -644,11 +712,14 @@ model_details = {
     "MP-RNA": {"params": "52-186M", "data": "OneKP (seq + structure)"},
     "RNA-TorsionBERT": {"params": "86.9M", "data": "PDB RNA 3D structures"},
     "StructRFM": {"params": "-", "data": "21M seq-structure pairs"},
+    "RhoFold+": {"params": "-", "data": "PDB RNA 3D + RNA-FM embeddings", "arch": "RNA-FM + geometry module"},
     "LoRNA SH": {"params": "6.5M", "data": "Full-length transcriptome architecture data", "arch": "Hybrid (StripedHyena)", "token": "Specialized nt + region"},
     "GenerRNA": {"params": "350M", "data": "RNAcentral (16.09M seqs, ~17.4B nt)"},
     "GARNET": {"params": "-", "data": "GTDB (30M seqs, 17B nt, 400K genomes)", "arch": "Decoder + GNN", "token": "Overlapping triplet"},
     "RNAtranslator": {"params": "41.4M", "data": "RNAInter (26M interaction pairs)", "arch": "Encoder-decoder", "token": "Nucleotide + AA"},
     "EVA": {"params": "-", "data": "114M+ full-length RNA seqs", "arch": "Decoder-only (MoE)", "token": "-"},
+    "RiboDiffusion": {"params": "-", "data": "PDB RNA 3D + predicted structures", "arch": "Diffusion + GNN/Transformer"},
+    "RhoDesign": {"params": "-", "data": "PDB RNA 3D + RhoFold-predicted structures", "arch": "GVP + Transformer"},
     "Uni-RNA": {"params": "400M", "data": "RNAcentral + MG-RAST + MGnify (1B seqs)"},
     "RNALens": {"params": "469M", "data": "Multispecies genomic + 5'UTR sequences"},
     "Evo": {"params": "7B", "data": "OpenGenome (2.7M prokaryotic + phage genomes)", "arch": "Hybrid (StripedHyena)"},
@@ -1016,6 +1087,12 @@ elif next_section != -1:
 else:
     print("ERROR: Could not find insertion point")
     new_readme = readme
+
+new_readme = re.sub(
+    r"Detailed tables for all \d+ model entries, \d+ benchmarks, \d+ surveys",
+    f"Detailed tables for all {len(papers)} model entries, {len(benchmarks)} benchmarks, {len(surveys)} surveys",
+    new_readme,
+)
 
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(new_readme)
