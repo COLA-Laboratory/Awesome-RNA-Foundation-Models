@@ -11,40 +11,12 @@ A curated, comprehensive, and up-to-date collection of **RNA sequence foundation
 
 ---
 
-<!-- <p align="center">
-  <img src="assets/image.png" alt="Taxonomy of RNA Foundation Models" width="100%">
-</p> -->
-
-<!-- --- -->
-
 ## Table of Contents
 
-- [Taxonomy](#taxonomy) — Three classification views of 58 models and related resources
 - [Paper List](#paper-list) — Models and related resources (3 views), Benchmarks, Surveys
 - [Detailed Tables](#detailed-tables) — Detailed tables for all 58 model entries, 12 benchmarks, 3 surveys
 - [Contributing](#contributing)
 - [Abbreviations](#abbreviations)
-
----
-
-## Taxonomy
-
-Three complementary classification views of the 58 model entries surveyed in this work: by RNA type, by model architecture, and by tokenization strategy.
-
-<p align="center">
-  <img src="assets/RNAType.png" alt="Taxonomy by RNA Type" width="100%">
-</p>
-<p align="center"><b>Figure 1.</b> Classification by RNA Type</p>
-
-<p align="center">
-  <img src="assets/Architecture.png" alt="Taxonomy by Architecture" width="100%">
-</p>
-<p align="center"><b>Figure 2.</b> Classification by Model Architecture</p>
-
-<p align="center">
-  <img src="assets/Tokenization.png" alt="Taxonomy by Tokenization Strategy" width="100%">
-</p>
-<p align="center"><b>Figure 3.</b> Classification by Tokenization Strategy</p>
 
 ---
 
