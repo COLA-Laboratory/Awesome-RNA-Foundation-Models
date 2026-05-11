@@ -1,0 +1,64 @@
+name: Discover RNA foundation model candidates
+
+on:
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: Days of recent literature to scan
+        required: false
+        default: "60"
+  schedule:
+    - cron: "0 3 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Discover candidates
+        run: |
+          LOOKBACK_DAYS="${{ inputs.lookback_days || '60' }}"
+          python scripts/discover_candidates.py --lookback-days "$LOOKBACK_DAYS" --update
+
+      - name: Validate metadata
+        run: python scripts/validate_papers.py
+
+      - name: Create candidate update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet data/candidates.yaml; then
+            echo "No candidate metadata changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B bot/update-rna-candidates
+          git add data/candidates.yaml
+          git commit -m "Update RNA foundation model candidates"
+          git push --force-with-lease origin bot/update-rna-candidates
+
+          gh pr create \
+            --base main \
+            --head bot/update-rna-candidates \
+            --title "Update RNA foundation model candidates" \
+            --body "Automated literature scan found new pending candidates in data/candidates.yaml. Please review before moving any entry into data/papers.yaml." \
+          || gh pr edit \
+            --title "Update RNA foundation model candidates" \
+            --body "Automated literature scan found new pending candidates in data/candidates.yaml. Please review before moving any entry into data/papers.yaml."
