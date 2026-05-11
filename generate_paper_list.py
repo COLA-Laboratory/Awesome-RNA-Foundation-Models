@@ -1004,7 +1004,7 @@ lines = []
 lines.append("")
 lines.append("## Paper List")
 lines.append("")
-lines.append("A strict list of RNA foundation models included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.")
+lines.append("A list of RNA foundation models included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.")
 lines.append("")
 lines.append("**Classification rules**:")
 lines.append("")
@@ -1139,9 +1139,12 @@ else:
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![Last Update](https://img.shields.io/badge/Last_Update-2026.05-blue.svg)]()
 
-A curated, strict, and up-to-date collection of **RNA sequence foundation models**, covering reusable pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware RNA representations, and generative RNA sequence modeling.
+A curated and up-to-date collection of **RNA sequence foundation models**, covering reusable pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware RNA representations, and generative RNA sequence modeling.
 
-> **Scope**: This README includes models that introduce or release a reusable RNA/mRNA/CDS/UTR sequence backbone or checkpoint. Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile models, and single-cell foundation models (e.g., scGPT, Geneformer) are **excluded**.
+> **Scope**
+>
+> - **Included**: models that introduce or release a reusable RNA/mRNA/CDS/UTR sequence backbone or checkpoint.
+> - **Excluded**: downstream-only predictors/designers; reverse-translation or inverse-folding pipelines; RNA 3D prediction systems; broad DNA/nucleotide/multi-omics FMs; expression-profile models; and single-cell foundation models (e.g., scGPT, Geneformer).
 
 ---
 
