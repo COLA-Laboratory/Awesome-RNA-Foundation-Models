@@ -1,5 +1,6 @@
 """Generate a bullet-list paper index section for the README, with abstracts.
-Three classification views: by RNA type, by architecture, by tokenization strategy."""
+Four classification views: by foundation-model scope, RNA/data focus, architecture,
+and tokenization strategy."""
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from collections import OrderedDict
@@ -71,7 +72,7 @@ papers = [
      "Encoder-only", "SNT"),
 
     ("RNAGenesis", "RNAGenesis: A Generalist Foundation Model for Functional RNA Therapeutics",
-     "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2", "2024.12", None, "https://huggingface.co/Zaixi/RNAGenesis", "Adapted/Derived RNA FM",
+     "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2", "2024.12", None, "https://huggingface.co/Zaixi/RNAGenesis", "Generative FM",
      "Proposes RNAGenesis, a 1B-parameter generative RNA model that integrates sequence representation, structure prediction, and de novo functional design, listed here as an adapted / derived RNA design model rather than a core ncRNA pre-training-only FM.",
      "Specialized", "SNT"),
 
@@ -137,7 +138,7 @@ papers = [
      "Decoder-only", "Codon"),
 
     ("CodonMoE", "DNA Language Models for RNA Analyses",
-     "https://openreview.net/forum?id=TOUrnb1EaG", "2024.09", None, None, "Adapted/Derived RNA FM",
+     "https://openreview.net/forum?id=TOUrnb1EaG", "2024.09", None, None, "mRNA/CDS FM",
      "Proposes CodonMoE, a parameter-efficient approach to adapt pre-trained DNA foundation models for RNA tasks using Mixture-of-Experts adapters with codon-aware routing for improved mRNA property prediction.",
      "Specialized", "Codon"),
 
@@ -441,7 +442,7 @@ def group_papers(papers, key_index, label_map, order):
     return groups
 
 
-def render_view(groups, label_map):
+def render_view(groups, label_map, description_map=None):
     """Render grouped papers as nested <details open> blocks."""
     lines = []
     for key, entries in groups.items():
@@ -452,6 +453,9 @@ def render_view(groups, label_map):
         lines.append(f'<details open>')
         lines.append(f'<summary><b>{label} ({count})</b></summary>')
         lines.append("")
+        if description_map and description_map.get(key):
+            lines.append(description_map[key])
+            lines.append("")
         for p in entries:
             name, title, url, ym, gh, hf = p[0], p[1], p[2], p[3], p[4], p[5]
             abstract = p[7]
@@ -465,22 +469,119 @@ def render_view(groups, label_map):
 # Classification configs
 # ============================================================
 
-# View 1: By RNA Type (current categories)
+# View 1: By foundation-model scope. This axis answers whether an entry is a
+# newly pre-trained RNA FM, a narrower RNA-specific FM, a derivative/adaptation,
+# or a related non-RNA-sequence resource.
+scope_labels = {
+    "core_rna_fm": "Core RNA Foundation Models",
+    "specialized_rna_fm": "Specialized RNA Foundation Models",
+    "adapted_derived": "Adapted / Derived RNA Models",
+    "task_design": "Task-specific / Design-oriented RNA Models",
+    "related_nucleotide": "RNA-related Nucleotide / Multi-omics FMs",
+    "expression_profile": "Expression-profile Related Models",
+}
+scope_order = list(scope_labels.keys())
+scope_descriptions = {
+    "core_rna_fm": "Primary contribution is a reusable RNA or mRNA sequence foundation model pre-trained on raw nucleotide sequences and intended for broad downstream transfer or generation.",
+    "specialized_rna_fm": "RNA-specific pre-training is present, but the scope is constrained by RNA subtype, species, structural modality, or a narrow biological question.",
+    "adapted_derived": "The work mainly adapts, extends, or composes existing foundation models / pre-trained components for RNA-specific analysis or design, rather than introducing a fully new RNA backbone.",
+    "task_design": "Useful RNA models whose main deliverable is a predictor or designer for a specific task, rather than a general reusable foundation-model backbone.",
+    "related_nucleotide": "Foundation models for DNA, nucleotide, metagenomic, or multi-omics sequences that are RNA-relevant but not pure RNA sequence FMs.",
+    "expression_profile": "Models over RNA-seq expression profiles or multi-omics expression features, not raw RNA nucleotide sequences.",
+}
+scope_by_name = {
+    "RNABert": "specialized_rna_fm",
+    "RNAFM": "core_rna_fm",
+    "RNAMSM": "specialized_rna_fm",
+    "RNA-km": "specialized_rna_fm",
+    "RNAErnie": "core_rna_fm",
+    "ERNIE-RNA": "core_rna_fm",
+    "DGRNA": "core_rna_fm",
+    "ChaRNABERT": "core_rna_fm",
+    "AIDO.RNA": "core_rna_fm",
+    "BiRNA-BERT": "core_rna_fm",
+    "RNA-BERTa": "core_rna_fm",
+    "RiNALMo": "core_rna_fm",
+    "HydraRNA": "core_rna_fm",
+    "RNAElectra": "core_rna_fm",
+    "CodonBERT": "specialized_rna_fm",
+    "CaLM": "specialized_rna_fm",
+    "HELM": "core_rna_fm",
+    "Helix-mRNA": "core_rna_fm",
+    "GenSLM": "specialized_rna_fm",
+    "mRNABERT": "core_rna_fm",
+    "mRNA-GPT": "core_rna_fm",
+    "NUWA": "core_rna_fm",
+    "GenerRNA": "core_rna_fm",
+    "EVA": "core_rna_fm",
+    "Uni-RNA": "core_rna_fm",
+    "RNALens": "core_rna_fm",
+    "UTR-LM": "specialized_rna_fm",
+    "3UTRBERT": "specialized_rna_fm",
+    "SpliceBERT": "specialized_rna_fm",
+    "RFamLlama": "specialized_rna_fm",
+    "PlantRNA-FM": "specialized_rna_fm",
+    "LncRNA-BERT": "specialized_rna_fm",
+    "G4mer": "specialized_rna_fm",
+    "ATOM-1": "specialized_rna_fm",
+    "OmniGenome": "specialized_rna_fm",
+    "MP-RNA": "specialized_rna_fm",
+    "RNA-TorsionBERT": "specialized_rna_fm",
+    "StructRFM": "specialized_rna_fm",
+    "LoRNA SH": "specialized_rna_fm",
+    "Orthrus": "specialized_rna_fm",
+    "RNAGenesis": "adapted_derived",
+    "CodonMoE": "adapted_derived",
+    "mRNA-GPT (full-length)": "adapted_derived",
+    "GEMORNA": "task_design",
+    "RibonanzaNet": "task_design",
+    "GARNET": "task_design",
+    "RNAtranslator": "task_design",
+    "Evo": "related_nucleotide",
+    "LucaOne": "related_nucleotide",
+    "BSM": "related_nucleotide",
+    "LAMAR": "related_nucleotide",
+    "METAGENE-1": "related_nucleotide",
+    "Life-Code": "related_nucleotide",
+    "Evo 2": "related_nucleotide",
+    "OmniNA": "related_nucleotide",
+    "EDEN": "related_nucleotide",
+    "BulkRNABert": "expression_profile",
+    "MOJO": "expression_profile",
+}
+
+
+def scope_key(paper):
+    name = paper[0]
+    if name not in scope_by_name:
+        raise KeyError(f"Missing scope classification for {name}")
+    return scope_by_name[name]
+
+
+def group_papers_by_scope(entries):
+    groups = OrderedDict((key, []) for key in scope_order)
+    for paper in entries:
+        groups[scope_key(paper)].append(paper)
+    for key in groups:
+        groups[key].sort(key=lambda x: x[3])
+    return groups
+
+
+# View 2: By RNA / data focus
 rna_type_labels = {
-    "ncRNA FM": "Core ncRNA Sequence Foundation Models",
-    "mRNA/CDS FM": "mRNA / CDS Sequence Foundation Models",
-    "UTR FM": "UTR Sequence Foundation Models",
+    "ncRNA FM": "ncRNA Sequence Models",
+    "mRNA/CDS FM": "mRNA / CDS Sequence Models",
+    "UTR FM": "UTR Sequence Models",
     "Specific RNA FM": "Specific RNA Type Models",
     "Structure-aware FM": "Structure-aware RNA Models",
     "Generative FM": "RNA Generative Models",
-    "Adapted/Derived RNA FM": "Adapted / Derived RNA Models",
     "General RNA FM": "General / Other RNA Models",
     "DNA+RNA FM": "DNA+RNA Related Foundation Models",
     "Expression FM": "Expression-based Related Models",
 }
 rna_type_order = list(rna_type_labels.keys())
 
-# View 2: By Architecture
+# View 3: By Architecture
 arch_labels = {
     "Encoder-only": "Encoder-only (BERT-family)",
     "Decoder-only": "Decoder-only (GPT-family)",
@@ -490,7 +591,7 @@ arch_labels = {
 }
 arch_order = ["Encoder-only", "Decoder-only", "Encoder-Decoder", "Hybrid/SSM", "Specialized"]
 
-# View 3: By Tokenization Strategy
+# View 4: By Tokenization Strategy
 tok_labels = {
     "SNT": "Single Nucleotide Token (SNT)",
     "Codon": "Codon-level Tokenization",
@@ -565,13 +666,12 @@ model_details = {
 }
 
 model_table_descriptions = {
-    "ncRNA FM": "Core models primarily pre-trained on non-coding RNA sequences (from RNAcentral, Rfam, etc.).",
-    "mRNA/CDS FM": "Models pre-trained on messenger RNA coding sequences or full mRNA sequences.",
+    "ncRNA FM": "Models primarily focused on non-coding RNA sequences (from RNAcentral, Rfam, etc.).",
+    "mRNA/CDS FM": "Models focused on messenger RNA coding sequences or full mRNA sequences.",
     "UTR FM": "Models focused on untranslated regions (5'UTR, 3'UTR).",
     "Specific RNA FM": "Models targeting specific RNA types or species (splicing, lncRNA, G-quadruplex, plant RNA, RNA families).",
     "Structure-aware FM": "Models incorporating RNA secondary or tertiary structure information during pre-training or inference.",
     "Generative FM": "Models focused on RNA sequence generation or generative transcript modeling.",
-    "Adapted/Derived RNA FM": "Models or modules that adapt existing foundation models, or combine pre-trained components, for RNA-specific analysis or design.",
     "General RNA FM": "General-purpose RNA models covering multiple RNA types.",
     "DNA+RNA FM": "Nucleotide or biological sequence foundation models with RNA-relevant pre-training data, transcriptomic data, or downstream applications. These are not pure RNA sequence FMs and are listed as related resources.",
     "Expression FM": "Models operating on RNA-seq **gene expression profiles** (not raw nucleotide sequences). Listed for completeness.",
@@ -622,6 +722,10 @@ def date_status_cell(date, url, name=None):
     return nobr(date)
 
 
+def scope_cell(name):
+    return nobr(scope_labels[scope_by_name[name]])
+
+
 def render_model_table(entries, label, description):
     rows = []
     rows.append("<details open>")
@@ -629,8 +733,8 @@ def render_model_table(entries, label, description):
     rows.append("")
     rows.append(description)
     rows.append("")
-    rows.append("| Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Date / Status <img width=90/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |")
-    rows.append("|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|")
+    rows.append("| Model <img width=180/> | Scope <img width=190/> | Paper <img width=110/> | Code <img width=110/> | Date / Status <img width=90/> | Architecture <img width=150/> | Params <img width=90/> | Pre-training Data <img width=240/> | Tokenization <img width=130/> |")
+    rows.append("|:------|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|")
     for paper in sorted(entries, key=lambda x: x[3]):
         name, title, url, date, github_url, hf_url, category, abstract, arch, token = paper
         details = model_details.get(name, {})
@@ -639,6 +743,7 @@ def render_model_table(entries, label, description):
             + " | ".join(
                 [
                     nobr(f"**{name}**"),
+                    scope_cell(name),
                     link_cell("Paper", url),
                     link_cell("Code", code_url(github_url, hf_url)),
                     date_status_cell(date, url, name),
@@ -775,22 +880,48 @@ lines = []
 lines.append("")
 lines.append("## Paper List")
 lines.append("")
-lines.append("A complete list of model papers and related resources included in this survey. Each entry shows the model/resource name separately from the official paper title. Three classification views are provided below — click to expand/collapse each view.")
+lines.append("A complete list of model papers and related resources included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.")
 lines.append("")
 lines.append("> **Date convention**: Dates shown in this section use the official publication or conference month when available; otherwise they use the linked preprint month and are marked `preprint`. Workshop-only entries are marked `workshop`.")
 lines.append("")
 
-# Model entries (collapsible wrapper with 3 views inside)
+# Model entries (collapsible wrapper with 4 views inside)
 lines.append('<details open>')
 lines.append('<summary><b>Models & Related Resources</b></summary>')
 lines.append("")
 lines.append("<blockquote>")
 lines.append("")
 
-# --- View 1: By RNA Type ---
+# --- Classification rules ---
+lines.append('<details open>')
+lines.append('<summary><b>Classification Rules</b></summary>')
+lines.append("")
+lines.append("- **Core RNA Foundation Models**: reusable RNA or mRNA sequence backbones pre-trained on raw nucleotide sequences for broad downstream transfer or generation.")
+lines.append("- **Specialized RNA Foundation Models**: RNA-specific pre-trained models whose scope is limited to a subtype, species, structural modality, or narrow biological question.")
+lines.append("- **Adapted / Derived RNA Models**: models that mainly adapt, extend, fine-tune, or compose existing foundation models / pre-trained components for RNA tasks.")
+lines.append("- **Task-specific / Design-oriented RNA Models**: predictors or designers for a specific RNA task, useful to RNA FM research but not primarily general reusable backbones.")
+lines.append("- **RNA-related Nucleotide / Multi-omics FMs** and **Expression-profile Related Models**: related resources whose pre-training data are not pure raw RNA sequence.")
+lines.append("")
+lines.append("</details>")
+lines.append("")
+
+# --- View 1: By foundation-model scope ---
+scope_groups = group_papers_by_scope(papers)
+lines.append('<details open>')
+lines.append('<summary><b>View 1: Classified by Foundation-model Scope</b></summary>')
+lines.append("")
+lines.append("<blockquote>")
+lines.append("")
+lines.extend(render_view(scope_groups, scope_labels, scope_descriptions))
+lines.append("</blockquote>")
+lines.append("")
+lines.append("</details>")
+lines.append("")
+
+# --- View 2: By RNA / data focus ---
 rna_groups = group_papers(papers, 6, rna_type_labels, rna_type_order)
 lines.append('<details open>')
-lines.append('<summary><b>View 1: Classified by RNA Type</b></summary>')
+lines.append('<summary><b>View 2: Classified by RNA / Data Focus</b></summary>')
 lines.append("")
 lines.append("<blockquote>")
 lines.append("")
@@ -800,10 +931,10 @@ lines.append("")
 lines.append("</details>")
 lines.append("")
 
-# --- View 2: By Architecture ---
+# --- View 3: By Architecture ---
 arch_groups = group_papers(papers, 8, arch_labels, arch_order)
 lines.append('<details>')
-lines.append('<summary><b>View 2: Classified by Architecture</b></summary>')
+lines.append('<summary><b>View 3: Classified by Architecture</b></summary>')
 lines.append("")
 lines.append("<blockquote>")
 lines.append("")
@@ -813,10 +944,10 @@ lines.append("")
 lines.append("</details>")
 lines.append("")
 
-# --- View 3: By Tokenization ---
+# --- View 4: By Tokenization ---
 tok_groups = group_papers(papers, 9, tok_labels, tok_order)
 lines.append('<details>')
-lines.append('<summary><b>View 3: Classified by Tokenization Strategy</b></summary>')
+lines.append('<summary><b>View 4: Classified by Tokenization Strategy</b></summary>')
 lines.append("")
 lines.append("<blockquote>")
 lines.append("")
