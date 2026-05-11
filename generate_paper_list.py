@@ -4,362 +4,64 @@ and tokenization strategy."""
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 import re
+from pathlib import Path
 from collections import OrderedDict
 
-# Fields: (name, title, url, date, github_url, hf_url, category, abstract, architecture, tokenization)
-# Date convention: use the official publication / conference date when available; otherwise
-# use the linked preprint date and mark the entry as a preprint. Keep `title`
-# as the paper title, not a synthetic "model: title" display string.
-papers = [
-    # === ncRNA FMs ===
-    ("RNABert", "Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning",
-     "https://doi.org/10.1093/nargab/lqac012", "2022.01", "https://github.com/mana438/RNABERT", None, "ncRNA FM",
-     "Proposes RNABERT, a BERT-based model pre-trained on Rfam seed alignments using masked language modeling to learn informative RNA-base embeddings for structural alignment and clustering of ncRNAs.",
-     "Encoder-only", "SNT"),
-
-    ("RNAFM", "Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions",
-     "https://arxiv.org/abs/2204.00300", "2022.04", None, "https://huggingface.co/multimolecule/rnafm", "ncRNA FM",
-     "Presents RNA-FM, a foundation model pre-trained on 23 million non-coding RNA sequences from RNAcentral, achieving state-of-the-art performance on RNA secondary structure prediction, 3D closeness prediction, and functional annotation tasks.",
-     "Encoder-only", "SNT"),
-
-    ("RNAMSM", "Multiple sequence alignment-based RNA language model and its application to structural inference",
-     "https://doi.org/10.1093/nar/gkad1031", "2024.01", "https://github.com/yikunpku/RNA-MSM", None, "ncRNA FM",
-     "Introduces RNA-MSM, an unsupervised RNA language model that leverages multiple sequence alignments (MSAs) from homologous RNA families to capture evolutionary and co-evolutionary information for improved structural inference.",
-     "Encoder-only", "SNT"),
-
-    ("RNA-km", "Language models enable zero-shot prediction of RNA secondary structures including pseudoknots",
-     "https://doi.org/10.1101/2024.01.27.577533", "2024.01", "https://github.com/gongtiansu/RNA-km", None, "ncRNA FM",
-     "Proposes RNA-km, a self-supervised RNA language model trained on 23M ncRNA sequences with k-mer masking and relative positional encoding, enabling zero-shot RNA secondary structure prediction including pseudoknots.",
-     "Encoder-only", "SNT"),
-
-    ("RNAErnie", "Multi-purpose RNA language modelling with motif-aware pretraining and type-guided fine-tuning",
-     "https://www.nature.com/articles/s42256-024-00836-4", "2024.05", None, "https://huggingface.co/LLM-EDA/RNAErnie", "ncRNA FM",
-     "Presents RNAErnie, an RNA-focused pre-trained model that combines motif-aware pretraining with type-guided fine-tuning for diverse RNA sequence analysis tasks.",
-     "Encoder-only", "SNT"),
-
-    ("ERNIE-RNA", "ERNIE-RNA: an RNA language model with structure-enhanced representations",
-     "https://www.nature.com/articles/s41467-025-64972-0", "2025.11", None, "https://huggingface.co/multimolecule/ernierna-ss", "ncRNA FM",
-     "Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs, improving structure and function prediction tasks.",
-     "Encoder-only", "SNT"),
-
-    ("DGRNA", "DGRNA: a long-context RNA foundation model with bidirectional attention Mamba2",
-     "https://doi.org/10.1101/2024.10.31.621427", "2024.10", None, None, "ncRNA FM",
-     "Introduces DGRNA, a long-context RNA foundation model based on bidirectional Mamba2 architecture, enabling efficient processing of long RNA sequences up to 100K nucleotides with linear computational complexity.",
-     "Hybrid/SSM", "SNT"),
-
-    ("ChaRNABERT", "Character-level Tokenizations as Powerful Inductive Biases for RNA Foundational Models",
-     "https://openreview.net/forum?id=cAiECLDjzF", "2025.03", None, None, "ncRNA FM",
-     "Proposes ChaRNABERT with Gradient-based Subword Tokenization (GBST) that learns data-driven tokenization during pre-training, outperforming fixed tokenization approaches on RNA structure and function prediction tasks.",
-     "Encoder-only", "Learnable"),
-
-    ("AIDO.RNA", "A Large-Scale Foundation Model for RNA Function and Structure Prediction",
-     "https://doi.org/10.1101/2024.11.28.625345", "2024.11", None, "https://huggingface.co/genbio-ai/AIDO.RNA-1.6B", "ncRNA FM",
-     "Presents AIDO.RNA, a scalable RNA foundation model with up to 1.6B parameters pre-trained on 42M non-coding RNA sequences (~30B nucleotides), demonstrating strong generalization across diverse RNA tasks.",
-     "Encoder-only", "SNT"),
-
-    ("BiRNA-BERT", "BiRNA-BERT allows efficient RNA language modeling with adaptive tokenization",
-     "https://www.nature.com/articles/s42003-025-08982-0", "2025.11", "https://github.com/buetnlpbio/BiRNA-BERT", None, "ncRNA FM",
-     "Introduces BiRNA-BERT, a 117M-parameter encoder trained on 36M ncRNA sequences with adaptive dual tokenization combining nucleotide-level and BPE representations.",
-     "Encoder-only", "Learnable"),
-
-    ("RNA-BERTa", "DLRNA-BERTa: A transformer approach for RNA-drug binding affinity prediction",
-     "https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1", "2025.09", None, "https://huggingface.co/IlPakoZ/RNA-BERTa9700", "ncRNA FM",
-     "Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations, applied to RNA-drug binding affinity prediction with downstream fine-tuning.",
-     "Encoder-only", "BPE"),
-
-    ("RiNALMo", "RiNALMo: general-purpose RNA language models can generalize well on structure prediction tasks",
-     "https://www.nature.com/articles/s41467-025-60872-5", "2025.07", "https://github.com/lbcb-sci/RiNALMo", None, "ncRNA FM",
-     "Presents RiNALMo, a general-purpose RNA language model (up to 650M parameters) pre-trained on 36M ncRNA sequences, demonstrating that large-scale RNA LMs can generalize effectively to secondary and tertiary structure prediction.",
-     "Encoder-only", "SNT"),
-
-    ("RNAGenesis", "RNAGenesis: A Generalist Foundation Model for Functional RNA Therapeutics",
-     "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2", "2024.12", None, "https://huggingface.co/Zaixi/RNAGenesis", "Generative FM",
-     "Proposes RNAGenesis, a 1B-parameter generative RNA model that integrates sequence representation, structure prediction, and de novo functional design, listed here as an adapted / derived RNA design model rather than a core ncRNA pre-training-only FM.",
-     "Specialized", "SNT"),
-
-    ("HydraRNA", "HydraRNA: a hybrid architecture based full-length RNA language model",
-     "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7", "2025.11", "https://github.com/GuipengLi/HydraRNA", None, "ncRNA FM",
-     "Introduces HydraRNA, a full-length RNA language model using a hybrid bidirectional state space and attention architecture for both coding and non-coding RNA tasks.",
-     "Hybrid/SSM", "SNT"),
-
-    ("RNAElectra", "RNAElectra: An ELECTRA-Style RNA Foundation Model for RNA Regulatory Inference",
-     "https://doi.org/10.64898/2026.03.15.711950", "2026.03", None, None, "ncRNA FM",
-     "Proposes RNAElectra, applying the ELECTRA-style replaced token detection pre-training objective to RNA sequences, offering more sample-efficient pre-training compared to masked language modeling approaches.",
-     "Encoder-only", "SNT"),
-
-    ("RNAret", "Retentive Network promotes efficient RNA language modeling of long sequences",
-     "https://www.nature.com/articles/s42003-026-09757-x", "2026.03", "https://github.com/DrBlackZJU/RNAret/", None, "ncRNA FM",
-     "Introduces RNAret, a Retentive Network-based RNA language model pre-trained with masked language modeling on 29.8M RNAcentral sequences, enabling efficient long-sequence RNA representation learning across interaction, structure, and classification tasks.",
-     "Hybrid/SSM", "K-mer"),
-
-    ("ProtRNA", "ProtRNA: A protein-derived RNA language model by cross-modality transfer learning",
-     "https://www.sciencedirect.com/science/article/pii/S2405471225002042", "2025.09", "https://github.com/roxie-zhang/ProtRNA", None, "ncRNA FM",
-     "Adapts the protein language model ESM-2 to RNA through cross-modality transfer learning on 6M RNAcentral sequences, providing a parameter- and data-efficient RNA language model.",
-     "Encoder-only", "SNT"),
-
-    # === mRNA/CDS FMs ===
-    ("CodonBERT", "CodonBERT large language model for mRNA vaccines",
-     "https://doi.org/10.1101/gr.278870.123", "2024.08", "https://github.com/Sanofi-Public/CodonBERT", None, "mRNA/CDS FM",
-     "Presents CodonBERT, a BERT-based model pre-trained on 10M mRNA coding sequences with codon-aware tokenization for mRNA sequence representation and vaccine-related design tasks.",
-     "Encoder-only", "Codon"),
-
-    ("CaLM", "Codon language embeddings provide strong signals for use in protein engineering",
-     "https://www.nature.com/articles/s42256-024-00791-0", "2024.02", "https://github.com/oxpig/CaLM", None, "mRNA/CDS FM",
-     "Introduces CaLM, a codon-level language model trained on ~9M non-redundant coding sequences for predicting and optimizing codon usage, enabling rational mRNA therapeutic design with improved translation efficiency.",
-     "Encoder-only", "Codon"),
-
-    ("mRNA-FM", "RNA-FM: The RNA Foundation Model",
-     "https://github.com/ml4bio/RNA-FM", "2024.03", "https://github.com/ml4bio/RNA-FM", "https://huggingface.co/multimolecule/mrnafm", "mRNA/CDS FM",
-     "Adds mRNA-FM as the coding-sequence extension of RNA-FM, pre-trained on 45M mRNA CDS sequences to provide contextual embeddings for mRNA and protein-related downstream tasks.",
-     "Encoder-only", "SNT"),
-
-    ("HELM", "HELM: Hierarchical Encoding for mRNA Language Modeling",
-     "https://arxiv.org/abs/2410.12459", "2024.10", None, None, "mRNA/CDS FM",
-     "Proposes HELM, a hierarchical encoding approach for mRNA language modeling that captures both nucleotide-level and codon-level information through a multi-scale architecture for improved mRNA property prediction.",
-     "Encoder-Decoder", "Codon"),
-
-    ("Helix-mRNA", "Helix-mRNA: A Hybrid Foundation Model For Full Sequence mRNA Therapeutics",
-     "https://openreview.net/forum?id=Ky0CkFiVhu", "2025.03", None, "https://huggingface.co/helical-ai/helix-mRNA", "mRNA/CDS FM",
-     "Presents Helix-mRNA, a compact hybrid model combining Mamba2 state space layers with attention mechanisms for efficient mRNA sequence modeling, targeting mRNA stability and translation efficiency prediction.",
-     "Hybrid/SSM", "Codon"),
-
-    ("GEMORNA", "Deep generative models design mRNA sequences with enhanced translational capacity and stability",
-     "https://www.science.org/doi/10.1126/science.adr8470", "2025.11", "https://github.com/RainaBio/GEMORNA", None, "mRNA/CDS FM",
-     "Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.",
-     "Specialized", "Codon"),
-
-    ("CodonFM", "Introducing the CodonFM Open Model for RNA Design and Analysis",
-     "https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/", "2025.10", "https://github.com/NVIDIA-Digital-Bio/CodonFM", "https://huggingface.co/nvidia/NV-CodonFM-Encodon-1B-v1", "mRNA/CDS FM",
-     "Releases NVIDIA CodonFM / Encodon, a family of codon-level masked language models trained on 131M RefSeq protein-coding sequences for mRNA design, codon optimization, and synonymous or missense variant interpretation.",
-     "Encoder-only", "Codon"),
-
-    ("GenSLM", "GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics",
-     "https://doi.org/10.1177/10943420231201154", "2023.11", None, None, "mRNA/CDS FM",
-     "Develops GenSLMs (up to 25B parameters), genome-scale language models trained on codon-level gene sequences from 110M+ genes and 1.5M SARS-CoV-2 genomes, revealing evolutionary dynamics and enabling variant prediction.",
-     "Decoder-only", "Codon"),
-
-    ("mRNABERT", "mRNABERT: advancing mRNA sequence design with a universal language model and comprehensive dataset",
-     "https://www.nature.com/articles/s41467-025-65340-8", "2025.11", None, "https://huggingface.co/Taykhoom/mRNABERT-no-flashattention", "mRNA/CDS FM",
-     "Introduces mRNABERT, a 114M-parameter BERT model pre-trained on 18M mRNA sequences from diverse databases using dual tokenization, achieving state-of-the-art on mRNA stability, translation efficiency, and expression prediction.",
-     "Encoder-only", "Learnable"),
-
-    ("mRNA-GPT", "Large generative mRNA language foundation model for efficient coding sequence generation and design with mRNA-GPT",
-     "https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1", "2025.12", "https://github.com/ZHymLumine/mRNA-GPT/", None, "mRNA/CDS FM",
-     "Presents mRNA-GPT, a 302M-parameter autoregressive model pre-trained on 80M bacterial, 83M eukaryotic, and 2M archaeal CDS sequences with codon/nucleotide tokenization for cross-species mRNA understanding and generation.",
-     "Decoder-only", "Codon"),
-
-    ("NUWA", "Large mRNA language foundation modeling with NUWA for unified sequence perception and generation",
-     "https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3", "2026.02", "https://github.com/zysxmu/NUWA", None, "mRNA/CDS FM",
-     "Proposes NUWA, a large mRNA foundation model pre-trained on 115M multi-species coding sequences for unified mRNA sequence perception and generation.",
-     "Encoder-only", "Codon"),
-
-    ("mRNA-GPT (full-length)", "mRNA-GPT: Full-Length mRNA Design via Autoregressive Generation with PPO",
-     "https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1", "2026.03", None, None, "mRNA/CDS FM",
-     "Extends mRNA-GPT to full-length mRNA design (5'UTR+CDS+3'UTR) using autoregressive generation with PPO-based reinforcement learning to optimize translation efficiency and stability of generated mRNA sequences.",
-     "Decoder-only", "Codon"),
-
-    ("codonGPT", "codonGPT: reinforcement learning on a generative language model enables scalable mRNA design",
-     "https://academic.oup.com/nar/article/53/22/gkaf1345/8384118", "2025.12", "https://github.com/NanilTx/codonGPT_pub", "https://huggingface.co/naniltx/codonGPT", "mRNA/CDS FM",
-     "Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.",
-     "Decoder-only", "Codon"),
-
-    ("Pro2RNA", "Designing mRNA coding sequence via multimodal reverse translation language modeling with Pro2RNA",
-     "https://doi.org/10.64898/2026.03.18.712790", "2026.03", None, None, "mRNA/CDS FM",
-     "Presents Pro2RNA, a multimodal reverse-translation framework that composes protein, taxonomy, and generative RNA language models to generate host-adapted mRNA coding sequences from protein sequences.",
-     "Encoder-Decoder", "Codon"),
-
-    ("CodonMoE", "DNA Language Models for RNA Analyses",
-     "https://openreview.net/forum?id=TOUrnb1EaG", "2024.09", None, None, "mRNA/CDS FM",
-     "Proposes CodonMoE, a parameter-efficient approach to adapt pre-trained DNA foundation models for RNA tasks using Mixture-of-Experts adapters with codon-aware routing for improved mRNA property prediction.",
-     "Specialized", "Codon"),
-
-    # === UTR FMs ===
-    ("UTR-LM", "A 5′ UTR language model for decoding untranslated regions of mRNA and function predictions",
-     "https://www.nature.com/articles/s42256-024-00823-9", "2024.04", None, "https://huggingface.co/multimolecule/utrlm-te_el", "UTR FM",
-     "Introduces UTR-LM, a language model specifically pre-trained on 5' UTR sequences from Ensembl, predicting mean ribosome loading (translation efficiency) and expression level from UTR sequences alone.",
-     "Encoder-only", "SNT"),
-
-    ("3UTRBERT", "Deciphering 3'UTR Mediated Gene Regulation Using Interpretable Deep Representation Learning",
-     "https://doi.org/10.1002/advs.202407013", "2024.10", "https://github.com/yangyn533/3UTRBERT", None, "UTR FM",
-     "Presents 3UTRBERT, a BERT model pre-trained on GENCODE 3'UTR sequences using 3-mer tokenization, capturing regulatory motifs for predicting mRNA stability, polyadenylation, and subcellular localization.",
-     "Encoder-only", "K-mer"),
-
-    ("UTR-Insight", "UTR-Insight: integrating deep learning for efficient 5′ UTR discovery and design",
-     "https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7", "2025.02", None, None, "UTR FM",
-     "Develops UTR-Insight, a 5'UTR discovery and design model that combines a pre-trained UTR language model encoder with a CNN-Transformer decoder to predict mean ribosome loading and design high-expression 5'UTRs.",
-     "Specialized", "SNT"),
-
-    # === Specific RNA FMs ===
-    ("SpliceBERT", "Self-supervised learning on millions of primary RNA sequences from 72 vertebrates improves sequence-based RNA splicing prediction",
-     "https://doi.org/10.1093/bib/bbae163", "2024.03", "https://github.com/chenkenbio/SpliceBERT", None, "Specific RNA FM",
-     "Develops SpliceBERT, a 20M-parameter BERT model pre-trained on pre-mRNA sequences from 72 vertebrate species for self-supervised learning of splicing patterns, improving splice site prediction and branchpoint detection.",
-     "Encoder-only", "SNT"),
-
-    ("RFamLlama", "RFamLlama: an efficient conditional language model for RNA sequence generation across diverse structural families",
-     "https://openreview.net/forum?id=dXnQedxEJD", "2024.06", None, "https://huggingface.co/jinyuan22/RFamLlama-base", "Specific RNA FM",
-     "Proposes RFamLlama, a Llama-based autoregressive model for conditional RNA sequence generation conditioned on RNA family labels, generating novel functional ncRNA sequences belonging to over 4,000 Rfam families.",
-     "Decoder-only", "SNT"),
-
-    ("PlantRNA-FM", "An interpretable RNA foundation model for exploring functional RNA motifs in plants",
-     "https://www.nature.com/articles/s42256-024-00946-z", "2024.12", None, "https://huggingface.co/yangheng/PlantRNA-FM", "Specific RNA FM",
-     "Presents PlantRNA-FM, a foundation model pre-trained on transcriptomes from 1,124 plant species (OneKP dataset), capturing plant-specific RNA regulatory patterns for gene expression prediction and functional annotation.",
-     "Encoder-only", "SNT"),
-
-    ("LncRNA-BERT", "LncRNA-BERT: A BERT-based Model for Long Non-coding RNA Classification",
-     "https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1", "2025.01", "https://github.com/luukromeijn/lncRNA-Py", None, "Specific RNA FM",
-     "Introduces LncRNA-BERT, a BERT model pre-trained on 536K long non-coding RNA sequences from GENCODE, RefSeq, and NONCODE for lncRNA classification, subcellular localization, and functional prediction.",
-     "Encoder-only", "K-mer"),
-
-    ("G4mer", "G4mer: An RNA language model for transcriptome-wide identification of G-quadruplexes and disease variants from population-scale genetic data",
-     "https://www.nature.com/articles/s41467-025-65020-7", "2025.11", None, "https://huggingface.co/Biociphers/g4mer", "Specific RNA FM",
-     "Develops G4mer, a 46M-parameter interpretable transformer model for predicting RNA G-quadruplex structures in the human transcriptome, providing attention-based interpretability for understanding G4-mediated regulation.",
-     "Encoder-only", "SNT"),
-
-    # === Structure-aware RNA FMs ===
-    ("ATOM-1", "ATOM-1: A Foundation Model for RNA Structure and Function Built on Chemical Mapping Data",
-     "https://doi.org/10.1101/2023.12.13.571579", "2023.12", None, None, "Structure-aware FM",
-     "Proposes ATOM-1, a foundation model trained on chemical mapping data to learn RNA structure-aware representations for secondary and tertiary structure probing and RNA function prediction.",
-     "Encoder-Decoder", "SNT"),
-
-    ("RibonanzaNet", "Ribonanza: deep learning of RNA structure through dual crowdsourcing",
-     "https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1", "2024.02", "https://github.com/Shujun-He/RibonanzaNet", None, "Structure-aware FM",
-     "Presents RibonanzaNet, a deep neural network trained on 2M RNA sequences with experimental chemical mapping data from Eterna, Rfam, and PDB, predicting RNA chemical reactivity profiles for structure determination.",
-     "Specialized", "SNT"),
-
-    ("OmniGenome", "Bridging Sequence-Structure Alignment in RNA Foundation Models",
-     "https://arxiv.org/abs/2407.11242", "2024.07", None, "https://huggingface.co/yangheng/OmniGenome-186M", "Structure-aware FM",
-     "Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.",
-     "Encoder-only", "SNT"),
-
-    ("MP-RNA", "MP-RNA: Unleashing Multi-species RNA Foundation Model via Calibrated Secondary Structure Prediction",
-     "https://aclanthology.org/2024.findings-emnlp.304/", "2024.11", None, "https://huggingface.co/yangheng/MP-RNA", "Structure-aware FM",
-     "Develops MP-RNA, a multi-purpose RNA foundation model that integrates sequence and structure information through joint pre-training on the OneKP dataset, supporting diverse RNA tasks within a unified framework.",
-     "Encoder-only", "SNT"),
-
-    ("RNA-TorsionBERT", "RNA-TorsionBERT: leveraging language models for RNA 3D torsion angles prediction",
-     "https://doi.org/10.1093/bioinformatics/btaf004", "2024.12", None, "https://huggingface.co/sayby/rna_torsionBERT", "Structure-aware FM",
-     "Proposes RNA-TorsionBERT, a BERT model pre-trained on PDB RNA 3D structures to predict backbone torsion angles directly from RNA sequences, enabling rapid assessment of RNA 3D structural properties.",
-     "Encoder-only", "SNT"),
-
-    ("StructRFM", "StructRFM: Structure-guided RNA Foundation Model",
-     "https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1", "2025.08", "https://github.com/heqin-zhu/structRFM", None, "Structure-aware FM",
-     "Presents StructRFM, a structure-guided RNA foundation model pre-trained on 21M sequence-structure pairs, integrating predicted secondary structure information during pre-training for enhanced RNA representation learning.",
-     "Encoder-only", "SNT"),
-
-    ("RhoFold+", "Accurate RNA 3D structure prediction using a language model-based deep learning approach",
-     "https://www.nature.com/articles/s41592-024-02487-0", "2024.11", "https://github.com/ml4bio/RhoFold", "https://huggingface.co/cuhkaih/rhofold", "Structure-aware FM",
-     "Presents RhoFold+, an RNA-FM-based deep learning pipeline for automated RNA 3D structure prediction, combining pre-trained RNA language-model embeddings, MSA features, and geometry-aware structure modules.",
-     "Specialized", "SNT"),
-
-    # === Generative FMs ===
-    ("LoRNA SH", "A long-context RNA foundation model for predicting transcriptome architecture",
-     "https://doi.org/10.1101/2024.08.26.609813", "2024.08", None, None, "General RNA FM",
-     "Introduces LoRNA SH, a StripedHyena-based long-context RNA foundation model trained on full-length transcriptome architecture data to predict isoform abundance, isoform structure, and variant effects.",
-     "Hybrid/SSM", "SNT"),
-
-    ("GenerRNA", "GenerRNA: A generative pre-trained language model for de novo RNA design",
-     "https://doi.org/10.1371/journal.pone.0310814", "2024.10", None, "https://huggingface.co/pfnet/GenerRNA", "Generative FM",
-     "Presents GenerRNA, a 350M-parameter autoregressive language model pre-trained on 16M RNAcentral sequences (~17.4B nucleotides) using BPE tokenization for de novo RNA sequence generation with controllable properties.",
-     "Decoder-only", "BPE"),
-
-    ("GARNET", "GARNET: A Generative RNA Design Model from Microbial Genomes",
-     "https://www.nature.com/articles/s41467-024-54812-y", "2024.12", "https://github.com/Doudna-lab/GARNET_DL", None, "Generative FM",
-     "Develops GARNET, a generative model combining a decoder with a GNN, trained on 30M microbial genome sequences (17B nucleotides) from GTDB for designing novel functional RNA sequences with desired structural properties.",
-     "Specialized", "SNT"),
-
-    ("RNAtranslator", "RNAtranslator: Modeling protein-conditional RNA design as sequence-to-sequence natural language translation",
-     "https://doi.org/10.1371/journal.pcbi.1013541", "2025.10", None, "https://huggingface.co/SobhanShukueian/rnatranslator", "Generative FM",
-     "Proposes RNAtranslator, a 41.4M-parameter encoder-decoder model trained on 26M RNA-protein interaction pairs for generating RNA sequences conditioned on protein binding partners, enabling rational RNA aptamer design.",
-     "Encoder-Decoder", "SNT"),
-
-    ("EVA", "EVA: Evolutionary Versatile Architect for Long-context RNA Generation",
-     "https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2", "2026.03", None, None, "Generative FM",
-     "Introduces EVA, a Mixture-of-Experts decoder model for long-context RNA sequence generation, trained on 114M+ full-length RNA sequences for generating diverse functional RNA molecules at unprecedented lengths.",
-     "Specialized", "BPE"),
-
-    ("RiboDiffusion", "RiboDiffusion: tertiary structure-based RNA inverse folding with generative diffusion models",
-     "https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903", "2024.06", "https://github.com/ml4bio/RiboDiffusion", None, "Generative FM",
-     "Introduces RiboDiffusion, a generative diffusion model for RNA inverse folding that learns sequence distributions conditioned on RNA tertiary backbone structures.",
-     "Specialized", "SNT"),
-
-    ("RhoDesign", "Deep generative design of RNA aptamers using structural predictions",
-     "https://www.nature.com/articles/s43588-024-00720-6", "2024.11", "https://github.com/ml4bio/RhoDesign", None, "Generative FM",
-     "Presents RhoDesign, a structure-to-sequence deep generative platform that uses RNA 3D structural predictions to design novel aptamer sequences with experimentally validated fluorescence activity.",
-     "Encoder-Decoder", "SNT"),
-
-    # === General / Other ===
-    ("Uni-RNA", "Uni-RNA: Universal Pre-trained Models for RNA across Species",
-     "https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1", "2023.07", "https://github.com/ComDec/unirna_tf", None, "General RNA FM",
-     "Presents Uni-RNA, a 400M-parameter universal RNA model pre-trained on 1B sequences from RNAcentral, MG-RAST, and MGnify, covering RNA across diverse species for general-purpose RNA representation learning.",
-     "Encoder-only", "SNT"),
-
-    ("RNALens", "RNALens: A Multi-task RNA Foundation Model",
-     "https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1", "2025.07", "https://github.com/oomics/RNALens", None, "General RNA FM",
-     "Introduces RNALens, a 469M-parameter multi-task RNA foundation model pre-trained on multispecies genomic and 5'UTR sequences using BPE tokenization, supporting diverse RNA analysis tasks within a unified framework.",
-     "Encoder-only", "BPE"),
-
-    # === DNA+RNA FMs ===
-    ("Evo", "Sequence Modeling and Design from Molecular to Genome Scale with Evo",
-     "https://www.science.org/doi/10.1126/science.ado9336", "2024.11", "https://github.com/evo-design/evo", None, "DNA+RNA FM",
-     "Presents Evo, a 7B-parameter genomic foundation model using StripedHyena architecture, pre-trained on 2.7M prokaryotic and phage genomes at single-nucleotide resolution, enabling sequence modeling and design from molecular to genome scale.",
-     "Hybrid/SSM", "SNT"),
-
-    ("LucaOne", "Generalized biological foundation model with unified nucleic acid and protein language",
-     "https://www.nature.com/articles/s42256-025-01044-4", "2025.06", "https://github.com/LucaOne/LucaOne", None, "DNA+RNA FM",
-     "Introduces LucaOne, a 1.8B-parameter unified model pre-trained on 800B tokens from RefSeq, UniProt, and PDB, jointly modeling DNA, RNA, and protein sequences for cross-modal biological sequence understanding.",
-     "Encoder-only", "SNT"),
-
-    ("BSM", "BSM: Small but Powerful Biological Sequence Model for Genes and Proteins",
-     "https://arxiv.org/abs/2410.11499", "2024.10", None, None, "DNA+RNA FM",
-     "Proposes BSM (110M/270M parameters), a biological sequence model with mixed-modal pre-training on DNA, RNA, and protein sequences from RefSeq and web-collected biological data for unified sequence representation.",
-     "Specialized", "SNT"),
-
-    ("LAMAR", "LAMAR: A Language Model for Mammalian and Viral Genomes and Transcriptomes",
-     "https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1", "2024.10", "https://github.com/zhw-e8/LAMAR", None, "DNA+RNA FM",
-     "Develops LAMAR, a 150M-parameter language model pre-trained on genomes and transcriptomes from 225 mammalian species (15M sequences), capturing mammalian-specific and viral genomic patterns for RNA and DNA tasks.",
-     "Encoder-only", "SNT"),
-
-    ("Orthrus", "Orthrus: toward evolutionary and functional RNA foundation models",
-     "https://www.nature.com/articles/s41592-026-03064-3", "2026.04", None, "https://huggingface.co/quietflamingo/orthrus-large-4-track", "Specific RNA FM",
-     "Introduces Orthrus, a Mamba-based mature RNA foundation model using contrastive learning on transcript isoforms and cross-species orthologs to learn evolutionary and functional RNA representations.",
-     "Hybrid/SSM", "SNT"),
-
-    ("METAGENE-1", "METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring",
-     "https://arxiv.org/abs/2501.02045", "2025.01", None, "https://huggingface.co/metagene-ai/METAGENE-1", "DNA+RNA FM",
-     "Presents METAGENE-1, a 7B-parameter metagenomic foundation model pre-trained on >1.5 trillion base pairs of wastewater metagenomic DNA and RNA sequences using BPE tokenization for pathogen detection and biosurveillance.",
-     "Decoder-only", "BPE"),
-
-    ("Life-Code", "Life-Code: Central Dogma Modeling with Multi-Omics Sequence Unification",
-     "https://arxiv.org/abs/2502.07299", "2025.02", None, None, "DNA+RNA FM",
-     "Proposes Life-Code, a unified foundation model that jointly models DNA, RNA, and protein following the central dogma of molecular biology, using codon-level tokenization to capture cross-modal biological relationships.",
-     "Hybrid/SSM", "Codon"),
-
-    ("Evo 2", "Genome Modeling and Design Across All Domains of Life with Evo 2",
-     "https://www.nature.com/articles/s41586-026-10176-5", "2026.03", "https://github.com/ArcInstitute/evo2", None, "DNA+RNA FM",
-     "Presents Evo 2 (7B/40B parameters), a next-generation genomic foundation model trained on 9 trillion nucleotides from 128K genomes spanning all domains of life, enabling genome-scale modeling, understanding, and design.",
-     "Hybrid/SSM", "SNT"),
-
-    ("OmniNA", "OmniNA: A Foundation Model for Nucleotide Sequences and Annotations",
-     "https://academic.oup.com/nar/article/54/6/gkag083/8528802", "2026.01", None, None, "DNA+RNA FM",
-     "Introduces OmniNA, a generative foundation model pre-trained on 91.7M nucleotide sequences with annotations (1076B bases), jointly modeling sequences and functional annotations for unified nucleotide analysis.",
-     "Decoder-only", "BPE"),
-
-    ("EDEN", "EDEN: A 28B Foundation Model for Programmable Gene Insertion",
-     "https://www.biorxiv.org/content/10.64898/2026.01.12.699009v1", "2026.01", None, None, "DNA+RNA FM",
-     "Develops EDEN, a 28B-parameter foundation model pre-trained on 9.7 trillion biological tokens (DNA+RNA+Protein) for programmable gene insertion, enabling precise genome engineering guided by learned sequence representations.",
-     "Decoder-only", "BPE"),
-
-    # === Expression-based FMs ===
-    ("BulkRNABert", "BulkRNABert: A Pre-trained Model for Bulk RNA-seq Expression Data",
-     "https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2", "2024.06", None, "https://huggingface.co/InstaDeepAI/BulkRNABert", "Expression FM",
-     "Presents BulkRNABert, a 6M-parameter encoder model pre-trained on bulk RNA-seq gene expression profiles from TCGA, GTEx, and ENCODE using expression bin tokens for cancer classification and gene expression analysis.",
-     "Specialized", "Expression"),
-
-    ("MOJO", "MOJO: A Multi-omics Foundation Model for RNA-seq and Methylation",
-     "https://www.biorxiv.org/content/10.1101/2025.06.25.661237v1", "2025.06", None, "https://huggingface.co/InstaDeepAI/MOJO", "Expression FM",
-     "Introduces MOJO, a 52.3M-parameter multimodal encoder pre-trained on TCGA RNA-seq expression and DNA methylation data, enabling joint multi-omics analysis for cancer subtyping and biomarker discovery.",
-     "Specialized", "Expression"),
-]
+import yaml
+
+# Model entries live in data/papers.yaml so the README source of truth is
+# structured data rather than Python tuples.
+DATA_DIR = Path(__file__).resolve().parent / "data"
+PAPERS_FILE = DATA_DIR / "papers.yaml"
+
+
+def load_papers(path=PAPERS_FILE):
+    """Load confirmed RNA foundation-model entries from YAML."""
+    with open(path, "r", encoding="utf-8") as f:
+        records = yaml.safe_load(f) or []
+
+    papers = []
+    scope_by_name = {}
+    model_details = {}
+    required = {
+        "name",
+        "title",
+        "paper_url",
+        "date",
+        "scope",
+        "category",
+        "abstract",
+        "architecture",
+        "tokenization",
+    }
+    for record in records:
+        missing = sorted(required - set(record))
+        if missing:
+            raise KeyError(f"Missing required fields for {record.get('name', '<unknown>')}: {missing}")
+        name = record["name"]
+        papers.append((
+            name,
+            record["title"],
+            record["paper_url"],
+            record["date"],
+            record.get("github_url"),
+            record.get("hf_url"),
+            record["category"],
+            record["abstract"],
+            record["architecture"],
+            record["tokenization"],
+        ))
+        scope_by_name[name] = record["scope"]
+        model_details[name] = {
+            "params": record.get("params", "-"),
+            "data": record.get("pretraining_data", "-"),
+            "arch": record.get("table_architecture", record["architecture"]),
+            "token": record.get("table_tokenization", record["tokenization"]),
+        }
+    return papers, scope_by_name, model_details
+
+
+papers, scope_by_name, model_details = load_papers()
 
 benchmarks = [
     ("BEACON", "BEACON: Benchmark for Comprehensive RNA Tasks and Language Models",
@@ -540,131 +242,6 @@ scope_descriptions = {
     "related_nucleotide": "Foundation models for DNA, nucleotide, metagenomic, or multi-omics sequences that are RNA-relevant but not pure RNA sequence FMs.",
     "expression_profile": "Models over RNA-seq expression profiles or multi-omics expression features, not raw RNA nucleotide sequences.",
 }
-scope_by_name = {
-    "RNABert": "specialized_rna_fm",
-    "RNAFM": "core_rna_fm",
-    "RNAMSM": "specialized_rna_fm",
-    "RNA-km": "specialized_rna_fm",
-    "RNAErnie": "core_rna_fm",
-    "ERNIE-RNA": "core_rna_fm",
-    "DGRNA": "core_rna_fm",
-    "ChaRNABERT": "core_rna_fm",
-    "AIDO.RNA": "core_rna_fm",
-    "BiRNA-BERT": "core_rna_fm",
-    "RNA-BERTa": "core_rna_fm",
-    "RiNALMo": "core_rna_fm",
-    "HydraRNA": "core_rna_fm",
-    "RNAElectra": "core_rna_fm",
-    "RNAret": "core_rna_fm",
-    "CodonBERT": "specialized_rna_fm",
-    "CaLM": "specialized_rna_fm",
-    "HELM": "core_rna_fm",
-    "Helix-mRNA": "core_rna_fm",
-    "CodonFM": "core_rna_fm",
-    "GenSLM": "specialized_rna_fm",
-    "mRNABERT": "core_rna_fm",
-    "mRNA-GPT": "core_rna_fm",
-    "NUWA": "core_rna_fm",
-    "GenerRNA": "core_rna_fm",
-    "EVA": "core_rna_fm",
-    "Uni-RNA": "core_rna_fm",
-    "RNALens": "core_rna_fm",
-    "UTR-LM": "specialized_rna_fm",
-    "3UTRBERT": "specialized_rna_fm",
-    "SpliceBERT": "specialized_rna_fm",
-    "RFamLlama": "specialized_rna_fm",
-    "PlantRNA-FM": "specialized_rna_fm",
-    "LncRNA-BERT": "specialized_rna_fm",
-    "G4mer": "specialized_rna_fm",
-    "ATOM-1": "specialized_rna_fm",
-    "OmniGenome": "specialized_rna_fm",
-    "MP-RNA": "specialized_rna_fm",
-    "RNA-TorsionBERT": "specialized_rna_fm",
-    "StructRFM": "specialized_rna_fm",
-    "LoRNA SH": "specialized_rna_fm",
-    "Orthrus": "specialized_rna_fm",
-    "mRNA-FM": "adapted_derived",
-    "ProtRNA": "adapted_derived",
-    "RNAGenesis": "adapted_derived",
-    "CodonMoE": "adapted_derived",
-    "mRNA-GPT (full-length)": "adapted_derived",
-    "Pro2RNA": "adapted_derived",
-    "GEMORNA": "task_design",
-    "RibonanzaNet": "task_design",
-    "RhoFold+": "task_design",
-    "GARNET": "task_design",
-    "RiboDiffusion": "task_design",
-    "RhoDesign": "task_design",
-    "RNAtranslator": "task_design",
-    "codonGPT": "adapted_derived",
-    "UTR-Insight": "task_design",
-    "Evo": "related_nucleotide",
-    "LucaOne": "related_nucleotide",
-    "BSM": "related_nucleotide",
-    "LAMAR": "related_nucleotide",
-    "METAGENE-1": "related_nucleotide",
-    "Life-Code": "related_nucleotide",
-    "Evo 2": "related_nucleotide",
-    "OmniNA": "related_nucleotide",
-    "EDEN": "related_nucleotide",
-    "BulkRNABert": "expression_profile",
-    "MOJO": "expression_profile",
-}
-
-
-strict_model_names = {
-    "RNAFM",
-    "Uni-RNA",
-    "RNAErnie",
-    "DGRNA",
-    "HELM",
-    "GenerRNA",
-    "AIDO.RNA",
-    "ChaRNABERT",
-    "Helix-mRNA",
-    "RiNALMo",
-    "RNALens",
-    "RNA-BERTa",
-    "CodonFM",
-    "ERNIE-RNA",
-    "BiRNA-BERT",
-    "HydraRNA",
-    "mRNABERT",
-    "mRNA-GPT",
-    "NUWA",
-    "RNAElectra",
-    "RNAret",
-    "EVA",
-    "RNABert",
-    "GenSLM",
-    "ATOM-1",
-    "RNAMSM",
-    "RNA-km",
-    "CaLM",
-    "SpliceBERT",
-    "UTR-LM",
-    "RFamLlama",
-    "OmniGenome",
-    "CodonBERT",
-    "LoRNA SH",
-    "3UTRBERT",
-    "MP-RNA",
-    "PlantRNA-FM",
-    "LncRNA-BERT",
-    "StructRFM",
-    "G4mer",
-    "Orthrus",
-    "mRNA-FM",
-    "RNAGenesis",
-    "ProtRNA",
-    "codonGPT",
-}
-missing_strict_models = strict_model_names - {paper[0] for paper in papers}
-if missing_strict_models:
-    raise KeyError(f"Strict model names missing from papers: {sorted(missing_strict_models)}")
-papers = [paper for paper in papers if paper[0] in strict_model_names]
-
-
 def scope_key(paper):
     name = paper[0]
     if name not in scope_by_name:
@@ -716,79 +293,7 @@ tok_labels = {
 }
 tok_order = ["SNT", "Codon", "K-mer", "BPE", "Learnable", "Expression"]
 
-# Detailed table metadata. The compact paper tuples above carry the common fields;
-# this mapping keeps table-only fields in the same generated source of truth.
-model_details = {
-    "RNABert": {"params": "0.5M", "data": "Rfam seed alignments + ncRNA"},
-    "RNAFM": {"params": "100M", "data": "RNAcentral (23M seqs)"},
-    "RNAMSM": {"params": "95M", "data": "Rfam families + MSA homologs"},
-    "RNA-km": {"params": "152M", "data": "RNAcentral (23M ncRNA seqs)", "token": "SNT + k-mer masking"},
-    "RNAErnie": {"params": "105M", "data": "RNAcentral (23M seqs)", "token": "Nucleotide + motif"},
-    "ERNIE-RNA": {"params": "86M", "data": "RNAcentral (20.4M seqs)"},
-    "DGRNA": {"params": "100M", "data": "MARS (100M RNA seqs)", "arch": "Hybrid (SSM)"},
-    "ChaRNABERT": {"params": "8M-650M", "data": "RNAcentral + NCBI (62M seqs)", "token": "Learnable (GBST)"},
-    "AIDO.RNA": {"params": "650M / 1.6B", "data": "RNAcentral (42M seqs, ~30B nt)"},
-    "BiRNA-BERT": {"params": "117M", "data": "RNAcentral (36M seqs, ~26.4B nt)", "token": "Dual (NUC + BPE)"},
-    "RNA-BERTa": {"params": "55.9M", "data": "Public RNA collections (9.76M seqs)"},
-    "RiNALMo": {"params": "135M-650M", "data": "RNAcentral (36M ncRNA seqs)"},
-    "RNAGenesis": {"params": "1B", "data": "RNAcentral clustered ncRNA", "arch": "Encoder + Diffusion", "token": "Hybrid N-gram"},
-    "HydraRNA": {"params": "84M", "data": "28.1M RNAs (ncRNA + coding)", "arch": "Hybrid (SSM+Attention)"},
-    "RNAElectra": {"params": "-", "data": "RNAcentral ncRNAs"},
-    "RNAret": {"params": "12M", "data": "RNAcentral (29.8M ncRNA seqs)", "arch": "Hybrid (RetNet)", "token": "1/3/5-mer"},
-    "ProtRNA": {"params": "ESM-2 derived", "data": "RNAcentral (6M representative seqs)", "token": "RNA tokens"},
-    "CodonBERT": {"params": "110M", "data": "NCBI (10M mRNA CDS)", "token": "Codon-aware"},
-    "CaLM": {"params": "86M", "data": "~9M non-redundant CDS", "token": "Codon-level (triplet)"},
-    "mRNA-FM": {"params": "239M", "data": "mRNA CDS (45M seqs)", "token": "SNT"},
-    "HELM": {"params": "-", "data": "mRNA coding sequences", "token": "Codon-hierarchical"},
-    "Helix-mRNA": {"params": "Compact", "data": "mRNA sequences", "arch": "Hybrid (SSM+Attention)", "token": "SNT + codon markers"},
-    "GEMORNA": {"params": "-", "data": "mRNA CDS + UTR", "arch": "Specialized generative", "token": "Codon / nucleotide"},
-    "CodonFM": {"params": "80M / 600M / 1B", "data": "RefSeq CDS (131M seqs, 22K+ species)", "token": "Codon-level"},
-    "GenSLM": {"params": "2.5B-25B", "data": "110M+ gene seqs + 1.5M SARS-CoV-2 genomes", "token": "Codon-level"},
-    "mRNABERT": {"params": "114M", "data": "18M mRNA seqs (NCBI, MG-RAST, GWH, MGnify)", "token": "Dual tokenization"},
-    "mRNA-GPT": {"params": "302M", "data": "NCBI CDS (80M bact. + 83M euk. + 2M arch.)", "token": "Codon / nucleotide"},
-    "NUWA": {"params": "-", "data": "Multi-species mRNA CDS (115M seqs)", "token": "Codon tokens"},
-    "mRNA-GPT (full-length)": {"params": "-", "data": "30M full-length mRNAs (5'UTR+CDS+3'UTR)", "token": "Nucleotide"},
-    "codonGPT": {"params": "GPT-2 based", "data": "Model-organism CDS (338K seqs)", "token": "Codon-level"},
-    "Pro2RNA": {"params": "-", "data": "mRNA-protein pairs (0.55M euk. + 1M bact.)", "arch": "Multimodal encoder-decoder", "token": "Codon-level"},
-    "CodonMoE": {"params": "-", "data": "DNA FM + RNA adaptation", "arch": "Decoder-only (MoE)", "token": "Codon-aware"},
-    "UTR-LM": {"params": "1M", "data": "Ensembl 5'UTR (>214K seqs + synthetic)"},
-    "3UTRBERT": {"params": "86M", "data": "GENCODE 3'UTR (20K seqs)", "token": "3-mer"},
-    "UTR-Insight": {"params": "-", "data": "5'UTR reporter + endogenous UTR data", "arch": "UTR-LM + CNN-Transformer"},
-    "SpliceBERT": {"params": "20M", "data": "UCSC pre-mRNA (72 species, >2M seqs)"},
-    "RFamLlama": {"params": "13-88M", "data": "Rfam (>4,000 families, 0.6M seqs)", "token": "Nucleotide + family"},
-    "PlantRNA-FM": {"params": "35M", "data": "OneKP (1,124 plant species transcriptomes)"},
-    "LncRNA-BERT": {"params": "-", "data": "GENCODE + RefSeq + NONCODE (536K seqs)", "token": "CSE / k-mer / nt"},
-    "G4mer": {"params": "46M", "data": "Human transcriptome (G-quadruplex)"},
-    "ATOM-1": {"params": "-", "data": "Chemical mapping sequencing data", "arch": "Encoder-decoder"},
-    "RibonanzaNet": {"params": "-", "data": "Eterna + Rfam + PDB (2M seqs)", "arch": "CNN + Attention", "token": "-"},
-    "OmniGenome": {"params": "52M / 186M", "data": "OneKP (seq-structure pairs)"},
-    "MP-RNA": {"params": "52-186M", "data": "OneKP (seq + structure)"},
-    "RNA-TorsionBERT": {"params": "86.9M", "data": "PDB RNA 3D structures"},
-    "StructRFM": {"params": "-", "data": "21M seq-structure pairs"},
-    "RhoFold+": {"params": "-", "data": "PDB RNA 3D + RNA-FM embeddings", "arch": "RNA-FM + geometry module"},
-    "LoRNA SH": {"params": "6.5M", "data": "Full-length transcriptome architecture data", "arch": "Hybrid (StripedHyena)", "token": "Specialized nt + region"},
-    "GenerRNA": {"params": "350M", "data": "RNAcentral (16.09M seqs, ~17.4B nt)"},
-    "GARNET": {"params": "-", "data": "GTDB (30M seqs, 17B nt, 400K genomes)", "arch": "Decoder + GNN", "token": "Overlapping triplet"},
-    "RNAtranslator": {"params": "41.4M", "data": "RNAInter (26M interaction pairs)", "arch": "Encoder-decoder", "token": "Nucleotide + AA"},
-    "EVA": {"params": "-", "data": "114M+ full-length RNA seqs", "arch": "Decoder-only (MoE)", "token": "-"},
-    "RiboDiffusion": {"params": "-", "data": "PDB RNA 3D + predicted structures", "arch": "Diffusion + GNN/Transformer"},
-    "RhoDesign": {"params": "-", "data": "PDB RNA 3D + RhoFold-predicted structures", "arch": "GVP + Transformer"},
-    "Uni-RNA": {"params": "400M", "data": "RNAcentral + MG-RAST + MGnify (1B seqs)"},
-    "RNALens": {"params": "469M", "data": "Multispecies genomic + 5'UTR sequences"},
-    "Evo": {"params": "7B", "data": "OpenGenome (2.7M prokaryotic + phage genomes)", "arch": "Hybrid (StripedHyena)"},
-    "LucaOne": {"params": "1.8B", "data": "RefSeq + UniProt/PDB (800B tokens)", "token": "SNT / amino acid"},
-    "BSM": {"params": "110M / 270M", "data": "RefSeq + web bio-seqs (DNA+RNA+Prot)", "arch": "Decoder-only", "token": "Mixed"},
-    "LAMAR": {"params": "150M", "data": "Genome + transcriptome (225 mammals, 15M)"},
-    "Orthrus": {"params": "1.3M / 10.1M", "data": "GENCODE + RefSeq + Zoonomia (32M transcripts)", "arch": "Hybrid (SSM)"},
-    "METAGENE-1": {"params": "7B", "data": "Wastewater metagenomic DNA/RNA (>1.5T bp)"},
-    "Life-Code": {"params": "-", "data": "Multi-omics (DNA/RNA/Prot unified)", "arch": "Hybrid (SSM+Attention)"},
-    "Evo 2": {"params": "7B / 40B", "data": "OpenGenome2 (9T nt, 128K genomes)", "arch": "Hybrid (StripedHyena)"},
-    "OmniNA": {"params": "-", "data": "91.7M seqs + annotations (1076B bases)"},
-    "EDEN": {"params": "28B", "data": "9.7T biological tokens (DNA+RNA+Protein)"},
-    "BulkRNABert": {"params": "6.01M", "data": "TCGA + GTEx + ENCODE (RNA-seq expr.)", "arch": "Encoder-only", "token": "Expression bin tokens"},
-    "MOJO": {"params": "52.3M", "data": "TCGA (RNA-seq + DNA methylation)", "arch": "Encoder (multimodal)", "token": "Expression bin tokens"},
-}
-
+# Detailed table metadata is loaded from data/papers.yaml.
 model_table_descriptions = {
     "ncRNA FM": "Models primarily focused on non-coding RNA sequences (from RNAcentral, Rfam, etc.).",
     "mRNA/CDS FM": "Models focused on messenger RNA coding sequences or full mRNA sequences.",
@@ -1167,6 +672,8 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 **What to include**: RNA sequence foundation models with reusable pre-trained RNA/mRNA/CDS/UTR backbones or checkpoints.
 
 **What NOT to include**: Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile models, single-cell foundation models, protein-only models, or purely DNA models.
+
+**Metadata workflow**: confirmed entries live in `data/papers.yaml`, pending discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`. After editing metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed.
 
 
 *Last updated: May 2026*
