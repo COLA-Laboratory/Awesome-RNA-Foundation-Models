@@ -4,7 +4,9 @@ import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from collections import OrderedDict
 
-# Fields: (name, title, url, year_month, github_url, hf_url, category, abstract, architecture, tokenization)
+# Fields: (name, title, url, date, github_url, hf_url, category, abstract, architecture, tokenization)
+# Date convention: use the official publication date when available; otherwise
+# use the linked preprint date and mark the entry as a preprint.
 papers = [
     # === ncRNA FMs ===
     ("RNABert", "Informative RNA-base embedding for RNA structural alignment and clustering by a representation learning framework",
@@ -18,7 +20,7 @@ papers = [
      "Encoder-only", "SNT"),
 
     ("RNAMSM", "Multiple sequence-alignment-based RNA language model and its application to structural inference",
-     "https://doi.org/10.1093/nar/gkad1031", "2023.12", "https://github.com/yikunpku/RNA-MSM", None, "ncRNA FM",
+     "https://doi.org/10.1093/nar/gkad1031", "2023.11", "https://github.com/yikunpku/RNA-MSM", None, "ncRNA FM",
      "Introduces RNA-MSM, an unsupervised RNA language model that leverages multiple sequence alignments (MSAs) from homologous RNA families to capture evolutionary and co-evolutionary information for improved structural inference.",
      "Encoder-only", "SNT"),
 
@@ -109,7 +111,7 @@ papers = [
      "Specialized", "Codon"),
 
     ("GenSLM", "GenSLMs: Genome-scale Language Models Reveal SARS-CoV-2 Evolutionary Dynamics",
-     "https://doi.org/10.1177/10943420231201154", "2023.01", None, None, "mRNA/CDS FM",
+     "https://doi.org/10.1177/10943420231201154", "2023.10", None, None, "mRNA/CDS FM",
      "Develops GenSLMs (up to 25B parameters), genome-scale language models trained on codon-level gene sequences from 110M+ genes and 1.5M SARS-CoV-2 genomes, revealing evolutionary dynamics and enabling variant prediction.",
      "Decoder-only", "Codon"),
 
@@ -123,9 +125,9 @@ papers = [
      "Presents mRNA-GPT, a 302M-parameter autoregressive model pre-trained on 80M bacterial, 83M eukaryotic, and 2M archaeal CDS sequences with codon/nucleotide tokenization for cross-species mRNA understanding and generation.",
      "Decoder-only", "Codon"),
 
-    ("NUWA", "NUWA: A Codon Language Model for mRNA Coding Sequences",
+    ("NUWA", "Large mRNA language foundation modeling with NUWA for unified sequence perception and generation",
      "https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3", "2026.02", "https://github.com/zysxmu/NUWA", None, "mRNA/CDS FM",
-     "Proposes NUWA, a codon-level language model pre-trained on 115M multi-species mRNA coding sequences, learning codon usage patterns for downstream tasks including codon optimization and mRNA expression prediction.",
+     "Proposes NUWA, a large mRNA foundation model pre-trained on 115M multi-species coding sequences for unified mRNA sequence perception and generation.",
      "Encoder-only", "Codon"),
 
     ("mRNA-GPT (full-length)", "mRNA-GPT: Full-Length mRNA Design via Autoregressive Generation with PPO",
@@ -151,7 +153,7 @@ papers = [
 
     # === Specific RNA FMs ===
     ("SpliceBERT", "SpliceBERT: A Pre-trained Model for Self-supervised Learning of Pre-mRNA Splicing",
-     "https://doi.org/10.1093/bib/bbae163", "2023.01", "https://github.com/chenkenbio/SpliceBERT", None, "Specific RNA FM",
+     "https://doi.org/10.1093/bib/bbae163", "2024.04", "https://github.com/chenkenbio/SpliceBERT", None, "Specific RNA FM",
      "Develops SpliceBERT, a 20M-parameter BERT model pre-trained on pre-mRNA sequences from 72 vertebrate species for self-supervised learning of splicing patterns, improving splice site prediction and branchpoint detection.",
      "Encoder-only", "SNT"),
 
@@ -171,7 +173,7 @@ papers = [
      "Encoder-only", "K-mer"),
 
     ("G4mer", "G4mer: An Interpretable Transformer for G-quadruplex Prediction in the Transcriptome",
-     "https://www.nature.com/articles/s41467-025-65020-7", "2025.12", None, "https://huggingface.co/Biociphers/g4mer", "Specific RNA FM",
+     "https://www.nature.com/articles/s41467-025-65020-7", "2025.11", None, "https://huggingface.co/Biociphers/g4mer", "Specific RNA FM",
      "Develops G4mer, a 46M-parameter interpretable transformer model for predicting RNA G-quadruplex structures in the human transcriptome, providing attention-based interpretability for understanding G4-mediated regulation.",
      "Encoder-only", "SNT"),
 
@@ -223,7 +225,7 @@ papers = [
      "Specialized", "SNT"),
 
     ("RNAtranslator", "RNAtranslator: Protein-conditioned RNA Sequence Generation",
-     "https://doi.org/10.1371/journal.pcbi.1013541", "2025.03", None, "https://huggingface.co/SobhanShukueian/rnatranslator", "Generative FM",
+     "https://doi.org/10.1371/journal.pcbi.1013541", "2025.10", None, "https://huggingface.co/SobhanShukueian/rnatranslator", "Generative FM",
      "Proposes RNAtranslator, a 41.4M-parameter encoder-decoder model trained on 26M RNA-protein interaction pairs for generating RNA sequences conditioned on protein binding partners, enabling rational RNA aptamer design.",
      "Encoder-Decoder", "SNT"),
 
@@ -245,12 +247,12 @@ papers = [
 
     # === DNA+RNA FMs ===
     ("Evo", "Sequence Modeling and Design from Molecular to Genome Scale with Evo",
-     "https://www.science.org/doi/10.1126/science.ado9336", "2024.02", "https://github.com/evo-design/evo", None, "DNA+RNA FM",
+     "https://www.science.org/doi/10.1126/science.ado9336", "2024.11", "https://github.com/evo-design/evo", None, "DNA+RNA FM",
      "Presents Evo, a 7B-parameter genomic foundation model using StripedHyena architecture, pre-trained on 2.7M prokaryotic and phage genomes at single-nucleotide resolution, enabling sequence modeling and design from molecular to genome scale.",
      "Hybrid/SSM", "SNT"),
 
     ("LucaOne", "LucaOne: A Unified Foundation Model for DNA, RNA and Protein",
-     "https://www.nature.com/articles/s42256-025-01044-4", "2024.05", "https://github.com/LucaOne/LucaOne", None, "DNA+RNA FM",
+     "https://www.nature.com/articles/s42256-025-01044-4", "2025.06", "https://github.com/LucaOne/LucaOne", None, "DNA+RNA FM",
      "Introduces LucaOne, a 1.8B-parameter unified model pre-trained on 800B tokens from RefSeq, UniProt, and PDB, jointly modeling DNA, RNA, and protein sequences for cross-modal biological sequence understanding.",
      "Encoder-only", "SNT"),
 
@@ -280,7 +282,7 @@ papers = [
      "Hybrid/SSM", "Codon"),
 
     ("Evo 2", "Genome Modeling and Design Across All Domains of Life with Evo 2",
-     "https://www.nature.com/articles/s41586-026-10176-5", "2026.02", "https://github.com/ArcInstitute/evo2", None, "DNA+RNA FM",
+     "https://www.nature.com/articles/s41586-026-10176-5", "2026.03", "https://github.com/ArcInstitute/evo2", None, "DNA+RNA FM",
      "Presents Evo 2 (7B/40B parameters), a next-generation genomic foundation model trained on 9 trillion nucleotides from 128K genomes spanning all domains of life, enabling genome-scale modeling, understanding, and design.",
      "Hybrid/SSM", "SNT"),
 
@@ -373,10 +375,26 @@ surveys = [
 # ============================================================
 # Helpers
 # ============================================================
-def format_entry(name, title, paper_url, year_month, github_url, hf_url, abstract):
+def is_preprint_url(url):
+    """Return True for preprint-style sources that are not formal publications."""
+    preprint_markers = (
+        "arxiv.org",
+        "biorxiv.org",
+        "openreview.net",
+        "doi.org/10.1101",
+        "doi.org/10.64898",
+    )
+    return any(marker in url for marker in preprint_markers)
+
+
+def format_entry(name, title, paper_url, date, github_url, hf_url, abstract):
     """Format a paper entry as a bullet list item with badges."""
-    line = f'- [{title}]({paper_url}) ({year_month})'
-    line += f' [![abs](https://img.shields.io/badge/abs-{year_month}-b31b1b.svg)]({paper_url})'
+    is_preprint = is_preprint_url(paper_url)
+    date_text = f"{date}, preprint" if is_preprint else date
+    line = f'- [{title}]({paper_url}) ({date_text})'
+    line += f' [![abs](https://img.shields.io/badge/abs-{date}-b31b1b.svg)]({paper_url})'
+    if is_preprint:
+        line += f' [![preprint](https://img.shields.io/badge/preprint-gray.svg)]({paper_url})'
     if github_url:
         line += f' [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)]({github_url})'
     if hf_url:
@@ -468,6 +486,8 @@ lines.append("")
 lines.append("## Paper List")
 lines.append("")
 lines.append("A complete list of model papers and related resources included in this survey. Three classification views are provided below — click to expand/collapse each view.")
+lines.append("")
+lines.append("> **Date convention**: Dates shown in this section use the official publication month when a peer-reviewed version is available; otherwise they use the linked preprint month and are marked `preprint`.")
 lines.append("")
 
 # Model entries (collapsible wrapper with 3 views inside)
