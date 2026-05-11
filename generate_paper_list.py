@@ -5,12 +5,13 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from collections import OrderedDict
 
 # Fields: (name, title, url, date, github_url, hf_url, category, abstract, architecture, tokenization)
-# Date convention: use the official publication date when available; otherwise
-# use the linked preprint date and mark the entry as a preprint.
+# Date convention: use the official publication / conference date when available; otherwise
+# use the linked preprint date and mark the entry as a preprint. Keep `title`
+# as the paper title, not a synthetic "model: title" display string.
 papers = [
     # === ncRNA FMs ===
     ("RNABert", "Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning",
-     "https://doi.org/10.1093/nargab/lqac012", "2022.02", "https://github.com/mana438/RNABERT", None, "ncRNA FM",
+     "https://doi.org/10.1093/nargab/lqac012", "2022.01", "https://github.com/mana438/RNABERT", None, "ncRNA FM",
      "Proposes RNABERT, a BERT-based model pre-trained on Rfam seed alignments using masked language modeling to learn informative RNA-base embeddings for structural alignment and clustering of ncRNAs.",
      "Encoder-only", "SNT"),
 
@@ -20,7 +21,7 @@ papers = [
      "Encoder-only", "SNT"),
 
     ("RNAMSM", "Multiple sequence alignment-based RNA language model and its application to structural inference",
-     "https://doi.org/10.1093/nar/gkad1031", "2023.11", "https://github.com/yikunpku/RNA-MSM", None, "ncRNA FM",
+     "https://doi.org/10.1093/nar/gkad1031", "2024.01", "https://github.com/yikunpku/RNA-MSM", None, "ncRNA FM",
      "Introduces RNA-MSM, an unsupervised RNA language model that leverages multiple sequence alignments (MSAs) from homologous RNA families to capture evolutionary and co-evolutionary information for improved structural inference.",
      "Encoder-only", "SNT"),
 
@@ -45,7 +46,7 @@ papers = [
      "Hybrid/SSM", "SNT"),
 
     ("ChaRNABERT", "Character-level Tokenizations as Powerful Inductive Biases for RNA Foundational Models",
-     "https://arxiv.org/abs/2411.11808", "2024.11", None, None, "ncRNA FM",
+     "https://openreview.net/forum?id=cAiECLDjzF", "2025.03", None, None, "ncRNA FM",
      "Proposes ChaRNABERT with Gradient-based Subword Tokenization (GBST) that learns data-driven tokenization during pre-training, outperforming fixed tokenization approaches on RNA structure and function prediction tasks.",
      "Encoder-only", "Learnable"),
 
@@ -70,8 +71,8 @@ papers = [
      "Encoder-only", "SNT"),
 
     ("RNAGenesis", "RNAGenesis: A Generalist Foundation Model for Functional RNA Therapeutics",
-     "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2", "2024.12", None, "https://huggingface.co/Zaixi/RNAGenesis", "ncRNA FM",
-     "Proposes RNAGenesis, a 1B-parameter generative RNA foundation model combining encoder representations with diffusion-based generation, enabling both RNA understanding and de novo RNA sequence design.",
+     "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2", "2024.12", None, "https://huggingface.co/Zaixi/RNAGenesis", "Adapted/Derived RNA FM",
+     "Proposes RNAGenesis, a 1B-parameter generative RNA model that integrates sequence representation, structure prediction, and de novo functional design, listed here as an adapted / derived RNA design model rather than a core ncRNA pre-training-only FM.",
      "Specialized", "SNT"),
 
     ("HydraRNA", "HydraRNA: a hybrid architecture based full-length RNA language model",
@@ -96,22 +97,22 @@ papers = [
      "Encoder-only", "Codon"),
 
     ("HELM", "HELM: Hierarchical Encoding for mRNA Language Modeling",
-     "https://arxiv.org/abs/2410.12459", "2025.01", None, None, "mRNA/CDS FM",
+     "https://arxiv.org/abs/2410.12459", "2024.10", None, None, "mRNA/CDS FM",
      "Proposes HELM, a hierarchical encoding approach for mRNA language modeling that captures both nucleotide-level and codon-level information through a multi-scale architecture for improved mRNA property prediction.",
      "Encoder-Decoder", "Codon"),
 
     ("Helix-mRNA", "Helix-mRNA: A Hybrid Foundation Model For Full Sequence mRNA Therapeutics",
-     "https://arxiv.org/abs/2502.13785", "2025.02", None, "https://huggingface.co/helical-ai/helix-mRNA", "mRNA/CDS FM",
+     "https://openreview.net/forum?id=Ky0CkFiVhu", "2025.03", None, "https://huggingface.co/helical-ai/helix-mRNA", "mRNA/CDS FM",
      "Presents Helix-mRNA, a compact hybrid model combining Mamba2 state space layers with attention mechanisms for efficient mRNA sequence modeling, targeting mRNA stability and translation efficiency prediction.",
      "Hybrid/SSM", "Codon"),
 
     ("GEMORNA", "Deep generative models design mRNA sequences with enhanced translational capacity and stability",
-     "https://www.science.org/doi/10.1126/science.adr8470", "2025.08", "https://github.com/RainaBio/GEMORNA", None, "mRNA/CDS FM",
+     "https://www.science.org/doi/10.1126/science.adr8470", "2025.11", "https://github.com/RainaBio/GEMORNA", None, "mRNA/CDS FM",
      "Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.",
      "Specialized", "Codon"),
 
     ("GenSLM", "GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics",
-     "https://doi.org/10.1177/10943420231201154", "2023.10", None, None, "mRNA/CDS FM",
+     "https://doi.org/10.1177/10943420231201154", "2023.11", None, None, "mRNA/CDS FM",
      "Develops GenSLMs (up to 25B parameters), genome-scale language models trained on codon-level gene sequences from 110M+ genes and 1.5M SARS-CoV-2 genomes, revealing evolutionary dynamics and enabling variant prediction.",
      "Decoder-only", "Codon"),
 
@@ -136,33 +137,33 @@ papers = [
      "Decoder-only", "Codon"),
 
     ("CodonMoE", "DNA Language Models for RNA Analyses",
-     "https://openreview.net/forum?id=TOUrnb1EaG", "2026.01", None, None, "mRNA/CDS FM",
+     "https://openreview.net/forum?id=TOUrnb1EaG", "2024.09", None, None, "Adapted/Derived RNA FM",
      "Proposes CodonMoE, a parameter-efficient approach to adapt pre-trained DNA foundation models for RNA tasks using Mixture-of-Experts adapters with codon-aware routing for improved mRNA property prediction.",
      "Specialized", "Codon"),
 
     # === UTR FMs ===
-    ("UTR-LM", "UTR-LM: A 5' UTR Language Model for Predicting Translation Efficiency",
+    ("UTR-LM", "A 5′ UTR language model for decoding untranslated regions of mRNA and function predictions",
      "https://www.nature.com/articles/s42256-024-00823-9", "2024.04", None, "https://huggingface.co/multimolecule/utrlm-te_el", "UTR FM",
      "Introduces UTR-LM, a language model specifically pre-trained on 5' UTR sequences from Ensembl, predicting mean ribosome loading (translation efficiency) and expression level from UTR sequences alone.",
      "Encoder-only", "SNT"),
 
     ("3UTRBERT", "Deciphering 3'UTR Mediated Gene Regulation Using Interpretable Deep Representation Learning",
-     "https://doi.org/10.1002/advs.202407013", "2024.08", "https://github.com/yangyn533/3UTRBERT", None, "UTR FM",
+     "https://doi.org/10.1002/advs.202407013", "2024.10", "https://github.com/yangyn533/3UTRBERT", None, "UTR FM",
      "Presents 3UTRBERT, a BERT model pre-trained on GENCODE 3'UTR sequences using 3-mer tokenization, capturing regulatory motifs for predicting mRNA stability, polyadenylation, and subcellular localization.",
      "Encoder-only", "K-mer"),
 
     # === Specific RNA FMs ===
-    ("SpliceBERT", "SpliceBERT: A Pre-trained Model for Self-supervised Learning of Pre-mRNA Splicing",
-     "https://doi.org/10.1093/bib/bbae163", "2024.04", "https://github.com/chenkenbio/SpliceBERT", None, "Specific RNA FM",
+    ("SpliceBERT", "Self-supervised learning on millions of primary RNA sequences from 72 vertebrates improves sequence-based RNA splicing prediction",
+     "https://doi.org/10.1093/bib/bbae163", "2024.03", "https://github.com/chenkenbio/SpliceBERT", None, "Specific RNA FM",
      "Develops SpliceBERT, a 20M-parameter BERT model pre-trained on pre-mRNA sequences from 72 vertebrate species for self-supervised learning of splicing patterns, improving splice site prediction and branchpoint detection.",
      "Encoder-only", "SNT"),
 
     ("RFamLlama", "RFamLlama: an efficient conditional language model for RNA sequence generation across diverse structural families",
-     "https://openreview.net/forum?id=dXnQedxEJD", "2024.08", None, "https://huggingface.co/jinyuan22/RFamLlama-base", "Specific RNA FM",
+     "https://openreview.net/forum?id=dXnQedxEJD", "2024.06", None, "https://huggingface.co/jinyuan22/RFamLlama-base", "Specific RNA FM",
      "Proposes RFamLlama, a Llama-based autoregressive model for conditional RNA sequence generation conditioned on RNA family labels, generating novel functional ncRNA sequences belonging to over 4,000 Rfam families.",
      "Decoder-only", "SNT"),
 
-    ("PlantRNA-FM", "PlantRNA-FM: A Plant RNA Foundation Model from Multi-species Transcriptomes",
+    ("PlantRNA-FM", "An interpretable RNA foundation model for exploring functional RNA motifs in plants",
      "https://www.nature.com/articles/s42256-024-00946-z", "2024.12", None, "https://huggingface.co/yangheng/PlantRNA-FM", "Specific RNA FM",
      "Presents PlantRNA-FM, a foundation model pre-trained on transcriptomes from 1,124 plant species (OneKP dataset), capturing plant-specific RNA regulatory patterns for gene expression prediction and functional annotation.",
      "Encoder-only", "SNT"),
@@ -172,7 +173,7 @@ papers = [
      "Introduces LncRNA-BERT, a BERT model pre-trained on 536K long non-coding RNA sequences from GENCODE, RefSeq, and NONCODE for lncRNA classification, subcellular localization, and functional prediction.",
      "Encoder-only", "K-mer"),
 
-    ("G4mer", "G4mer: An Interpretable Transformer for G-quadruplex Prediction in the Transcriptome",
+    ("G4mer", "G4mer: An RNA language model for transcriptome-wide identification of G-quadruplexes and disease variants from population-scale genetic data",
      "https://www.nature.com/articles/s41467-025-65020-7", "2025.11", None, "https://huggingface.co/Biociphers/g4mer", "Specific RNA FM",
      "Develops G4mer, a 46M-parameter interpretable transformer model for predicting RNA G-quadruplex structures in the human transcriptome, providing attention-based interpretability for understanding G4-mediated regulation.",
      "Encoder-only", "SNT"),
@@ -198,8 +199,8 @@ papers = [
      "Develops MP-RNA, a multi-purpose RNA foundation model that integrates sequence and structure information through joint pre-training on the OneKP dataset, supporting diverse RNA tasks within a unified framework.",
      "Encoder-only", "SNT"),
 
-    ("RNA-TorsionBERT", "RNA-TorsionBERT: Predicting RNA Backbone Torsion Angles",
-     "https://doi.org/10.1093/bioinformatics/btaf004", "2025.01", None, "https://huggingface.co/sayby/rna_torsionBERT", "Structure-aware FM",
+    ("RNA-TorsionBERT", "RNA-TorsionBERT: leveraging language models for RNA 3D torsion angles prediction",
+     "https://doi.org/10.1093/bioinformatics/btaf004", "2024.12", None, "https://huggingface.co/sayby/rna_torsionBERT", "Structure-aware FM",
      "Proposes RNA-TorsionBERT, a BERT model pre-trained on PDB RNA 3D structures to predict backbone torsion angles directly from RNA sequences, enabling rapid assessment of RNA 3D structural properties.",
      "Encoder-only", "SNT"),
 
@@ -210,11 +211,11 @@ papers = [
 
     # === Generative FMs ===
     ("LoRNA SH", "A long-context RNA foundation model for predicting transcriptome architecture",
-     "https://doi.org/10.1101/2024.08.26.609813", "2024.08", None, None, "Generative FM",
+     "https://doi.org/10.1101/2024.08.26.609813", "2024.08", None, None, "General RNA FM",
      "Introduces LoRNA SH, a StripedHyena-based long-context RNA foundation model trained on full-length transcriptome architecture data to predict isoform abundance, isoform structure, and variant effects.",
      "Hybrid/SSM", "SNT"),
 
-    ("GenerRNA", "GenerRNA: A Generative Pre-trained Autoregressive RNA Language Model",
+    ("GenerRNA", "GenerRNA: A generative pre-trained language model for de novo RNA design",
      "https://doi.org/10.1371/journal.pone.0310814", "2024.10", None, "https://huggingface.co/pfnet/GenerRNA", "Generative FM",
      "Presents GenerRNA, a 350M-parameter autoregressive language model pre-trained on 16M RNAcentral sequences (~17.4B nucleotides) using BPE tokenization for de novo RNA sequence generation with controllable properties.",
      "Decoder-only", "BPE"),
@@ -224,7 +225,7 @@ papers = [
      "Develops GARNET, a generative model combining a decoder with a GNN, trained on 30M microbial genome sequences (17B nucleotides) from GTDB for designing novel functional RNA sequences with desired structural properties.",
      "Specialized", "SNT"),
 
-    ("RNAtranslator", "RNAtranslator: Protein-conditioned RNA Sequence Generation",
+    ("RNAtranslator", "RNAtranslator: Modeling protein-conditional RNA design as sequence-to-sequence natural language translation",
      "https://doi.org/10.1371/journal.pcbi.1013541", "2025.10", None, "https://huggingface.co/SobhanShukueian/rnatranslator", "Generative FM",
      "Proposes RNAtranslator, a 41.4M-parameter encoder-decoder model trained on 26M RNA-protein interaction pairs for generating RNA sequences conditioned on protein binding partners, enabling rational RNA aptamer design.",
      "Encoder-Decoder", "SNT"),
@@ -251,7 +252,7 @@ papers = [
      "Presents Evo, a 7B-parameter genomic foundation model using StripedHyena architecture, pre-trained on 2.7M prokaryotic and phage genomes at single-nucleotide resolution, enabling sequence modeling and design from molecular to genome scale.",
      "Hybrid/SSM", "SNT"),
 
-    ("LucaOne", "LucaOne: A Unified Foundation Model for DNA, RNA and Protein",
+    ("LucaOne", "Generalized biological foundation model with unified nucleic acid and protein language",
      "https://www.nature.com/articles/s42256-025-01044-4", "2025.06", "https://github.com/LucaOne/LucaOne", None, "DNA+RNA FM",
      "Introduces LucaOne, a 1.8B-parameter unified model pre-trained on 800B tokens from RefSeq, UniProt, and PDB, jointly modeling DNA, RNA, and protein sequences for cross-modal biological sequence understanding.",
      "Encoder-only", "SNT"),
@@ -266,9 +267,9 @@ papers = [
      "Develops LAMAR, a 150M-parameter language model pre-trained on genomes and transcriptomes from 225 mammalian species (15M sequences), capturing mammalian-specific and viral genomic patterns for RNA and DNA tasks.",
      "Encoder-only", "SNT"),
 
-    ("Orthrus", "Orthrus: Contrastive Learning of Transcript Isoforms and Orthologs via Mamba",
-     "https://www.biorxiv.org/content/10.1101/2024.10.10.617658v3", "2024.10", None, "https://huggingface.co/quietflamingo/orthrus-large-4-track", "DNA+RNA FM",
-     "Introduces Orthrus, a Mamba-based model using contrastive learning on 32M transcript sequences from GENCODE, RefSeq, and Zoonomia to learn representations of transcript isoforms and cross-species orthologs.",
+    ("Orthrus", "Orthrus: toward evolutionary and functional RNA foundation models",
+     "https://www.nature.com/articles/s41592-026-03064-3", "2026.04", None, "https://huggingface.co/quietflamingo/orthrus-large-4-track", "Specific RNA FM",
+     "Introduces Orthrus, a Mamba-based mature RNA foundation model using contrastive learning on transcript isoforms and cross-species orthologs to learn evolutionary and functional RNA representations.",
      "Hybrid/SSM", "SNT"),
 
     ("METAGENE-1", "METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring",
@@ -310,19 +311,19 @@ papers = [
 
 benchmarks = [
     ("BEACON", "BEACON: Benchmark for Comprehensive RNA Tasks and Language Models",
-     "https://arxiv.org/abs/2406.10391", "2024.06", "https://github.com/terry-r123/RNABenchmark", None,
+     "https://papers.nips.cc/paper_files/paper/2024/hash/a8ea503d91320fcfe12cba61c8a6d285-Abstract-Datasets_and_Benchmarks_Track.html", "2024.12", "https://github.com/terry-r123/RNABenchmark", None,
      "Introduces BEACON, a comprehensive benchmark covering 13 RNA tasks across structural, functional, and engineering categories for systematic evaluation of RNA language models."),
 
-    ("BEND", "BEND: Benchmarking DNA Language Models on Biologically Meaningful Tasks",
-     "https://arxiv.org/abs/2311.12570", "2024.01", "https://github.com/frederikkemarin/BEND", None,
+    ("BEND", "BEND: Benchmarking DNA Language Models on biologically meaningful tasks",
+     "https://proceedings.iclr.cc/paper_files/paper/2024/hash/429e7b31625a8b7839f9e4d6e2aa9bb9-Abstract-Conference.html", "2024.05", "https://github.com/frederikkemarin/BEND", None,
      "Proposes BEND, a benchmark of biologically meaningful tasks for evaluating DNA language models, covering gene regulation, chromatin accessibility, and conservation prediction."),
 
     ("GUE", "DNABERT-2: Efficient Foundation Model and Benchmark for Multi-Species Genome",
      "https://arxiv.org/abs/2306.15006", "2023.06", None, None,
      "Introduces DNABERT-2 along with GUE (Genome Understanding Evaluation), a benchmark of 36 datasets across 9 task categories for evaluating genome foundation models."),
 
-    ("RNA LLM Folding", "Comprehensive Benchmarking of LLMs for RNA Secondary Structure Prediction",
-     "https://arxiv.org/abs/2410.16212", "2024.10", "https://github.com/sinc-lab/rna-llm-folding", None,
+    ("RNA LLM Folding", "Comprehensive benchmarking of large language models for RNA secondary structure prediction",
+     "https://academic.oup.com/bib/article/26/2/bbaf137/8109668", "2025.03", "https://github.com/sinc-lab/rna-llm-folding", None,
      "Systematically benchmarks 6 RNA large language models on RNA secondary structure prediction across 4 datasets, revealing performance gaps and limitations of current LLM-based folding approaches."),
 
     ("RNAGym", "RNAGym: A Benchmark for RNA Fitness and Structure Prediction",
@@ -337,7 +338,7 @@ benchmarks = [
      "https://www.biorxiv.org/content/10.1101/2025.07.05.662870v1", "2025.07", "https://github.com/morrislab/mRNABench", None,
      "Proposes mRNABench with 10 datasets, 59 tasks, and 135K experiments for benchmarking nucleotide foundation models specifically on mature mRNA prediction tasks including stability and translation efficiency."),
 
-    ("NABench", "NABench: Nucleic Acid Fitness Prediction Benchmark",
+    ("NABench", "NABench: Large-Scale Benchmarks of Nucleotide Foundation Models for Fitness Prediction",
      "https://arxiv.org/html/2511.02888v1", "2025.11", None, None,
      "Introduces NABench, a nucleic acid fitness prediction benchmark with 2.6M+ mutated sequences and 160+ experimental conditions for evaluating foundation models on RNA and DNA fitness landscapes."),
 
@@ -368,7 +369,7 @@ surveys = [
      "Surveys genome language models for DNA and RNA, discussing architectural innovations, pre-training strategies, limitations in long-range modeling, and future directions for biological sequence understanding."),
 
     ("LLMs in Bioinformatics", "Large Language Models in Bioinformatics: A Survey",
-     "https://arxiv.org/abs/2503.04490", "2026.03", None, None,
+     "https://aclanthology.org/2025.findings-acl.184/", "2025.07", None, None,
      "Comprehensive survey of large language models applied to bioinformatics including DNA, RNA, and protein domains, covering model architectures, training paradigms, and applications across biological sequences."),
 ]
 
@@ -392,16 +393,29 @@ def is_preprint_url(url):
     return any(marker in url for marker in preprint_markers)
 
 
+status_overrides = {
+    "ChaRNABERT": "workshop",
+    "RFamLlama": "workshop",
+    "Helix-mRNA": "workshop",
+}
+
+
+def entry_status(name, url):
+    """Return a compact status label for non-formal or workshop items."""
+    if name in status_overrides:
+        return status_overrides[name]
+    if is_preprint_url(url):
+        return "preprint"
+    return None
+
+
 def format_entry(name, title, paper_url, date, github_url, hf_url, abstract):
     """Format a paper entry as a bullet list item with badges."""
-    display_title = title
-    if name and not title.lstrip().lower().startswith(name.strip().lower()):
-        display_title = f"{name}: {title}"
-    is_preprint = is_preprint_url(paper_url)
-    date_text = f"{date}, preprint" if is_preprint else date
-    line = f'- [{display_title}]({paper_url}) ({date_text})'
+    status = entry_status(name, paper_url)
+    date_text = f"{date}, {status}" if status else date
+    line = f'- **{name}** — [{title}]({paper_url}) ({date_text})'
     line += f' [![abs](https://img.shields.io/badge/abs-{date}-b31b1b.svg)]({paper_url})'
-    if is_preprint:
+    if status == "preprint":
         line += f' [![preprint](https://img.shields.io/badge/preprint-gray.svg)]({paper_url})'
     if github_url:
         line += f' [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)]({github_url})'
@@ -453,12 +467,13 @@ def render_view(groups, label_map):
 
 # View 1: By RNA Type (current categories)
 rna_type_labels = {
-    "ncRNA FM": "ncRNA Foundation Models",
-    "mRNA/CDS FM": "mRNA / CDS Foundation Models",
-    "UTR FM": "UTR Foundation Models",
+    "ncRNA FM": "Core ncRNA Sequence Foundation Models",
+    "mRNA/CDS FM": "mRNA / CDS Sequence Foundation Models",
+    "UTR FM": "UTR Sequence Foundation Models",
     "Specific RNA FM": "Specific RNA Type Models",
     "Structure-aware FM": "Structure-aware RNA Models",
     "Generative FM": "RNA Generative Models",
+    "Adapted/Derived RNA FM": "Adapted / Derived RNA Models",
     "General RNA FM": "General / Other RNA Models",
     "DNA+RNA FM": "DNA+RNA Related Foundation Models",
     "Expression FM": "Expression-based Related Models",
@@ -550,12 +565,13 @@ model_details = {
 }
 
 model_table_descriptions = {
-    "ncRNA FM": "Models primarily pre-trained on non-coding RNA sequences (from RNAcentral, Rfam, etc.).",
-    "mRNA/CDS FM": "Models pre-trained on messenger RNA coding sequences, codon-level representations.",
+    "ncRNA FM": "Core models primarily pre-trained on non-coding RNA sequences (from RNAcentral, Rfam, etc.).",
+    "mRNA/CDS FM": "Models pre-trained on messenger RNA coding sequences or full mRNA sequences.",
     "UTR FM": "Models focused on untranslated regions (5'UTR, 3'UTR).",
     "Specific RNA FM": "Models targeting specific RNA types or species (splicing, lncRNA, G-quadruplex, plant RNA, RNA families).",
     "Structure-aware FM": "Models incorporating RNA secondary or tertiary structure information during pre-training or inference.",
     "Generative FM": "Models focused on RNA sequence generation or generative transcript modeling.",
+    "Adapted/Derived RNA FM": "Models or modules that adapt existing foundation models, or combine pre-trained components, for RNA-specific analysis or design.",
     "General RNA FM": "General-purpose RNA models covering multiple RNA types.",
     "DNA+RNA FM": "Nucleotide or biological sequence foundation models with RNA-relevant pre-training data, transcriptomic data, or downstream applications. These are not pure RNA sequence FMs and are listed as related resources.",
     "Expression FM": "Models operating on RNA-seq **gene expression profiles** (not raw nucleotide sequences). Listed for completeness.",
@@ -599,9 +615,10 @@ def code_url(github_url, hf_url):
     return github_url or hf_url
 
 
-def date_status_cell(date, url):
-    if is_preprint_url(url):
-        return nobr(f"{date}<br><sub>preprint</sub>")
+def date_status_cell(date, url, name=None):
+    status = entry_status(name, url) if name else ("preprint" if is_preprint_url(url) else None)
+    if status:
+        return nobr(f"{date}<br><sub>{status}</sub>")
     return nobr(date)
 
 
@@ -624,7 +641,7 @@ def render_model_table(entries, label, description):
                     nobr(f"**{name}**"),
                     link_cell("Paper", url),
                     link_cell("Code", code_url(github_url, hf_url)),
-                    date_status_cell(date, url),
+                    date_status_cell(date, url, name),
                     nobr(details.get("arch", arch)),
                     nobr(details.get("params", "-")),
                     nobr(details.get("data", "-")),
@@ -657,7 +674,7 @@ def render_benchmark_table(entries):
                     nobr(f"**{name}**"),
                     link_cell("Paper", url),
                     link_cell("Code", code_url(github_url, hf_url)),
-                    date_status_cell(date, url),
+                    date_status_cell(date, url, name),
                     nobr(details.get("focus", "-")),
                     nobr(details.get("scale", "-")),
                 ]
@@ -685,7 +702,7 @@ def render_survey_table(entries):
                 [
                     nobr(f"**{title}**"),
                     link_cell("Paper", url),
-                    date_status_cell(date, url),
+                    date_status_cell(date, url, name),
                     nobr(details.get("scope", "-")),
                 ]
             )
@@ -758,9 +775,9 @@ lines = []
 lines.append("")
 lines.append("## Paper List")
 lines.append("")
-lines.append("A complete list of model papers and related resources included in this survey. Three classification views are provided below — click to expand/collapse each view.")
+lines.append("A complete list of model papers and related resources included in this survey. Each entry shows the model/resource name separately from the official paper title. Three classification views are provided below — click to expand/collapse each view.")
 lines.append("")
-lines.append("> **Date convention**: Dates shown in this section use the official publication month when a peer-reviewed version is available; otherwise they use the linked preprint month and are marked `preprint`.")
+lines.append("> **Date convention**: Dates shown in this section use the official publication or conference month when available; otherwise they use the linked preprint month and are marked `preprint`. Workshop-only entries are marked `workshop`.")
 lines.append("")
 
 # Model entries (collapsible wrapper with 3 views inside)
