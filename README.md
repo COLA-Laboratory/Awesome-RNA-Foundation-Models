@@ -5,9 +5,9 @@
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![Last Update](https://img.shields.io/badge/Last_Update-2026.04-blue.svg)]()
 
-A curated, comprehensive, and up-to-date collection of **RNA Sequence Foundation Models**, covering pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware models, generative models, DNA+RNA multi-modal models, and related benchmarks.
+A curated, comprehensive, and up-to-date collection of **RNA sequence foundation models and related resources**, covering pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware models, generative models, DNA+RNA multi-modal models, expression-profile models, and related benchmarks.
 
-> **Scope**: We focus on foundation models whose pre-training data includes **RNA sequences (A/U/C/G)**. Single-cell foundation models (e.g., scGPT, Geneformer) are **excluded**. DNA-only models that are commonly used as baselines in RNA benchmarks are listed separately for reference.
+> **Scope**: Core entries focus on models whose pre-training data includes **RNA sequences (A/U/C/G)**. DNA+RNA, nucleotide, task-specific, and expression-profile models are listed as related resources when they are useful for RNA foundation-model research. Single-cell foundation models (e.g., scGPT, Geneformer) are **excluded**.
 
 ---
 
@@ -19,9 +19,9 @@ A curated, comprehensive, and up-to-date collection of **RNA Sequence Foundation
 
 ## Table of Contents
 
-- [Taxonomy](#taxonomy) — Three classification views of 58 RNA Foundation Models
-- [Paper List](#paper-list) — Foundation Models (3 views), Benchmarks, Surveys
-- [Detailed Tables](#detailed-tables) — Detailed tables for all 58 FMs, 12 benchmarks, 3 surveys
+- [Taxonomy](#taxonomy) — Three classification views of 58 models and related resources
+- [Paper List](#paper-list) — Models and related resources (3 views), Benchmarks, Surveys
+- [Detailed Tables](#detailed-tables) — Detailed tables for all 58 model entries, 12 benchmarks, 3 surveys
 - [Contributing](#contributing)
 - [Abbreviations](#abbreviations)
 
@@ -29,7 +29,7 @@ A curated, comprehensive, and up-to-date collection of **RNA Sequence Foundation
 
 ## Taxonomy
 
-Three complementary classification views of the 58 RNA Foundation Models surveyed in this work: by RNA type, by model architecture, and by tokenization strategy.
+Three complementary classification views of the 58 model entries surveyed in this work: by RNA type, by model architecture, and by tokenization strategy.
 
 <p align="center">
   <img src="assets/RNAType.png" alt="Taxonomy by RNA Type" width="100%">
@@ -50,10 +50,10 @@ Three complementary classification views of the 58 RNA Foundation Models surveye
 
 ## Paper List
 
-A complete list of all papers included in this survey. Three classification views are provided below — click to expand/collapse each view.
+A complete list of model papers and related resources included in this survey. Three classification views are provided below — click to expand/collapse each view.
 
 <details open>
-<summary><b>Foundation Models</b></summary>
+<summary><b>Models & Related Resources</b></summary>
 
 <blockquote>
 
@@ -81,13 +81,9 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes RNA-km, a pre-trained encoder model that uses k-mer frequency features from 23M RNAcentral sequences to predict diverse RNA sequence properties including subcellular localization and modification sites.
 
-- [RNAErnie: An RNA language model with structure-enhanced representations](https://www.nature.com/articles/s42256-024-00836-4) (2024.05) [![abs](https://img.shields.io/badge/abs-2024.05-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00836-4) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LLM-EDA/RNAErnie)
+- [Multi-purpose RNA language modelling with motif-aware pretraining and type-guided fine-tuning](https://www.nature.com/articles/s42256-024-00836-4) (2024.05) [![abs](https://img.shields.io/badge/abs-2024.05-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00836-4) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LLM-EDA/RNAErnie)
 
-  > Presents RNAErnie, a pre-trained RNA language model that integrates RNA sequence, secondary structure, and base-pairing information through a multi-level masking strategy, achieving superior performance across RNA downstream tasks.
-
-- [ERNIE-RNA: An RNA Language Model with Structure-enhanced Representations](https://doi.org/10.1101/2024.03.17.585376) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1101/2024.03.17.585376) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/ernierna-ss)
-
-  > Develops ERNIE-RNA with structure-enhanced pre-training that jointly models RNA sequences and secondary structures, achieving improvements in RNA contact prediction, distance prediction, and secondary structure prediction.
+  > Presents RNAErnie, an RNA-focused pre-trained model that combines motif-aware pretraining with type-guided fine-tuning for diverse RNA sequence analysis tasks.
 
 - [DGRNA: a long-context RNA foundation model with bidirectional Mamba2](https://doi.org/10.1101/2024.10.31.621427) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1101/2024.10.31.621427)
 
@@ -97,7 +93,7 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes ChaRNABERT with Gradient-based Subword Tokenization (GBST) that learns data-driven tokenization during pre-training, outperforming fixed tokenization approaches on RNA structure and function prediction tasks.
 
-- [AIDO.RNA: A Scalable RNA Foundation Model](https://doi.org/10.1101/2024.11.28.625345) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://doi.org/10.1101/2024.11.28.625345) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/genbio-ai/AIDO.RNA-1.6B)
+- [A Large-Scale Foundation Model for RNA Function and Structure Prediction](https://doi.org/10.1101/2024.11.28.625345) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://doi.org/10.1101/2024.11.28.625345) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/genbio-ai/AIDO.RNA-1.6B)
 
   > Presents AIDO.RNA, a scalable RNA foundation model with up to 1.6B parameters pre-trained on 42M non-coding RNA sequences (~30B nucleotides), demonstrating strong generalization across diverse RNA tasks.
 
@@ -105,21 +101,25 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes RNAGenesis, a 1B-parameter generative RNA foundation model combining encoder representations with diffusion-based generation, enabling both RNA understanding and de novo RNA sequence design.
 
-- [HydraRNA: An Efficient RNA Foundation Model via Hybrid SSM and Attention](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) (2025.03) [![abs](https://img.shields.io/badge/abs-2025.03-b31b1b.svg)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/GuipengLi/HydraRNA)
-
-  > Introduces HydraRNA, an efficient RNA foundation model using a hybrid architecture combining state space models (SSM) and attention mechanisms, achieving competitive performance with significantly reduced computational cost.
-
-- [RiNALMo: General-Purpose RNA Language Models Can Generalize Well on Structure Prediction Tasks](https://arxiv.org/abs/2403.00043) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://arxiv.org/abs/2403.00043) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
+- [RiNALMo: General-Purpose RNA Language Models Can Generalize Well on Structure Prediction Tasks](https://www.nature.com/articles/s41467-025-60872-5) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://www.nature.com/articles/s41467-025-60872-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
 
   > Presents RiNALMo, a general-purpose RNA language model (up to 650M parameters) pre-trained on 36M ncRNA sequences, demonstrating that large-scale RNA LMs can generalize effectively to secondary and tertiary structure prediction.
 
-- [BiRNA-BERT: An Efficient RNA Language Model with Adaptive Dual Tokenization](https://doi.org/10.1101/2024.07.02.601703) (2025.08) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://doi.org/10.1101/2024.07.02.601703) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/buetnlpbio/BiRNA-BERT)
-
-  > Introduces BiRNA-BERT with a dual tokenization strategy combining single-nucleotide and BPE tokenization, enabling efficient processing of long RNA sequences while maintaining fine-grained nucleotide-level representations.
-
-- [DLRNA-BERTa: A Transformer for RNA-Drug Binding Affinity Prediction](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/IlPakoZ/RNA-BERTa9700)
+- [DLRNA-BERTa: A transformer approach for RNA-drug binding affinity prediction](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/IlPakoZ/RNA-BERTa9700)
 
   > Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations, applied to RNA-drug binding affinity prediction with downstream fine-tuning.
+
+- [ERNIE-RNA: an RNA language model with structure-enhanced representations](https://www.nature.com/articles/s41467-025-64972-0) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-64972-0) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/ernierna-ss)
+
+  > Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs, improving structure and function prediction tasks.
+
+- [BiRNA-BERT allows efficient RNA language modeling with adaptive tokenization](https://www.nature.com/articles/s42003-025-08982-0) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s42003-025-08982-0) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/buetnlpbio/BiRNA-BERT)
+
+  > Introduces BiRNA-BERT, a 117M-parameter encoder trained on 36M ncRNA sequences with adaptive dual tokenization combining nucleotide-level and BPE representations.
+
+- [HydraRNA: a hybrid architecture based full-length RNA language model](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/GuipengLi/HydraRNA)
+
+  > Introduces HydraRNA, a full-length RNA language model using a hybrid bidirectional state space and attention architecture for both coding and non-coding RNA tasks.
 
 - [RNAElectra: An ELECTRA-style RNA Foundation Model](https://www.biorxiv.org/content/10.64898/2026.03.15.711950v1.full) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.15.711950v1.full)
 
@@ -150,9 +150,9 @@ A complete list of all papers included in this survey. Three classification view
 
   > Presents Helix-mRNA, a compact hybrid model combining Mamba2 state space layers with attention mechanisms for efficient mRNA sequence modeling, targeting mRNA stability and translation efficiency prediction.
 
-- [GEMORNA: Generative mRNA Design via Codon and UTR Optimization](https://www.science.org/doi/10.1126/science.adr8470) (2025.05) [![abs](https://img.shields.io/badge/abs-2025.05-b31b1b.svg)](https://www.science.org/doi/10.1126/science.adr8470) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/RainaBio/GEMORNA)
+- [Deep generative models design mRNA sequences with enhanced translational capacity and stability](https://www.science.org/doi/10.1126/science.adr8470) (2025.08) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://www.science.org/doi/10.1126/science.adr8470) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/RainaBio/GEMORNA)
 
-  > Presents GEMORNA, a generative model for end-to-end mRNA design that jointly optimizes coding sequences and UTR regions, enabling the design of mRNAs with enhanced stability, translation efficiency, and immunogenicity profiles.
+  > Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.
 
 - [mRNABERT: A Pre-trained Language Model for mRNA Sequences](https://www.nature.com/articles/s41467-025-65340-8) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-65340-8) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/Taykhoom/mRNABERT-no-flashattention)
 
@@ -282,7 +282,7 @@ A complete list of all papers included in this survey. Three classification view
 </details>
 
 <details open>
-<summary><b>DNA+RNA Foundation Models (10)</b></summary>
+<summary><b>DNA+RNA Related Foundation Models (10)</b></summary>
 
 - [Sequence Modeling and Design from Molecular to Genome Scale with Evo](https://www.science.org/doi/10.1126/science.ado9336) (2024.02) [![abs](https://img.shields.io/badge/abs-2024.02-b31b1b.svg)](https://www.science.org/doi/10.1126/science.ado9336) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/evo-design/evo)
 
@@ -327,7 +327,7 @@ A complete list of all papers included in this survey. Three classification view
 </details>
 
 <details open>
-<summary><b>Expression-based Foundation Models (2)</b></summary>
+<summary><b>Expression-based Related Models (2)</b></summary>
 
 - [BulkRNABert: A Pre-trained Model for Bulk RNA-seq Expression Data](https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2) (2024.06) [![abs](https://img.shields.io/badge/abs-2024.06-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/InstaDeepAI/BulkRNABert)
 
@@ -387,9 +387,9 @@ A complete list of all papers included in this survey. Three classification view
 
   > Introduces UTR-LM, a language model specifically pre-trained on 5' UTR sequences from Ensembl, predicting mean ribosome loading (translation efficiency) and expression level from UTR sequences alone.
 
-- [RNAErnie: An RNA language model with structure-enhanced representations](https://www.nature.com/articles/s42256-024-00836-4) (2024.05) [![abs](https://img.shields.io/badge/abs-2024.05-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00836-4) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LLM-EDA/RNAErnie)
+- [Multi-purpose RNA language modelling with motif-aware pretraining and type-guided fine-tuning](https://www.nature.com/articles/s42256-024-00836-4) (2024.05) [![abs](https://img.shields.io/badge/abs-2024.05-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00836-4) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LLM-EDA/RNAErnie)
 
-  > Presents RNAErnie, a pre-trained RNA language model that integrates RNA sequence, secondary structure, and base-pairing information through a multi-level masking strategy, achieving superior performance across RNA downstream tasks.
+  > Presents RNAErnie, an RNA-focused pre-trained model that combines motif-aware pretraining with type-guided fine-tuning for diverse RNA sequence analysis tasks.
 
 - [LucaOne: A Unified Foundation Model for DNA, RNA and Protein](https://www.nature.com/articles/s42256-025-01044-4) (2024.05) [![abs](https://img.shields.io/badge/abs-2024.05-b31b1b.svg)](https://www.nature.com/articles/s42256-025-01044-4) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/LucaOne/LucaOne)
 
@@ -403,10 +403,6 @@ A complete list of all papers included in this survey. Three classification view
 
   > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
 
-- [ERNIE-RNA: An RNA Language Model with Structure-enhanced Representations](https://doi.org/10.1101/2024.03.17.585376) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1101/2024.03.17.585376) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/ernierna-ss)
-
-  > Develops ERNIE-RNA with structure-enhanced pre-training that jointly models RNA sequences and secondary structures, achieving improvements in RNA contact prediction, distance prediction, and secondary structure prediction.
-
 - [LAMAR: A Language Model for Mammalian and Viral Genomes and Transcriptomes](https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/zhw-e8/LAMAR)
 
   > Develops LAMAR, a 150M-parameter language model pre-trained on genomes and transcriptomes from 225 mammalian species (15M sequences), capturing mammalian-specific and viral genomic patterns for RNA and DNA tasks.
@@ -415,7 +411,7 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes ChaRNABERT with Gradient-based Subword Tokenization (GBST) that learns data-driven tokenization during pre-training, outperforming fixed tokenization approaches on RNA structure and function prediction tasks.
 
-- [AIDO.RNA: A Scalable RNA Foundation Model](https://doi.org/10.1101/2024.11.28.625345) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://doi.org/10.1101/2024.11.28.625345) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/genbio-ai/AIDO.RNA-1.6B)
+- [A Large-Scale Foundation Model for RNA Function and Structure Prediction](https://doi.org/10.1101/2024.11.28.625345) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://doi.org/10.1101/2024.11.28.625345) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/genbio-ai/AIDO.RNA-1.6B)
 
   > Presents AIDO.RNA, a scalable RNA foundation model with up to 1.6B parameters pre-trained on 42M non-coding RNA sequences (~30B nucleotides), demonstrating strong generalization across diverse RNA tasks.
 
@@ -435,7 +431,7 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes RNA-TorsionBERT, a BERT model pre-trained on PDB RNA 3D structures to predict backbone torsion angles directly from RNA sequences, enabling rapid assessment of RNA 3D structural properties.
 
-- [RiNALMo: General-Purpose RNA Language Models Can Generalize Well on Structure Prediction Tasks](https://arxiv.org/abs/2403.00043) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://arxiv.org/abs/2403.00043) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
+- [RiNALMo: General-Purpose RNA Language Models Can Generalize Well on Structure Prediction Tasks](https://www.nature.com/articles/s41467-025-60872-5) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://www.nature.com/articles/s41467-025-60872-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
 
   > Presents RiNALMo, a general-purpose RNA language model (up to 650M parameters) pre-trained on 36M ncRNA sequences, demonstrating that large-scale RNA LMs can generalize effectively to secondary and tertiary structure prediction.
 
@@ -443,17 +439,21 @@ A complete list of all papers included in this survey. Three classification view
 
   > Introduces RNALens, a 469M-parameter multi-task RNA foundation model pre-trained on multispecies genomic and 5'UTR sequences using BPE tokenization, supporting diverse RNA analysis tasks within a unified framework.
 
-- [BiRNA-BERT: An Efficient RNA Language Model with Adaptive Dual Tokenization](https://doi.org/10.1101/2024.07.02.601703) (2025.08) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://doi.org/10.1101/2024.07.02.601703) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/buetnlpbio/BiRNA-BERT)
-
-  > Introduces BiRNA-BERT with a dual tokenization strategy combining single-nucleotide and BPE tokenization, enabling efficient processing of long RNA sequences while maintaining fine-grained nucleotide-level representations.
-
 - [StructRFM: Structure-guided RNA Foundation Model](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) (2025.08) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/heqin-zhu/structRFM)
 
   > Presents StructRFM, a structure-guided RNA foundation model pre-trained on 21M sequence-structure pairs, integrating predicted secondary structure information during pre-training for enhanced RNA representation learning.
 
-- [DLRNA-BERTa: A Transformer for RNA-Drug Binding Affinity Prediction](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/IlPakoZ/RNA-BERTa9700)
+- [DLRNA-BERTa: A transformer approach for RNA-drug binding affinity prediction](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/IlPakoZ/RNA-BERTa9700)
 
   > Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations, applied to RNA-drug binding affinity prediction with downstream fine-tuning.
+
+- [ERNIE-RNA: an RNA language model with structure-enhanced representations](https://www.nature.com/articles/s41467-025-64972-0) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-64972-0) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/ernierna-ss)
+
+  > Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs, improving structure and function prediction tasks.
+
+- [BiRNA-BERT allows efficient RNA language modeling with adaptive tokenization](https://www.nature.com/articles/s42003-025-08982-0) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s42003-025-08982-0) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/buetnlpbio/BiRNA-BERT)
+
+  > Introduces BiRNA-BERT, a 117M-parameter encoder trained on 36M ncRNA sequences with adaptive dual tokenization combining nucleotide-level and BPE representations.
 
 - [mRNABERT: A Pre-trained Language Model for mRNA Sequences](https://www.nature.com/articles/s41467-025-65340-8) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-65340-8) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/Taykhoom/mRNABERT-no-flashattention)
 
@@ -515,7 +515,7 @@ A complete list of all papers included in this survey. Three classification view
 </details>
 
 <details open>
-<summary><b>Encoder-Decoder (Seq2Seq) (4)</b></summary>
+<summary><b>Encoder-Decoder (Seq2Seq) (3)</b></summary>
 
 - [ATOM-1: Augmented Transformer with Structure-aware Chemical Mapping](https://doi.org/10.1101/2023.12.13.571579) (2023.12) [![abs](https://img.shields.io/badge/abs-2023.12-b31b1b.svg)](https://doi.org/10.1101/2023.12.13.571579)
 
@@ -528,10 +528,6 @@ A complete list of all papers included in this survey. Three classification view
 - [RNAtranslator: Protein-conditioned RNA Sequence Generation](https://doi.org/10.1371/journal.pcbi.1013541) (2025.03) [![abs](https://img.shields.io/badge/abs-2025.03-b31b1b.svg)](https://doi.org/10.1371/journal.pcbi.1013541) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/SobhanShukueian/rnatranslator)
 
   > Proposes RNAtranslator, a 41.4M-parameter encoder-decoder model trained on 26M RNA-protein interaction pairs for generating RNA sequences conditioned on protein binding partners, enabling rational RNA aptamer design.
-
-- [GEMORNA: Generative mRNA Design via Codon and UTR Optimization](https://www.science.org/doi/10.1126/science.adr8470) (2025.05) [![abs](https://img.shields.io/badge/abs-2025.05-b31b1b.svg)](https://www.science.org/doi/10.1126/science.adr8470) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/RainaBio/GEMORNA)
-
-  > Presents GEMORNA, a generative model for end-to-end mRNA design that jointly optimizes coding sequences and UTR regions, enabling the design of mRNAs with enhanced stability, translation efficiency, and immunogenicity profiles.
 
 </details>
 
@@ -558,9 +554,9 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes Life-Code, a unified foundation model that jointly models DNA, RNA, and protein following the central dogma of molecular biology, using codon-level tokenization to capture cross-modal biological relationships.
 
-- [HydraRNA: An Efficient RNA Foundation Model via Hybrid SSM and Attention](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) (2025.03) [![abs](https://img.shields.io/badge/abs-2025.03-b31b1b.svg)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/GuipengLi/HydraRNA)
+- [HydraRNA: a hybrid architecture based full-length RNA language model](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/GuipengLi/HydraRNA)
 
-  > Introduces HydraRNA, an efficient RNA foundation model using a hybrid architecture combining state space models (SSM) and attention mechanisms, achieving competitive performance with significantly reduced computational cost.
+  > Introduces HydraRNA, a full-length RNA language model using a hybrid bidirectional state space and attention architecture for both coding and non-coding RNA tasks.
 
 - [Genome Modeling and Design Across All Domains of Life with Evo 2](https://www.nature.com/articles/s41586-026-10176-5) (2026.02) [![abs](https://img.shields.io/badge/abs-2026.02-b31b1b.svg)](https://www.nature.com/articles/s41586-026-10176-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ArcInstitute/evo2)
 
@@ -569,7 +565,7 @@ A complete list of all papers included in this survey. Three classification view
 </details>
 
 <details open>
-<summary><b>Specialized (Diffusion, MoE, GNN, Multimodal) (8)</b></summary>
+<summary><b>Specialized (Diffusion, MoE, GNN, Multimodal) (9)</b></summary>
 
 - [RibonanzaNet: Deep Learning for RNA Chemical Mapping Prediction](https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1) (2024.02) [![abs](https://img.shields.io/badge/abs-2024.02-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/Shujun-He/RibonanzaNet)
 
@@ -595,6 +591,10 @@ A complete list of all papers included in this survey. Three classification view
 
   > Introduces MOJO, a 52.3M-parameter multimodal encoder pre-trained on TCGA RNA-seq expression and DNA methylation data, enabling joint multi-omics analysis for cancer subtyping and biomarker discovery.
 
+- [Deep generative models design mRNA sequences with enhanced translational capacity and stability](https://www.science.org/doi/10.1126/science.adr8470) (2025.08) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://www.science.org/doi/10.1126/science.adr8470) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/RainaBio/GEMORNA)
+
+  > Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.
+
 - [CodonMoE: Adapting DNA Language Models for RNA via Mixture-of-Experts](https://openreview.net/forum?id=TOUrnb1EaG) (2026.01) [![abs](https://img.shields.io/badge/abs-2026.01-b31b1b.svg)](https://openreview.net/forum?id=TOUrnb1EaG)
 
   > Proposes CodonMoE, a parameter-efficient approach to adapt pre-trained DNA foundation models for RNA tasks using Mixture-of-Experts adapters with codon-aware routing for improved mRNA property prediction.
@@ -615,7 +615,7 @@ A complete list of all papers included in this survey. Three classification view
 <blockquote>
 
 <details open>
-<summary><b>Single Nucleotide Token (SNT) (31)</b></summary>
+<summary><b>Single Nucleotide Token (SNT) (32)</b></summary>
 
 - [Informative RNA-base embedding for RNA structural alignment and clustering by a representation learning framework](https://doi.org/10.1093/nargab/lqac012) (2022.02) [![abs](https://img.shields.io/badge/abs-2022.02-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -653,9 +653,9 @@ A complete list of all papers included in this survey. Three classification view
 
   > Introduces UTR-LM, a language model specifically pre-trained on 5' UTR sequences from Ensembl, predicting mean ribosome loading (translation efficiency) and expression level from UTR sequences alone.
 
-- [RNAErnie: An RNA language model with structure-enhanced representations](https://www.nature.com/articles/s42256-024-00836-4) (2024.05) [![abs](https://img.shields.io/badge/abs-2024.05-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00836-4) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LLM-EDA/RNAErnie)
+- [Multi-purpose RNA language modelling with motif-aware pretraining and type-guided fine-tuning](https://www.nature.com/articles/s42256-024-00836-4) (2024.05) [![abs](https://img.shields.io/badge/abs-2024.05-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00836-4) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LLM-EDA/RNAErnie)
 
-  > Presents RNAErnie, a pre-trained RNA language model that integrates RNA sequence, secondary structure, and base-pairing information through a multi-level masking strategy, achieving superior performance across RNA downstream tasks.
+  > Presents RNAErnie, an RNA-focused pre-trained model that combines motif-aware pretraining with type-guided fine-tuning for diverse RNA sequence analysis tasks.
 
 - [LucaOne: A Unified Foundation Model for DNA, RNA and Protein](https://www.nature.com/articles/s42256-025-01044-4) (2024.05) [![abs](https://img.shields.io/badge/abs-2024.05-b31b1b.svg)](https://www.nature.com/articles/s42256-025-01044-4) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/LucaOne/LucaOne)
 
@@ -673,10 +673,6 @@ A complete list of all papers included in this survey. Three classification view
 
   > Introduces LoRNA, a foundation model designed for long-read RNA sequencing data, pre-trained on ~100M IsoSeq long reads (7B tokens) with specialized nucleotide and region tokenization for transcript-level analysis.
 
-- [ERNIE-RNA: An RNA Language Model with Structure-enhanced Representations](https://doi.org/10.1101/2024.03.17.585376) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1101/2024.03.17.585376) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/ernierna-ss)
-
-  > Develops ERNIE-RNA with structure-enhanced pre-training that jointly models RNA sequences and secondary structures, achieving improvements in RNA contact prediction, distance prediction, and secondary structure prediction.
-
 - [DGRNA: a long-context RNA foundation model with bidirectional Mamba2](https://doi.org/10.1101/2024.10.31.621427) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1101/2024.10.31.621427)
 
   > Introduces DGRNA, a long-context RNA foundation model based on bidirectional Mamba2 architecture, enabling efficient processing of long RNA sequences up to 100K nucleotides with linear computational complexity.
@@ -685,11 +681,15 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes BSM (110M/270M parameters), a biological sequence model with mixed-modal pre-training on DNA, RNA, and protein sequences from RefSeq and web-collected biological data for unified sequence representation.
 
+- [LAMAR: A Language Model for Mammalian and Viral Genomes and Transcriptomes](https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/zhw-e8/LAMAR)
+
+  > Develops LAMAR, a 150M-parameter language model pre-trained on genomes and transcriptomes from 225 mammalian species (15M sequences), capturing mammalian-specific and viral genomic patterns for RNA and DNA tasks.
+
 - [Orthrus: Contrastive Learning of Transcript Isoforms and Orthologs via Mamba](https://www.biorxiv.org/content/10.1101/2024.10.10.617658v3) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.10.10.617658v3) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/quietflamingo/orthrus-large-4-track)
 
   > Introduces Orthrus, a Mamba-based model using contrastive learning on 32M transcript sequences from GENCODE, RefSeq, and Zoonomia to learn representations of transcript isoforms and cross-species orthologs.
 
-- [AIDO.RNA: A Scalable RNA Foundation Model](https://doi.org/10.1101/2024.11.28.625345) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://doi.org/10.1101/2024.11.28.625345) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/genbio-ai/AIDO.RNA-1.6B)
+- [A Large-Scale Foundation Model for RNA Function and Structure Prediction](https://doi.org/10.1101/2024.11.28.625345) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://doi.org/10.1101/2024.11.28.625345) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/genbio-ai/AIDO.RNA-1.6B)
 
   > Presents AIDO.RNA, a scalable RNA foundation model with up to 1.6B parameters pre-trained on 42M non-coding RNA sequences (~30B nucleotides), demonstrating strong generalization across diverse RNA tasks.
 
@@ -713,21 +713,25 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes RNA-TorsionBERT, a BERT model pre-trained on PDB RNA 3D structures to predict backbone torsion angles directly from RNA sequences, enabling rapid assessment of RNA 3D structural properties.
 
-- [HydraRNA: An Efficient RNA Foundation Model via Hybrid SSM and Attention](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) (2025.03) [![abs](https://img.shields.io/badge/abs-2025.03-b31b1b.svg)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/GuipengLi/HydraRNA)
-
-  > Introduces HydraRNA, an efficient RNA foundation model using a hybrid architecture combining state space models (SSM) and attention mechanisms, achieving competitive performance with significantly reduced computational cost.
-
 - [RNAtranslator: Protein-conditioned RNA Sequence Generation](https://doi.org/10.1371/journal.pcbi.1013541) (2025.03) [![abs](https://img.shields.io/badge/abs-2025.03-b31b1b.svg)](https://doi.org/10.1371/journal.pcbi.1013541) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/SobhanShukueian/rnatranslator)
 
   > Proposes RNAtranslator, a 41.4M-parameter encoder-decoder model trained on 26M RNA-protein interaction pairs for generating RNA sequences conditioned on protein binding partners, enabling rational RNA aptamer design.
 
-- [RiNALMo: General-Purpose RNA Language Models Can Generalize Well on Structure Prediction Tasks](https://arxiv.org/abs/2403.00043) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://arxiv.org/abs/2403.00043) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
+- [RiNALMo: General-Purpose RNA Language Models Can Generalize Well on Structure Prediction Tasks](https://www.nature.com/articles/s41467-025-60872-5) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://www.nature.com/articles/s41467-025-60872-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
 
   > Presents RiNALMo, a general-purpose RNA language model (up to 650M parameters) pre-trained on 36M ncRNA sequences, demonstrating that large-scale RNA LMs can generalize effectively to secondary and tertiary structure prediction.
 
 - [StructRFM: Structure-guided RNA Foundation Model](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) (2025.08) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/heqin-zhu/structRFM)
 
   > Presents StructRFM, a structure-guided RNA foundation model pre-trained on 21M sequence-structure pairs, integrating predicted secondary structure information during pre-training for enhanced RNA representation learning.
+
+- [ERNIE-RNA: an RNA language model with structure-enhanced representations](https://www.nature.com/articles/s41467-025-64972-0) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-64972-0) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/ernierna-ss)
+
+  > Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs, improving structure and function prediction tasks.
+
+- [HydraRNA: a hybrid architecture based full-length RNA language model](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/GuipengLi/HydraRNA)
+
+  > Introduces HydraRNA, a full-length RNA language model using a hybrid bidirectional state space and attention architecture for both coding and non-coding RNA tasks.
 
 - [G4mer: An Interpretable Transformer for G-quadruplex Prediction in the Transcriptome](https://www.nature.com/articles/s41467-025-65020-7) (2025.12) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://www.nature.com/articles/s41467-025-65020-7) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/Biociphers/g4mer)
 
@@ -770,9 +774,9 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes Life-Code, a unified foundation model that jointly models DNA, RNA, and protein following the central dogma of molecular biology, using codon-level tokenization to capture cross-modal biological relationships.
 
-- [GEMORNA: Generative mRNA Design via Codon and UTR Optimization](https://www.science.org/doi/10.1126/science.adr8470) (2025.05) [![abs](https://img.shields.io/badge/abs-2025.05-b31b1b.svg)](https://www.science.org/doi/10.1126/science.adr8470) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/RainaBio/GEMORNA)
+- [Deep generative models design mRNA sequences with enhanced translational capacity and stability](https://www.science.org/doi/10.1126/science.adr8470) (2025.08) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://www.science.org/doi/10.1126/science.adr8470) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/RainaBio/GEMORNA)
 
-  > Presents GEMORNA, a generative model for end-to-end mRNA design that jointly optimizes coding sequences and UTR regions, enabling the design of mRNAs with enhanced stability, translation efficiency, and immunogenicity profiles.
+  > Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.
 
 - [mRNA-GPT: An Autoregressive mRNA Foundation Model across Three Domains of Life](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1) (2025.12) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ZHymLumine/mRNA-GPT/)
 
@@ -810,15 +814,11 @@ A complete list of all papers included in this survey. Three classification view
 </details>
 
 <details open>
-<summary><b>Byte Pair Encoding (BPE) (8)</b></summary>
+<summary><b>Byte Pair Encoding (BPE) (7)</b></summary>
 
 - [GenerRNA: A Generative Pre-trained Autoregressive RNA Language Model](https://doi.org/10.1371/journal.pone.0310814) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1371/journal.pone.0310814) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/pfnet/GenerRNA)
 
   > Presents GenerRNA, a 350M-parameter autoregressive language model pre-trained on 16M RNAcentral sequences (~17.4B nucleotides) using BPE tokenization for de novo RNA sequence generation with controllable properties.
-
-- [LAMAR: A Language Model for Mammalian and Viral Genomes and Transcriptomes](https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/zhw-e8/LAMAR)
-
-  > Develops LAMAR, a 150M-parameter language model pre-trained on genomes and transcriptomes from 225 mammalian species (15M sequences), capturing mammalian-specific and viral genomic patterns for RNA and DNA tasks.
 
 - [METAGENE-1: A 7B Metagenomic Foundation Model for DNA and RNA](https://arxiv.org/abs/2501.02045) (2025.01) [![abs](https://img.shields.io/badge/abs-2025.01-b31b1b.svg)](https://arxiv.org/abs/2501.02045) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/metagene-ai/METAGENE-1)
 
@@ -828,7 +828,7 @@ A complete list of all papers included in this survey. Three classification view
 
   > Introduces RNALens, a 469M-parameter multi-task RNA foundation model pre-trained on multispecies genomic and 5'UTR sequences using BPE tokenization, supporting diverse RNA analysis tasks within a unified framework.
 
-- [DLRNA-BERTa: A Transformer for RNA-Drug Binding Affinity Prediction](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/IlPakoZ/RNA-BERTa9700)
+- [DLRNA-BERTa: A transformer approach for RNA-drug binding affinity prediction](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) (2025.09) [![abs](https://img.shields.io/badge/abs-2025.09-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/IlPakoZ/RNA-BERTa9700)
 
   > Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations, applied to RNA-drug binding affinity prediction with downstream fine-tuning.
 
@@ -853,9 +853,9 @@ A complete list of all papers included in this survey. Three classification view
 
   > Proposes ChaRNABERT with Gradient-based Subword Tokenization (GBST) that learns data-driven tokenization during pre-training, outperforming fixed tokenization approaches on RNA structure and function prediction tasks.
 
-- [BiRNA-BERT: An Efficient RNA Language Model with Adaptive Dual Tokenization](https://doi.org/10.1101/2024.07.02.601703) (2025.08) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://doi.org/10.1101/2024.07.02.601703) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/buetnlpbio/BiRNA-BERT)
+- [BiRNA-BERT allows efficient RNA language modeling with adaptive tokenization](https://www.nature.com/articles/s42003-025-08982-0) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s42003-025-08982-0) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/buetnlpbio/BiRNA-BERT)
 
-  > Introduces BiRNA-BERT with a dual tokenization strategy combining single-nucleotide and BPE tokenization, enabling efficient processing of long RNA sequences while maintaining fine-grained nucleotide-level representations.
+  > Introduces BiRNA-BERT, a 117M-parameter encoder trained on 36M ncRNA sequences with adaptive dual tokenization combining nucleotide-level and BPE representations.
 
 - [mRNABERT: A Pre-trained Language Model for mRNA Sequences](https://www.nature.com/articles/s41467-025-65340-8) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-65340-8) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/Taykhoom/mRNABERT-no-flashattention)
 
@@ -967,7 +967,7 @@ A complete list of all papers included in this survey. Three classification view
 ## Detailed Tables
 
 <details open>
-<summary><b>RNA Sequence Foundation Models</b></summary>
+<summary><b>RNA Sequence Models</b></summary>
 
 <blockquote>
 
@@ -983,15 +983,15 @@ Models primarily pre-trained on non-coding RNA sequences (from RNAcentral, Rfam,
 | <nobr>**RNAMSM**</nobr> | <nobr>[Paper](https://doi.org/10.1093/nar/gkad1031)</nobr> | <nobr>[Code](https://github.com/yikunpku/RNA-MSM)</nobr> | <nobr>2023.12</nobr> | <nobr>Encoder-only</nobr> | <nobr>95M</nobr> | <nobr>Rfam families + MSA homologs</nobr> | <nobr>SNT</nobr> |
 | <nobr>**RNA-km**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.01.27.577533)</nobr> | <nobr>[Code](https://github.com/gongtiansu/RNA-km)</nobr> | <nobr>2024.01</nobr> | <nobr>Encoder-only</nobr> | <nobr>152M</nobr> | <nobr>RNAcentral (23M ncRNA seqs)</nobr> | <nobr>K-mer</nobr> |
 | <nobr>**RNAErnie**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00836-4)</nobr> | <nobr>[Code](https://huggingface.co/LLM-EDA/RNAErnie)</nobr> | <nobr>2024.05</nobr> | <nobr>Encoder-only</nobr> | <nobr>105M</nobr> | <nobr>RNAcentral (23M seqs)</nobr> | <nobr>Nucleotide + motif</nobr> |
-| <nobr>**ERNIE-RNA**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.03.17.585376)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/ernierna-ss)</nobr> | <nobr>2024.10</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>RNAcentral (20.4M seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**ERNIE-RNA**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-64972-0)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/ernierna-ss)</nobr> | <nobr>2025.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>RNAcentral (20.4M seqs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**DGRNA**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.10.31.621427)</nobr> | - | <nobr>2024.10</nobr> | <nobr>Hybrid (SSM)</nobr> | <nobr>100M</nobr> | <nobr>MARS (100M RNA seqs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**ChaRNABERT**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2411.11808)</nobr> | - | <nobr>2024.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>8M-650M</nobr> | <nobr>RNAcentral + NCBI (62M seqs)</nobr> | <nobr>Learnable (GBST)</nobr> |
 | <nobr>**AIDO.RNA**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.11.28.625345)</nobr> | <nobr>[Code](https://huggingface.co/genbio-ai/AIDO.RNA-1.6B)</nobr> | <nobr>2024.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>650M / 1.6B</nobr> | <nobr>RNAcentral (42M seqs, ~30B nt)</nobr> | <nobr>SNT</nobr> |
-| <nobr>**BiRNA-BERT**</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.07.02.601703)</nobr> | <nobr>[Code](https://github.com/buetnlpbio/BiRNA-BERT)</nobr> | <nobr>2025.08</nobr> | <nobr>Encoder-only</nobr> | <nobr>117M</nobr> | <nobr>RNAcentral (36M seqs, ~26.4B nt)</nobr> | <nobr>Dual (NUC + BPE)</nobr> |
-| <nobr>**RNA-BERTa**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1)</nobr> | <nobr>[Code](https://huggingface.co/IlPakoZ/RNA-BERTa9700)</nobr> | <nobr>2025.09</nobr> | <nobr>Encoder-only</nobr> | <nobr>55.9M</nobr> | <nobr>Public RNA collections (9.76M seqs)</nobr> | <nobr>SNT</nobr> |
-| <nobr>**RiNALMo**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2403.00043)</nobr> | <nobr>[Code](https://github.com/lbcb-sci/RiNALMo)</nobr> | <nobr>2025.07</nobr> | <nobr>Encoder-only</nobr> | <nobr>135M-650M</nobr> | <nobr>RNAcentral (36M ncRNA seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**BiRNA-BERT**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42003-025-08982-0)</nobr> | <nobr>[Code](https://github.com/buetnlpbio/BiRNA-BERT)</nobr> | <nobr>2025.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>117M</nobr> | <nobr>RNAcentral (36M seqs, ~26.4B nt)</nobr> | <nobr>Dual (NUC + BPE)</nobr> |
+| <nobr>**RNA-BERTa**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1)</nobr> | <nobr>[Code](https://huggingface.co/IlPakoZ/RNA-BERTa9700)</nobr> | <nobr>2025.09</nobr> | <nobr>Encoder-only</nobr> | <nobr>55.9M</nobr> | <nobr>Public RNA collections (9.76M seqs)</nobr> | <nobr>BPE</nobr> |
+| <nobr>**RiNALMo**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-60872-5)</nobr> | <nobr>[Code](https://github.com/lbcb-sci/RiNALMo)</nobr> | <nobr>2025.07</nobr> | <nobr>Encoder-only</nobr> | <nobr>135M-650M</nobr> | <nobr>RNAcentral (36M ncRNA seqs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**RNAGenesis**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2)</nobr> | <nobr>[Code](https://huggingface.co/Zaixi/RNAGenesis)</nobr> | <nobr>2024.12</nobr> | <nobr>Encoder + Diffusion</nobr> | <nobr>1B</nobr> | <nobr>RNAcentral clustered ncRNA</nobr> | <nobr>Hybrid N-gram</nobr> |
-| <nobr>**HydraRNA**</nobr> | <nobr>[Paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7)</nobr> | <nobr>[Code](https://github.com/GuipengLi/HydraRNA)</nobr> | <nobr>2025.03</nobr> | <nobr>Hybrid (SSM+Attention)</nobr> | <nobr>84M</nobr> | <nobr>28.1M RNAs (ncRNA + coding)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**HydraRNA**</nobr> | <nobr>[Paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7)</nobr> | <nobr>[Code](https://github.com/GuipengLi/HydraRNA)</nobr> | <nobr>2025.11</nobr> | <nobr>Hybrid (SSM+Attention)</nobr> | <nobr>84M</nobr> | <nobr>28.1M RNAs (ncRNA + coding)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**RNAElectra**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.15.711950v1.full)</nobr> | - | <nobr>2026.03</nobr> | <nobr>Encoder-only</nobr> | - | <nobr>RNAcentral ncRNAs</nobr> | <nobr>SNT</nobr> |
 
 </details>
@@ -1007,7 +1007,7 @@ Models pre-trained on messenger RNA coding sequences, codon-level representation
 | <nobr>**CaLM**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00791-0)</nobr> | <nobr>[Code](https://github.com/oxpig/CaLM)</nobr> | <nobr>2024.02</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>~9M non-redundant CDS</nobr> | <nobr>Codon-level (triplet)</nobr> |
 | <nobr>**HELM**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2410.12459)</nobr> | - | <nobr>2025.01</nobr> | <nobr>Encoder-Decoder</nobr> | - | <nobr>mRNA coding sequences</nobr> | <nobr>Codon-hierarchical</nobr> |
 | <nobr>**Helix-mRNA**</nobr> | <nobr>[Paper](https://arxiv.org/abs/2502.13785)</nobr> | <nobr>[Code](https://huggingface.co/helical-ai/helix-mRNA)</nobr> | <nobr>2025.02</nobr> | <nobr>Hybrid (SSM+Attention)</nobr> | <nobr>Compact</nobr> | <nobr>mRNA sequences</nobr> | <nobr>SNT + codon markers</nobr> |
-| <nobr>**GEMORNA**</nobr> | <nobr>[Paper](https://www.science.org/doi/10.1126/science.adr8470)</nobr> | <nobr>[Code](https://github.com/RainaBio/GEMORNA)</nobr> | <nobr>2025.05</nobr> | <nobr>Encoder-Decoder</nobr> | - | <nobr>mRNA CDS + UTR</nobr> | <nobr>Codon / nucleotide</nobr> |
+| <nobr>**GEMORNA**</nobr> | <nobr>[Paper](https://www.science.org/doi/10.1126/science.adr8470)</nobr> | <nobr>[Code](https://github.com/RainaBio/GEMORNA)</nobr> | <nobr>2025.08</nobr> | <nobr>Specialized generative</nobr> | - | <nobr>mRNA CDS + UTR</nobr> | <nobr>Codon / nucleotide</nobr> |
 | <nobr>**GenSLM**</nobr> | <nobr>[Paper](https://doi.org/10.1177/10943420231201154)</nobr> | - | <nobr>2023.01</nobr> | <nobr>Decoder-only</nobr> | <nobr>2.5B-25B</nobr> | <nobr>110M+ gene seqs + 1.5M SARS-CoV-2 genomes</nobr> | <nobr>Codon-level</nobr> |
 | <nobr>**mRNABERT**</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-65340-8)</nobr> | <nobr>[Code](https://huggingface.co/Taykhoom/mRNABERT-no-flashattention)</nobr> | <nobr>2025.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>114M</nobr> | <nobr>18M mRNA seqs (NCBI, MG-RAST, GWH, MGnify)</nobr> | <nobr>Dual tokenization</nobr> |
 | <nobr>**mRNA-GPT**</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1)</nobr> | <nobr>[Code](https://github.com/ZHymLumine/mRNA-GPT/)</nobr> | <nobr>2025.12</nobr> | <nobr>Decoder-only</nobr> | <nobr>302M</nobr> | <nobr>NCBI CDS (80M bact. + 83M euk. + 2M arch.)</nobr> | <nobr>Codon / nucleotide</nobr> |
@@ -1092,9 +1092,9 @@ General-purpose RNA models covering multiple RNA types.
 </details>
 
 <details open>
-<summary><b>DNA+RNA Foundation Models</b></summary>
+<summary><b>DNA+RNA Related Foundation Models</b></summary>
 
-Models pre-trained on **both DNA and RNA sequences**. These are not pure RNA FMs but their pre-training data includes RNA sequences and they can be applied to RNA downstream tasks.
+Nucleotide or biological sequence foundation models with RNA-relevant pre-training data, transcriptomic data, or downstream applications. These are not pure RNA sequence FMs and are listed as related resources.
 
 | Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Year <img width=70/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |
 |:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
@@ -1112,7 +1112,7 @@ Models pre-trained on **both DNA and RNA sequences**. These are not pure RNA FMs
 </details>
 
 <details open>
-<summary><b>Expression-based Foundation Models</b></summary>
+<summary><b>Expression-based Related Models</b></summary>
 
 Models operating on RNA-seq **gene expression profiles** (not raw nucleotide sequences). Listed for completeness.
 
@@ -1189,7 +1189,7 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 1. Open an issue with the model/paper details
 2. Or submit a pull request following the existing table format
 
-**What to include**: RNA sequence foundation models (pre-trained on A/U/C/G sequences), DNA+RNA models, and relevant benchmarks.
+**What to include**: RNA sequence foundation models (pre-trained on A/U/C/G sequences), RNA-relevant DNA+RNA or nucleotide models, task-specific RNA models, and relevant benchmarks.
 
 **What NOT to include**: Single-cell foundation models (scGPT, Geneformer, etc.), protein-only models, or purely DNA models (unless they are widely evaluated on RNA tasks).
 

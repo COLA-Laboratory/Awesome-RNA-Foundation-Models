@@ -27,14 +27,14 @@ papers = [
      "Proposes RNA-km, a pre-trained encoder model that uses k-mer frequency features from 23M RNAcentral sequences to predict diverse RNA sequence properties including subcellular localization and modification sites.",
      "Encoder-only", "K-mer"),
 
-    ("RNAErnie", "RNAErnie: An RNA language model with structure-enhanced representations",
+    ("RNAErnie", "Multi-purpose RNA language modelling with motif-aware pretraining and type-guided fine-tuning",
      "https://www.nature.com/articles/s42256-024-00836-4", "2024.05", None, "https://huggingface.co/LLM-EDA/RNAErnie", "ncRNA FM",
-     "Presents RNAErnie, a pre-trained RNA language model that integrates RNA sequence, secondary structure, and base-pairing information through a multi-level masking strategy, achieving superior performance across RNA downstream tasks.",
+     "Presents RNAErnie, an RNA-focused pre-trained model that combines motif-aware pretraining with type-guided fine-tuning for diverse RNA sequence analysis tasks.",
      "Encoder-only", "SNT"),
 
-    ("ERNIE-RNA", "ERNIE-RNA: An RNA Language Model with Structure-enhanced Representations",
-     "https://doi.org/10.1101/2024.03.17.585376", "2024.10", None, "https://huggingface.co/multimolecule/ernierna-ss", "ncRNA FM",
-     "Develops ERNIE-RNA with structure-enhanced pre-training that jointly models RNA sequences and secondary structures, achieving improvements in RNA contact prediction, distance prediction, and secondary structure prediction.",
+    ("ERNIE-RNA", "ERNIE-RNA: an RNA language model with structure-enhanced representations",
+     "https://www.nature.com/articles/s41467-025-64972-0", "2025.11", None, "https://huggingface.co/multimolecule/ernierna-ss", "ncRNA FM",
+     "Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs, improving structure and function prediction tasks.",
      "Encoder-only", "SNT"),
 
     ("DGRNA", "DGRNA: a long-context RNA foundation model with bidirectional Mamba2",
@@ -47,23 +47,23 @@ papers = [
      "Proposes ChaRNABERT with Gradient-based Subword Tokenization (GBST) that learns data-driven tokenization during pre-training, outperforming fixed tokenization approaches on RNA structure and function prediction tasks.",
      "Encoder-only", "Learnable"),
 
-    ("AIDO.RNA", "AIDO.RNA: A Scalable RNA Foundation Model",
+    ("AIDO.RNA", "A Large-Scale Foundation Model for RNA Function and Structure Prediction",
      "https://doi.org/10.1101/2024.11.28.625345", "2024.11", None, "https://huggingface.co/genbio-ai/AIDO.RNA-1.6B", "ncRNA FM",
      "Presents AIDO.RNA, a scalable RNA foundation model with up to 1.6B parameters pre-trained on 42M non-coding RNA sequences (~30B nucleotides), demonstrating strong generalization across diverse RNA tasks.",
      "Encoder-only", "SNT"),
 
-    ("BiRNA-BERT", "BiRNA-BERT: An Efficient RNA Language Model with Adaptive Dual Tokenization",
-     "https://doi.org/10.1101/2024.07.02.601703", "2025.08", "https://github.com/buetnlpbio/BiRNA-BERT", None, "ncRNA FM",
-     "Introduces BiRNA-BERT with a dual tokenization strategy combining single-nucleotide and BPE tokenization, enabling efficient processing of long RNA sequences while maintaining fine-grained nucleotide-level representations.",
+    ("BiRNA-BERT", "BiRNA-BERT allows efficient RNA language modeling with adaptive tokenization",
+     "https://www.nature.com/articles/s42003-025-08982-0", "2025.11", "https://github.com/buetnlpbio/BiRNA-BERT", None, "ncRNA FM",
+     "Introduces BiRNA-BERT, a 117M-parameter encoder trained on 36M ncRNA sequences with adaptive dual tokenization combining nucleotide-level and BPE representations.",
      "Encoder-only", "Learnable"),
 
-    ("RNA-BERTa", "DLRNA-BERTa: A Transformer for RNA-Drug Binding Affinity Prediction",
+    ("RNA-BERTa", "DLRNA-BERTa: A transformer approach for RNA-drug binding affinity prediction",
      "https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1", "2025.09", None, "https://huggingface.co/IlPakoZ/RNA-BERTa9700", "ncRNA FM",
      "Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations, applied to RNA-drug binding affinity prediction with downstream fine-tuning.",
      "Encoder-only", "BPE"),
 
     ("RiNALMo", "RiNALMo: General-Purpose RNA Language Models Can Generalize Well on Structure Prediction Tasks",
-     "https://arxiv.org/abs/2403.00043", "2025.07", "https://github.com/lbcb-sci/RiNALMo", None, "ncRNA FM",
+     "https://www.nature.com/articles/s41467-025-60872-5", "2025.07", "https://github.com/lbcb-sci/RiNALMo", None, "ncRNA FM",
      "Presents RiNALMo, a general-purpose RNA language model (up to 650M parameters) pre-trained on 36M ncRNA sequences, demonstrating that large-scale RNA LMs can generalize effectively to secondary and tertiary structure prediction.",
      "Encoder-only", "SNT"),
 
@@ -72,9 +72,9 @@ papers = [
      "Proposes RNAGenesis, a 1B-parameter generative RNA foundation model combining encoder representations with diffusion-based generation, enabling both RNA understanding and de novo RNA sequence design.",
      "Specialized", "SNT"),
 
-    ("HydraRNA", "HydraRNA: An Efficient RNA Foundation Model via Hybrid SSM and Attention",
-     "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7", "2025.03", "https://github.com/GuipengLi/HydraRNA", None, "ncRNA FM",
-     "Introduces HydraRNA, an efficient RNA foundation model using a hybrid architecture combining state space models (SSM) and attention mechanisms, achieving competitive performance with significantly reduced computational cost.",
+    ("HydraRNA", "HydraRNA: a hybrid architecture based full-length RNA language model",
+     "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7", "2025.11", "https://github.com/GuipengLi/HydraRNA", None, "ncRNA FM",
+     "Introduces HydraRNA, a full-length RNA language model using a hybrid bidirectional state space and attention architecture for both coding and non-coding RNA tasks.",
      "Hybrid/SSM", "SNT"),
 
     ("RNAElectra", "RNAElectra: An ELECTRA-style RNA Foundation Model",
@@ -103,10 +103,10 @@ papers = [
      "Presents Helix-mRNA, a compact hybrid model combining Mamba2 state space layers with attention mechanisms for efficient mRNA sequence modeling, targeting mRNA stability and translation efficiency prediction.",
      "Hybrid/SSM", "Codon"),
 
-    ("GEMORNA", "GEMORNA: Generative mRNA Design via Codon and UTR Optimization",
-     "https://www.science.org/doi/10.1126/science.adr8470", "2025.05", "https://github.com/RainaBio/GEMORNA", None, "mRNA/CDS FM",
-     "Presents GEMORNA, a generative model for end-to-end mRNA design that jointly optimizes coding sequences and UTR regions, enabling the design of mRNAs with enhanced stability, translation efficiency, and immunogenicity profiles.",
-     "Encoder-Decoder", "Codon"),
+    ("GEMORNA", "Deep generative models design mRNA sequences with enhanced translational capacity and stability",
+     "https://www.science.org/doi/10.1126/science.adr8470", "2025.08", "https://github.com/RainaBio/GEMORNA", None, "mRNA/CDS FM",
+     "Presents GEMORNA, a deep generative model for designing mRNA CDS and UTR sequences with enhanced translational capacity and stability.",
+     "Specialized", "Codon"),
 
     ("GenSLM", "GenSLMs: Genome-scale Language Models Reveal SARS-CoV-2 Evolutionary Dynamics",
      "https://doi.org/10.1177/10943420231201154", "2023.01", None, None, "mRNA/CDS FM",
@@ -262,7 +262,7 @@ papers = [
     ("LAMAR", "LAMAR: A Language Model for Mammalian and Viral Genomes and Transcriptomes",
      "https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1", "2024.10", "https://github.com/zhw-e8/LAMAR", None, "DNA+RNA FM",
      "Develops LAMAR, a 150M-parameter language model pre-trained on genomes and transcriptomes from 225 mammalian species (15M sequences), capturing mammalian-specific and viral genomic patterns for RNA and DNA tasks.",
-     "Encoder-only", "BPE"),
+     "Encoder-only", "SNT"),
 
     ("Orthrus", "Orthrus: Contrastive Learning of Transcript Isoforms and Orthologs via Mamba",
      "https://www.biorxiv.org/content/10.1101/2024.10.10.617658v3", "2024.10", None, "https://huggingface.co/quietflamingo/orthrus-large-4-track", "DNA+RNA FM",
@@ -434,8 +434,8 @@ rna_type_labels = {
     "Structure-aware FM": "Structure-aware RNA Models",
     "Generative FM": "RNA Generative Models",
     "General RNA FM": "General / Other RNA Models",
-    "DNA+RNA FM": "DNA+RNA Foundation Models",
-    "Expression FM": "Expression-based Foundation Models",
+    "DNA+RNA FM": "DNA+RNA Related Foundation Models",
+    "Expression FM": "Expression-based Related Models",
 }
 rna_type_order = list(rna_type_labels.keys())
 
@@ -467,12 +467,12 @@ lines = []
 lines.append("")
 lines.append("## Paper List")
 lines.append("")
-lines.append("A complete list of all papers included in this survey. Three classification views are provided below — click to expand/collapse each view.")
+lines.append("A complete list of model papers and related resources included in this survey. Three classification views are provided below — click to expand/collapse each view.")
 lines.append("")
 
-# Foundation Models (collapsible wrapper with 3 views inside)
+# Model entries (collapsible wrapper with 3 views inside)
 lines.append('<details open>')
-lines.append('<summary><b>Foundation Models</b></summary>')
+lines.append('<summary><b>Models & Related Resources</b></summary>')
 lines.append("")
 lines.append("<blockquote>")
 lines.append("")
