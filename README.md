@@ -7,10 +7,11 @@
 
 A curated and up-to-date collection of **RNA sequence foundation models**, covering reusable pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware RNA representations, and generative RNA sequence modeling.
 
-**Scope.** This README focuses on reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints.
-
-- **Included**: models that introduce or release a reusable RNA/mRNA/CDS/UTR sequence backbone or checkpoint.
-- **Excluded**: downstream-only predictors/designers; reverse-translation or inverse-folding pipelines; RNA 3D prediction systems; broad DNA/nucleotide/multi-omics FMs; expression-profile models; and single-cell foundation models (e.g., scGPT, Geneformer).
+> [!NOTE]
+> **Scope.** This README focuses on reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints.
+>
+> - **Included**: models that introduce or release a reusable RNA/mRNA/CDS/UTR sequence backbone or checkpoint.
+> - **Excluded**: downstream-only predictors/designers; reverse-translation or inverse-folding pipelines; RNA 3D prediction systems; broad DNA/nucleotide/multi-omics FMs; expression-profile models; and single-cell foundation models (e.g., scGPT, Geneformer).
 
 ---
 
