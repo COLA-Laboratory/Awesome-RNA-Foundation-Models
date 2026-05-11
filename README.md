@@ -5,7 +5,7 @@
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![Last Update](https://img.shields.io/badge/Last_Update-2026.05-blue.svg)]()
 
-A curated, strict, and up-to-date collection of **RNA sequence foundation models**, covering reusable pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware RNA representations, and generative RNA sequence modeling.
+A curated and up-to-date collection of **RNA sequence foundation models**, covering reusable pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware RNA representations, and generative RNA sequence modeling.
 
 > **Scope**: This README includes models that introduce or release a reusable RNA/mRNA/CDS/UTR sequence backbone or checkpoint. Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile models, and single-cell foundation models (e.g., scGPT, Geneformer) are **excluded**.
 
@@ -24,22 +24,19 @@ A curated, strict, and up-to-date collection of **RNA sequence foundation models
 
 A strict list of RNA foundation models included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.
 
-> **Date convention**: Dates shown in this section use the official publication or conference month when available; otherwise they use the linked preprint month and are marked `preprint`. Workshop-only entries are marked `workshop`.
-
-<details open>
-<summary><b>Models & Related Resources</b></summary>
-
-<blockquote>
-
-<details open>
-<summary><b>Classification Rules</b></summary>
+**Classification rules**:
 
 - **Core RNA Foundation Models**: reusable RNA or mRNA sequence backbones pre-trained on raw nucleotide sequences for broad downstream transfer or generation.
 - **Specialized RNA Foundation Models**: RNA-specific pre-trained models whose scope is limited to a subtype, species, structural modality, or narrow biological question.
 - **Adapted / Derived RNA Models**: models that adapt, extend, or transfer existing pre-trained components but still yield a reusable RNA language model.
 - **Excluded from this strict model list**: downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, and expression-profile models.
 
-</details>
+> **Date convention**: Dates shown in this section use the official publication or conference month when available; otherwise they use the linked preprint month and are marked `preprint`. Workshop-only entries are marked `workshop`.
+
+<details open>
+<summary><b>Models & Related Resources</b></summary>
+
+<blockquote>
 
 <details open>
 <summary><b>View 1: Classified by Foundation-model Scope</b></summary>
