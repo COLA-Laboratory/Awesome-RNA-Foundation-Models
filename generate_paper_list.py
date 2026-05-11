@@ -15,7 +15,7 @@ papers = [
      "Encoder-only", "SNT"),
 
     ("RNAFM", "Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions",
-     "https://arxiv.org/abs/2204.00300", "2022.08", None, "https://huggingface.co/multimolecule/rnafm", "ncRNA FM",
+     "https://arxiv.org/abs/2204.00300", "2022.04", None, "https://huggingface.co/multimolecule/rnafm", "ncRNA FM",
      "Presents RNA-FM, a foundation model pre-trained on 23 million non-coding RNA sequences from RNAcentral, achieving state-of-the-art performance on RNA secondary structure prediction, 3D closeness prediction, and functional annotation tasks.",
      "Encoder-only", "SNT"),
 
@@ -24,10 +24,10 @@ papers = [
      "Introduces RNA-MSM, an unsupervised RNA language model that leverages multiple sequence alignments (MSAs) from homologous RNA families to capture evolutionary and co-evolutionary information for improved structural inference.",
      "Encoder-only", "SNT"),
 
-    ("RNA-km", "RNA-km: a tool for predicting RNA sequence properties using k-mer frequency features",
+    ("RNA-km", "Language models enable zero-shot prediction of RNA secondary structures including pseudoknots",
      "https://doi.org/10.1101/2024.01.27.577533", "2024.01", "https://github.com/gongtiansu/RNA-km", None, "ncRNA FM",
-     "Proposes RNA-km, a pre-trained encoder model that uses k-mer frequency features from 23M RNAcentral sequences to predict diverse RNA sequence properties including subcellular localization and modification sites.",
-     "Encoder-only", "K-mer"),
+     "Proposes RNA-km, a self-supervised RNA language model trained on 23M ncRNA sequences with k-mer masking and relative positional encoding, enabling zero-shot RNA secondary structure prediction including pseudoknots.",
+     "Encoder-only", "SNT"),
 
     ("RNAErnie", "Multi-purpose RNA language modelling with motif-aware pretraining and type-guided fine-tuning",
      "https://www.nature.com/articles/s42256-024-00836-4", "2024.05", None, "https://huggingface.co/LLM-EDA/RNAErnie", "ncRNA FM",
@@ -85,9 +85,9 @@ papers = [
      "Encoder-only", "SNT"),
 
     # === mRNA/CDS FMs ===
-    ("CodonBERT", "CodonBERT: Large Language Models for mRNA Unimodal and Multimodal Molecular Learning",
-     "https://www.biorxiv.org/content/10.1101/2023.09.09.556981v1", "2023.09", "https://github.com/Sanofi-Public/CodonBERT", None, "mRNA/CDS FM",
-     "Presents CodonBERT, a BERT-based model pre-trained on 10M mRNA coding sequences with codon-aware tokenization, enabling both unimodal RNA and multimodal RNA-protein molecular learning.",
+    ("CodonBERT", "CodonBERT large language model for mRNA vaccines",
+     "https://doi.org/10.1101/gr.278870.123", "2024.08", "https://github.com/Sanofi-Public/CodonBERT", None, "mRNA/CDS FM",
+     "Presents CodonBERT, a BERT-based model pre-trained on 10M mRNA coding sequences with codon-aware tokenization for mRNA sequence representation and vaccine-related design tasks.",
      "Encoder-only", "Codon"),
 
     ("CaLM", "CaLM: Codon Adaptation Language Model for mRNA Design",
@@ -146,8 +146,8 @@ papers = [
      "Introduces UTR-LM, a language model specifically pre-trained on 5' UTR sequences from Ensembl, predicting mean ribosome loading (translation efficiency) and expression level from UTR sequences alone.",
      "Encoder-only", "SNT"),
 
-    ("3UTRBert", "3UTRBERT: Pre-trained Language Model for 3' UTR Sequences",
-     "https://doi.org/10.1101/2023.09.08.556883", "2024.07", "https://github.com/yangyn533/3UTRBERT", None, "UTR FM",
+    ("3UTRBERT", "Deciphering 3'UTR Mediated Gene Regulation Using Interpretable Deep Representation Learning",
+     "https://doi.org/10.1002/advs.202407013", "2024.08", "https://github.com/yangyn533/3UTRBERT", None, "UTR FM",
      "Presents 3UTRBERT, a BERT model pre-trained on GENCODE 3'UTR sequences using 3-mer tokenization, capturing regulatory motifs for predicting mRNA stability, polyadenylation, and subcellular localization.",
      "Encoder-only", "K-mer"),
 
@@ -178,12 +178,12 @@ papers = [
      "Encoder-only", "SNT"),
 
     # === Structure-aware RNA FMs ===
-    ("ATOM-1", "ATOM-1: Augmented Transformer with Structure-aware Chemical Mapping",
+    ("ATOM-1", "ATOM-1: A Foundation Model for RNA Structure and Function Built on Chemical Mapping Data",
      "https://doi.org/10.1101/2023.12.13.571579", "2023.12", None, None, "Structure-aware FM",
-     "Proposes ATOM-1, an augmented transformer pre-trained on chemical mapping (SHAPE, DMS) sequencing data, learning structure-aware RNA representations that encode both sequence and experimentally-derived structural information.",
+     "Proposes ATOM-1, a foundation model trained on chemical mapping data to learn RNA structure-aware representations for secondary and tertiary structure probing and RNA function prediction.",
      "Encoder-Decoder", "SNT"),
 
-    ("Ribonanza", "RibonanzaNet: Deep Learning for RNA Chemical Mapping Prediction",
+    ("RibonanzaNet", "Ribonanza: deep learning of RNA structure through dual crowdsourcing",
      "https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1", "2024.02", "https://github.com/Shujun-He/RibonanzaNet", None, "Structure-aware FM",
      "Presents RibonanzaNet, a deep neural network trained on 2M RNA sequences with experimental chemical mapping data from Eterna, Rfam, and PDB, predicting RNA chemical reactivity profiles for structure determination.",
      "Specialized", "SNT"),
@@ -209,10 +209,10 @@ papers = [
      "Encoder-only", "SNT"),
 
     # === Generative FMs ===
-    ("LoRNA", "LoRNA: A Long-read RNA Foundation Model",
+    ("LoRNA SH", "A long-context RNA foundation model for predicting transcriptome architecture",
      "https://doi.org/10.1101/2024.08.26.609813", "2024.08", None, None, "Generative FM",
-     "Introduces LoRNA, a foundation model designed for long-read RNA sequencing data, pre-trained on ~100M IsoSeq long reads (7B tokens) with specialized nucleotide and region tokenization for transcript-level analysis.",
-     "Decoder-only", "SNT"),
+     "Introduces LoRNA SH, a StripedHyena-based long-context RNA foundation model trained on full-length transcriptome architecture data to predict isoform abundance, isoform structure, and variant effects.",
+     "Hybrid/SSM", "SNT"),
 
     ("GenerRNA", "GenerRNA: A Generative Pre-trained Autoregressive RNA Language Model",
      "https://doi.org/10.1371/journal.pone.0310814", "2024.10", None, "https://huggingface.co/pfnet/GenerRNA", "Generative FM",
@@ -377,6 +377,11 @@ surveys = [
 # ============================================================
 def is_preprint_url(url):
     """Return True for preprint-style sources that are not formal publications."""
+    formal_exceptions = (
+        "doi.org/10.1101/gr.",
+    )
+    if any(marker in url for marker in formal_exceptions):
+        return False
     preprint_markers = (
         "arxiv.org",
         "biorxiv.org",
@@ -478,6 +483,271 @@ tok_labels = {
 }
 tok_order = ["SNT", "Codon", "K-mer", "BPE", "Learnable", "Expression"]
 
+# Detailed table metadata. The compact paper tuples above carry the common fields;
+# this mapping keeps table-only fields in the same generated source of truth.
+model_details = {
+    "RNABert": {"params": "0.5M", "data": "Rfam seed alignments + ncRNA"},
+    "RNAFM": {"params": "100M", "data": "RNAcentral (23M seqs)"},
+    "RNAMSM": {"params": "95M", "data": "Rfam families + MSA homologs"},
+    "RNA-km": {"params": "152M", "data": "RNAcentral (23M ncRNA seqs)", "token": "SNT + k-mer masking"},
+    "RNAErnie": {"params": "105M", "data": "RNAcentral (23M seqs)", "token": "Nucleotide + motif"},
+    "ERNIE-RNA": {"params": "86M", "data": "RNAcentral (20.4M seqs)"},
+    "DGRNA": {"params": "100M", "data": "MARS (100M RNA seqs)", "arch": "Hybrid (SSM)"},
+    "ChaRNABERT": {"params": "8M-650M", "data": "RNAcentral + NCBI (62M seqs)", "token": "Learnable (GBST)"},
+    "AIDO.RNA": {"params": "650M / 1.6B", "data": "RNAcentral (42M seqs, ~30B nt)"},
+    "BiRNA-BERT": {"params": "117M", "data": "RNAcentral (36M seqs, ~26.4B nt)", "token": "Dual (NUC + BPE)"},
+    "RNA-BERTa": {"params": "55.9M", "data": "Public RNA collections (9.76M seqs)"},
+    "RiNALMo": {"params": "135M-650M", "data": "RNAcentral (36M ncRNA seqs)"},
+    "RNAGenesis": {"params": "1B", "data": "RNAcentral clustered ncRNA", "arch": "Encoder + Diffusion", "token": "Hybrid N-gram"},
+    "HydraRNA": {"params": "84M", "data": "28.1M RNAs (ncRNA + coding)", "arch": "Hybrid (SSM+Attention)"},
+    "RNAElectra": {"params": "-", "data": "RNAcentral ncRNAs"},
+    "CodonBERT": {"params": "110M", "data": "NCBI (10M mRNA CDS)", "token": "Codon-aware"},
+    "CaLM": {"params": "86M", "data": "~9M non-redundant CDS", "token": "Codon-level (triplet)"},
+    "HELM": {"params": "-", "data": "mRNA coding sequences", "token": "Codon-hierarchical"},
+    "Helix-mRNA": {"params": "Compact", "data": "mRNA sequences", "arch": "Hybrid (SSM+Attention)", "token": "SNT + codon markers"},
+    "GEMORNA": {"params": "-", "data": "mRNA CDS + UTR", "arch": "Specialized generative", "token": "Codon / nucleotide"},
+    "GenSLM": {"params": "2.5B-25B", "data": "110M+ gene seqs + 1.5M SARS-CoV-2 genomes", "token": "Codon-level"},
+    "mRNABERT": {"params": "114M", "data": "18M mRNA seqs (NCBI, MG-RAST, GWH, MGnify)", "token": "Dual tokenization"},
+    "mRNA-GPT": {"params": "302M", "data": "NCBI CDS (80M bact. + 83M euk. + 2M arch.)", "token": "Codon / nucleotide"},
+    "NUWA": {"params": "-", "data": "Multi-species mRNA CDS (115M seqs)", "token": "Codon tokens"},
+    "mRNA-GPT (full-length)": {"params": "-", "data": "30M full-length mRNAs (5'UTR+CDS+3'UTR)", "token": "Nucleotide"},
+    "CodonMoE": {"params": "-", "data": "DNA FM + RNA adaptation", "arch": "Decoder-only (MoE)", "token": "Codon-aware"},
+    "UTR-LM": {"params": "1M", "data": "Ensembl 5'UTR (>214K seqs + synthetic)"},
+    "3UTRBERT": {"params": "86M", "data": "GENCODE 3'UTR (20K seqs)", "token": "3-mer"},
+    "SpliceBERT": {"params": "20M", "data": "UCSC pre-mRNA (72 species, >2M seqs)"},
+    "RFamLlama": {"params": "13-88M", "data": "Rfam (>4,000 families, 0.6M seqs)", "token": "Nucleotide + family"},
+    "PlantRNA-FM": {"params": "35M", "data": "OneKP (1,124 plant species transcriptomes)"},
+    "LncRNA-BERT": {"params": "-", "data": "GENCODE + RefSeq + NONCODE (536K seqs)", "token": "CSE / k-mer / nt"},
+    "G4mer": {"params": "46M", "data": "Human transcriptome (G-quadruplex)"},
+    "ATOM-1": {"params": "-", "data": "Chemical mapping sequencing data", "arch": "Encoder-decoder"},
+    "RibonanzaNet": {"params": "-", "data": "Eterna + Rfam + PDB (2M seqs)", "arch": "CNN + Attention", "token": "-"},
+    "OmniGenome": {"params": "52M / 186M", "data": "OneKP (seq-structure pairs)"},
+    "MP-RNA": {"params": "52-186M", "data": "OneKP (seq + structure)"},
+    "RNA-TorsionBERT": {"params": "86.9M", "data": "PDB RNA 3D structures"},
+    "StructRFM": {"params": "-", "data": "21M seq-structure pairs"},
+    "LoRNA SH": {"params": "6.5M", "data": "Full-length transcriptome architecture data", "arch": "Hybrid (StripedHyena)", "token": "Specialized nt + region"},
+    "GenerRNA": {"params": "350M", "data": "RNAcentral (16.09M seqs, ~17.4B nt)"},
+    "GARNET": {"params": "-", "data": "GTDB (30M seqs, 17B nt, 400K genomes)", "arch": "Decoder + GNN", "token": "Overlapping triplet"},
+    "RNAtranslator": {"params": "41.4M", "data": "RNAInter (26M interaction pairs)", "arch": "Encoder-decoder", "token": "Nucleotide + AA"},
+    "EVA": {"params": "-", "data": "114M+ full-length RNA seqs", "arch": "Decoder-only (MoE)", "token": "-"},
+    "Uni-RNA": {"params": "400M", "data": "RNAcentral + MG-RAST + MGnify (1B seqs)"},
+    "RNALens": {"params": "469M", "data": "Multispecies genomic + 5'UTR sequences"},
+    "Evo": {"params": "7B", "data": "OpenGenome (2.7M prokaryotic + phage genomes)", "arch": "Hybrid (StripedHyena)"},
+    "LucaOne": {"params": "1.8B", "data": "RefSeq + UniProt/PDB (800B tokens)", "token": "SNT / amino acid"},
+    "BSM": {"params": "110M / 270M", "data": "RefSeq + web bio-seqs (DNA+RNA+Prot)", "arch": "Decoder-only", "token": "Mixed"},
+    "LAMAR": {"params": "150M", "data": "Genome + transcriptome (225 mammals, 15M)"},
+    "Orthrus": {"params": "1.3M / 10.1M", "data": "GENCODE + RefSeq + Zoonomia (32M transcripts)", "arch": "Hybrid (SSM)"},
+    "METAGENE-1": {"params": "7B", "data": "Wastewater metagenomic DNA/RNA (>1.5T bp)"},
+    "Life-Code": {"params": "-", "data": "Multi-omics (DNA/RNA/Prot unified)", "arch": "Hybrid (SSM+Attention)"},
+    "Evo 2": {"params": "7B / 40B", "data": "OpenGenome2 (9T nt, 128K genomes)", "arch": "Hybrid (StripedHyena)"},
+    "OmniNA": {"params": "-", "data": "91.7M seqs + annotations (1076B bases)"},
+    "EDEN": {"params": "28B", "data": "9.7T biological tokens (DNA+RNA+Protein)"},
+    "BulkRNABert": {"params": "6.01M", "data": "TCGA + GTEx + ENCODE (RNA-seq expr.)", "arch": "Encoder-only", "token": "Expression bin tokens"},
+    "MOJO": {"params": "52.3M", "data": "TCGA (RNA-seq + DNA methylation)", "arch": "Encoder (multimodal)", "token": "Expression bin tokens"},
+}
+
+model_table_descriptions = {
+    "ncRNA FM": "Models primarily pre-trained on non-coding RNA sequences (from RNAcentral, Rfam, etc.).",
+    "mRNA/CDS FM": "Models pre-trained on messenger RNA coding sequences, codon-level representations.",
+    "UTR FM": "Models focused on untranslated regions (5'UTR, 3'UTR).",
+    "Specific RNA FM": "Models targeting specific RNA types or species (splicing, lncRNA, G-quadruplex, plant RNA, RNA families).",
+    "Structure-aware FM": "Models incorporating RNA secondary or tertiary structure information during pre-training or inference.",
+    "Generative FM": "Models focused on RNA sequence generation or generative transcript modeling.",
+    "General RNA FM": "General-purpose RNA models covering multiple RNA types.",
+    "DNA+RNA FM": "Nucleotide or biological sequence foundation models with RNA-relevant pre-training data, transcriptomic data, or downstream applications. These are not pure RNA sequence FMs and are listed as related resources.",
+    "Expression FM": "Models operating on RNA-seq **gene expression profiles** (not raw nucleotide sequences). Listed for completeness.",
+}
+
+benchmark_details = {
+    "BEACON": {"focus": "RNA (structural, functional, engineering)", "scale": "13 tasks"},
+    "BEND": {"focus": "DNA LM biologically meaningful tasks", "scale": "Multiple tasks"},
+    "GUE": {"focus": "Genome understanding evaluation", "scale": "36 datasets, 9 tasks"},
+    "RNA LLM Folding": {"focus": "RNA secondary structure prediction", "scale": "6 RNA LLMs, 4 datasets"},
+    "RNAGym": {"focus": "RNA fitness & structure prediction (2D/3D)", "scale": "Fitness + structure tasks"},
+    "RNAscope": {"focus": "RNA (structure, interaction, function)", "scale": "15 tasks, 1,253 experiments"},
+    "mRNABench": {"focus": "Mature mRNA prediction tasks", "scale": "10 datasets, 59 tasks, 135K experiments"},
+    "NABench": {"focus": "Nucleic acid fitness prediction", "scale": "2.6M+ mutated seqs, 160+ experiments"},
+    "RNA 3D Benchmark": {"focus": "RNA 3D structure-function", "scale": "7 tasks, 9 datasets"},
+    "Genomic LM RNA Eval": {"focus": "RNA processes (ncRNA, m6A, splicing, TE)", "scale": "11 genomic LMs, 4 RNA tasks"},
+    "DNA FM Benchmark": {"focus": "Genomic & genetic tasks (incl. RNA-relevant)", "scale": "Multiple tasks"},
+    "DNALongBench": {"focus": "Long-range genomic tasks", "scale": "5 tasks, up to 1M bp"},
+}
+
+survey_details = {
+    "Comparative Review of RNA LMs": {"scope": "Compares 13 RNA LMs + 3 DNA LMs + 1 protein LM"},
+    "Genome LM Survey": {"scope": "DNA/RNA genome LMs: limitations, long-range modeling"},
+    "LLMs in Bioinformatics": {"scope": "LLMs for DNA, RNA, proteins (ACL 2025 Findings, updated 2026)"},
+}
+
+
+def nobr(value):
+    if value in (None, "-"):
+        return "-"
+    return f"<nobr>{value}</nobr>"
+
+
+def link_cell(label, url):
+    if not url:
+        return "-"
+    return nobr(f"[{label}]({url})")
+
+
+def code_url(github_url, hf_url):
+    return github_url or hf_url
+
+
+def date_status_cell(date, url):
+    if is_preprint_url(url):
+        return nobr(f"{date}<br><sub>preprint</sub>")
+    return nobr(date)
+
+
+def render_model_table(entries, label, description):
+    rows = []
+    rows.append("<details open>")
+    rows.append(f"<summary><b>{label}</b></summary>")
+    rows.append("")
+    rows.append(description)
+    rows.append("")
+    rows.append("| Model <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Date / Status <img width=90/> | Architecture <img width=160/> | Params <img width=100/> | Pre-training Data <img width=260/> | Tokenization <img width=140/> |")
+    rows.append("|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|")
+    for paper in sorted(entries, key=lambda x: x[3]):
+        name, title, url, date, github_url, hf_url, category, abstract, arch, token = paper
+        details = model_details.get(name, {})
+        rows.append(
+            "| "
+            + " | ".join(
+                [
+                    nobr(f"**{name}**"),
+                    link_cell("Paper", url),
+                    link_cell("Code", code_url(github_url, hf_url)),
+                    date_status_cell(date, url),
+                    nobr(details.get("arch", arch)),
+                    nobr(details.get("params", "-")),
+                    nobr(details.get("data", "-")),
+                    nobr(details.get("token", token)),
+                ]
+            )
+            + " |"
+        )
+    rows.append("")
+    rows.append("</details>")
+    rows.append("")
+    return rows
+
+
+def render_benchmark_table(entries):
+    rows = []
+    rows.append("<details open>")
+    rows.append("<summary><b>Benchmarks & Evaluations</b></summary>")
+    rows.append("")
+    rows.append("Benchmark datasets and systematic evaluations of RNA / nucleotide foundation models.")
+    rows.append("")
+    rows.append("| Benchmark <img width=200/> | Paper <img width=120/> | Code <img width=120/> | Date / Status <img width=90/> | Focus <img width=300/> | Scale <img width=220/> |")
+    rows.append("|:----------|:-----:|:----:|:----:|:------|:------|")
+    for name, title, url, date, github_url, hf_url, abstract in sorted(entries, key=lambda x: x[3]):
+        details = benchmark_details.get(name, {})
+        rows.append(
+            "| "
+            + " | ".join(
+                [
+                    nobr(f"**{name}**"),
+                    link_cell("Paper", url),
+                    link_cell("Code", code_url(github_url, hf_url)),
+                    date_status_cell(date, url),
+                    nobr(details.get("focus", "-")),
+                    nobr(details.get("scale", "-")),
+                ]
+            )
+            + " |"
+        )
+    rows.append("")
+    rows.append("</details>")
+    rows.append("")
+    return rows
+
+
+def render_survey_table(entries):
+    rows = []
+    rows.append("<details open>")
+    rows.append("<summary><b>Surveys & Reviews</b></summary>")
+    rows.append("")
+    rows.append("| Title <img width=350/> | Paper <img width=120/> | Date / Status <img width=90/> | Scope <img width=400/> |")
+    rows.append("|:------|:-----:|:----:|:------|")
+    for name, title, url, date, github_url, hf_url, abstract in sorted(entries, key=lambda x: x[3]):
+        details = survey_details.get(name, {})
+        rows.append(
+            "| "
+            + " | ".join(
+                [
+                    nobr(f"**{title}**"),
+                    link_cell("Paper", url),
+                    date_status_cell(date, url),
+                    nobr(details.get("scope", "-")),
+                ]
+            )
+            + " |"
+        )
+    rows.append("")
+    rows.append("</details>")
+    rows.append("")
+    return rows
+
+
+def render_detailed_tables():
+    rows = []
+    rows.append("## Detailed Tables")
+    rows.append("")
+    rows.append("<details open>")
+    rows.append("<summary><b>RNA Sequence Models</b></summary>")
+    rows.append("")
+    rows.append("<blockquote>")
+    rows.append("")
+    grouped_by_type = group_papers(papers, 6, rna_type_labels, rna_type_order)
+    for category in rna_type_order:
+        if category in ("DNA+RNA FM", "Expression FM"):
+            continue
+        entries = grouped_by_type.get(category, [])
+        if entries:
+            rows.extend(render_model_table(entries, rna_type_labels[category], model_table_descriptions[category]))
+    rows.append("</blockquote>")
+    rows.append("")
+    rows.append("</details>")
+    rows.append("")
+    for category in ("DNA+RNA FM", "Expression FM"):
+        entries = grouped_by_type.get(category, [])
+        if entries:
+            rows.extend(render_model_table(entries, rna_type_labels[category], model_table_descriptions[category]))
+    rows.append("<details open>")
+    rows.append("<summary><b>Other Materials</b></summary>")
+    rows.append("")
+    rows.append("<blockquote>")
+    rows.append("")
+    rows.extend(render_benchmark_table(benchmarks))
+    rows.extend(render_survey_table(surveys))
+    rows.append("</blockquote>")
+    rows.append("")
+    rows.append("</details>")
+    rows.append("")
+    rows.append("---")
+    rows.append("")
+    rows.append("## Abbreviations")
+    rows.append("")
+    rows.append("| Abbreviation <img width=120/> | Meaning <img width=400/> |")
+    rows.append("|:-------------|:--------|")
+    rows.append("| <nobr>**SNT**</nobr> | <nobr>Single Nucleotide Tokenization (A/U/C/G or A/T/C/G)</nobr> |")
+    rows.append("| <nobr>**MLM**</nobr> | <nobr>Masked Language Modeling</nobr> |")
+    rows.append("| <nobr>**BPE**</nobr> | <nobr>Byte Pair Encoding</nobr> |")
+    rows.append("| <nobr>**MoE**</nobr> | <nobr>Mixture of Experts</nobr> |")
+    rows.append("| <nobr>**SSM**</nobr> | <nobr>State Space Model</nobr> |")
+    rows.append("| <nobr>**CDS**</nobr> | <nobr>Coding Sequence</nobr> |")
+    rows.append("| <nobr>**UTR**</nobr> | <nobr>Untranslated Region</nobr> |")
+    rows.append("| <nobr>**ncRNA**</nobr> | <nobr>Non-coding RNA</nobr> |")
+    rows.append("")
+    rows.append("---")
+    rows.append("")
+    return rows
+
 # ============================================================
 # Build output
 # ============================================================
@@ -573,20 +843,20 @@ lines.append("")
 lines.append("</details>")
 lines.append("")
 
+lines.extend(render_detailed_tables())
+
 output = "\n".join(lines)
 print(output)
 
-# Now inject into README: replace existing Paper List or insert before Contributing
+# Now inject into README: replace generated Paper List + Detailed Tables content.
 with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
-# Find and replace existing Paper List section (stop at Detailed Tables, or Contributing)
+# Find and replace existing generated content (stop before Contributing).
 paper_list_start = readme.find("\n## Paper List")
-model_tables_start = readme.find("\n## Detailed Tables")
 contributing_start = readme.find("\n## Contributing")
 
-# Replace Paper List up to the next major section
-next_section = model_tables_start if model_tables_start != -1 else contributing_start
+next_section = contributing_start
 
 if paper_list_start != -1 and next_section != -1:
     new_readme = readme[:paper_list_start] + output + "\n" + readme[next_section:]
@@ -598,4 +868,4 @@ else:
 
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(new_readme)
-print("\n\nSUCCESS: Paper list injected into README.md")
+print("\n\nSUCCESS: Paper list and detailed tables injected into README.md")
