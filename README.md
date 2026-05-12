@@ -25,12 +25,14 @@ A curated and up-to-date collection of **RNA sequence foundation models**, cover
 ## Model Timeline
 
 Auto-generated from `data/papers.yaml` for 45 confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.
-Timeline dates follow first public model/preprint release when it differs from the formal paper date.
+
+> [!NOTE]
+> Timeline dates use the first public model/preprint release date, not necessarily the formal publication date. Paper List dates below use formal publication/conference dates when available.
 
 > [!TIP]
-> **[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@f67de3d6e0ddd40f8c901b066f471f84c2057bfd/assets/model_timeline.svg?v=146eaca8c5fd)** — model labels in the opened SVG link to source papers.
+> **[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@f67de3d6e0ddd40f8c901b066f471f84c2057bfd/assets/model_timeline.svg?v=ac6590bec485)** — model labels in the opened SVG link to source papers.
 
-[![RNA foundation model timeline](assets/model_timeline.svg)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@f67de3d6e0ddd40f8c901b066f471f84c2057bfd/assets/model_timeline.svg?v=146eaca8c5fd)
+[![RNA foundation model timeline](assets/model_timeline.svg)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@f67de3d6e0ddd40f8c901b066f471f84c2057bfd/assets/model_timeline.svg?v=ac6590bec485)
 
 ---
 

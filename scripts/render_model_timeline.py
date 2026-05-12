@@ -68,7 +68,7 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
     left = 90
     right = width - 90
     step_x = (right - left) // (columns - 1)
-    top = 204
+    top = 214
     tight_gap = 112
     open_gap = 156
     row_positions = row_y_positions(rows, top, tight_gap, open_gap)
@@ -98,13 +98,24 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
         ),
     ]
 
-    svg.append('<rect x="34" y="90" width="850" height="34" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>')
+    svg.append('<rect x="34" y="88" width="980" height="44" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>')
     svg.append(
         svg_text(
             52,
-            112,
+            106,
+            "Timeline dates use first public model/preprint release, not necessarily formal publication.",
+            13,
+            700,
+            "#1d4ed8",
+            "start",
+        )
+    )
+    svg.append(
+        svg_text(
+            52,
+            124,
             "Read each row in the arrow direction, then continue to the next row.",
-            14,
+            13,
             700,
             "#1d4ed8",
             "start",
