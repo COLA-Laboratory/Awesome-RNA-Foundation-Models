@@ -26,26 +26,9 @@ A curated and up-to-date collection of **RNA sequence foundation models**, cover
 
 Auto-generated from `data/papers.yaml` for 45 confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.
 
-[![RNA foundation model timeline](assets/model_timeline.svg)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@ccfb7f6/assets/model_timeline.svg?v=d50691a8849f)
+[![RNA foundation model timeline](assets/model_timeline.svg)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@ccfb7f6/assets/model_timeline.svg?v=5f1d20be5afa)
 
-<sub>[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@ccfb7f6/assets/model_timeline.svg?v=d50691a8849f): model labels in the opened SVG link to source papers.</sub>
-
-Read each row in the arrow direction, then continue to the next row.
-
-| Flow |  |  |  |  |
-|:----:|:--:|:--:|:--:|:--:|
-| &rarr; | <sub>2022.01</sub><br>**[RNABert](https://doi.org/10.1093/nargab/lqac012)** | <sub>2022.04</sub><br>**[RNAFM](https://arxiv.org/abs/2204.00300)** | <sub>2023.07</sub><br>**[Uni-RNA](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1)** | <sub>2023.11</sub><br>**[GenSLM](https://doi.org/10.1177/10943420231201154)** |
-| &larr; | <sub>2024.02</sub><br>**[CaLM](https://www.nature.com/articles/s42256-024-00791-0)** | <sub>2024.01</sub><br>**[RNA-km](https://doi.org/10.1101/2024.01.27.577533)** | <sub>2024.01</sub><br>**[RNAMSM](https://doi.org/10.1093/nar/gkad1031)** | <sub>2023.12</sub><br>**[ATOM-1](https://doi.org/10.1101/2023.12.13.571579)** |
-| &rarr; | <sub>2024.03</sub><br>**[mRNA-FM](https://github.com/ml4bio/RNA-FM)** | <sub>2024.03</sub><br>**[SpliceBERT](https://doi.org/10.1093/bib/bbae163)** | <sub>2024.04</sub><br>**[UTR-LM](https://www.nature.com/articles/s42256-024-00823-9)** | <sub>2024.05</sub><br>**[RNAErnie](https://www.nature.com/articles/s42256-024-00836-4)** |
-| &larr; | <sub>2024.08</sub><br>**[LoRNA SH](https://doi.org/10.1101/2024.08.26.609813)** | <sub>2024.08</sub><br>**[CodonBERT](https://doi.org/10.1101/gr.278870.123)** | <sub>2024.07</sub><br>**[OmniGenome](https://arxiv.org/abs/2407.11242)** | <sub>2024.06</sub><br>**[RFamLlama](https://openreview.net/forum?id=dXnQedxEJD)** |
-| &rarr; | <sub>2024.10</sub><br>**[DGRNA](https://doi.org/10.1101/2024.10.31.621427)** | <sub>2024.10</sub><br>**[HELM](https://arxiv.org/abs/2410.12459)** | <sub>2024.10</sub><br>**[3UTRBERT](https://doi.org/10.1002/advs.202407013)** | <sub>2024.10</sub><br>**[GenerRNA](https://doi.org/10.1371/journal.pone.0310814)** |
-| &larr; | <sub>2024.12</sub><br>**[PlantRNA-FM](https://www.nature.com/articles/s42256-024-00946-z)** | <sub>2024.12</sub><br>**[RNAGenesis](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2)** | <sub>2024.11</sub><br>**[MP-RNA](https://aclanthology.org/2024.findings-emnlp.304/)** | <sub>2024.11</sub><br>**[AIDO.RNA](https://doi.org/10.1101/2024.11.28.625345)** |
-| &rarr; | <sub>2025.01</sub><br>**[LncRNA-BERT](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1)** | <sub>2025.03</sub><br>**[ChaRNABERT](https://openreview.net/forum?id=cAiECLDjzF)** | <sub>2025.03</sub><br>**[Helix-mRNA](https://openreview.net/forum?id=Ky0CkFiVhu)** | <sub>2025.07</sub><br>**[RiNALMo](https://www.nature.com/articles/s41467-025-60872-5)** |
-| &larr; | <sub>2025.09</sub><br>**[ProtRNA](https://www.sciencedirect.com/science/article/pii/S2405471225002042)** | <sub>2025.09</sub><br>**[RNA-BERTa](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1)** | <sub>2025.08</sub><br>**[StructRFM](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1)** | <sub>2025.07</sub><br>**[RNALens](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1)** |
-| &rarr; | <sub>2025.10</sub><br>**[CodonFM](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/)** | <sub>2025.11</sub><br>**[ERNIE-RNA](https://www.nature.com/articles/s41467-025-64972-0)** | <sub>2025.11</sub><br>**[BiRNA-BERT](https://www.nature.com/articles/s42003-025-08982-0)** | <sub>2025.11</sub><br>**[HydraRNA](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7)** |
-| &larr; | <sub>2025.12</sub><br>**[codonGPT](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118)** | <sub>2025.12</sub><br>**[mRNA-GPT](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1)** | <sub>2025.11</sub><br>**[G4mer](https://www.nature.com/articles/s41467-025-65020-7)** | <sub>2025.11</sub><br>**[mRNABERT](https://www.nature.com/articles/s41467-025-65340-8)** |
-| &rarr; | <sub>2026.02</sub><br>**[NUWA](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3)** | <sub>2026.03</sub><br>**[RNAElectra](https://doi.org/10.64898/2026.03.15.711950)** | <sub>2026.03</sub><br>**[RNAret](https://www.nature.com/articles/s42003-026-09757-x)** | <sub>2026.03</sub><br>**[EVA](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)** |
-| &larr; | &nbsp; | &nbsp; | &nbsp; | <sub>2026.04</sub><br>**[Orthrus](https://www.nature.com/articles/s41592-026-03064-3)** |
+<sub>[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@ccfb7f6/assets/model_timeline.svg?v=5f1d20be5afa): model labels in the opened SVG link to source papers.</sub>
 
 ---
 
@@ -209,10 +192,6 @@ RNA-specific pre-training is present, but the scope is constrained by RNA subtyp
 
   > Proposes RFamLlama, a Llama-based autoregressive model for conditional RNA sequence generation conditioned on RNA family labels, generating novel functional ncRNA sequences belonging to over 4,000 Rfam families.
 
-- **OmniGenome** — [Bridging Sequence-Structure Alignment in RNA Foundation Models](https://arxiv.org/abs/2407.11242) (2024.07, preprint) [![abs](https://img.shields.io/badge/abs-2024.07-b31b1b.svg)](https://arxiv.org/abs/2407.11242) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2407.11242) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/OmniGenome-186M)
-
-  > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
-
 - **CodonBERT** — [CodonBERT large language model for mRNA vaccines](https://doi.org/10.1101/gr.278870.123) (2024.08) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/gr.278870.123) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/Sanofi-Public/CodonBERT)
 
   > Presents CodonBERT, a BERT-based model pre-trained on 10M mRNA coding sequences with codon-aware tokenization for mRNA sequence representation and vaccine-related design tasks.
@@ -236,6 +215,10 @@ RNA-specific pre-training is present, but the scope is constrained by RNA subtyp
 - **LncRNA-BERT** — [LncRNA-BERT: A BERT-based Model for Long Non-coding RNA Classification](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1) (2025.01, preprint) [![abs](https://img.shields.io/badge/abs-2025.01-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/luukromeijn/lncRNA-Py)
 
   > Introduces LncRNA-BERT, a BERT model pre-trained on 536K long non-coding RNA sequences from GENCODE, RefSeq, and NONCODE for lncRNA classification, subcellular localization, and functional prediction.
+
+- **OmniGenome** — [Bridging Sequence-Structure Alignment in RNA Foundation Models](https://ojs.aaai.org/index.php/AAAI/article/view/35500) (2025.04) [![abs](https://img.shields.io/badge/abs-2025.04-b31b1b.svg)](https://ojs.aaai.org/index.php/AAAI/article/view/35500) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/OmniGenome-186M)
+
+  > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
 
 - **StructRFM** — [StructRFM: Structure-guided RNA Foundation Model](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) (2025.08, preprint) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/heqin-zhu/structRFM)
 
@@ -450,13 +433,13 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 
   > Proposes ATOM-1, a foundation model trained on chemical mapping data to learn RNA structure-aware representations for secondary and tertiary structure probing and RNA function prediction.
 
-- **OmniGenome** — [Bridging Sequence-Structure Alignment in RNA Foundation Models](https://arxiv.org/abs/2407.11242) (2024.07, preprint) [![abs](https://img.shields.io/badge/abs-2024.07-b31b1b.svg)](https://arxiv.org/abs/2407.11242) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2407.11242) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/OmniGenome-186M)
-
-  > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
-
 - **MP-RNA** — [MP-RNA: Unleashing Multi-species RNA Foundation Model via Calibrated Secondary Structure Prediction](https://aclanthology.org/2024.findings-emnlp.304/) (2024.11) [![abs](https://img.shields.io/badge/abs-2024.11-b31b1b.svg)](https://aclanthology.org/2024.findings-emnlp.304/) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/MP-RNA)
 
   > Develops MP-RNA, a multi-purpose RNA foundation model that integrates sequence and structure information through joint pre-training on the OneKP dataset, supporting diverse RNA tasks within a unified framework.
+
+- **OmniGenome** — [Bridging Sequence-Structure Alignment in RNA Foundation Models](https://ojs.aaai.org/index.php/AAAI/article/view/35500) (2025.04) [![abs](https://img.shields.io/badge/abs-2025.04-b31b1b.svg)](https://ojs.aaai.org/index.php/AAAI/article/view/35500) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/OmniGenome-186M)
+
+  > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
 
 - **StructRFM** — [StructRFM: Structure-guided RNA Foundation Model](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) (2025.08, preprint) [![abs](https://img.shields.io/badge/abs-2025.08-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/heqin-zhu/structRFM)
 
@@ -550,10 +533,6 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 
   > Presents RNAErnie, an RNA-focused pre-trained model that combines motif-aware pretraining with type-guided fine-tuning for diverse RNA sequence analysis tasks.
 
-- **OmniGenome** — [Bridging Sequence-Structure Alignment in RNA Foundation Models](https://arxiv.org/abs/2407.11242) (2024.07, preprint) [![abs](https://img.shields.io/badge/abs-2024.07-b31b1b.svg)](https://arxiv.org/abs/2407.11242) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2407.11242) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/OmniGenome-186M)
-
-  > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
-
 - **CodonBERT** — [CodonBERT large language model for mRNA vaccines](https://doi.org/10.1101/gr.278870.123) (2024.08) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/gr.278870.123) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/Sanofi-Public/CodonBERT)
 
   > Presents CodonBERT, a BERT-based model pre-trained on 10M mRNA coding sequences with codon-aware tokenization for mRNA sequence representation and vaccine-related design tasks.
@@ -581,6 +560,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **ChaRNABERT** — [Character-level Tokenizations as Powerful Inductive Biases for RNA Foundational Models](https://openreview.net/forum?id=cAiECLDjzF) (2025.03, workshop) [![abs](https://img.shields.io/badge/abs-2025.03-b31b1b.svg)](https://openreview.net/forum?id=cAiECLDjzF)
 
   > Proposes ChaRNABERT with Gradient-based Subword Tokenization (GBST) that learns data-driven tokenization during pre-training, outperforming fixed tokenization approaches on RNA structure and function prediction tasks.
+
+- **OmniGenome** — [Bridging Sequence-Structure Alignment in RNA Foundation Models](https://ojs.aaai.org/index.php/AAAI/article/view/35500) (2025.04) [![abs](https://img.shields.io/badge/abs-2025.04-b31b1b.svg)](https://ojs.aaai.org/index.php/AAAI/article/view/35500) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/OmniGenome-186M)
+
+  > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
 
 - **RiNALMo** — [RiNALMo: general-purpose RNA language models can generalize well on structure prediction tasks](https://www.nature.com/articles/s41467-025-60872-5) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://www.nature.com/articles/s41467-025-60872-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
 
@@ -768,10 +751,6 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 
   > Proposes RFamLlama, a Llama-based autoregressive model for conditional RNA sequence generation conditioned on RNA family labels, generating novel functional ncRNA sequences belonging to over 4,000 Rfam families.
 
-- **OmniGenome** — [Bridging Sequence-Structure Alignment in RNA Foundation Models](https://arxiv.org/abs/2407.11242) (2024.07, preprint) [![abs](https://img.shields.io/badge/abs-2024.07-b31b1b.svg)](https://arxiv.org/abs/2407.11242) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2407.11242) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/OmniGenome-186M)
-
-  > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
-
 - **LoRNA SH** — [A long-context RNA foundation model for predicting transcriptome architecture](https://doi.org/10.1101/2024.08.26.609813) (2024.08, preprint) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/2024.08.26.609813) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2024.08.26.609813)
 
   > Introduces LoRNA SH, a StripedHyena-based long-context RNA foundation model trained on full-length transcriptome architecture data to predict isoform abundance, isoform structure, and variant effects.
@@ -795,6 +774,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **PlantRNA-FM** — [An interpretable RNA foundation model for exploring functional RNA motifs in plants](https://www.nature.com/articles/s42256-024-00946-z) (2024.12) [![abs](https://img.shields.io/badge/abs-2024.12-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00946-z) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/PlantRNA-FM)
 
   > Presents PlantRNA-FM, a foundation model pre-trained on transcriptomes from 1,124 plant species (OneKP dataset), capturing plant-specific RNA regulatory patterns for gene expression prediction and functional annotation.
+
+- **OmniGenome** — [Bridging Sequence-Structure Alignment in RNA Foundation Models](https://ojs.aaai.org/index.php/AAAI/article/view/35500) (2025.04) [![abs](https://img.shields.io/badge/abs-2025.04-b31b1b.svg)](https://ojs.aaai.org/index.php/AAAI/article/view/35500) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/yangheng/OmniGenome-186M)
+
+  > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
 
 - **RiNALMo** — [RiNALMo: general-purpose RNA language models can generalize well on structure prediction tasks](https://www.nature.com/articles/s41467-025-60872-5) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://www.nature.com/articles/s41467-025-60872-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
 
@@ -1103,8 +1086,8 @@ Models incorporating RNA secondary or tertiary structure information during pre-
 | Model <img width=180/> | Scope <img width=190/> | Paper <img width=110/> | Code <img width=110/> | Date / Status <img width=90/> | Architecture <img width=150/> | Params <img width=90/> | Pre-training Data <img width=240/> | Tokenization <img width=130/> |
 |:------|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
 | <nobr>**ATOM-1**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1101/2023.12.13.571579)</nobr> | - | <nobr>2023.12<br><sub>preprint</sub></nobr> | <nobr>Encoder-decoder</nobr> | - | <nobr>Chemical mapping sequencing data</nobr> | <nobr>SNT</nobr> |
-| <nobr>**OmniGenome**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://arxiv.org/abs/2407.11242)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/OmniGenome-186M)</nobr> | <nobr>2024.07<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | <nobr>52M / 186M</nobr> | <nobr>OneKP (seq-structure pairs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**MP-RNA**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://aclanthology.org/2024.findings-emnlp.304/)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/MP-RNA)</nobr> | <nobr>2024.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>52-186M</nobr> | <nobr>OneKP (seq + structure)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**OmniGenome**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://ojs.aaai.org/index.php/AAAI/article/view/35500)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/OmniGenome-186M)</nobr> | <nobr>2025.04</nobr> | <nobr>Encoder-only</nobr> | <nobr>52M / 186M</nobr> | <nobr>OneKP (seq-structure pairs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**StructRFM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1)</nobr> | <nobr>[Code](https://github.com/heqin-zhu/structRFM)</nobr> | <nobr>2025.08<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | - | <nobr>21M seq-structure pairs</nobr> | <nobr>SNT</nobr> |
 
 </details>

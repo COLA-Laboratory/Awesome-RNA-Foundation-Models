@@ -38,12 +38,21 @@ def svg_text(x, y, text, size=16, weight=400, fill="#111827", anchor="middle"):
     )
 
 
-def node_position(index: int, columns: int, left: int, step_x: int, top: int, step_y: int):
+def row_y_positions(rows: int, top: int, tight_gap: int, open_gap: int) -> list[int]:
+    positions = [top]
+    for row in range(1, rows):
+        previous_row = row - 1
+        gap = tight_gap if previous_row % 2 == 0 else open_gap
+        positions.append(positions[-1] + gap)
+    return positions
+
+
+def node_position(index: int, columns: int, left: int, step_x: int, row_positions: list[int]):
     row = index // columns
     col = index % columns
     if row % 2:
         col = columns - 1 - col
-    return left + col * step_x, top + row * step_y, row
+    return left + col * step_x, row_positions[row], row
 
 
 def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTPUT_FILE) -> None:
@@ -55,13 +64,15 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
     left = 90
     right = width - 90
     step_x = (right - left) // (columns - 1)
-    top = 168
-    step_y = 156
+    top = 204
+    tight_gap = 112
+    open_gap = 156
+    row_positions = row_y_positions(rows, top, tight_gap, open_gap)
     bottom_padding = 90
-    height = top + (rows - 1) * step_y + bottom_padding
+    height = row_positions[-1] + bottom_padding
 
     points = [
-        node_position(index, columns, left, step_x, top, step_y)[:2]
+        node_position(index, columns, left, step_x, row_positions)[:2]
         for index, _ in enumerate(papers)
     ]
     path_points = " ".join(f"{x},{y}" for x, y in points)
@@ -83,6 +94,19 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
         ),
     ]
 
+    svg.append('<rect x="34" y="90" width="850" height="34" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>')
+    svg.append(
+        svg_text(
+            52,
+            112,
+            "Read each row in the arrow direction, then continue to the next row.",
+            14,
+            700,
+            "#1d4ed8",
+            "start",
+        )
+    )
+
     legend_x = width - 330
     legend_y = 31
     svg.append(f'<rect x="{legend_x - 18}" y="{legend_y - 20}" width="290" height="72" rx="8" fill="#ffffff" stroke="#e5e7eb"/>')
@@ -93,8 +117,11 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
         svg.append(svg_text(legend_x + 14, y + 5, label, 13, 500, "#374151", "start"))
 
     for row in range(rows):
-        y = top + row * step_y
+        y = row_positions[row]
         svg.append(f'<line x1="{left}" y1="{y}" x2="{right}" y2="{y}" stroke="#e5e7eb" stroke-width="1"/>')
+        arrow = "→" if row % 2 == 0 else "←"
+        arrow_x = left - 38 if row % 2 == 0 else right + 38
+        svg.append(svg_text(arrow_x, y + 7, arrow, 24, 800, "#525252"))
 
     svg.append(
         f'<polyline points="{path_points}" fill="none" stroke="#404040" '
@@ -104,7 +131,7 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
     label_width = 136
     label_height = 42
     for index, paper in enumerate(papers):
-        x, y, row = node_position(index, columns, left, step_x, top, step_y)
+        x, y, row = node_position(index, columns, left, step_x, row_positions)
         scope = paper["scope"]
         color = SCOPE_COLORS.get(scope, "#64748b")
         label_y = y - 68 if row % 2 == 0 else y + 26
