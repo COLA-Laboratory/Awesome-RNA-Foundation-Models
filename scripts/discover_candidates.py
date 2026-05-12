@@ -14,7 +14,7 @@ import re
 import time
 from pathlib import Path
 from typing import Iterable
-from urllib.parse import quote, urlencode
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
@@ -74,15 +74,36 @@ MODEL_TERMS = (
     "decoder",
 )
 
+HIGH_CONFIDENCE_MODEL_TERMS = (
+    "foundation model",
+    "language model",
+    "pre-trained",
+    "pretrained",
+    "masked language",
+    "bert",
+    "gpt",
+    "mamba",
+)
+
 LOW_PRIORITY_TERMS = (
     "single-cell",
     "scrna-seq",
     "rna-seq expression",
     "expression profile",
+    "morphology",
+    "cellular morphology",
     "inverse folding",
     "reverse translation",
     "3d structure prediction",
     "protein language model",
+)
+
+BENCHMARK_TERMS = (
+    "benchmark",
+    "leaderboard",
+    "evaluation",
+    "survey",
+    "review",
 )
 
 
@@ -190,8 +211,7 @@ def query_biorxiv(from_date: date, to_date: date) -> list[Candidate]:
         for record in records:
             title = compact(record.get("title", ""))
             doi = compact(record.get("doi", ""))
-            doi_suffix = doi.removeprefix("10.1101/")
-            link = f"https://www.biorxiv.org/content/10.1101/{doi_suffix}v{record.get('version', '1')}" if doi else ""
+            link = f"https://www.biorxiv.org/content/{doi}v{record.get('version', '1')}" if doi else ""
             published = compact(record.get("date", ""))
             abstract = compact(record.get("abstract", ""))
             if title and link:
@@ -285,11 +305,30 @@ def score_candidate(candidate: Candidate) -> tuple[int, list[str]]:
     return score, sorted(set(evidence))
 
 
+def is_likely_new_model(candidate: Candidate) -> bool:
+    title = normalize_text(candidate.title)
+    text = normalize_text(f"{candidate.title} {candidate.abstract}")
+    has_rna = any(term in text for term in RNA_TERMS)
+    has_high_confidence_model_term = any(term in text for term in HIGH_CONFIDENCE_MODEL_TERMS)
+    if not (has_rna and has_high_confidence_model_term):
+        return False
+    if any(term in title for term in LOW_PRIORITY_TERMS):
+        return False
+    if any(term in title for term in BENCHMARK_TERMS):
+        return False
+    if any(term in text for term in ("single cell", "single-cell", "scrna seq", "expression profile")):
+        return False
+    return True
+
+
 def infer_model_name(title: str) -> str:
     prefix = title.split(":", 1)[0].strip()
-    if 1 <= len(prefix.split()) <= 4 and re.search(r"[A-Z0-9-]{2,}|RNA|mRNA|BERT|GPT|FM", prefix):
+    if 1 <= len(prefix.split()) <= 3:
         return prefix
-    match = re.search(r"\b([A-Za-z0-9.-]*(?:RNA|mRNA|BERT|GPT|FM|Mamba)[A-Za-z0-9.-]*)\b", title)
+    match = re.search(r"\b([A-Z][A-Za-z0-9.-]*(?:RNA|mRNA|BERT|GPT|FM|Mamba)[A-Za-z0-9.-]*)\b", title)
+    if match and match.group(1).lower() != "rna":
+        return match.group(1)
+    match = re.search(r"\b([A-Z0-9][A-Z0-9.-]{2,})\b", title)
     if match:
         return match.group(1)
     return "-"
@@ -369,6 +408,8 @@ def discover(lookback_days: int, max_results: int, min_score: int) -> list[dict]
             continue
         score, evidence = score_candidate(candidate)
         if score < min_score:
+            continue
+        if not is_likely_new_model(candidate):
             continue
         record = candidate_to_record(candidate, evidence)
         record["score"] = score

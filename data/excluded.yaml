@@ -5,7 +5,7 @@
   date: '2025.11'
   reason: Task-specific predictor/designer or downstream application rather than a reusable RNA language-model backbone.
 - name: mRNA-GPT (full-length)
-  title: 'mRNA-GPT: Full-Length mRNA Design via Autoregressive Generation with PPO'
+  title: 'mRNA-GPT: A Generative Model for Full-Length mRNA Design and Optimization'
   paper_url: https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1
   date: '2026.03'
   reason: Adapted or composed downstream framework without a clearly reusable RNA language-model backbone for this strict list.

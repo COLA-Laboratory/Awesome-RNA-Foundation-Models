@@ -616,7 +616,7 @@
   pretraining_data: RNAcentral (16.09M seqs, ~17.4B nt)
   table_tokenization: BPE
 - name: EVA
-  title: 'EVA: Evolutionary Versatile Architect for Long-context RNA Generation'
+  title: A Long-Context Generative Foundation Model Deciphers RNA Design Principles
   paper_url: https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2
   date: '2026.03'
   github_url: null
