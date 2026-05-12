@@ -16,7 +16,7 @@ from scripts.render_model_timeline import render_timeline_svg
 # structured data rather than Python tuples.
 DATA_DIR = Path(__file__).resolve().parent / "data"
 PAPERS_FILE = DATA_DIR / "papers.yaml"
-TIMELINE_INTERACTIVE_BASE_URL = "https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg"
+TIMELINE_INTERACTIVE_BASE_URL = "https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@001633a/assets/model_timeline.svg"
 
 
 def load_papers(path=PAPERS_FILE):
