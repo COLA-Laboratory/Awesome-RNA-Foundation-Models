@@ -26,9 +26,10 @@ A curated and up-to-date collection of **RNA sequence foundation models**, cover
 
 Auto-generated from `data/papers.yaml` for 45 confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.
 
-[![RNA foundation model timeline](assets/model_timeline.svg)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@f533786/assets/model_timeline.svg?v=5f1d20be5afa)
+> [!TIP]
+> **[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@f533786/assets/model_timeline.svg?v=5f1d20be5afa)** — model labels in the opened SVG link to source papers.
 
-<sub>[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@f533786/assets/model_timeline.svg?v=5f1d20be5afa): model labels in the opened SVG link to source papers.</sub>
+[![RNA foundation model timeline](assets/model_timeline.svg)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@f533786/assets/model_timeline.svg?v=5f1d20be5afa)
 
 ---
 
