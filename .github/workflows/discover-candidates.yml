@@ -52,7 +52,7 @@ jobs:
           git checkout -B bot/update-rna-candidates
           git add data/candidates.yaml
           git commit -m "Update RNA foundation model candidates"
-          git push --force-with-lease origin bot/update-rna-candidates
+          git push --force origin HEAD:bot/update-rna-candidates
 
           PR_BODY="Automated literature scan found new pending candidates in data/candidates.yaml. Please review before moving any entry into data/papers.yaml."
 
