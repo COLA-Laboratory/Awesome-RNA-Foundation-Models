@@ -15,6 +15,7 @@ from scripts.render_model_timeline import render_timeline_svg
 # structured data rather than Python tuples.
 DATA_DIR = Path(__file__).resolve().parent / "data"
 PAPERS_FILE = DATA_DIR / "papers.yaml"
+TIMELINE_INTERACTIVE_URL = "https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg"
 
 
 def load_papers(path=PAPERS_FILE):
@@ -371,9 +372,9 @@ def render_model_timeline():
     rows.append("")
     rows.append(f"Auto-generated from `data/papers.yaml` for {len(papers)} confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.")
     rows.append("")
-    rows.append("[![RNA foundation model timeline](assets/model_timeline.svg)](assets/model_timeline.svg?raw=1)")
+    rows.append(f"[![RNA foundation model timeline](assets/model_timeline.svg)]({TIMELINE_INTERACTIVE_URL})")
     rows.append("")
-    rows.append("<sub>[Open interactive SVG](assets/model_timeline.svg?raw=1): model labels in the opened SVG link to source papers.</sub>")
+    rows.append(f"<sub>[Open interactive SVG]({TIMELINE_INTERACTIVE_URL}): model labels in the opened SVG link to source papers.</sub>")
     rows.append("")
     rows.append("Read each row in the arrow direction, then continue to the next row.")
     rows.append("")
