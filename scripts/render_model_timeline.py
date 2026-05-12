@@ -68,7 +68,8 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
 
     svg = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
+        f'width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="#fbfbfd"/>',
         svg_text(34, 42, "RNA Foundation Model Timeline", 30, 800, "#111827", "start"),
         svg_text(
@@ -111,7 +112,8 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
 
         svg.append(f'<line x1="{x}" y1="{y}" x2="{x}" y2="{line_end}" stroke="{color}" stroke-width="2"/>')
         svg.append(f'<circle cx="{x}" cy="{y}" r="10" fill="{color}" stroke="#ffffff" stroke-width="4"/>')
-        svg.append(f'<a href="{escape(paper["paper_url"])}" target="_blank">')
+        paper_url = escape(paper["paper_url"])
+        svg.append(f'<a href="{paper_url}" xlink:href="{paper_url}">')
         svg.append(
             f'<rect x="{x - label_width / 2}" y="{label_y}" width="{label_width}" height="{label_height}" '
             f'rx="8" fill="#ffffff" stroke="{color}" stroke-width="1.4"/>'
