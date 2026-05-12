@@ -355,6 +355,52 @@ def scope_cell(name):
     return nobr(scope_labels[scope_by_name[name]])
 
 
+def timeline_date(date):
+    return date.replace(".", "-")
+
+
+def render_model_timeline():
+    rows = []
+    rows.append("## Model Timeline")
+    rows.append("")
+    rows.append(f"Auto-generated from `data/papers.yaml` for {len(papers)} confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.")
+    rows.append("")
+    rows.append("```mermaid")
+    rows.append("timeline")
+    rows.append("    title Confirmed RNA Foundation Models")
+    for paper in sorted(papers, key=lambda x: x[3]):
+        name, title, url, date, github_url, hf_url, category, abstract, arch, token = paper
+        rows.append(f"    {timeline_date(date)} : {name}")
+    rows.append("```")
+    rows.append("")
+    rows.append("<details>")
+    rows.append("<summary><b>Chronological entries</b></summary>")
+    rows.append("")
+    rows.append("| Date | Model | Scope | Focus | Paper |")
+    rows.append("|:-----|:------|:------|:------|:------|")
+    for paper in sorted(papers, key=lambda x: x[3]):
+        name, title, url, date, github_url, hf_url, category, abstract, arch, token = paper
+        rows.append(
+            "| "
+            + " | ".join(
+                [
+                    date_status_cell(date, url, name),
+                    nobr(f"**{name}**"),
+                    scope_cell(name),
+                    nobr(category),
+                    link_cell("Paper", url),
+                ]
+            )
+            + " |"
+        )
+    rows.append("")
+    rows.append("</details>")
+    rows.append("")
+    rows.append("---")
+    rows.append("")
+    return rows
+
+
 def render_model_table(entries, label, description):
     rows = []
     rows.append("<details open>")
@@ -506,6 +552,7 @@ def render_detailed_tables():
 # Build output
 # ============================================================
 lines = []
+lines.extend(render_model_timeline())
 lines.append("")
 lines.append("## Paper List")
 lines.append("")
@@ -627,13 +674,15 @@ with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
 # Find and replace existing generated content (stop before Contributing).
-paper_list_start = readme.find("\n## Paper List")
+generated_start = readme.find("\n## Model Timeline")
+if generated_start == -1:
+    generated_start = readme.find("\n## Paper List")
 contributing_start = readme.find("\n## Contributing")
 
 next_section = contributing_start
 
-if paper_list_start != -1 and next_section != -1:
-    new_readme = readme[:paper_list_start] + output + "\n" + readme[next_section:]
+if generated_start != -1 and next_section != -1:
+    new_readme = readme[:generated_start] + output + "\n" + readme[next_section:]
 elif next_section != -1:
     new_readme = readme[:next_section] + output + "\n" + readme[next_section:]
 else:
@@ -653,6 +702,7 @@ A curated and up-to-date collection of **RNA sequence foundation models**, cover
 
 ## Table of Contents
 
+- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA foundation models
 - [Paper List](#paper-list) — Strict RNA foundation models (4 views), Benchmarks, Surveys
 - [Detailed Tables](#detailed-tables) — Detailed tables for all {len(papers)} model entries, {len(benchmarks)} benchmarks, {len(surveys)} surveys
 - [Abbreviations](#abbreviations)
@@ -685,7 +735,14 @@ new_readme = re.sub(
     f"Detailed tables for all {len(papers)} model entries, {len(benchmarks)} benchmarks, {len(surveys)} surveys",
     new_readme,
 )
+if "- [Model Timeline](#model-timeline)" not in new_readme:
+    new_readme = new_readme.replace(
+        "- [Paper List](#paper-list) — Strict RNA foundation models (4 views), Benchmarks, Surveys",
+        "- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA foundation models\n"
+        "- [Paper List](#paper-list) — Strict RNA foundation models (4 views), Benchmarks, Surveys",
+    )
 new_readme = new_readme.replace("\n---\n## Paper List", "\n---\n\n## Paper List")
+new_readme = new_readme.replace("\n---\n## Model Timeline", "\n---\n\n## Model Timeline")
 
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(new_readme)
