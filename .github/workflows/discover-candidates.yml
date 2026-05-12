@@ -54,11 +54,21 @@ jobs:
           git commit -m "Update RNA foundation model candidates"
           git push --force-with-lease origin bot/update-rna-candidates
 
-          gh pr create \
+          PR_BODY="Automated literature scan found new pending candidates in data/candidates.yaml. Please review before moving any entry into data/papers.yaml."
+
+          if gh pr view bot/update-rna-candidates --json url --jq .url; then
+            gh pr edit bot/update-rna-candidates \
+              --title "Update RNA foundation model candidates" \
+              --body "$PR_BODY"
+            exit 0
+          fi
+
+          if gh pr create \
             --base main \
             --head bot/update-rna-candidates \
             --title "Update RNA foundation model candidates" \
-            --body "Automated literature scan found new pending candidates in data/candidates.yaml. Please review before moving any entry into data/papers.yaml." \
-          || gh pr edit \
-            --title "Update RNA foundation model candidates" \
-            --body "Automated literature scan found new pending candidates in data/candidates.yaml. Please review before moving any entry into data/papers.yaml."
+            --body "$PR_BODY"; then
+            exit 0
+          fi
+
+          echo "::warning::Candidate branch was pushed, but this repository does not allow GitHub Actions to create pull requests. Open a PR manually from bot/update-rna-candidates or enable 'Allow GitHub Actions to create and approve pull requests' in repository settings."
