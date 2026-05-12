@@ -26,55 +26,22 @@ A curated and up-to-date collection of **RNA sequence foundation models**, cover
 
 Auto-generated from `data/papers.yaml` for 45 confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.
 
-```mermaid
-timeline
-    title Confirmed RNA Foundation Models
-    2022-01 : RNABert
-    2022-04 : RNAFM
-    2023-07 : Uni-RNA
-    2023-11 : GenSLM
-    2023-12 : ATOM-1
-    2024-01 : RNAMSM
-    2024-01 : RNA-km
-    2024-02 : CaLM
-    2024-03 : mRNA-FM
-    2024-03 : SpliceBERT
-    2024-04 : UTR-LM
-    2024-05 : RNAErnie
-    2024-06 : RFamLlama
-    2024-07 : OmniGenome
-    2024-08 : CodonBERT
-    2024-08 : LoRNA SH
-    2024-10 : DGRNA
-    2024-10 : HELM
-    2024-10 : 3UTRBERT
-    2024-10 : GenerRNA
-    2024-11 : AIDO.RNA
-    2024-11 : MP-RNA
-    2024-12 : RNAGenesis
-    2024-12 : PlantRNA-FM
-    2025-01 : LncRNA-BERT
-    2025-03 : ChaRNABERT
-    2025-03 : Helix-mRNA
-    2025-07 : RiNALMo
-    2025-07 : RNALens
-    2025-08 : StructRFM
-    2025-09 : RNA-BERTa
-    2025-09 : ProtRNA
-    2025-10 : CodonFM
-    2025-11 : ERNIE-RNA
-    2025-11 : BiRNA-BERT
-    2025-11 : HydraRNA
-    2025-11 : mRNABERT
-    2025-11 : G4mer
-    2025-12 : mRNA-GPT
-    2025-12 : codonGPT
-    2026-02 : NUWA
-    2026-03 : RNAElectra
-    2026-03 : RNAret
-    2026-03 : EVA
-    2026-04 : Orthrus
-```
+Read each row in the arrow direction, then continue to the next row.
+
+| Flow |  |  |  |  |
+|:----:|:--:|:--:|:--:|:--:|
+| &rarr; | <sub>2022.01</sub><br>**[RNABert](https://doi.org/10.1093/nargab/lqac012)** | <sub>2022.04</sub><br>**[RNAFM](https://arxiv.org/abs/2204.00300)** | <sub>2023.07</sub><br>**[Uni-RNA](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1)** | <sub>2023.11</sub><br>**[GenSLM](https://doi.org/10.1177/10943420231201154)** |
+| &larr; | <sub>2024.02</sub><br>**[CaLM](https://www.nature.com/articles/s42256-024-00791-0)** | <sub>2024.01</sub><br>**[RNA-km](https://doi.org/10.1101/2024.01.27.577533)** | <sub>2024.01</sub><br>**[RNAMSM](https://doi.org/10.1093/nar/gkad1031)** | <sub>2023.12</sub><br>**[ATOM-1](https://doi.org/10.1101/2023.12.13.571579)** |
+| &rarr; | <sub>2024.03</sub><br>**[mRNA-FM](https://github.com/ml4bio/RNA-FM)** | <sub>2024.03</sub><br>**[SpliceBERT](https://doi.org/10.1093/bib/bbae163)** | <sub>2024.04</sub><br>**[UTR-LM](https://www.nature.com/articles/s42256-024-00823-9)** | <sub>2024.05</sub><br>**[RNAErnie](https://www.nature.com/articles/s42256-024-00836-4)** |
+| &larr; | <sub>2024.08</sub><br>**[LoRNA SH](https://doi.org/10.1101/2024.08.26.609813)** | <sub>2024.08</sub><br>**[CodonBERT](https://doi.org/10.1101/gr.278870.123)** | <sub>2024.07</sub><br>**[OmniGenome](https://arxiv.org/abs/2407.11242)** | <sub>2024.06</sub><br>**[RFamLlama](https://openreview.net/forum?id=dXnQedxEJD)** |
+| &rarr; | <sub>2024.10</sub><br>**[DGRNA](https://doi.org/10.1101/2024.10.31.621427)** | <sub>2024.10</sub><br>**[HELM](https://arxiv.org/abs/2410.12459)** | <sub>2024.10</sub><br>**[3UTRBERT](https://doi.org/10.1002/advs.202407013)** | <sub>2024.10</sub><br>**[GenerRNA](https://doi.org/10.1371/journal.pone.0310814)** |
+| &larr; | <sub>2024.12</sub><br>**[PlantRNA-FM](https://www.nature.com/articles/s42256-024-00946-z)** | <sub>2024.12</sub><br>**[RNAGenesis](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2)** | <sub>2024.11</sub><br>**[MP-RNA](https://aclanthology.org/2024.findings-emnlp.304/)** | <sub>2024.11</sub><br>**[AIDO.RNA](https://doi.org/10.1101/2024.11.28.625345)** |
+| &rarr; | <sub>2025.01</sub><br>**[LncRNA-BERT](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1)** | <sub>2025.03</sub><br>**[ChaRNABERT](https://openreview.net/forum?id=cAiECLDjzF)** | <sub>2025.03</sub><br>**[Helix-mRNA](https://openreview.net/forum?id=Ky0CkFiVhu)** | <sub>2025.07</sub><br>**[RiNALMo](https://www.nature.com/articles/s41467-025-60872-5)** |
+| &larr; | <sub>2025.09</sub><br>**[ProtRNA](https://www.sciencedirect.com/science/article/pii/S2405471225002042)** | <sub>2025.09</sub><br>**[RNA-BERTa](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1)** | <sub>2025.08</sub><br>**[StructRFM](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1)** | <sub>2025.07</sub><br>**[RNALens](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1)** |
+| &rarr; | <sub>2025.10</sub><br>**[CodonFM](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/)** | <sub>2025.11</sub><br>**[ERNIE-RNA](https://www.nature.com/articles/s41467-025-64972-0)** | <sub>2025.11</sub><br>**[BiRNA-BERT](https://www.nature.com/articles/s42003-025-08982-0)** | <sub>2025.11</sub><br>**[HydraRNA](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7)** |
+| &larr; | <sub>2025.12</sub><br>**[codonGPT](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118)** | <sub>2025.12</sub><br>**[mRNA-GPT](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1)** | <sub>2025.11</sub><br>**[G4mer](https://www.nature.com/articles/s41467-025-65020-7)** | <sub>2025.11</sub><br>**[mRNABERT](https://www.nature.com/articles/s41467-025-65340-8)** |
+| &rarr; | <sub>2026.02</sub><br>**[NUWA](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3)** | <sub>2026.03</sub><br>**[RNAElectra](https://doi.org/10.64898/2026.03.15.711950)** | <sub>2026.03</sub><br>**[RNAret](https://www.nature.com/articles/s42003-026-09757-x)** | <sub>2026.03</sub><br>**[EVA](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)** |
+| &larr; | &nbsp; | &nbsp; | &nbsp; | <sub>2026.04</sub><br>**[Orthrus](https://www.nature.com/articles/s41592-026-03064-3)** |
 
 <details>
 <summary><b>Chronological entries</b></summary>

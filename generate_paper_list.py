@@ -359,19 +359,35 @@ def timeline_date(date):
     return date.replace(".", "-")
 
 
+def timeline_node(paper):
+    name, title, url, date, github_url, hf_url, category, abstract, arch, token = paper
+    return f"<sub>{date}</sub><br>**[{name}]({url})**"
+
+
 def render_model_timeline():
+    columns = 4
+    sorted_papers = sorted(papers, key=lambda x: x[3])
     rows = []
     rows.append("## Model Timeline")
     rows.append("")
     rows.append(f"Auto-generated from `data/papers.yaml` for {len(papers)} confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.")
     rows.append("")
-    rows.append("```mermaid")
-    rows.append("timeline")
-    rows.append("    title Confirmed RNA Foundation Models")
-    for paper in sorted(papers, key=lambda x: x[3]):
-        name, title, url, date, github_url, hf_url, category, abstract, arch, token = paper
-        rows.append(f"    {timeline_date(date)} : {name}")
-    rows.append("```")
+    rows.append("Read each row in the arrow direction, then continue to the next row.")
+    rows.append("")
+    rows.append("| Flow |  |  |  |  |")
+    rows.append("|:----:|:--:|:--:|:--:|:--:|")
+    for index in range(0, len(sorted_papers), columns):
+        chunk = sorted_papers[index:index + columns]
+        row_number = index // columns
+        if row_number % 2 == 0:
+            direction = "&rarr;"
+            display = chunk + [None] * (columns - len(chunk))
+        else:
+            direction = "&larr;"
+            display = [None] * (columns - len(chunk)) + list(reversed(chunk))
+        cells = [direction]
+        cells.extend(timeline_node(paper) if paper else "&nbsp;" for paper in display)
+        rows.append("| " + " | ".join(cells) + " |")
     rows.append("")
     rows.append("<details>")
     rows.append("<summary><b>Chronological entries</b></summary>")
