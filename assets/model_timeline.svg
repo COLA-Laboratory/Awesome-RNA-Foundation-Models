@@ -18,7 +18,7 @@
 <polyline points="90,168 242,168 394,168 546,168 698,168 850,168 1002,168 1154,168 1306,168 1306,324 1154,324 1002,324 850,324 698,324 546,324 394,324 242,324 90,324 90,480 242,480 394,480 546,480 698,480 850,480 1002,480 1154,480 1306,480 1306,636 1154,636 1002,636 850,636 698,636 546,636 394,636 242,636 90,636 90,792 242,792 394,792 546,792 698,792 850,792 1002,792 1154,792 1306,792" fill="none" stroke="#404040" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 <line x1="90" y1="168" x2="90" y2="142" stroke="#16a34a" stroke-width="2"/>
 <circle cx="90" cy="168" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://doi.org/10.1093/nargab/lqac012" xlink:href="https://doi.org/10.1093/nargab/lqac012">
+<a href="https://pubmed.ncbi.nlm.nih.gov/35211670/" xlink:href="https://pubmed.ncbi.nlm.nih.gov/35211670/">
 <rect x="22.0" y="100" width="136" height="42" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
 <text x="90" y="116" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2022.01</text>
 <text x="90" y="132" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="middle">RNABert</text>

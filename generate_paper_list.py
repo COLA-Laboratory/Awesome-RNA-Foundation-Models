@@ -3,6 +3,7 @@ Four classification views: by foundation-model scope, RNA/data focus, architectu
 and tokenization strategy."""
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+import hashlib
 import re
 from pathlib import Path
 from collections import OrderedDict
@@ -15,7 +16,7 @@ from scripts.render_model_timeline import render_timeline_svg
 # structured data rather than Python tuples.
 DATA_DIR = Path(__file__).resolve().parent / "data"
 PAPERS_FILE = DATA_DIR / "papers.yaml"
-TIMELINE_INTERACTIVE_URL = "https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg"
+TIMELINE_INTERACTIVE_BASE_URL = "https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg"
 
 
 def load_papers(path=PAPERS_FILE):
@@ -366,15 +367,18 @@ def timeline_node(paper):
 def render_model_timeline():
     columns = 4
     sorted_papers = sorted(papers, key=lambda x: x[3])
-    render_timeline_svg(PAPERS_FILE, Path(__file__).resolve().parent / "assets" / "model_timeline.svg")
+    timeline_svg = Path(__file__).resolve().parent / "assets" / "model_timeline.svg"
+    render_timeline_svg(PAPERS_FILE, timeline_svg)
+    cache_key = hashlib.sha256(timeline_svg.read_bytes()).hexdigest()[:12]
+    timeline_url = f"{TIMELINE_INTERACTIVE_BASE_URL}?v={cache_key}"
     rows = []
     rows.append("## Model Timeline")
     rows.append("")
     rows.append(f"Auto-generated from `data/papers.yaml` for {len(papers)} confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.")
     rows.append("")
-    rows.append(f"[![RNA foundation model timeline](assets/model_timeline.svg)]({TIMELINE_INTERACTIVE_URL})")
+    rows.append(f"[![RNA foundation model timeline](assets/model_timeline.svg)]({timeline_url})")
     rows.append("")
-    rows.append(f"<sub>[Open interactive SVG]({TIMELINE_INTERACTIVE_URL}): model labels in the opened SVG link to source papers.</sub>")
+    rows.append(f"<sub>[Open interactive SVG]({timeline_url}): model labels in the opened SVG link to source papers.</sub>")
     rows.append("")
     rows.append("Read each row in the arrow direction, then continue to the next row.")
     rows.append("")
