@@ -30,6 +30,10 @@ def load_papers(path: Path) -> list[dict]:
         return yaml.safe_load(f) or []
 
 
+def timeline_date(paper: dict) -> str:
+    return paper.get("timeline_date", paper["date"])
+
+
 def svg_text(x, y, text, size=16, weight=400, fill="#111827", anchor="middle"):
     return (
         f'<text x="{x}" y="{y}" font-family="Inter, Arial, sans-serif" '
@@ -56,7 +60,7 @@ def node_position(index: int, columns: int, left: int, step_x: int, row_position
 
 
 def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTPUT_FILE) -> None:
-    papers = sorted(load_papers(input_file), key=lambda record: record["date"])
+    papers = sorted(load_papers(input_file), key=lambda record: timeline_date(record))
 
     columns = 9
     rows = ceil(len(papers) / columns)
@@ -145,7 +149,7 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
             f'<rect x="{x - label_width / 2}" y="{label_y}" width="{label_width}" height="{label_height}" '
             f'rx="8" fill="#ffffff" stroke="{color}" stroke-width="1.4"/>'
         )
-        svg.append(svg_text(x, label_y + 16, paper["date"], 11, 500, "#6b7280"))
+        svg.append(svg_text(x, label_y + 16, timeline_date(paper), 11, 500, "#6b7280"))
         svg.append(svg_text(x, label_y + 32, paper["name"], 13, 700, "#111827"))
         svg.append("</a>")
 

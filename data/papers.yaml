@@ -545,6 +545,8 @@
   title: Bridging Sequence-Structure Alignment in RNA Foundation Models
   paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/35500
   date: '2025.04'
+  timeline_date: '2024.07'
+  timeline_url: https://arxiv.org/abs/2407.11242
   github_url: null
   hf_url: https://huggingface.co/yangheng/OmniGenome-186M
   scope: specialized_rna_fm
