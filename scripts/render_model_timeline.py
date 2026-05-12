@@ -49,14 +49,14 @@ def node_position(index: int, columns: int, left: int, step_x: int, top: int, st
 def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTPUT_FILE) -> None:
     papers = sorted(load_papers(input_file), key=lambda record: record["date"])
 
-    columns = 7
+    columns = 9
     rows = ceil(len(papers) / columns)
     width = 1400
-    left = 110
-    right = width - 110
+    left = 90
+    right = width - 90
     step_x = (right - left) // (columns - 1)
-    top = 150
-    step_y = 122
+    top = 168
+    step_y = 156
     bottom_padding = 90
     height = top + (rows - 1) * step_y + bottom_padding
 
@@ -100,7 +100,7 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
         'stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
     )
 
-    label_width = 148
+    label_width = 136
     label_height = 42
     for index, paper in enumerate(papers):
         x, y, row = node_position(index, columns, left, step_x, top, step_y)
