@@ -364,6 +364,44 @@ def timeline_node(paper):
     return f"<sub>{date}</sub><br>**[{name}]({url})**"
 
 
+def mermaid_timeline_node(node_id, paper):
+    name, title, url, date, github_url, hf_url, category, abstract, arch, token = paper
+    label = f"{date}<br/>{name}".replace('"', "&quot;")
+    return f'{node_id}["{label}"]'
+
+
+def render_snake_timeline_graph(sorted_papers, columns):
+    rows = []
+    rows.append("```mermaid")
+    rows.append("flowchart TB")
+    rows.append("    classDef model fill:#f8fbff,stroke:#4d8fd8,stroke-width:1px,color:#0f172a;")
+    node_ids = []
+    previous_tail = None
+    for index in range(0, len(sorted_papers), columns):
+        chunk = sorted_papers[index:index + columns]
+        row_number = index // columns
+        direction = "LR" if row_number % 2 == 0 else "RL"
+        row_node_ids = [f"n{index + offset}" for offset in range(len(chunk))]
+        node_ids.extend(row_node_ids)
+        rows.append(f'    subgraph row_{row_number}[" "]')
+        rows.append(f"        direction {direction}")
+        rows.append(
+            "        "
+            + " --> ".join(
+                mermaid_timeline_node(node_id, paper)
+                for node_id, paper in zip(row_node_ids, chunk)
+            )
+        )
+        rows.append("    end")
+        if previous_tail:
+            rows.append(f"    {previous_tail} --> {row_node_ids[0]}")
+        previous_tail = row_node_ids[-1]
+    rows.append(f"    class {','.join(node_ids)} model;")
+    rows.append("```")
+    rows.append("")
+    return rows
+
+
 def render_model_timeline():
     columns = 4
     sorted_papers = sorted(papers, key=lambda x: x[3])
@@ -372,6 +410,7 @@ def render_model_timeline():
     rows.append("")
     rows.append(f"Auto-generated from `data/papers.yaml` for {len(papers)} confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.")
     rows.append("")
+    rows.extend(render_snake_timeline_graph(sorted_papers, columns))
     rows.append("Read each row in the arrow direction, then continue to the next row.")
     rows.append("")
     rows.append("| Flow |  |  |  |  |")
@@ -388,29 +427,6 @@ def render_model_timeline():
         cells = [direction]
         cells.extend(timeline_node(paper) if paper else "&nbsp;" for paper in display)
         rows.append("| " + " | ".join(cells) + " |")
-    rows.append("")
-    rows.append("<details>")
-    rows.append("<summary><b>Chronological entries</b></summary>")
-    rows.append("")
-    rows.append("| Date | Model | Scope | Focus | Paper |")
-    rows.append("|:-----|:------|:------|:------|:------|")
-    for paper in sorted(papers, key=lambda x: x[3]):
-        name, title, url, date, github_url, hf_url, category, abstract, arch, token = paper
-        rows.append(
-            "| "
-            + " | ".join(
-                [
-                    date_status_cell(date, url, name),
-                    nobr(f"**{name}**"),
-                    scope_cell(name),
-                    nobr(category),
-                    link_cell("Paper", url),
-                ]
-            )
-            + " |"
-        )
-    rows.append("")
-    rows.append("</details>")
     rows.append("")
     rows.append("---")
     rows.append("")

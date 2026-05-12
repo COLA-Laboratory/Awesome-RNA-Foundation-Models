@@ -26,6 +26,71 @@ A curated and up-to-date collection of **RNA sequence foundation models**, cover
 
 Auto-generated from `data/papers.yaml` for 45 confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.
 
+```mermaid
+flowchart TB
+    classDef model fill:#f8fbff,stroke:#4d8fd8,stroke-width:1px,color:#0f172a;
+    subgraph row_0[" "]
+        direction LR
+        n0["2022.01<br/>RNABert"] --> n1["2022.04<br/>RNAFM"] --> n2["2023.07<br/>Uni-RNA"] --> n3["2023.11<br/>GenSLM"]
+    end
+    subgraph row_1[" "]
+        direction RL
+        n4["2023.12<br/>ATOM-1"] --> n5["2024.01<br/>RNAMSM"] --> n6["2024.01<br/>RNA-km"] --> n7["2024.02<br/>CaLM"]
+    end
+    n3 --> n4
+    subgraph row_2[" "]
+        direction LR
+        n8["2024.03<br/>mRNA-FM"] --> n9["2024.03<br/>SpliceBERT"] --> n10["2024.04<br/>UTR-LM"] --> n11["2024.05<br/>RNAErnie"]
+    end
+    n7 --> n8
+    subgraph row_3[" "]
+        direction RL
+        n12["2024.06<br/>RFamLlama"] --> n13["2024.07<br/>OmniGenome"] --> n14["2024.08<br/>CodonBERT"] --> n15["2024.08<br/>LoRNA SH"]
+    end
+    n11 --> n12
+    subgraph row_4[" "]
+        direction LR
+        n16["2024.10<br/>DGRNA"] --> n17["2024.10<br/>HELM"] --> n18["2024.10<br/>3UTRBERT"] --> n19["2024.10<br/>GenerRNA"]
+    end
+    n15 --> n16
+    subgraph row_5[" "]
+        direction RL
+        n20["2024.11<br/>AIDO.RNA"] --> n21["2024.11<br/>MP-RNA"] --> n22["2024.12<br/>RNAGenesis"] --> n23["2024.12<br/>PlantRNA-FM"]
+    end
+    n19 --> n20
+    subgraph row_6[" "]
+        direction LR
+        n24["2025.01<br/>LncRNA-BERT"] --> n25["2025.03<br/>ChaRNABERT"] --> n26["2025.03<br/>Helix-mRNA"] --> n27["2025.07<br/>RiNALMo"]
+    end
+    n23 --> n24
+    subgraph row_7[" "]
+        direction RL
+        n28["2025.07<br/>RNALens"] --> n29["2025.08<br/>StructRFM"] --> n30["2025.09<br/>RNA-BERTa"] --> n31["2025.09<br/>ProtRNA"]
+    end
+    n27 --> n28
+    subgraph row_8[" "]
+        direction LR
+        n32["2025.10<br/>CodonFM"] --> n33["2025.11<br/>ERNIE-RNA"] --> n34["2025.11<br/>BiRNA-BERT"] --> n35["2025.11<br/>HydraRNA"]
+    end
+    n31 --> n32
+    subgraph row_9[" "]
+        direction RL
+        n36["2025.11<br/>mRNABERT"] --> n37["2025.11<br/>G4mer"] --> n38["2025.12<br/>mRNA-GPT"] --> n39["2025.12<br/>codonGPT"]
+    end
+    n35 --> n36
+    subgraph row_10[" "]
+        direction LR
+        n40["2026.02<br/>NUWA"] --> n41["2026.03<br/>RNAElectra"] --> n42["2026.03<br/>RNAret"] --> n43["2026.03<br/>EVA"]
+    end
+    n39 --> n40
+    subgraph row_11[" "]
+        direction RL
+        n44["2026.04<br/>Orthrus"]
+    end
+    n43 --> n44
+    class n0,n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15,n16,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,n31,n32,n33,n34,n35,n36,n37,n38,n39,n40,n41,n42,n43,n44 model;
+```
+
 Read each row in the arrow direction, then continue to the next row.
 
 | Flow |  |  |  |  |
@@ -42,59 +107,6 @@ Read each row in the arrow direction, then continue to the next row.
 | &larr; | <sub>2025.12</sub><br>**[codonGPT](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118)** | <sub>2025.12</sub><br>**[mRNA-GPT](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1)** | <sub>2025.11</sub><br>**[G4mer](https://www.nature.com/articles/s41467-025-65020-7)** | <sub>2025.11</sub><br>**[mRNABERT](https://www.nature.com/articles/s41467-025-65340-8)** |
 | &rarr; | <sub>2026.02</sub><br>**[NUWA](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3)** | <sub>2026.03</sub><br>**[RNAElectra](https://doi.org/10.64898/2026.03.15.711950)** | <sub>2026.03</sub><br>**[RNAret](https://www.nature.com/articles/s42003-026-09757-x)** | <sub>2026.03</sub><br>**[EVA](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)** |
 | &larr; | &nbsp; | &nbsp; | &nbsp; | <sub>2026.04</sub><br>**[Orthrus](https://www.nature.com/articles/s41592-026-03064-3)** |
-
-<details>
-<summary><b>Chronological entries</b></summary>
-
-| Date | Model | Scope | Focus | Paper |
-|:-----|:------|:------|:------|:------|
-| <nobr>2022.01</nobr> | <nobr>**RNABert**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://doi.org/10.1093/nargab/lqac012)</nobr> |
-| <nobr>2022.04<br><sub>preprint</sub></nobr> | <nobr>**RNAFM**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://arxiv.org/abs/2204.00300)</nobr> |
-| <nobr>2023.07<br><sub>preprint</sub></nobr> | <nobr>**Uni-RNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>General RNA FM</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1)</nobr> |
-| <nobr>2023.11</nobr> | <nobr>**GenSLM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://doi.org/10.1177/10943420231201154)</nobr> |
-| <nobr>2023.12<br><sub>preprint</sub></nobr> | <nobr>**ATOM-1**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Structure-aware FM</nobr> | <nobr>[Paper](https://doi.org/10.1101/2023.12.13.571579)</nobr> |
-| <nobr>2024.01</nobr> | <nobr>**RNAMSM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://doi.org/10.1093/nar/gkad1031)</nobr> |
-| <nobr>2024.01<br><sub>preprint</sub></nobr> | <nobr>**RNA-km**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.01.27.577533)</nobr> |
-| <nobr>2024.02</nobr> | <nobr>**CaLM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00791-0)</nobr> |
-| <nobr>2024.03</nobr> | <nobr>**mRNA-FM**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://github.com/ml4bio/RNA-FM)</nobr> |
-| <nobr>2024.03</nobr> | <nobr>**SpliceBERT**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Specific RNA FM</nobr> | <nobr>[Paper](https://doi.org/10.1093/bib/bbae163)</nobr> |
-| <nobr>2024.04</nobr> | <nobr>**UTR-LM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>UTR FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00823-9)</nobr> |
-| <nobr>2024.05</nobr> | <nobr>**RNAErnie**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00836-4)</nobr> |
-| <nobr>2024.06<br><sub>workshop</sub></nobr> | <nobr>**RFamLlama**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Specific RNA FM</nobr> | <nobr>[Paper](https://openreview.net/forum?id=dXnQedxEJD)</nobr> |
-| <nobr>2024.07<br><sub>preprint</sub></nobr> | <nobr>**OmniGenome**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Structure-aware FM</nobr> | <nobr>[Paper](https://arxiv.org/abs/2407.11242)</nobr> |
-| <nobr>2024.08</nobr> | <nobr>**CodonBERT**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://doi.org/10.1101/gr.278870.123)</nobr> |
-| <nobr>2024.08<br><sub>preprint</sub></nobr> | <nobr>**LoRNA SH**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>General RNA FM</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.08.26.609813)</nobr> |
-| <nobr>2024.10<br><sub>preprint</sub></nobr> | <nobr>**DGRNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.10.31.621427)</nobr> |
-| <nobr>2024.10<br><sub>preprint</sub></nobr> | <nobr>**HELM**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://arxiv.org/abs/2410.12459)</nobr> |
-| <nobr>2024.10</nobr> | <nobr>**3UTRBERT**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>UTR FM</nobr> | <nobr>[Paper](https://doi.org/10.1002/advs.202407013)</nobr> |
-| <nobr>2024.10</nobr> | <nobr>**GenerRNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>Generative FM</nobr> | <nobr>[Paper](https://doi.org/10.1371/journal.pone.0310814)</nobr> |
-| <nobr>2024.11<br><sub>preprint</sub></nobr> | <nobr>**AIDO.RNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.11.28.625345)</nobr> |
-| <nobr>2024.11</nobr> | <nobr>**MP-RNA**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Structure-aware FM</nobr> | <nobr>[Paper](https://aclanthology.org/2024.findings-emnlp.304/)</nobr> |
-| <nobr>2024.12<br><sub>preprint</sub></nobr> | <nobr>**RNAGenesis**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>Generative FM</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2)</nobr> |
-| <nobr>2024.12</nobr> | <nobr>**PlantRNA-FM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Specific RNA FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00946-z)</nobr> |
-| <nobr>2025.01<br><sub>preprint</sub></nobr> | <nobr>**LncRNA-BERT**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Specific RNA FM</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1)</nobr> |
-| <nobr>2025.03<br><sub>workshop</sub></nobr> | <nobr>**ChaRNABERT**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://openreview.net/forum?id=cAiECLDjzF)</nobr> |
-| <nobr>2025.03<br><sub>workshop</sub></nobr> | <nobr>**Helix-mRNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://openreview.net/forum?id=Ky0CkFiVhu)</nobr> |
-| <nobr>2025.07</nobr> | <nobr>**RiNALMo**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-60872-5)</nobr> |
-| <nobr>2025.07<br><sub>preprint</sub></nobr> | <nobr>**RNALens**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>General RNA FM</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1)</nobr> |
-| <nobr>2025.08<br><sub>preprint</sub></nobr> | <nobr>**StructRFM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Structure-aware FM</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1)</nobr> |
-| <nobr>2025.09<br><sub>preprint</sub></nobr> | <nobr>**RNA-BERTa**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1)</nobr> |
-| <nobr>2025.09</nobr> | <nobr>**ProtRNA**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://www.sciencedirect.com/science/article/pii/S2405471225002042)</nobr> |
-| <nobr>2025.10</nobr> | <nobr>**CodonFM**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/)</nobr> |
-| <nobr>2025.11</nobr> | <nobr>**ERNIE-RNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-64972-0)</nobr> |
-| <nobr>2025.11</nobr> | <nobr>**BiRNA-BERT**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42003-025-08982-0)</nobr> |
-| <nobr>2025.11</nobr> | <nobr>**HydraRNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7)</nobr> |
-| <nobr>2025.11</nobr> | <nobr>**mRNABERT**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-65340-8)</nobr> |
-| <nobr>2025.11</nobr> | <nobr>**G4mer**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Specific RNA FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41467-025-65020-7)</nobr> |
-| <nobr>2025.12<br><sub>preprint</sub></nobr> | <nobr>**mRNA-GPT**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1)</nobr> |
-| <nobr>2025.12</nobr> | <nobr>**codonGPT**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118)</nobr> |
-| <nobr>2026.02<br><sub>preprint</sub></nobr> | <nobr>**NUWA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>mRNA/CDS FM</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3)</nobr> |
-| <nobr>2026.03<br><sub>preprint</sub></nobr> | <nobr>**RNAElectra**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://doi.org/10.64898/2026.03.15.711950)</nobr> |
-| <nobr>2026.03</nobr> | <nobr>**RNAret**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>ncRNA FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42003-026-09757-x)</nobr> |
-| <nobr>2026.03<br><sub>preprint</sub></nobr> | <nobr>**EVA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>Generative FM</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)</nobr> |
-| <nobr>2026.04</nobr> | <nobr>**Orthrus**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>Specific RNA FM</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41592-026-03064-3)</nobr> |
-
-</details>
 
 ---
 
