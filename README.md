@@ -26,70 +26,7 @@ A curated and up-to-date collection of **RNA sequence foundation models**, cover
 
 Auto-generated from `data/papers.yaml` for 45 confirmed RNA foundation-model entries; it updates whenever confirmed metadata is regenerated.
 
-```mermaid
-flowchart TB
-    classDef model fill:#f8fbff,stroke:#4d8fd8,stroke-width:1px,color:#0f172a;
-    subgraph row_0[" "]
-        direction LR
-        n0["2022.01<br/>RNABert"] --> n1["2022.04<br/>RNAFM"] --> n2["2023.07<br/>Uni-RNA"] --> n3["2023.11<br/>GenSLM"]
-    end
-    subgraph row_1[" "]
-        direction RL
-        n4["2023.12<br/>ATOM-1"] --> n5["2024.01<br/>RNAMSM"] --> n6["2024.01<br/>RNA-km"] --> n7["2024.02<br/>CaLM"]
-    end
-    n3 --> n4
-    subgraph row_2[" "]
-        direction LR
-        n8["2024.03<br/>mRNA-FM"] --> n9["2024.03<br/>SpliceBERT"] --> n10["2024.04<br/>UTR-LM"] --> n11["2024.05<br/>RNAErnie"]
-    end
-    n7 --> n8
-    subgraph row_3[" "]
-        direction RL
-        n12["2024.06<br/>RFamLlama"] --> n13["2024.07<br/>OmniGenome"] --> n14["2024.08<br/>CodonBERT"] --> n15["2024.08<br/>LoRNA SH"]
-    end
-    n11 --> n12
-    subgraph row_4[" "]
-        direction LR
-        n16["2024.10<br/>DGRNA"] --> n17["2024.10<br/>HELM"] --> n18["2024.10<br/>3UTRBERT"] --> n19["2024.10<br/>GenerRNA"]
-    end
-    n15 --> n16
-    subgraph row_5[" "]
-        direction RL
-        n20["2024.11<br/>AIDO.RNA"] --> n21["2024.11<br/>MP-RNA"] --> n22["2024.12<br/>RNAGenesis"] --> n23["2024.12<br/>PlantRNA-FM"]
-    end
-    n19 --> n20
-    subgraph row_6[" "]
-        direction LR
-        n24["2025.01<br/>LncRNA-BERT"] --> n25["2025.03<br/>ChaRNABERT"] --> n26["2025.03<br/>Helix-mRNA"] --> n27["2025.07<br/>RiNALMo"]
-    end
-    n23 --> n24
-    subgraph row_7[" "]
-        direction RL
-        n28["2025.07<br/>RNALens"] --> n29["2025.08<br/>StructRFM"] --> n30["2025.09<br/>RNA-BERTa"] --> n31["2025.09<br/>ProtRNA"]
-    end
-    n27 --> n28
-    subgraph row_8[" "]
-        direction LR
-        n32["2025.10<br/>CodonFM"] --> n33["2025.11<br/>ERNIE-RNA"] --> n34["2025.11<br/>BiRNA-BERT"] --> n35["2025.11<br/>HydraRNA"]
-    end
-    n31 --> n32
-    subgraph row_9[" "]
-        direction RL
-        n36["2025.11<br/>mRNABERT"] --> n37["2025.11<br/>G4mer"] --> n38["2025.12<br/>mRNA-GPT"] --> n39["2025.12<br/>codonGPT"]
-    end
-    n35 --> n36
-    subgraph row_10[" "]
-        direction LR
-        n40["2026.02<br/>NUWA"] --> n41["2026.03<br/>RNAElectra"] --> n42["2026.03<br/>RNAret"] --> n43["2026.03<br/>EVA"]
-    end
-    n39 --> n40
-    subgraph row_11[" "]
-        direction RL
-        n44["2026.04<br/>Orthrus"]
-    end
-    n43 --> n44
-    class n0,n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15,n16,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,n31,n32,n33,n34,n35,n36,n37,n38,n39,n40,n41,n42,n43,n44 model;
-```
+![RNA foundation model timeline](assets/model_timeline.svg)
 
 Read each row in the arrow direction, then continue to the next row.
 

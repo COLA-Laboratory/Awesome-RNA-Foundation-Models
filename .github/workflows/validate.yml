@@ -28,5 +28,5 @@ jobs:
       - name: Regenerate README
         run: python generate_paper_list.py
 
-      - name: Check generated README is committed
-        run: git diff --exit-code README.md
+      - name: Check generated README and assets are committed
+        run: git diff --exit-code README.md assets/model_timeline.svg
