@@ -1,20 +1,14 @@
-# ✨✨ Awesome RNA Foundation Models [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome RNA Foundation Models
 
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/)
-[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-[![Last Update](https://img.shields.io/badge/Last_Update-2026.05-blue.svg)]()
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) [![Last Update](https://img.shields.io/badge/Last_Update-2026.05-blue.svg)]()
 
-A curated and up-to-date collection of **RNA and RNA-relevant foundation/model resources**, covering reusable pre-trained language models, task-specific RNA designers/predictors, RNA-structure systems, RNA-related nucleotide models, and RNA-seq / transcriptomic foundation models.
+A curated, continuously updated catalog of **RNA and RNA-relevant model resources**, covering reusable RNA/mRNA/CDS/UTR foundation backbones, task-oriented RNA design and prediction systems, structure-aware RNA models, RNA-related nucleotide or multi-omics models, and RNA-seq / transcriptomic models.
 
-> [!NOTE]
-> **Scope.** This README uses a broad RNA-relevance scope: it includes models that either introduce reusable RNA/mRNA/CDS/UTR sequence backbones/checkpoints, or are pre-trained / large-scale trained on RNA, mRNA, UTR, transcriptomic, pegRNA, RNA-structure, or RNA-seq data and support downstream prediction, design, or generation. Protein-only models, single-cell foundation models, and pure DNA/genome models without explicit RNA/transcriptomic training signal are excluded.
-
----
+> **Scope.** Included model entries have explicit RNA-related pre-training or large-scale training signal and support downstream prediction, design, generation, or representation learning. Protein-only models, single-cell foundation models, pure DNA/genome models without RNA/transcriptomic training signal, and non-model resources are excluded from the model list.
 
 ## Table of Contents
 
-- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA foundation models
+- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed model entries
 - [Paper List](#paper-list) — RNA and RNA-relevant models (4 views), Benchmarks, Surveys
 - [Detailed Tables](#detailed-tables) — Detailed tables for all 66 model entries, 12 benchmarks, 3 surveys
 - [Abbreviations](#abbreviations)
@@ -24,15 +18,13 @@ A curated and up-to-date collection of **RNA and RNA-relevant foundation/model r
 
 ## Model Timeline
 
-Auto-generated from `data/papers.yaml` for 66 confirmed RNA-relevant model entries; it updates whenever confirmed metadata is regenerated.
+Timeline of 66 confirmed RNA-relevant model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
 
-> [!NOTE]
-> Timeline dates use the first public model/preprint release date, not necessarily the formal publication date. Paper List dates below use formal publication/conference dates when available.
+**Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.
 
-> [!TIP]
-> **[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=1e5fcc0d58ae)** — model labels in the opened SVG link to source papers.
+**Interactive view:** [open the SVG timeline](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=677094064e28) to click model labels and source papers.
 
-[![RNA foundation model timeline](assets/model_timeline.svg?v=1e5fcc0d58ae)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=1e5fcc0d58ae)
+[![RNA foundation model timeline](assets/model_timeline.svg?v=677094064e28)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=677094064e28)
 
 ---
 
