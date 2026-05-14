@@ -29,4 +29,9 @@ jobs:
         run: python generate_paper_list.py
 
       - name: Check generated README and assets are committed
-        run: git diff --exit-code README.md assets/model_timeline.svg
+        run: |
+          if [ -n "$(git status --porcelain README.md assets/model_timeline.svg 'assets/model_timeline-*.svg')" ]; then
+            git status --short README.md assets/model_timeline.svg 'assets/model_timeline-*.svg'
+            git diff -- README.md assets/model_timeline.svg 'assets/model_timeline-*.svg'
+            exit 1
+          fi

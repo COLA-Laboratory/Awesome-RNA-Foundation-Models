@@ -16,7 +16,7 @@ from scripts.render_model_timeline import render_timeline_svg
 # structured data rather than Python tuples.
 DATA_DIR = Path(__file__).resolve().parent / "data"
 PAPERS_FILE = DATA_DIR / "papers.yaml"
-TIMELINE_INTERACTIVE_BASE_URL = "https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline.svg"
+TIMELINE_INTERACTIVE_BASE_URL = "https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets"
 
 
 def load_papers(path=PAPERS_FILE):
@@ -354,11 +354,19 @@ def scope_cell(name):
 
 
 def render_model_timeline():
-    timeline_svg = Path(__file__).resolve().parent / "assets" / "model_timeline.svg"
+    assets_dir = Path(__file__).resolve().parent / "assets"
+    timeline_svg = assets_dir / "model_timeline.svg"
     render_timeline_svg(PAPERS_FILE, timeline_svg)
-    cache_key = hashlib.sha256(timeline_svg.read_bytes()).hexdigest()[:12]
-    timeline_url = f"{TIMELINE_INTERACTIVE_BASE_URL}?v={cache_key}"
-    timeline_image = f"assets/model_timeline.svg?v={cache_key}"
+    timeline_bytes = timeline_svg.read_bytes()
+    cache_key = hashlib.sha256(timeline_bytes).hexdigest()[:12]
+    versioned_name = f"model_timeline-{cache_key}.svg"
+    versioned_svg = assets_dir / versioned_name
+    for old_svg in assets_dir.glob("model_timeline-*.svg"):
+        if old_svg != versioned_svg:
+            old_svg.unlink()
+    versioned_svg.write_bytes(timeline_bytes)
+    timeline_url = f"{TIMELINE_INTERACTIVE_BASE_URL}/{versioned_name}"
+    timeline_image = f"assets/{versioned_name}"
     rows = []
     rows.append("## Model Timeline")
     rows.append("")
