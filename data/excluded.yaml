@@ -1,121 +1,25 @@
-# Entries intentionally excluded from the strict README scope.
-- name: OPED
-  title: Design of prime-editing guide RNAs with deep transfer learning
-  paper_url: https://www.nature.com/articles/s42256-023-00739-w
-  date: '2023.11'
-  reason: Task-specific pegRNA efficiency predictor/designer for prime editing rather than a reusable RNA language-model backbone.
-- name: GEMORNA
-  title: Deep generative models design mRNA sequences with enhanced translational capacity and stability
-  paper_url: https://www.science.org/doi/10.1126/science.adr8470
-  date: '2025.11'
-  reason: Task-specific predictor/designer or downstream application rather than a reusable RNA language-model backbone.
-- name: mRNA-GPT (full-length)
-  title: 'mRNA-GPT: A Generative Model for Full-Length mRNA Design and Optimization'
-  paper_url: https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1
-  date: '2026.03'
-  reason: Adapted or composed downstream framework without a clearly reusable RNA language-model backbone for this strict list.
-- name: Pro2RNA
-  title: Designing mRNA coding sequence via multimodal reverse translation language modeling with Pro2RNA
-  paper_url: https://doi.org/10.64898/2026.03.18.712790
-  date: '2026.03'
-  reason: Adapted or composed downstream framework without a clearly reusable RNA language-model backbone for this strict list.
+# Entries intentionally excluded after applying the broad RNA-relevance scope.
 - name: CodonMoE
-  title: DNA Language Models for RNA Analyses
+  title: DNA Language Models for mRNA Analyses
   paper_url: https://openreview.net/forum?id=TOUrnb1EaG
   date: '2024.09'
-  reason: Adapted or composed downstream framework without a clearly reusable RNA language-model backbone for this strict list.
-- name: UTR-Insight
-  title: 'UTR-Insight: integrating deep learning for efficient 5′ UTR discovery and design'
-  paper_url: https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7
-  date: '2025.02'
-  reason: Task-specific predictor/designer or downstream application rather than a reusable RNA language-model backbone.
-- name: RibonanzaNet
-  title: 'Ribonanza: deep learning of RNA structure through dual crowdsourcing'
-  paper_url: https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1
-  date: '2024.02'
-  reason: Task-specific predictor/designer or downstream application rather than a reusable RNA language-model backbone.
-- name: RNA-TorsionBERT
-  title: 'RNA-TorsionBERT: leveraging language models for RNA 3D torsion angles prediction'
-  paper_url: https://doi.org/10.1093/bioinformatics/btaf004
-  date: '2024.12'
-  reason: Outside the strict RNA foundation-model scope.
-- name: RhoFold+
-  title: Accurate RNA 3D structure prediction using a language model-based deep learning approach
-  paper_url: https://www.nature.com/articles/s41592-024-02487-0
-  date: '2024.11'
-  reason: Task-specific predictor/designer or downstream application rather than a reusable RNA language-model backbone.
-- name: GARNET
-  title: 'GARNET: A Generative RNA Design Model from Microbial Genomes'
-  paper_url: https://www.nature.com/articles/s41467-024-54812-y
-  date: '2024.12'
-  reason: Task-specific predictor/designer or downstream application rather than a reusable RNA language-model backbone.
-- name: RNAtranslator
-  title: 'RNAtranslator: Modeling protein-conditional RNA design as sequence-to-sequence natural language translation'
-  paper_url: https://doi.org/10.1371/journal.pcbi.1013541
-  date: '2025.10'
-  reason: Task-specific predictor/designer or downstream application rather than a reusable RNA language-model backbone.
-- name: RiboDiffusion
-  title: 'RiboDiffusion: tertiary structure-based RNA inverse folding with generative diffusion models'
-  paper_url: https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903
-  date: '2024.06'
-  reason: Task-specific predictor/designer or downstream application rather than a reusable RNA language-model backbone.
-- name: RhoDesign
-  title: Deep generative design of RNA aptamers using structural predictions
-  paper_url: https://www.nature.com/articles/s43588-024-00720-6
-  date: '2024.11'
-  reason: Task-specific predictor/designer or downstream application rather than a reusable RNA language-model backbone.
+  reason: Adapts DNA language models for mRNA analyses but explicitly avoids RNA-specific pretraining, so it does not meet
+    the RNA-training-signal criterion.
 - name: Evo
   title: Sequence Modeling and Design from Molecular to Genome Scale with Evo
   paper_url: https://www.science.org/doi/10.1126/science.ado9336
   date: '2024.11'
-  reason: Broad DNA/nucleotide/multi-omics foundation model, not a strict RNA sequence foundation model.
-- name: LucaOne
-  title: Generalized biological foundation model with unified nucleic acid and protein language
-  paper_url: https://www.nature.com/articles/s42256-025-01044-4
-  date: '2025.06'
-  reason: Broad DNA/nucleotide/multi-omics foundation model, not a strict RNA sequence foundation model.
-- name: BSM
-  title: 'BSM: Small but Powerful Biological Sequence Model for Genes and Proteins'
-  paper_url: https://arxiv.org/abs/2410.11499
-  date: '2024.10'
-  reason: Broad DNA/nucleotide/multi-omics foundation model, not a strict RNA sequence foundation model.
-- name: LAMAR
-  title: 'LAMAR: A Language Model for Mammalian and Viral Genomes and Transcriptomes'
-  paper_url: https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1
-  date: '2024.10'
-  reason: Broad DNA/nucleotide/multi-omics foundation model, not a strict RNA sequence foundation model.
-- name: METAGENE-1
-  title: 'METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring'
-  paper_url: https://arxiv.org/abs/2501.02045
-  date: '2025.01'
-  reason: Broad DNA/nucleotide/multi-omics foundation model, not a strict RNA sequence foundation model.
-- name: Life-Code
-  title: 'Life-Code: Central Dogma Modeling with Multi-Omics Sequence Unification'
-  paper_url: https://arxiv.org/abs/2502.07299
-  date: '2025.02'
-  reason: Broad DNA/nucleotide/multi-omics foundation model, not a strict RNA sequence foundation model.
+  reason: Broad genomic/DNA foundation model trained on prokaryotic and phage genomes; RNA is downstream-relevant but not
+    an explicit RNA/transcriptomic pretraining modality in the tracked source metadata.
 - name: Evo 2
   title: Genome Modeling and Design Across All Domains of Life with Evo 2
   paper_url: https://www.nature.com/articles/s41586-026-10176-5
   date: '2026.03'
-  reason: Broad DNA/nucleotide/multi-omics foundation model, not a strict RNA sequence foundation model.
-- name: OmniNA
-  title: 'OmniNA: A Foundation Model for Nucleotide Sequences and Annotations'
-  paper_url: https://academic.oup.com/nar/article/54/6/gkag083/8528802
-  date: '2026.01'
-  reason: Broad DNA/nucleotide/multi-omics foundation model, not a strict RNA sequence foundation model.
+  reason: Broad genome language model centered on OpenGenome2 genomic sequence pretraining rather than explicit RNA or
+    transcriptomic pretraining data.
 - name: EDEN
   title: 'EDEN: A 28B Foundation Model for Programmable Gene Insertion'
   paper_url: https://www.biorxiv.org/content/10.64898/2026.01.12.699009v1
   date: '2026.01'
-  reason: Broad DNA/nucleotide/multi-omics foundation model, not a strict RNA sequence foundation model.
-- name: BulkRNABert
-  title: 'BulkRNABert: A Pre-trained Model for Bulk RNA-seq Expression Data'
-  paper_url: https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2
-  date: '2024.06'
-  reason: Expression-profile model rather than a raw RNA sequence backbone.
-- name: MOJO
-  title: 'MOJO: A Multi-omics Foundation Model for RNA-seq and Methylation'
-  paper_url: https://www.biorxiv.org/content/10.1101/2025.06.25.661237v1
-  date: '2025.06'
-  reason: Expression-profile model rather than a raw RNA sequence backbone.
+  reason: Programmable gene-insertion model centered on genomic DNA editing; no explicit RNA/transcriptomic pretraining
+    signal was identified from the tracked source metadata.

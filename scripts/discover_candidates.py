@@ -36,6 +36,14 @@ BROAD_QUERIES = [
     "RNA masked language model",
     "RNA generative language model",
     "RNA sequence foundation model",
+    "RNA design model",
+    "RNA inverse folding model",
+    "RNA 3D language model",
+    "RNA-seq foundation model",
+    "transcriptomic foundation model",
+    "pegRNA language model",
+    "prime editing guide RNA model",
+    "multi-omics RNA foundation model",
     "mRNA foundation model",
     "mRNA language model",
     "codon language model",
@@ -54,8 +62,14 @@ RNA_TERMS = (
     "codon",
     "transcript",
     "transcriptome",
+    "transcriptomic",
     "splicing",
     "splice",
+    "pegrna",
+    "guide rna",
+    "inverse folding",
+    "rna seq",
+    "expression profile",
 )
 
 MODEL_TERMS = (
@@ -86,15 +100,10 @@ HIGH_CONFIDENCE_MODEL_TERMS = (
 )
 
 LOW_PRIORITY_TERMS = (
-    "single-cell",
-    "scrna-seq",
-    "rna-seq expression",
-    "expression profile",
+    "single cell",
+    "scrna seq",
     "morphology",
     "cellular morphology",
-    "inverse folding",
-    "reverse translation",
-    "3d structure prediction",
     "protein language model",
 )
 
@@ -316,7 +325,7 @@ def is_likely_new_model(candidate: Candidate) -> bool:
         return False
     if any(term in title for term in BENCHMARK_TERMS):
         return False
-    if any(term in text for term in ("single cell", "single-cell", "scrna seq", "expression profile")):
+    if any(term in text for term in ("single cell", "single-cell", "scrna seq", "cellular morphology", "protein language model", "without rna specific pretraining")):
         return False
     return True
 
@@ -335,7 +344,19 @@ def infer_model_name(title: str) -> str:
 
 
 def suggest_scope_and_category(candidate: Candidate) -> tuple[str, str]:
-    text = normalize_text(candidate.title)
+    text = normalize_text(f"{candidate.title} {candidate.abstract}")
+    if any(term in text for term in ("rna seq", "rna-seq", "expression profile", "methylation", "multi omics")):
+        return "expression_profile", "Expression FM"
+    if any(term in text for term in ("dna and rna", "dna rna", "rna and protein", "nucleic acid", "transcriptome", "transcriptomic", "central dogma", "metagenomic dna and rna")):
+        return "related_nucleotide", "DNA+RNA FM"
+    if any(term in text for term in ("inverse folding", "reverse translation", "prime editing", "guide rna", "pegrna", "3d structure", "torsion", "aptamer")):
+        if "utr" in text:
+            return "task_design", "UTR FM"
+        if "mrna" in text or "codon" in text or "coding sequence" in text:
+            return "task_design", "mRNA/CDS FM"
+        if "structure" in text or "folding" in text or "torsion" in text:
+            return "task_design", "Structure-aware FM"
+        return "task_design", "Generative FM"
     if "utr" in text:
         return "specialized_rna_fm", "UTR FM"
     if "mrna" in text or "codon" in text or "coding sequence" in text:

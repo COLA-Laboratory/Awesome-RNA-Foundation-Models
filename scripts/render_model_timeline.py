@@ -16,12 +16,18 @@ SCOPE_LABELS = {
     "core_rna_fm": "Core",
     "specialized_rna_fm": "Specialized",
     "adapted_derived": "Adapted",
+    "task_design": "Task/Design",
+    "related_nucleotide": "DNA+RNA",
+    "expression_profile": "Expression",
 }
 
 SCOPE_COLORS = {
     "core_rna_fm": "#2563eb",
     "specialized_rna_fm": "#16a34a",
     "adapted_derived": "#9333ea",
+    "task_design": "#f97316",
+    "related_nucleotide": "#64748b",
+    "expression_profile": "#db2777",
 }
 
 
@@ -90,7 +96,7 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
         svg_text(
             34,
             72,
-            f"Auto-generated from data/papers.yaml • {len(papers)} confirmed RNA sequence foundation models",
+            f"Auto-generated from data/papers.yaml • {len(papers)} confirmed RNA-relevant model entries",
             15,
             400,
             "#6b7280",
@@ -124,7 +130,8 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
 
     legend_x = width - 330
     legend_y = 31
-    svg.append(f'<rect x="{legend_x - 18}" y="{legend_y - 20}" width="290" height="72" rx="8" fill="#ffffff" stroke="#e5e7eb"/>')
+    legend_height = 18 + len(SCOPE_LABELS) * 22
+    svg.append(f'<rect x="{legend_x - 18}" y="{legend_y - 20}" width="290" height="{legend_height}" rx="8" fill="#ffffff" stroke="#e5e7eb"/>')
     for offset, (scope, label) in enumerate(SCOPE_LABELS.items()):
         y = legend_y + offset * 22
         color = SCOPE_COLORS[scope]

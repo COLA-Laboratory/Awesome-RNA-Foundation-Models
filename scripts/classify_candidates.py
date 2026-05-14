@@ -31,6 +31,9 @@ ALLOWED_SCOPES = {
     "core_rna_fm",
     "specialized_rna_fm",
     "adapted_derived",
+    "task_design",
+    "related_nucleotide",
+    "expression_profile",
 }
 
 ALLOWED_CATEGORIES = {
@@ -41,6 +44,8 @@ ALLOWED_CATEGORIES = {
     "Structure-aware FM",
     "Generative FM",
     "General RNA FM",
+    "DNA+RNA FM",
+    "Expression FM",
 }
 
 
