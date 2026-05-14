@@ -32,7 +32,7 @@ Auto-generated from `data/papers.yaml` for 66 confirmed RNA-relevant model entri
 > [!TIP]
 > **[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=130e9cc1ae3e)** — model labels in the opened SVG link to source papers.
 
-[![RNA foundation model timeline](assets/model_timeline.svg)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=130e9cc1ae3e)
+[![RNA foundation model timeline](assets/model_timeline.svg?v=130e9cc1ae3e)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=130e9cc1ae3e)
 
 ---
 

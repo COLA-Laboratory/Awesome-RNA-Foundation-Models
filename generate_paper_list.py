@@ -364,6 +364,7 @@ def render_model_timeline():
     render_timeline_svg(PAPERS_FILE, timeline_svg)
     cache_key = hashlib.sha256(timeline_svg.read_bytes()).hexdigest()[:12]
     timeline_url = f"{TIMELINE_INTERACTIVE_BASE_URL}?v={cache_key}"
+    timeline_image = f"assets/model_timeline.svg?v={cache_key}"
     rows = []
     rows.append("## Model Timeline")
     rows.append("")
@@ -375,7 +376,7 @@ def render_model_timeline():
     rows.append("> [!TIP]")
     rows.append(f"> **[Open interactive SVG]({timeline_url})** — model labels in the opened SVG link to source papers.")
     rows.append("")
-    rows.append(f"[![RNA foundation model timeline](assets/model_timeline.svg)]({timeline_url})")
+    rows.append(f"[![RNA foundation model timeline]({timeline_image})]({timeline_url})")
     rows.append("")
     rows.append("---")
     rows.append("")
