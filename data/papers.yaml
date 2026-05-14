@@ -1,5 +1,3 @@
-# Confirmed RNA foundation-model entries used to generate README.md.
-# Edit this file, then run: python generate_paper_list.py
 - name: RNABert
   title: Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning
   paper_url: https://doi.org/10.1093/nargab/lqac012
@@ -9,7 +7,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: ncRNA FM
-  abstract: Proposes RNABERT, a BERT-based model pre-trained on Rfam seed alignments using masked language modeling to learn informative RNA-base embeddings for structural alignment and clustering of ncRNAs.
+  abstract: Proposes RNABERT, a BERT-based model pre-trained on Rfam seed alignments using masked language modeling to learn
+    informative RNA-base embeddings for structural alignment and clustering of ncRNAs.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -24,7 +23,9 @@
   hf_url: https://huggingface.co/multimolecule/rnafm
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Presents RNA-FM, a foundation model pre-trained on 23 million non-coding RNA sequences from RNAcentral, achieving state-of-the-art performance on RNA secondary structure prediction, 3D closeness prediction, and functional annotation tasks.
+  abstract: Presents RNA-FM, a foundation model pre-trained on 23 million non-coding RNA sequences from RNAcentral, achieving
+    state-of-the-art performance on RNA secondary structure prediction, 3D closeness prediction, and functional annotation
+    tasks.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -39,7 +40,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: ncRNA FM
-  abstract: Introduces RNA-MSM, an unsupervised RNA language model that leverages multiple sequence alignments (MSAs) from homologous RNA families to capture evolutionary and co-evolutionary information for improved structural inference.
+  abstract: Introduces RNA-MSM, an unsupervised RNA language model that leverages multiple sequence alignments (MSAs) from
+    homologous RNA families to capture evolutionary and co-evolutionary information for improved structural inference.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -54,7 +56,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: ncRNA FM
-  abstract: Proposes RNA-km, a self-supervised RNA language model trained on 23M ncRNA sequences with k-mer masking and relative positional encoding, enabling zero-shot RNA secondary structure prediction including pseudoknots.
+  abstract: Proposes RNA-km, a self-supervised RNA language model trained on 23M ncRNA sequences with k-mer masking and relative
+    positional encoding, enabling zero-shot RNA secondary structure prediction including pseudoknots.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -69,7 +72,8 @@
   hf_url: https://huggingface.co/LLM-EDA/RNAErnie
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Presents RNAErnie, an RNA-focused pre-trained model that combines motif-aware pretraining with type-guided fine-tuning for diverse RNA sequence analysis tasks.
+  abstract: Presents RNAErnie, an RNA-focused pre-trained model that combines motif-aware pretraining with type-guided fine-tuning
+    for diverse RNA sequence analysis tasks.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -84,7 +88,8 @@
   hf_url: https://huggingface.co/multimolecule/ernierna-ss
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs, improving structure and function prediction tasks.
+  abstract: Develops ERNIE-RNA with base-pairing-aware attention bias for structure-enhanced pre-training on RNAcentral ncRNAs,
+    improving structure and function prediction tasks.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -99,7 +104,8 @@
   hf_url: null
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Introduces DGRNA, a long-context RNA foundation model based on bidirectional Mamba2 architecture, enabling efficient processing of long RNA sequences up to 100K nucleotides with linear computational complexity.
+  abstract: Introduces DGRNA, a long-context RNA foundation model based on bidirectional Mamba2 architecture, enabling efficient
+    processing of long RNA sequences up to 100K nucleotides with linear computational complexity.
   architecture: Hybrid/SSM
   tokenization: SNT
   table_architecture: Hybrid (SSM)
@@ -114,7 +120,8 @@
   hf_url: null
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Proposes ChaRNABERT with Gradient-based Subword Tokenization (GBST) that learns data-driven tokenization during pre-training, outperforming fixed tokenization approaches on RNA structure and function prediction tasks.
+  abstract: Proposes ChaRNABERT with Gradient-based Subword Tokenization (GBST) that learns data-driven tokenization during
+    pre-training, outperforming fixed tokenization approaches on RNA structure and function prediction tasks.
   architecture: Encoder-only
   tokenization: Learnable
   table_architecture: Encoder-only
@@ -129,7 +136,8 @@
   hf_url: https://huggingface.co/genbio-ai/AIDO.RNA-1.6B
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Presents AIDO.RNA, a scalable RNA foundation model with up to 1.6B parameters pre-trained on 42M non-coding RNA sequences (~30B nucleotides), demonstrating strong generalization across diverse RNA tasks.
+  abstract: Presents AIDO.RNA, a scalable RNA foundation model with up to 1.6B parameters pre-trained on 42M non-coding RNA
+    sequences (~30B nucleotides), demonstrating strong generalization across diverse RNA tasks.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -144,7 +152,8 @@
   hf_url: null
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Introduces BiRNA-BERT, a 117M-parameter encoder trained on 36M ncRNA sequences with adaptive dual tokenization combining nucleotide-level and BPE representations.
+  abstract: Introduces BiRNA-BERT, a 117M-parameter encoder trained on 36M ncRNA sequences with adaptive dual tokenization
+    combining nucleotide-level and BPE representations.
   architecture: Encoder-only
   tokenization: Learnable
   table_architecture: Encoder-only
@@ -159,7 +168,8 @@
   hf_url: https://huggingface.co/IlPakoZ/RNA-BERTa9700
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations, applied to RNA-drug binding affinity prediction with downstream fine-tuning.
+  abstract: Develops RNA-BERTa, a RoBERTa-based model pre-trained on 9.76M RNA sequences for learning general RNA representations,
+    applied to RNA-drug binding affinity prediction with downstream fine-tuning.
   architecture: Encoder-only
   tokenization: BPE
   table_architecture: Encoder-only
@@ -174,7 +184,8 @@
   hf_url: null
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Presents RiNALMo, a general-purpose RNA language model (up to 650M parameters) pre-trained on 36M ncRNA sequences, demonstrating that large-scale RNA LMs can generalize effectively to secondary and tertiary structure prediction.
+  abstract: Presents RiNALMo, a general-purpose RNA language model (up to 650M parameters) pre-trained on 36M ncRNA sequences,
+    demonstrating that large-scale RNA LMs can generalize effectively to secondary and tertiary structure prediction.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -189,7 +200,9 @@
   hf_url: https://huggingface.co/Zaixi/RNAGenesis
   scope: adapted_derived
   category: Generative FM
-  abstract: Proposes RNAGenesis, a 1B-parameter generative RNA model that integrates sequence representation, structure prediction, and de novo functional design, listed here as an adapted / derived RNA design model rather than a core ncRNA pre-training-only FM.
+  abstract: Proposes RNAGenesis, a 1B-parameter generative RNA model that integrates sequence representation, structure prediction,
+    and de novo functional design, listed here as an adapted / derived RNA design model rather than a core ncRNA pre-training-only
+    FM.
   architecture: Specialized
   tokenization: SNT
   table_architecture: Encoder + Diffusion
@@ -204,7 +217,8 @@
   hf_url: null
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Introduces HydraRNA, a full-length RNA language model using a hybrid bidirectional state space and attention architecture for both coding and non-coding RNA tasks.
+  abstract: Introduces HydraRNA, a full-length RNA language model using a hybrid bidirectional state space and attention architecture
+    for both coding and non-coding RNA tasks.
   architecture: Hybrid/SSM
   tokenization: SNT
   table_architecture: Hybrid (SSM+Attention)
@@ -219,7 +233,8 @@
   hf_url: null
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Proposes RNAElectra, applying the ELECTRA-style replaced token detection pre-training objective to RNA sequences, offering more sample-efficient pre-training compared to masked language modeling approaches.
+  abstract: Proposes RNAElectra, applying the ELECTRA-style replaced token detection pre-training objective to RNA sequences,
+    offering more sample-efficient pre-training compared to masked language modeling approaches.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -234,7 +249,9 @@
   hf_url: null
   scope: core_rna_fm
   category: ncRNA FM
-  abstract: Introduces RNAret, a Retentive Network-based RNA language model pre-trained with masked language modeling on 29.8M RNAcentral sequences, enabling efficient long-sequence RNA representation learning across interaction, structure, and classification tasks.
+  abstract: Introduces RNAret, a Retentive Network-based RNA language model pre-trained with masked language modeling on 29.8M
+    RNAcentral sequences, enabling efficient long-sequence RNA representation learning across interaction, structure, and
+    classification tasks.
   architecture: Hybrid/SSM
   tokenization: K-mer
   table_architecture: Hybrid (RetNet)
@@ -249,7 +266,8 @@
   hf_url: null
   scope: adapted_derived
   category: ncRNA FM
-  abstract: Adapts the protein language model ESM-2 to RNA through cross-modality transfer learning on 6M RNAcentral sequences, providing a parameter- and data-efficient RNA language model.
+  abstract: Adapts the protein language model ESM-2 to RNA through cross-modality transfer learning on 6M RNAcentral sequences,
+    providing a parameter- and data-efficient RNA language model.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -264,7 +282,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: mRNA/CDS FM
-  abstract: Presents CodonBERT, a BERT-based model pre-trained on 10M mRNA coding sequences with codon-aware tokenization for mRNA sequence representation and vaccine-related design tasks.
+  abstract: Presents CodonBERT, a BERT-based model pre-trained on 10M mRNA coding sequences with codon-aware tokenization
+    for mRNA sequence representation and vaccine-related design tasks.
   architecture: Encoder-only
   tokenization: Codon
   table_architecture: Encoder-only
@@ -279,7 +298,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: mRNA/CDS FM
-  abstract: Introduces CaLM, a codon-level language model trained on ~9M non-redundant coding sequences for predicting and optimizing codon usage, enabling rational mRNA therapeutic design with improved translation efficiency.
+  abstract: Introduces CaLM, a codon-level language model trained on ~9M non-redundant coding sequences for predicting and
+    optimizing codon usage, enabling rational mRNA therapeutic design with improved translation efficiency.
   architecture: Encoder-only
   tokenization: Codon
   table_architecture: Encoder-only
@@ -294,7 +314,8 @@
   hf_url: https://huggingface.co/multimolecule/mrnafm
   scope: adapted_derived
   category: mRNA/CDS FM
-  abstract: Adds mRNA-FM as the coding-sequence extension of RNA-FM, pre-trained on 45M mRNA CDS sequences to provide contextual embeddings for mRNA and protein-related downstream tasks.
+  abstract: Adds mRNA-FM as the coding-sequence extension of RNA-FM, pre-trained on 45M mRNA CDS sequences to provide contextual
+    embeddings for mRNA and protein-related downstream tasks.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -309,7 +330,8 @@
   hf_url: null
   scope: core_rna_fm
   category: mRNA/CDS FM
-  abstract: Proposes HELM, a hierarchical encoding approach for mRNA language modeling that captures both nucleotide-level and codon-level information through a multi-scale architecture for improved mRNA property prediction.
+  abstract: Proposes HELM, a hierarchical encoding approach for mRNA language modeling that captures both nucleotide-level
+    and codon-level information through a multi-scale architecture for improved mRNA property prediction.
   architecture: Encoder-Decoder
   tokenization: Codon
   table_architecture: Encoder-Decoder
@@ -324,7 +346,8 @@
   hf_url: https://huggingface.co/helical-ai/helix-mRNA
   scope: core_rna_fm
   category: mRNA/CDS FM
-  abstract: Presents Helix-mRNA, a compact hybrid model combining Mamba2 state space layers with attention mechanisms for efficient mRNA sequence modeling, targeting mRNA stability and translation efficiency prediction.
+  abstract: Presents Helix-mRNA, a compact hybrid model combining Mamba2 state space layers with attention mechanisms for
+    efficient mRNA sequence modeling, targeting mRNA stability and translation efficiency prediction.
   architecture: Hybrid/SSM
   tokenization: Codon
   table_architecture: Hybrid (SSM+Attention)
@@ -339,7 +362,8 @@
   hf_url: https://huggingface.co/nvidia/NV-CodonFM-Encodon-1B-v1
   scope: core_rna_fm
   category: mRNA/CDS FM
-  abstract: Releases NVIDIA CodonFM / Encodon, a family of codon-level masked language models trained on 131M RefSeq protein-coding sequences for mRNA design, codon optimization, and synonymous or missense variant interpretation.
+  abstract: Releases NVIDIA CodonFM / Encodon, a family of codon-level masked language models trained on 131M RefSeq protein-coding
+    sequences for mRNA design, codon optimization, and synonymous or missense variant interpretation.
   architecture: Encoder-only
   tokenization: Codon
   table_architecture: Encoder-only
@@ -354,7 +378,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: mRNA/CDS FM
-  abstract: Develops GenSLMs (up to 25B parameters), genome-scale language models trained on codon-level gene sequences from 110M+ genes and 1.5M SARS-CoV-2 genomes, revealing evolutionary dynamics and enabling variant prediction.
+  abstract: Develops GenSLMs (up to 25B parameters), genome-scale language models trained on codon-level gene sequences from
+    110M+ genes and 1.5M SARS-CoV-2 genomes, revealing evolutionary dynamics and enabling variant prediction.
   architecture: Decoder-only
   tokenization: Codon
   table_architecture: Decoder-only
@@ -369,7 +394,8 @@
   hf_url: https://huggingface.co/Taykhoom/mRNABERT-no-flashattention
   scope: core_rna_fm
   category: mRNA/CDS FM
-  abstract: Introduces mRNABERT, a 114M-parameter BERT model pre-trained on 18M mRNA sequences from diverse databases using dual tokenization, achieving state-of-the-art on mRNA stability, translation efficiency, and expression prediction.
+  abstract: Introduces mRNABERT, a 114M-parameter BERT model pre-trained on 18M mRNA sequences from diverse databases using
+    dual tokenization, achieving state-of-the-art on mRNA stability, translation efficiency, and expression prediction.
   architecture: Encoder-only
   tokenization: Learnable
   table_architecture: Encoder-only
@@ -384,7 +410,8 @@
   hf_url: null
   scope: core_rna_fm
   category: mRNA/CDS FM
-  abstract: Presents mRNA-GPT, a 302M-parameter autoregressive model pre-trained on 80M bacterial, 83M eukaryotic, and 2M archaeal CDS sequences with codon/nucleotide tokenization for cross-species mRNA understanding and generation.
+  abstract: Presents mRNA-GPT, a 302M-parameter autoregressive model pre-trained on 80M bacterial, 83M eukaryotic, and 2M
+    archaeal CDS sequences with codon/nucleotide tokenization for cross-species mRNA understanding and generation.
   architecture: Decoder-only
   tokenization: Codon
   table_architecture: Decoder-only
@@ -399,7 +426,8 @@
   hf_url: null
   scope: core_rna_fm
   category: mRNA/CDS FM
-  abstract: Proposes NUWA, a large mRNA foundation model pre-trained on 115M multi-species coding sequences for unified mRNA sequence perception and generation.
+  abstract: Proposes NUWA, a large mRNA foundation model pre-trained on 115M multi-species coding sequences for unified mRNA
+    sequence perception and generation.
   architecture: Encoder-only
   tokenization: Codon
   table_architecture: Encoder-only
@@ -414,7 +442,8 @@
   hf_url: https://huggingface.co/naniltx/codonGPT
   scope: adapted_derived
   category: mRNA/CDS FM
-  abstract: Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.
+  abstract: Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences
+    with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.
   architecture: Decoder-only
   tokenization: Codon
   table_architecture: Decoder-only
@@ -429,7 +458,8 @@
   hf_url: https://huggingface.co/multimolecule/utrlm-te_el
   scope: specialized_rna_fm
   category: UTR FM
-  abstract: Introduces UTR-LM, a language model specifically pre-trained on 5' UTR sequences from Ensembl, predicting mean ribosome loading (translation efficiency) and expression level from UTR sequences alone.
+  abstract: Introduces UTR-LM, a language model specifically pre-trained on 5' UTR sequences from Ensembl, predicting mean
+    ribosome loading (translation efficiency) and expression level from UTR sequences alone.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -444,7 +474,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: UTR FM
-  abstract: Presents 3UTRBERT, a BERT model pre-trained on GENCODE 3'UTR sequences using 3-mer tokenization, capturing regulatory motifs for predicting mRNA stability, polyadenylation, and subcellular localization.
+  abstract: Presents 3UTRBERT, a BERT model pre-trained on GENCODE 3'UTR sequences using 3-mer tokenization, capturing regulatory
+    motifs for predicting mRNA stability, polyadenylation, and subcellular localization.
   architecture: Encoder-only
   tokenization: K-mer
   table_architecture: Encoder-only
@@ -452,14 +483,16 @@
   pretraining_data: GENCODE 3'UTR (20K seqs)
   table_tokenization: 3-mer
 - name: SpliceBERT
-  title: Self-supervised learning on millions of primary RNA sequences from 72 vertebrates improves sequence-based RNA splicing prediction
+  title: Self-supervised learning on millions of primary RNA sequences from 72 vertebrates improves sequence-based RNA splicing
+    prediction
   paper_url: https://doi.org/10.1093/bib/bbae163
   date: '2024.03'
   github_url: https://github.com/chenkenbio/SpliceBERT
   hf_url: null
   scope: specialized_rna_fm
   category: Specific RNA FM
-  abstract: Develops SpliceBERT, a 20M-parameter BERT model pre-trained on pre-mRNA sequences from 72 vertebrate species for self-supervised learning of splicing patterns, improving splice site prediction and branchpoint detection.
+  abstract: Develops SpliceBERT, a 20M-parameter BERT model pre-trained on pre-mRNA sequences from 72 vertebrate species for
+    self-supervised learning of splicing patterns, improving splice site prediction and branchpoint detection.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -474,7 +507,8 @@
   hf_url: https://huggingface.co/jinyuan22/RFamLlama-base
   scope: specialized_rna_fm
   category: Specific RNA FM
-  abstract: Proposes RFamLlama, a Llama-based autoregressive model for conditional RNA sequence generation conditioned on RNA family labels, generating novel functional ncRNA sequences belonging to over 4,000 Rfam families.
+  abstract: Proposes RFamLlama, a Llama-based autoregressive model for conditional RNA sequence generation conditioned on
+    RNA family labels, generating novel functional ncRNA sequences belonging to over 4,000 Rfam families.
   architecture: Decoder-only
   tokenization: SNT
   table_architecture: Decoder-only
@@ -489,7 +523,8 @@
   hf_url: https://huggingface.co/yangheng/PlantRNA-FM
   scope: specialized_rna_fm
   category: Specific RNA FM
-  abstract: Presents PlantRNA-FM, a foundation model pre-trained on transcriptomes from 1,124 plant species (OneKP dataset), capturing plant-specific RNA regulatory patterns for gene expression prediction and functional annotation.
+  abstract: Presents PlantRNA-FM, a foundation model pre-trained on transcriptomes from 1,124 plant species (OneKP dataset),
+    capturing plant-specific RNA regulatory patterns for gene expression prediction and functional annotation.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -504,7 +539,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: Specific RNA FM
-  abstract: Introduces LncRNA-BERT, a BERT model pre-trained on 536K long non-coding RNA sequences from GENCODE, RefSeq, and NONCODE for lncRNA classification, subcellular localization, and functional prediction.
+  abstract: Introduces LncRNA-BERT, a BERT model pre-trained on 536K long non-coding RNA sequences from GENCODE, RefSeq, and
+    NONCODE for lncRNA classification, subcellular localization, and functional prediction.
   architecture: Encoder-only
   tokenization: K-mer
   table_architecture: Encoder-only
@@ -512,14 +548,16 @@
   pretraining_data: GENCODE + RefSeq + NONCODE (536K seqs)
   table_tokenization: CSE / k-mer / nt
 - name: G4mer
-  title: 'G4mer: An RNA language model for transcriptome-wide identification of G-quadruplexes and disease variants from population-scale genetic data'
+  title: 'G4mer: An RNA language model for transcriptome-wide identification of G-quadruplexes and disease variants from population-scale
+    genetic data'
   paper_url: https://www.nature.com/articles/s41467-025-65020-7
   date: '2025.11'
   github_url: null
   hf_url: https://huggingface.co/Biociphers/g4mer
   scope: specialized_rna_fm
   category: Specific RNA FM
-  abstract: Develops G4mer, a 46M-parameter interpretable transformer model for predicting RNA G-quadruplex structures in the human transcriptome, providing attention-based interpretability for understanding G4-mediated regulation.
+  abstract: Develops G4mer, a 46M-parameter interpretable transformer model for predicting RNA G-quadruplex structures in
+    the human transcriptome, providing attention-based interpretability for understanding G4-mediated regulation.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -534,7 +572,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: Structure-aware FM
-  abstract: Proposes ATOM-1, a foundation model trained on chemical mapping data to learn RNA structure-aware representations for secondary and tertiary structure probing and RNA function prediction.
+  abstract: Proposes ATOM-1, a foundation model trained on chemical mapping data to learn RNA structure-aware representations
+    for secondary and tertiary structure probing and RNA function prediction.
   architecture: Encoder-Decoder
   tokenization: SNT
   table_architecture: Encoder-decoder
@@ -551,7 +590,8 @@
   hf_url: https://huggingface.co/yangheng/OmniGenome-186M
   scope: specialized_rna_fm
   category: Structure-aware FM
-  abstract: Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
+  abstract: Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs
+    from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -566,7 +606,8 @@
   hf_url: https://huggingface.co/yangheng/MP-RNA
   scope: specialized_rna_fm
   category: Structure-aware FM
-  abstract: Develops MP-RNA, a multi-purpose RNA foundation model that integrates sequence and structure information through joint pre-training on the OneKP dataset, supporting diverse RNA tasks within a unified framework.
+  abstract: Develops MP-RNA, a multi-purpose RNA foundation model that integrates sequence and structure information through
+    joint pre-training on the OneKP dataset, supporting diverse RNA tasks within a unified framework.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -581,7 +622,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: Structure-aware FM
-  abstract: Presents StructRFM, a structure-guided RNA foundation model pre-trained on 21M sequence-structure pairs, integrating predicted secondary structure information during pre-training for enhanced RNA representation learning.
+  abstract: Presents StructRFM, a structure-guided RNA foundation model pre-trained on 21M sequence-structure pairs, integrating
+    predicted secondary structure information during pre-training for enhanced RNA representation learning.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -596,7 +638,8 @@
   hf_url: null
   scope: specialized_rna_fm
   category: General RNA FM
-  abstract: Introduces LoRNA SH, a StripedHyena-based long-context RNA foundation model trained on full-length transcriptome architecture data to predict isoform abundance, isoform structure, and variant effects.
+  abstract: Introduces LoRNA SH, a StripedHyena-based long-context RNA foundation model trained on full-length transcriptome
+    architecture data to predict isoform abundance, isoform structure, and variant effects.
   architecture: Hybrid/SSM
   tokenization: SNT
   table_architecture: Hybrid (StripedHyena)
@@ -611,7 +654,8 @@
   hf_url: https://huggingface.co/pfnet/GenerRNA
   scope: core_rna_fm
   category: Generative FM
-  abstract: Presents GenerRNA, a 350M-parameter autoregressive language model pre-trained on 16M RNAcentral sequences (~17.4B nucleotides) using BPE tokenization for de novo RNA sequence generation with controllable properties.
+  abstract: Presents GenerRNA, a 350M-parameter autoregressive language model pre-trained on 16M RNAcentral sequences (~17.4B
+    nucleotides) using BPE tokenization for de novo RNA sequence generation with controllable properties.
   architecture: Decoder-only
   tokenization: BPE
   table_architecture: Decoder-only
@@ -626,7 +670,8 @@
   hf_url: null
   scope: core_rna_fm
   category: Generative FM
-  abstract: Introduces EVA, a Mixture-of-Experts decoder model for long-context RNA sequence generation, trained on 114M+ full-length RNA sequences for generating diverse functional RNA molecules at unprecedented lengths.
+  abstract: Introduces EVA, a Mixture-of-Experts decoder model for long-context RNA sequence generation, trained on 114M+
+    full-length RNA sequences for generating diverse functional RNA molecules at unprecedented lengths.
   architecture: Specialized
   tokenization: BPE
   table_architecture: Decoder-only (MoE)
@@ -641,7 +686,8 @@
   hf_url: null
   scope: core_rna_fm
   category: General RNA FM
-  abstract: Presents Uni-RNA, a 400M-parameter universal RNA model pre-trained on 1B sequences from RNAcentral, MG-RAST, and MGnify, covering RNA across diverse species for general-purpose RNA representation learning.
+  abstract: Presents Uni-RNA, a 400M-parameter universal RNA model pre-trained on 1B sequences from RNAcentral, MG-RAST, and
+    MGnify, covering RNA across diverse species for general-purpose RNA representation learning.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -656,7 +702,8 @@
   hf_url: null
   scope: core_rna_fm
   category: General RNA FM
-  abstract: Introduces RNALens, a 469M-parameter multi-task RNA foundation model pre-trained on multispecies genomic and 5'UTR sequences using BPE tokenization, supporting diverse RNA analysis tasks within a unified framework.
+  abstract: Introduces RNALens, a 469M-parameter multi-task RNA foundation model pre-trained on multispecies genomic and 5'UTR
+    sequences using BPE tokenization, supporting diverse RNA analysis tasks within a unified framework.
   architecture: Encoder-only
   tokenization: BPE
   table_architecture: Encoder-only
@@ -671,10 +718,31 @@
   hf_url: https://huggingface.co/quietflamingo/orthrus-large-4-track
   scope: specialized_rna_fm
   category: Specific RNA FM
-  abstract: Introduces Orthrus, a Mamba-based mature RNA foundation model using contrastive learning on transcript isoforms and cross-species orthologs to learn evolutionary and functional RNA representations.
+  abstract: Introduces Orthrus, a Mamba-based mature RNA foundation model using contrastive learning on transcript isoforms
+    and cross-species orthologs to learn evolutionary and functional RNA representations.
   architecture: Hybrid/SSM
   tokenization: SNT
   table_architecture: Hybrid (SSM)
   params: 1.3M / 10.1M
   pretraining_data: GENCODE + RefSeq + Zoonomia (32M transcripts)
   table_tokenization: SNT
+- name: GoForth
+  title: 'GoForth: Language Models for RNA Design under Structure, Sequence, and Coding Constraints'
+  paper_url: https://arxiv.org/abs/2605.07608
+  date: '2026.05'
+  github_url: null
+  hf_url: null
+  scope: core_rna_fm
+  category: Generative FM
+  abstract: Introduces GoForth, a forward-trained RNA language model that conditions on structure, sequence, and coding
+    targets for conditional generative RNA design under mixed constraints, using encoder-decoder models trained on
+    witnessed folds and evaluated on inverse-folding and constrained design tasks.
+  architecture: Encoder-Decoder
+  tokenization: SNT
+  table_architecture: Encoder-Decoder
+  params: '-'
+  pretraining_data: Witnessed RNA folds
+  table_tokenization: Sequence + structure/coding conditions
+  review_status: auto_classified
+  discovered_at: '2026-05-12'
+  timeline_url: https://arxiv.org/abs/2605.07608
