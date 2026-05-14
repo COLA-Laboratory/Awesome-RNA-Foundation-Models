@@ -61,7 +61,7 @@ jobs:
           git commit -m "Update RNA foundation model metadata"
           git push --force origin "HEAD:$UPDATE_BRANCH"
 
-          PR_BODY="Automated literature scan found new RNA foundation-model candidates, auto-classified promotable entries into data/papers.yaml, and regenerated README.md plus assets/model_timeline.svg. Please verify the metadata, classification, and strict-scope fit before merging."
+          PR_BODY="Automated literature scan found new RNA sequence foundation-model candidates, auto-classified only strict-scope promotable entries into data/papers.yaml, and regenerated README.md plus assets/model_timeline.svg. Please verify the metadata, classification, and strict-scope fit before merging."
 
           if gh pr view "$UPDATE_BRANCH" --json url --jq .url; then
             gh pr edit "$UPDATE_BRANCH" \

@@ -227,24 +227,18 @@ def render_view(groups, label_map, description_map=None):
 # ============================================================
 
 # View 1: By foundation-model scope. This axis answers whether an entry is a
-# newly pre-trained RNA FM, a narrower RNA-specific FM, a derivative/adaptation,
-# or a related non-RNA-sequence resource.
+# newly pre-trained RNA sequence FM, a narrower RNA-specific FM, or a
+# derivative/adaptation that still yields a reusable RNA sequence model.
 scope_labels = {
     "core_rna_fm": "Core RNA Foundation Models",
     "specialized_rna_fm": "Specialized RNA Foundation Models",
     "adapted_derived": "Adapted / Derived RNA Models",
-    "task_design": "Task-specific / Design-oriented RNA Models",
-    "related_nucleotide": "RNA-related Nucleotide / Multi-omics FMs",
-    "expression_profile": "Expression-profile Related Models",
 }
 scope_order = list(scope_labels.keys())
 scope_descriptions = {
     "core_rna_fm": "Primary contribution is a reusable RNA or mRNA sequence foundation model pre-trained on raw nucleotide sequences and intended for broad downstream transfer or generation.",
     "specialized_rna_fm": "RNA-specific pre-training is present, but the scope is constrained by RNA subtype, species, structural modality, or a narrow biological question.",
     "adapted_derived": "The work mainly adapts, extends, or composes existing foundation models / pre-trained components for RNA-specific analysis or design, rather than introducing a fully new RNA backbone.",
-    "task_design": "RNA models with explicit RNA training signal whose main deliverable is a specific predictor, designer, inverse-folding, structure, or editing-guide workflow.",
-    "related_nucleotide": "Foundation models for nucleotide, transcriptomic, or central-dogma sequences that include explicit RNA/transcriptomic training data, but are not pure RNA sequence FMs.",
-    "expression_profile": "Models over RNA-seq expression profiles or multi-omics expression features; included because the pre-training data contain RNA-derived measurements rather than raw RNA nucleotide sequences.",
 }
 def scope_key(paper):
     name = paper[0]
@@ -271,8 +265,6 @@ rna_type_labels = {
     "Structure-aware FM": "Structure-aware RNA Models",
     "Generative FM": "RNA Generative Models",
     "General RNA FM": "General / Other RNA Models",
-    "DNA+RNA FM": "DNA+RNA Related Foundation Models",
-    "Expression FM": "Expression-based Related Models",
 }
 rna_type_order = list(rna_type_labels.keys())
 
@@ -306,8 +298,6 @@ model_table_descriptions = {
     "Structure-aware FM": "Models incorporating RNA secondary or tertiary structure information during pre-training or inference.",
     "Generative FM": "Models focused on RNA sequence generation or generative transcript modeling.",
     "General RNA FM": "General-purpose RNA models covering multiple RNA types.",
-    "DNA+RNA FM": "Nucleotide or biological sequence foundation models with RNA-relevant pre-training data or transcriptomic data. These are not pure RNA sequence FMs and are listed as related resources.",
-    "Expression FM": "Models operating on RNA-seq **gene expression profiles** or RNA-linked multi-omics measurements rather than raw nucleotide sequences.",
 }
 
 benchmark_details = {
@@ -368,7 +358,7 @@ def render_model_timeline():
     rows = []
     rows.append("## Model Timeline")
     rows.append("")
-    rows.append(f"Timeline of {len(papers)} confirmed RNA-relevant model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.")
+    rows.append(f"Timeline of {len(papers)} confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.")
     rows.append("")
     rows.append("**Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.")
     rows.append("")
@@ -536,24 +526,21 @@ lines.extend(render_model_timeline())
 lines.append("")
 lines.append("## Paper List")
 lines.append("")
-lines.append("A broad list of RNA and RNA-relevant foundation/model resources included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.")
+lines.append("A strict survey list of RNA sequence foundation models included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.")
 lines.append("")
 lines.append("<!-- **Classification rules**:")
 lines.append("")
 lines.append("- **Core RNA Foundation Models**: reusable RNA or mRNA sequence backbones pre-trained on raw nucleotide sequences for broad downstream transfer or generation.")
 lines.append("- **Specialized RNA Foundation Models**: RNA-specific pre-trained models whose scope is limited to a subtype, species, structural modality, or narrow biological question.")
 lines.append("- **Adapted / Derived RNA Models**: models that adapt, extend, or transfer existing pre-trained components but still yield a reusable RNA language model.")
-lines.append("- **Task-specific / Design-oriented RNA Models**: RNA-trained or RNA-conditioned predictors/designers, reverse-translation or inverse-folding systems, RNA 3D/structure systems, and editing-guide models that can be used for downstream RNA tasks.")
-lines.append("- **RNA-related Nucleotide / Multi-omics FMs**: broader nucleotide, transcriptomic, or central-dogma models with explicit RNA/transcriptomic training data.")
-lines.append("- **Expression-profile Related Models**: foundation models over RNA-seq expression profiles or RNA-linked multi-omics measurements.")
-lines.append("- **Excluded from this broad list**: single-cell foundation models, protein-only models, pure DNA/genome models without explicit RNA/transcriptomic training signal, non-model datasets/benchmarks/surveys, and papers with no reusable downstream model. -->")
+lines.append("- **Excluded from this strict list**: downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile/RNA-seq feature models, protein-only models, single-cell foundation models, non-model datasets/benchmarks/surveys as model entries, and papers with no reusable RNA sequence model. -->")
 lines.append("")
 lines.append("> **Date convention**: Dates shown in this section use the official publication or conference month when available; otherwise they use the linked preprint month and are marked `preprint`. Workshop-only entries are marked `workshop`.")
 lines.append("")
 
 # Model entries (collapsible wrapper with 4 views inside)
 lines.append('<details open>')
-lines.append('<summary><b>Models & Related Resources</b></summary>')
+lines.append('<summary><b>RNA Sequence Foundation Models</b></summary>')
 lines.append("")
 lines.append("<blockquote>")
 lines.append("")
@@ -673,14 +660,14 @@ else:
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) [![Last Update](https://img.shields.io/badge/Last_Update-2026.05-blue.svg)]()
 
-A curated, continuously updated catalog of **RNA and RNA-relevant model resources**, covering reusable RNA/mRNA/CDS/UTR foundation backbones, task-oriented RNA design and prediction systems, structure-aware RNA models, RNA-related nucleotide or multi-omics models, and RNA-seq / transcriptomic models.
+A curated, continuously updated catalog of **RNA sequence foundation models**, covering reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints, specialized RNA-family or structure-aware sequence models, adapted / derived RNA language models, and generative RNA sequence models.
 
-> **Scope.** Included model entries have explicit RNA-related pre-training or large-scale training signal and support downstream prediction, design, generation, or representation learning. Protein-only models, single-cell foundation models, pure DNA/genome models without RNA/transcriptomic training signal, and non-model resources are excluded from the model list.
+> **Scope.** Included model entries must introduce or release a reusable RNA sequence model, backbone, or checkpoint pre-trained / large-scale trained on RNA, mRNA, CDS, UTR, or transcript sequences, and support embedding extraction, fine-tuning, generation, or broad transfer to RNA downstream tasks. Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile/RNA-seq feature models, protein-only models, single-cell foundation models, and non-model resources are excluded from model entries; benchmarks and surveys are listed separately.
 
 ## Table of Contents
 
-- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed model entries
-- [Paper List](#paper-list) — RNA and RNA-relevant models (4 views), Benchmarks, Surveys
+- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries
+- [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys
 - [Detailed Tables](#detailed-tables) — Detailed tables for all {len(papers)} model entries, {len(benchmarks)} benchmarks, {len(surveys)} surveys
 - [Abbreviations](#abbreviations)
 - [Contributing](#contributing)
@@ -696,11 +683,11 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 1. Open an issue with the model/paper details
 2. Or submit a pull request following the existing table format
 
-**What to include**: models with explicit RNA, mRNA, UTR, transcriptomic, pegRNA, RNA-structure, or RNA-seq training signal that can be used for downstream RNA prediction, design, or generation.
+**What to include**: reusable RNA sequence foundation models with RNA, mRNA, CDS, UTR, or transcript sequence pre-training / large-scale training signal that can support embedding extraction, fine-tuning, generation, or broad transfer to RNA downstream tasks.
 
-**What NOT to include**: single-cell foundation models, protein-only models, pure DNA/genome models without explicit RNA/transcriptomic training signal, non-model datasets/benchmarks/surveys as model entries, or papers with no reusable downstream model.
+**What NOT to include**: downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile/RNA-seq feature models, single-cell foundation models, protein-only models, non-model datasets/benchmarks/surveys as model entries, or papers with no reusable RNA sequence model.
 
-**Metadata workflow**: confirmed entries live in `data/papers.yaml`, temporary discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`. A scheduled GitHub Action scans recent arXiv, bioRxiv, and Crossref metadata, auto-classifies promotable RNA-relevant candidates into draft `data/papers.yaml` records, regenerates `README.md` and `assets/model_timeline.svg`, and opens a review PR. After editing confirmed metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed.
+**Metadata workflow**: confirmed entries live in `data/papers.yaml`, temporary discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`. A scheduled GitHub Action scans recent arXiv, bioRxiv, and Crossref metadata, auto-classifies promotable RNA sequence foundation model candidates into draft `data/papers.yaml` records, regenerates `README.md` and `assets/model_timeline.svg`, and opens a review PR. After editing confirmed metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed.
 
 
 *Last updated: May 2026*
@@ -709,15 +696,23 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 
 new_readme = new_readme.replace(
     "A curated and up-to-date collection of **RNA sequence foundation models**, covering reusable pre-trained language models for non-coding RNA, mRNA/CDS, UTR, structure-aware RNA representations, and generative RNA sequence modeling.",
-    "A curated, continuously updated catalog of **RNA and RNA-relevant model resources**, covering reusable RNA/mRNA/CDS/UTR foundation backbones, task-oriented RNA design and prediction systems, structure-aware RNA models, RNA-related nucleotide or multi-omics models, and RNA-seq / transcriptomic models.",
+    "A curated, continuously updated catalog of **RNA sequence foundation models**, covering reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints, specialized RNA-family or structure-aware sequence models, adapted / derived RNA language models, and generative RNA sequence models.",
 )
 new_readme = new_readme.replace(
     "A curated and up-to-date collection of **RNA and RNA-relevant foundation/model resources**, covering reusable pre-trained language models, task-specific RNA designers/predictors, RNA-structure systems, RNA-related nucleotide models, and RNA-seq / transcriptomic foundation models.",
-    "A curated, continuously updated catalog of **RNA and RNA-relevant model resources**, covering reusable RNA/mRNA/CDS/UTR foundation backbones, task-oriented RNA design and prediction systems, structure-aware RNA models, RNA-related nucleotide or multi-omics models, and RNA-seq / transcriptomic models.",
+    "A curated, continuously updated catalog of **RNA sequence foundation models**, covering reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints, specialized RNA-family or structure-aware sequence models, adapted / derived RNA language models, and generative RNA sequence models.",
 )
 new_readme = new_readme.replace(
     "A curated, continuously updated catalog of **RNA and RNA-relevant foundation models**, covering reusable RNA/mRNA/CDS/UTR sequence backbones, task-oriented RNA design and prediction models, structure-aware RNA models, RNA-related nucleotide or multi-omics models, and RNA-seq / transcriptomic models.",
+    "A curated, continuously updated catalog of **RNA sequence foundation models**, covering reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints, specialized RNA-family or structure-aware sequence models, adapted / derived RNA language models, and generative RNA sequence models.",
+)
+new_readme = new_readme.replace(
     "A curated, continuously updated catalog of **RNA and RNA-relevant model resources**, covering reusable RNA/mRNA/CDS/UTR foundation backbones, task-oriented RNA design and prediction systems, structure-aware RNA models, RNA-related nucleotide or multi-omics models, and RNA-seq / transcriptomic models.",
+    "A curated, continuously updated catalog of **RNA sequence foundation models**, covering reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints, specialized RNA-family or structure-aware sequence models, adapted / derived RNA language models, and generative RNA sequence models.",
+)
+new_readme = new_readme.replace(
+    "A curated, continuously updated catalog of **RNA foundation models**, covering reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints, RNA-trained design and prediction models, structure-aware RNA models, RNA-related nucleotide or multi-omics foundation models with explicit RNA/transcriptomic training signal, and RNA-seq / transcriptomic foundation models.",
+    "A curated, continuously updated catalog of **RNA sequence foundation models**, covering reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints, specialized RNA-family or structure-aware sequence models, adapted / derived RNA language models, and generative RNA sequence models.",
 )
 new_readme = re.sub(
     r"^# .*Awesome RNA Foundation Models.*$",
@@ -743,24 +738,40 @@ new_readme = re.sub(
 )
 new_readme = re.sub(
     r"> (?:\[!NOTE\]\n> )?\*\*Scope\.\*\* .*?(?:\n\n---)?(?=\n\n## Table of Contents)",
-    "> **Scope.** Included model entries have explicit RNA-related pre-training or large-scale training signal and support downstream prediction, design, generation, or representation learning. Protein-only models, single-cell foundation models, pure DNA/genome models without RNA/transcriptomic training signal, and non-model resources are excluded from the model list.",
+    "> **Scope.** Included model entries must introduce or release a reusable RNA sequence model, backbone, or checkpoint pre-trained / large-scale trained on RNA, mRNA, CDS, UTR, or transcript sequences, and support embedding extraction, fine-tuning, generation, or broad transfer to RNA downstream tasks. Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile/RNA-seq feature models, protein-only models, single-cell foundation models, and non-model resources are excluded from model entries; benchmarks and surveys are listed separately.",
     new_readme,
     count=1,
     flags=re.S,
 )
 new_readme = new_readme.replace(
     "- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA foundation models",
+    "- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries",
+)
+new_readme = new_readme.replace(
     "- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed model entries",
+    "- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries",
+)
+new_readme = new_readme.replace(
+    "- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA foundation model entries",
+    "- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries",
 )
 new_readme = new_readme.replace(
     "- [Paper List](#paper-list) — Strict RNA foundation models (4 views), Benchmarks, Surveys",
+    "- [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys",
+)
+new_readme = new_readme.replace(
     "- [Paper List](#paper-list) — RNA and RNA-relevant models (4 views), Benchmarks, Surveys",
+    "- [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys",
+)
+new_readme = new_readme.replace(
+    "- [Paper List](#paper-list) — RNA foundation models (4 views), Benchmarks, Surveys",
+    "- [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys",
 )
 new_readme = re.sub(
     r"\*\*What to include\*\*: .*?\n\n\*\*What NOT to include\*\*: .*?\n\n\*\*Metadata workflow\*\*: confirmed entries live in `data/papers.yaml`, temporary discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`\. A scheduled GitHub Action scans recent arXiv, bioRxiv, and Crossref metadata, auto-classifies promotable .*? candidates into draft `data/papers.yaml` records, regenerates `README.md` and `assets/model_timeline.svg`, and opens a review PR\. After editing confirmed metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed\.",
-    "**What to include**: models with explicit RNA, mRNA, UTR, transcriptomic, pegRNA, RNA-structure, or RNA-seq training signal that can be used for downstream RNA prediction, design, or generation.\n\n"
-    "**What NOT to include**: single-cell foundation models, protein-only models, pure DNA/genome models without explicit RNA/transcriptomic training signal, non-model datasets/benchmarks/surveys as model entries, or papers with no reusable downstream model.\n\n"
-    "**Metadata workflow**: confirmed entries live in `data/papers.yaml`, temporary discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`. A scheduled GitHub Action scans recent arXiv, bioRxiv, and Crossref metadata, auto-classifies promotable RNA-relevant candidates into draft `data/papers.yaml` records, regenerates `README.md` and `assets/model_timeline.svg`, and opens a review PR. After editing confirmed metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed.",
+    "**What to include**: reusable RNA sequence foundation models with RNA, mRNA, CDS, UTR, or transcript sequence pre-training / large-scale training signal that can support embedding extraction, fine-tuning, generation, or broad transfer to RNA downstream tasks.\n\n"
+    "**What NOT to include**: downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile/RNA-seq feature models, single-cell foundation models, protein-only models, non-model datasets/benchmarks/surveys as model entries, or papers with no reusable RNA sequence model.\n\n"
+    "**Metadata workflow**: confirmed entries live in `data/papers.yaml`, temporary discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`. A scheduled GitHub Action scans recent arXiv, bioRxiv, and Crossref metadata, auto-classifies promotable RNA sequence foundation model candidates into draft `data/papers.yaml` records, regenerates `README.md` and `assets/model_timeline.svg`, and opens a review PR. After editing confirmed metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed.",
     new_readme,
     flags=re.S,
 )
@@ -772,8 +783,8 @@ new_readme = re.sub(
 if "- [Model Timeline](#model-timeline)" not in new_readme:
     new_readme = new_readme.replace(
         "- [Paper List](#paper-list) — Strict RNA foundation models (4 views), Benchmarks, Surveys",
-        "- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA foundation models\n"
-        "- [Paper List](#paper-list) — RNA and RNA-relevant models (4 views), Benchmarks, Surveys",
+        "- [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries\n"
+        "- [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys",
     )
 new_readme = new_readme.replace("\n---\n## Paper List", "\n---\n\n## Paper List")
 new_readme = new_readme.replace("\n---\n## Model Timeline", "\n---\n\n## Model Timeline")

@@ -1,9 +1,9 @@
-"""Discover candidate RNA foundation models from public scholarly sources.
+"""Discover candidate RNA sequence foundation models from public scholarly sources.
 
 The script is intentionally conservative: it searches a small set of official
-or near-primary metadata sources, filters likely RNA language/foundation-model
-papers, and writes only pending candidates. Confirmed README entries remain
-manual-review metadata in data/papers.yaml.
+or near-primary metadata sources, filters likely RNA sequence language /
+foundation-model papers, and writes only pending candidates. Confirmed README
+entries remain manual-review metadata in data/papers.yaml.
 """
 from __future__ import annotations
 
@@ -36,14 +36,8 @@ BROAD_QUERIES = [
     "RNA masked language model",
     "RNA generative language model",
     "RNA sequence foundation model",
-    "RNA design model",
-    "RNA inverse folding model",
-    "RNA 3D language model",
-    "RNA-seq foundation model",
-    "transcriptomic foundation model",
-    "pegRNA language model",
-    "prime editing guide RNA model",
-    "multi-omics RNA foundation model",
+    "RNA sequence embedding model",
+    "RNA sequence pretraining",
     "mRNA foundation model",
     "mRNA language model",
     "codon language model",
@@ -61,15 +55,8 @@ RNA_TERMS = (
     "utr",
     "codon",
     "transcript",
-    "transcriptome",
-    "transcriptomic",
     "splicing",
     "splice",
-    "pegrna",
-    "guide rna",
-    "inverse folding",
-    "rna seq",
-    "expression profile",
 )
 
 MODEL_TERMS = (
@@ -101,10 +88,35 @@ HIGH_CONFIDENCE_MODEL_TERMS = (
 
 LOW_PRIORITY_TERMS = (
     "single cell",
+    "single-cell",
     "scrna seq",
+    "rna-seq",
+    "bulk rna",
+    "expression profile",
+    "multi omics",
+    "multi-omics",
+    "transcriptomic profile",
+    "genome language model",
+    "genomic language model",
+    "genomes and transcriptomes",
+    "central dogma",
+    "metagenomic",
+    "nucleic acid",
+    "dna and rna",
+    "dna rna",
     "morphology",
     "cellular morphology",
+    "protein conditional",
     "protein language model",
+    "prime editing",
+    "guide rna",
+    "pegrna",
+    "inverse folding",
+    "reverse translation",
+    "rna 3d",
+    "3d structure prediction",
+    "torsion",
+    "aptamer",
 )
 
 BENCHMARK_TERMS = (
@@ -316,6 +328,7 @@ def score_candidate(candidate: Candidate) -> tuple[int, list[str]]:
 
 def is_likely_new_model(candidate: Candidate) -> bool:
     title = normalize_text(candidate.title)
+    raw_text = f"{candidate.title} {candidate.abstract}".lower()
     text = normalize_text(f"{candidate.title} {candidate.abstract}")
     has_rna = any(term in text for term in RNA_TERMS)
     has_high_confidence_model_term = any(term in text for term in HIGH_CONFIDENCE_MODEL_TERMS)
@@ -326,6 +339,32 @@ def is_likely_new_model(candidate: Candidate) -> bool:
     if any(term in title for term in BENCHMARK_TERMS):
         return False
     if any(term in text for term in ("single cell", "single-cell", "scrna seq", "cellular morphology", "protein language model", "without rna specific pretraining")):
+        return False
+    if "rna-seq" in raw_text or "bulk rna" in text:
+        return False
+    if any(term in text for term in (
+        "expression profile",
+        "multi omics",
+        "transcriptomic profile",
+        "genome language model",
+        "genomic language model",
+        "genomes and transcriptomes",
+        "central dogma",
+        "metagenomic",
+        "nucleic acid",
+        "dna and rna",
+        "dna rna",
+        "protein conditional",
+        "prime editing",
+        "guide rna",
+        "pegrna",
+        "inverse folding",
+        "reverse translation",
+        "rna 3d",
+        "3d structure prediction",
+        "torsion",
+        "aptamer",
+    )):
         return False
     return True
 
@@ -344,8 +383,9 @@ def infer_model_name(title: str) -> str:
 
 
 def suggest_scope_and_category(candidate: Candidate) -> tuple[str, str]:
+    raw_text = f"{candidate.title} {candidate.abstract}".lower()
     text = normalize_text(f"{candidate.title} {candidate.abstract}")
-    if any(term in text for term in ("rna seq", "rna-seq", "expression profile", "methylation", "multi omics")):
+    if "rna-seq" in raw_text or any(term in text for term in ("bulk rna", "expression profile", "methylation", "multi omics")):
         return "expression_profile", "Expression FM"
     if any(term in text for term in ("dna and rna", "dna rna", "rna and protein", "nucleic acid", "transcriptome", "transcriptomic", "central dogma", "metagenomic dna and rna")):
         return "related_nucleotide", "DNA+RNA FM"

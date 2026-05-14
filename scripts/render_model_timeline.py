@@ -16,18 +16,12 @@ SCOPE_LABELS = {
     "core_rna_fm": "Core",
     "specialized_rna_fm": "Specialized",
     "adapted_derived": "Adapted",
-    "task_design": "Task/Design",
-    "related_nucleotide": "DNA+RNA",
-    "expression_profile": "Expression",
 }
 
 SCOPE_COLORS = {
     "core_rna_fm": "#2563eb",
     "specialized_rna_fm": "#16a34a",
     "adapted_derived": "#9333ea",
-    "task_design": "#f97316",
-    "related_nucleotide": "#64748b",
-    "expression_profile": "#db2777",
 }
 
 
@@ -96,7 +90,7 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
         svg_text(
             34,
             72,
-            f"Auto-generated from data/papers.yaml • {len(papers)} confirmed RNA-relevant model entries",
+            f"Auto-generated from data/papers.yaml • {len(papers)} confirmed RNA sequence foundation model entries",
             15,
             400,
             "#6b7280",

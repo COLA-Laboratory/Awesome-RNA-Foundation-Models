@@ -1,4 +1,4 @@
-# Entries intentionally excluded after applying the broad RNA-relevance scope.
+# Entries intentionally excluded after applying the strict RNA sequence foundation model scope.
 - name: CodonMoE
   title: DNA Language Models for mRNA Analyses
   paper_url: https://openreview.net/forum?id=TOUrnb1EaG
@@ -15,11 +15,129 @@
   title: Genome Modeling and Design Across All Domains of Life with Evo 2
   paper_url: https://www.nature.com/articles/s41586-026-10176-5
   date: '2026.03'
-  reason: Broad genome language model centered on OpenGenome2 genomic sequence pretraining rather than explicit RNA or
-    transcriptomic pretraining data.
+  reason: Broad genome language model centered on OpenGenome2 genomic sequence pretraining rather than explicit RNA or transcriptomic
+    pretraining data.
 - name: EDEN
   title: 'EDEN: A 28B Foundation Model for Programmable Gene Insertion'
   paper_url: https://www.biorxiv.org/content/10.64898/2026.01.12.699009v1
   date: '2026.01'
-  reason: Programmable gene-insertion model centered on genomic DNA editing; no explicit RNA/transcriptomic pretraining
-    signal was identified from the tracked source metadata.
+  reason: Programmable gene-insertion model centered on genomic DNA editing; no explicit RNA/transcriptomic pretraining signal
+    was identified from the tracked source metadata.
+- name: OPED
+  title: Design of prime-editing guide RNAs with deep transfer learning
+  paper_url: https://www.nature.com/articles/s42256-023-00739-w
+  date: '2023.11'
+  reason: Task-specific prime-editing guide RNA efficiency/design model based on transfer learning; not a reusable RNA sequence
+    foundation backbone for general embedding extraction or fine-tuning.
+- name: RibonanzaNet
+  title: 'Ribonanza: deep learning of RNA structure through dual crowdsourcing'
+  paper_url: https://www.biorxiv.org/content/10.1101/2024.02.24.581671v1
+  date: '2024.02'
+  reason: Task-specific RNA chemical-mapping/structure prediction model; trained for structure/degradation tasks rather than
+    released as a reusable RNA sequence foundation model.
+- name: UTR-Insight
+  title: 'UTR-Insight: integrating deep learning for efficient 5'' UTR discovery and design'
+  paper_url: https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-025-11269-7
+  date: '2025.02'
+  reason: Downstream 5' UTR screening/design workflow that composes UTR-LM with task-specific modules; does not introduce
+    a new reusable RNA sequence foundation backbone.
+- name: RiboDiffusion
+  title: 'RiboDiffusion: tertiary structure-based RNA inverse folding with generative diffusion models'
+  paper_url: https://academic.oup.com/bioinformatics/article/40/Supplement_1/i347/7700903
+  date: '2024.06'
+  reason: RNA inverse-folding / structure-conditioned diffusion designer; not an RNA sequence foundation model for embeddings
+    or broad downstream fine-tuning.
+- name: BSM
+  title: 'BSM: Small but Powerful Biological Sequence Model for Genes and Proteins'
+  paper_url: https://arxiv.org/abs/2410.11499
+  date: '2024.10'
+  reason: Broad biological sequence model over DNA/RNA/protein; related to RNA but outside the strict RNA sequence foundation
+    model scope.
+- name: LAMAR
+  title: 'LAMAR: A Language Model for Mammalian and Viral Genomes and Transcriptomes'
+  paper_url: https://www.biorxiv.org/content/10.1101/2024.10.12.617732v1
+  date: '2024.10'
+  reason: Broad genome/transcriptome language model rather than an RNA-specific sequence foundation model/checkpoint for RNA
+    downstream transfer.
+- name: RNA-TorsionBERT
+  title: 'RNA-TorsionBERT: leveraging language models for RNA 3D torsion angles prediction'
+  paper_url: https://doi.org/10.1093/bioinformatics/btaf004
+  date: '2024.12'
+  reason: Task-specific RNA 3D torsion-angle predictor trained for structural geometry prediction; not a general reusable
+    RNA sequence foundation model.
+- name: GARNET
+  title: 'GARNET: A Generative RNA Design Model from Microbial Genomes'
+  paper_url: https://www.nature.com/articles/s41467-024-54812-y
+  date: '2024.12'
+  reason: Task-specific generative RNA design model for mutation/sequence design rather than a reusable RNA sequence foundation
+    backbone for embedding/fine-tuning.
+- name: METAGENE-1
+  title: 'METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring'
+  paper_url: https://arxiv.org/abs/2501.02045
+  date: '2025.01'
+  reason: Metagenomic foundation model over mixed DNA and RNA metagenomic sequences for pathogen monitoring; related but not
+    a strict RNA sequence foundation model.
+- name: Life-Code
+  title: 'Life-Code: Central Dogma Modeling with Multi-Omics Sequence Unification'
+  paper_url: https://arxiv.org/abs/2502.07299
+  date: '2025.02'
+  reason: Central-dogma/multi-omics model unifying DNA, RNA/cDNA, amino-acid and omics modalities; broader than the strict
+    RNA sequence foundation model scope.
+- name: RhoFold+
+  title: Accurate RNA 3D structure prediction using a language model-based deep learning approach
+  paper_url: https://www.nature.com/articles/s41592-024-02487-0
+  date: '2024.11'
+  reason: RNA 3D structure prediction system built around language-model features and structure modules; not a new reusable
+    RNA sequence foundation model.
+- name: RhoDesign
+  title: Deep generative design of RNA aptamers using structural predictions
+  paper_url: https://www.nature.com/articles/s43588-024-00720-6
+  date: '2024.11'
+  reason: Structure-conditioned RNA aptamer design platform; downstream design system rather than reusable RNA sequence foundation
+    backbone.
+- name: MOJO
+  title: 'MOJO: A Multi-omics Foundation Model for RNA-seq and Methylation'
+  paper_url: https://www.biorxiv.org/content/10.1101/2025.06.25.661237v1
+  date: '2025.06'
+  reason: Foundation model over bulk RNA-seq expression and methylation profiles, not raw RNA nucleotide sequences.
+- name: BulkRNABert
+  title: 'BulkRNABert: A Pre-trained Model for Bulk RNA-seq Expression Data'
+  paper_url: https://www.biorxiv.org/content/10.1101/2024.06.18.599483v2
+  date: '2024.06'
+  reason: BERT-style model for bulk RNA-seq expression-profile features, not RNA nucleotide sequence pretraining.
+- name: RNAtranslator
+  title: 'RNAtranslator: Modeling protein-conditional RNA design as sequence-to-sequence natural language translation'
+  paper_url: https://doi.org/10.1371/journal.pcbi.1013541
+  date: '2025.10'
+  reason: Protein-conditioned RNA design/translation workflow trained on interaction pairs; task-specific design model rather
+    than broad RNA sequence foundation model.
+- name: GEMORNA
+  title: Deep generative models design mRNA sequences with enhanced translational capacity and stability
+  paper_url: https://www.science.org/doi/10.1126/science.adr8470
+  date: '2025.11'
+  reason: mRNA design model optimized for translational capacity and stability; treated as task/design focused rather than
+    a reusable RNA sequence foundation model entry.
+- name: LucaOne
+  title: Generalized biological foundation model with unified nucleic acid and protein language
+  paper_url: https://www.nature.com/articles/s42256-025-01044-4
+  date: '2025.06'
+  reason: Unified biological foundation model over nucleic acids and proteins; includes RNA but is broader than the strict
+    RNA sequence foundation model scope.
+- name: OmniNA
+  title: 'OmniNA: A Foundation Model for Nucleotide Sequences and Annotations'
+  paper_url: https://academic.oup.com/nar/article/54/6/gkag083/8528802
+  date: '2026.01'
+  reason: General nucleotide sequence and annotation foundation model spanning genomic DNA and RNA sequence types; related
+    but not RNA-sequence-specific.
+- name: Pro2RNA
+  title: Designing mRNA coding sequence via multimodal reverse translation language modeling with Pro2RNA
+  paper_url: https://doi.org/10.64898/2026.03.18.712790
+  date: '2026.03'
+  reason: Protein-conditioned reverse-translation / mRNA coding-sequence design model; task-specific design workflow rather
+    than reusable RNA sequence FM.
+- name: mRNA-GPT-FL
+  title: 'mRNA-GPT: A Generative Model for Full-Length mRNA Design and Optimization'
+  paper_url: https://www.biorxiv.org/content/10.64898/2026.03.31.715707v1
+  date: '2026.03'
+  reason: Full-length mRNA design/optimization framework; tracked as task-specific design rather than a reusable RNA sequence
+    foundation model for embedding/fine-tuning.

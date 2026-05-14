@@ -1,9 +1,11 @@
-"""Auto-classify discovered RNA foundation-model candidates.
+"""Auto-classify discovered RNA sequence foundation-model candidates.
 
 This script converts high-confidence entries in data/candidates.yaml into
 draft records in data/papers.yaml so the normal README and timeline generation
-path can update them. The generated records are intentionally conservative and
-marked with review_status: auto_classified for PR review before merging.
+path can update them. Only strict RNA sequence foundation-model candidates are
+promoted automatically; related/task-only records stay in candidates or should
+be moved to data/excluded.yaml after review. The generated records are marked
+with review_status: auto_classified for PR review before merging.
 """
 from __future__ import annotations
 
@@ -31,9 +33,6 @@ ALLOWED_SCOPES = {
     "core_rna_fm",
     "specialized_rna_fm",
     "adapted_derived",
-    "task_design",
-    "related_nucleotide",
-    "expression_profile",
 }
 
 ALLOWED_CATEGORIES = {
@@ -44,9 +43,49 @@ ALLOWED_CATEGORIES = {
     "Structure-aware FM",
     "Generative FM",
     "General RNA FM",
-    "DNA+RNA FM",
-    "Expression FM",
 }
+
+STRICT_MODEL_TERMS = (
+    "foundation model",
+    "language model",
+    "pre-trained",
+    "pretrained",
+    "masked language",
+    "self-supervised",
+    "representation",
+    "embedding",
+    "bert",
+    "gpt",
+    "mamba",
+)
+
+NON_STRICT_TERMS = (
+    "inverse folding",
+    "reverse translation",
+    "prime editing",
+    "guide rna",
+    "pegrna",
+    "3d structure prediction",
+    "rna 3d",
+    "bulk rna",
+    "expression profile",
+    "transcriptomic profile",
+    "single cell",
+    "single-cell",
+    "multi-omics",
+    "multi omics",
+    "genome language model",
+    "genomic language model",
+    "genomes and transcriptomes",
+    "central dogma",
+    "metagenomic",
+    "nucleic acid",
+    "dna and rna",
+    "dna/rna",
+    "dna rna",
+    "protein-conditional",
+    "protein conditional",
+)
 
 
 def compact(value: str | None) -> str:
@@ -104,7 +143,15 @@ def candidate_is_promotable(record: dict) -> bool:
         return False
     if category not in ALLOWED_CATEGORIES:
         return False
-    return bool(record.get("title") and record.get("url") and record.get("date"))
+    if not (record.get("title") and record.get("url") and record.get("date")):
+        return False
+    raw_text = f"{record.get('title', '')} {record.get('abstract', '')} {record.get('reason', '')}".lower()
+    text = normalize_text(raw_text)
+    if "rna-seq" in raw_text or "bulk rna" in text:
+        return False
+    if any(term in text for term in NON_STRICT_TERMS):
+        return False
+    return any(term in text for term in STRICT_MODEL_TERMS)
 
 
 def candidate_to_paper(record: dict) -> dict:

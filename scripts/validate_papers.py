@@ -39,16 +39,20 @@ CANDIDATE_REQUIRED_FIELDS = {
     "discovered_at",
 }
 
-ALLOWED_SCOPES = {
+PAPER_ALLOWED_SCOPES = {
     "core_rna_fm",
     "specialized_rna_fm",
     "adapted_derived",
+}
+
+CANDIDATE_ALLOWED_SCOPES = {
+    *PAPER_ALLOWED_SCOPES,
     "task_design",
     "related_nucleotide",
     "expression_profile",
 }
 
-ALLOWED_CATEGORIES = {
+PAPER_ALLOWED_CATEGORIES = {
     "ncRNA FM",
     "mRNA/CDS FM",
     "UTR FM",
@@ -56,6 +60,10 @@ ALLOWED_CATEGORIES = {
     "Structure-aware FM",
     "Generative FM",
     "General RNA FM",
+}
+
+CANDIDATE_ALLOWED_CATEGORIES = {
+    *PAPER_ALLOWED_CATEGORIES,
     "DNA+RNA FM",
     "Expression FM",
 }
@@ -110,9 +118,9 @@ def validate():
         missing = sorted(REQUIRED_FIELDS - set(record))
         if missing:
             errors.append(f"{name}: missing required fields: {', '.join(missing)}")
-        if record.get("scope") not in ALLOWED_SCOPES:
+        if record.get("scope") not in PAPER_ALLOWED_SCOPES:
             errors.append(f"{name}: invalid scope {record.get('scope')!r}")
-        if record.get("category") not in ALLOWED_CATEGORIES:
+        if record.get("category") not in PAPER_ALLOWED_CATEGORIES:
             errors.append(f"{name}: invalid category {record.get('category')!r}")
         if record.get("architecture") not in ALLOWED_ARCHITECTURES:
             errors.append(f"{name}: invalid architecture {record.get('architecture')!r}")
@@ -134,9 +142,9 @@ def validate():
         missing = sorted(CANDIDATE_REQUIRED_FIELDS - set(record))
         if missing:
             errors.append(f"candidate {name}: missing required fields: {', '.join(missing)}")
-        if record.get("suggested_scope") not in ALLOWED_SCOPES:
+        if record.get("suggested_scope") not in CANDIDATE_ALLOWED_SCOPES:
             errors.append(f"candidate {name}: invalid suggested_scope {record.get('suggested_scope')!r}")
-        if record.get("suggested_category") not in ALLOWED_CATEGORIES:
+        if record.get("suggested_category") not in CANDIDATE_ALLOWED_CATEGORIES:
             errors.append(f"candidate {name}: invalid suggested_category {record.get('suggested_category')!r}")
 
     paper_titles = {record.get("title") for record in papers}
