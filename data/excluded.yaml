@@ -141,3 +141,9 @@
   date: '2026.03'
   reason: Full-length mRNA design/optimization framework; tracked as task-specific design rather than a reusable RNA sequence
     foundation model for embedding/fine-tuning.
+- name: GoForth
+  title: 'GoForth: Language Models for RNA Design under Structure, Sequence, and Coding Constraints'
+  paper_url: https://arxiv.org/abs/2605.07608
+  date: '2026.05'
+  reason: Task-focused RNA sequence design model targeting constrained generation/inverse-folding pipelines (structure, sequence, coding)
+    rather than a broad reusable RNA sequence foundation backbone/checkpoint for general downstream fine-tuning or representation learning.

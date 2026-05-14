@@ -10,7 +10,7 @@ A curated, continuously updated catalog of **RNA sequence foundation models**, c
 
 - [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries
 - [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys
-- [Detailed Tables](#detailed-tables) — Detailed tables for all 46 model entries, 12 benchmarks, 3 surveys
+- [Detailed Tables](#detailed-tables) — Detailed tables for all 45 model entries, 12 benchmarks, 3 surveys
 - [Abbreviations](#abbreviations)
 - [Contributing](#contributing)
 
@@ -18,13 +18,13 @@ A curated, continuously updated catalog of **RNA sequence foundation models**, c
 
 ## Model Timeline
 
-Timeline of 46 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
+Timeline of 45 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
 
 **Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.
 
-**Interactive view:** [open the SVG timeline](https://raw.githubusercontent.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline.svg?v=fd265b16a579) to click model labels and source papers.
+**Interactive view:** [open the SVG timeline](https://raw.githubusercontent.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline.svg?v=2a0c7438775c) to click model labels and source papers.
 
-[![RNA foundation model timeline](assets/model_timeline.svg?v=fd265b16a579)](https://raw.githubusercontent.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline.svg?v=fd265b16a579)
+[![RNA foundation model timeline](assets/model_timeline.svg?v=2a0c7438775c)](https://raw.githubusercontent.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline.svg?v=2a0c7438775c)
 
 ---
 
@@ -53,7 +53,7 @@ A strict survey list of RNA sequence foundation models included in this survey. 
 <blockquote>
 
 <details open>
-<summary><b>Core RNA Foundation Models (23)</b></summary>
+<summary><b>Core RNA Foundation Models (22)</b></summary>
 
 Primary contribution is a reusable RNA or mRNA sequence foundation model pre-trained on raw nucleotide sequences and intended for broad downstream transfer or generation.
 
@@ -144,10 +144,6 @@ Primary contribution is a reusable RNA or mRNA sequence foundation model pre-tra
 - **EVA** — [A Long-Context Generative Foundation Model Deciphers RNA Design Principles](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)
 
   > Introduces EVA, a Mixture-of-Experts decoder model for long-context RNA sequence generation, trained on 114M+ full-length RNA sequences for generating diverse functional RNA molecules at unprecedented lengths.
-
-- **GoForth** — [GoForth: Language Models for RNA Design under Structure, Sequence, and Coding Constraints](https://arxiv.org/abs/2605.07608) (2026.05, preprint) [![abs](https://img.shields.io/badge/abs-2026.05-b31b1b.svg)](https://arxiv.org/abs/2605.07608) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2605.07608)
-
-  > Introduces GoForth, a forward-trained RNA language model that conditions on structure, sequence, and coding targets for conditional generative RNA design under mixed constraints, using encoder-decoder models trained on witnessed folds and evaluated on inverse-folding and constrained design tasks.
 
 </details>
 
@@ -448,7 +444,7 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 </details>
 
 <details open>
-<summary><b>RNA Generative Models (4)</b></summary>
+<summary><b>RNA Generative Models (3)</b></summary>
 
 - **GenerRNA** — [GenerRNA: A generative pre-trained language model for de novo RNA design](https://doi.org/10.1371/journal.pone.0310814) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1371/journal.pone.0310814) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/pfnet/GenerRNA)
 
@@ -461,10 +457,6 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **EVA** — [A Long-Context Generative Foundation Model Deciphers RNA Design Principles](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)
 
   > Introduces EVA, a Mixture-of-Experts decoder model for long-context RNA sequence generation, trained on 114M+ full-length RNA sequences for generating diverse functional RNA molecules at unprecedented lengths.
-
-- **GoForth** — [GoForth: Language Models for RNA Design under Structure, Sequence, and Coding Constraints](https://arxiv.org/abs/2605.07608) (2026.05, preprint) [![abs](https://img.shields.io/badge/abs-2026.05-b31b1b.svg)](https://arxiv.org/abs/2605.07608) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2605.07608)
-
-  > Introduces GoForth, a forward-trained RNA language model that conditions on structure, sequence, and coding targets for conditional generative RNA design under mixed constraints, using encoder-decoder models trained on witnessed folds and evaluated on inverse-folding and constrained design tasks.
 
 </details>
 
@@ -645,7 +637,7 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 </details>
 
 <details open>
-<summary><b>Encoder-Decoder (Seq2Seq) (3)</b></summary>
+<summary><b>Encoder-Decoder (Seq2Seq) (2)</b></summary>
 
 - **ATOM-1** — [ATOM-1: A Foundation Model for RNA Structure and Function Built on Chemical Mapping Data](https://doi.org/10.1101/2023.12.13.571579) (2023.12, preprint) [![abs](https://img.shields.io/badge/abs-2023.12-b31b1b.svg)](https://doi.org/10.1101/2023.12.13.571579) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2023.12.13.571579)
 
@@ -654,10 +646,6 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **HELM** — [HELM: Hierarchical Encoding for mRNA Language Modeling](https://arxiv.org/abs/2410.12459) (2024.10, preprint) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://arxiv.org/abs/2410.12459) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2410.12459)
 
   > Proposes HELM, a hierarchical encoding approach for mRNA language modeling that captures both nucleotide-level and codon-level information through a multi-scale architecture for improved mRNA property prediction.
-
-- **GoForth** — [GoForth: Language Models for RNA Design under Structure, Sequence, and Coding Constraints](https://arxiv.org/abs/2605.07608) (2026.05, preprint) [![abs](https://img.shields.io/badge/abs-2026.05-b31b1b.svg)](https://arxiv.org/abs/2605.07608) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2605.07608)
-
-  > Introduces GoForth, a forward-trained RNA language model that conditions on structure, sequence, and coding targets for conditional generative RNA design under mixed constraints, using encoder-decoder models trained on witnessed folds and evaluated on inverse-folding and constrained design tasks.
 
 </details>
 
@@ -713,7 +701,7 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 <blockquote>
 
 <details open>
-<summary><b>Single Nucleotide Token (SNT) (27)</b></summary>
+<summary><b>Single Nucleotide Token (SNT) (26)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -818,10 +806,6 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **Orthrus** — [Orthrus: toward evolutionary and functional RNA foundation models](https://www.nature.com/articles/s41592-026-03064-3) (2026.04) [![abs](https://img.shields.io/badge/abs-2026.04-b31b1b.svg)](https://www.nature.com/articles/s41592-026-03064-3) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/quietflamingo/orthrus-large-4-track)
 
   > Introduces Orthrus, a Mamba-based mature RNA foundation model using contrastive learning on transcript isoforms and cross-species orthologs to learn evolutionary and functional RNA representations.
-
-- **GoForth** — [GoForth: Language Models for RNA Design under Structure, Sequence, and Coding Constraints](https://arxiv.org/abs/2605.07608) (2026.05, preprint) [![abs](https://img.shields.io/badge/abs-2026.05-b31b1b.svg)](https://arxiv.org/abs/2605.07608) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2605.07608)
-
-  > Introduces GoForth, a forward-trained RNA language model that conditions on structure, sequence, and coding targets for conditional generative RNA design under mixed constraints, using encoder-decoder models trained on witnessed folds and evaluated on inverse-folding and constrained design tasks.
 
 </details>
 
@@ -1114,7 +1098,6 @@ Models focused on RNA sequence generation or generative transcript modeling.
 | <nobr>**GenerRNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1371/journal.pone.0310814)</nobr> | <nobr>[Code](https://huggingface.co/pfnet/GenerRNA)</nobr> | <nobr>2024.10</nobr> | <nobr>Decoder-only</nobr> | <nobr>350M</nobr> | <nobr>RNAcentral (16.09M seqs, ~17.4B nt)</nobr> | <nobr>BPE</nobr> |
 | <nobr>**RNAGenesis**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2)</nobr> | <nobr>[Code](https://huggingface.co/Zaixi/RNAGenesis)</nobr> | <nobr>2024.12<br><sub>preprint</sub></nobr> | <nobr>Encoder + Diffusion</nobr> | <nobr>1B</nobr> | <nobr>RNAcentral clustered ncRNA</nobr> | <nobr>Hybrid N-gram</nobr> |
 | <nobr>**EVA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)</nobr> | - | <nobr>2026.03<br><sub>preprint</sub></nobr> | <nobr>Decoder-only (MoE)</nobr> | - | <nobr>114M+ full-length RNA seqs</nobr> | - |
-| <nobr>**GoForth**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://arxiv.org/abs/2605.07608)</nobr> | - | <nobr>2026.05<br><sub>preprint</sub></nobr> | <nobr>Encoder-Decoder</nobr> | - | <nobr>Witnessed RNA folds</nobr> | <nobr>Sequence + structure/coding conditions</nobr> |
 
 </details>
 

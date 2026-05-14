@@ -714,6 +714,8 @@
   title: 'Orthrus: toward evolutionary and functional RNA foundation models'
   paper_url: https://www.nature.com/articles/s41592-026-03064-3
   date: '2026.04'
+  timeline_date: '2024.10'
+  timeline_url: https://doi.org/10.1101/2024.10.10.617658
   github_url: null
   hf_url: https://huggingface.co/quietflamingo/orthrus-large-4-track
   scope: specialized_rna_fm
@@ -726,23 +728,3 @@
   params: 1.3M / 10.1M
   pretraining_data: GENCODE + RefSeq + Zoonomia (32M transcripts)
   table_tokenization: SNT
-- name: GoForth
-  title: 'GoForth: Language Models for RNA Design under Structure, Sequence, and Coding Constraints'
-  paper_url: https://arxiv.org/abs/2605.07608
-  date: '2026.05'
-  github_url: null
-  hf_url: null
-  scope: core_rna_fm
-  category: Generative FM
-  abstract: Introduces GoForth, a forward-trained RNA language model that conditions on structure, sequence, and coding
-    targets for conditional generative RNA design under mixed constraints, using encoder-decoder models trained on
-    witnessed folds and evaluated on inverse-folding and constrained design tasks.
-  architecture: Encoder-Decoder
-  tokenization: SNT
-  table_architecture: Encoder-Decoder
-  params: '-'
-  pretraining_data: Witnessed RNA folds
-  table_tokenization: Sequence + structure/coding conditions
-  review_status: auto_classified
-  discovered_at: '2026-05-12'
-  timeline_url: https://arxiv.org/abs/2605.07608
