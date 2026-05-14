@@ -1,2 +1,19 @@
-# Newly discovered candidates pending manual review.
-[]
+- name: GoForth
+  title: 'GoForth: Language Models for RNA Design under Structure, Sequence, and Coding Constraints'
+  url: http://arxiv.org/abs/2605.07608v1
+  source: arXiv
+  date: '2026.05'
+  status: pending_review
+  publication_status: preprint
+  suggested_scope: core_rna_fm
+  suggested_category: Generative FM
+  reason: Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+  matched_terms:
+  - decoder
+  - encoder
+  - language model
+  - low-priority:inverse folding
+  - rna
+  discovery_query: RNA language model
+  discovered_at: '2026-05-12'
+  score: 8
