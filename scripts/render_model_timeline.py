@@ -68,17 +68,17 @@ def node_position(index: int, columns: int, left: int, step_x: int, row_position
 def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTPUT_FILE) -> None:
     papers = sorted(load_papers(input_file), key=lambda record: timeline_date(record))
 
-    columns = 9
+    columns = 10
     rows = ceil(len(papers) / columns)
     width = 1400
-    left = 90
-    right = width - 90
-    step_x = (right - left) // (columns - 1)
-    top = 214
-    tight_gap = 112
-    open_gap = 156
+    left = 86
+    right = width - 86
+    step_x = (right - left) / (columns - 1)
+    top = 220
+    tight_gap = 90
+    open_gap = 132
     row_positions = row_y_positions(rows, top, tight_gap, open_gap)
-    bottom_padding = 90
+    bottom_padding = 84
     height = row_positions[-1] + bottom_padding
 
     points = [
@@ -130,19 +130,37 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
 
     legend_x = width - 330
     legend_y = 31
-    legend_height = 18 + len(SCOPE_LABELS) * 22
-    svg.append(f'<rect x="{legend_x - 18}" y="{legend_y - 20}" width="290" height="{legend_height}" rx="8" fill="#ffffff" stroke="#e5e7eb"/>')
+    legend_columns = 2
+    legend_rows = ceil(len(SCOPE_LABELS) / legend_columns)
+    legend_col_width = 138
+    legend_height = 18 + legend_rows * 22
+    legend_width = legend_columns * legend_col_width + 12
+    svg.append(
+        f'<rect x="{legend_x - 18}" y="{legend_y - 20}" width="{legend_width}" '
+        f'height="{legend_height}" rx="8" fill="#ffffff" stroke="#e5e7eb"/>'
+    )
     for offset, (scope, label) in enumerate(SCOPE_LABELS.items()):
-        y = legend_y + offset * 22
+        col = offset // legend_rows
+        legend_item_x = legend_x + col * legend_col_width
+        y = legend_y + (offset % legend_rows) * 22
         color = SCOPE_COLORS[scope]
-        svg.append(f'<circle cx="{legend_x}" cy="{y}" r="6" fill="{color}"/>')
-        svg.append(svg_text(legend_x + 14, y + 5, label, 13, 500, "#374151", "start"))
+        svg.append(f'<circle cx="{legend_item_x}" cy="{y}" r="6" fill="{color}"/>')
+        svg.append(svg_text(legend_item_x + 14, y + 5, label, 13, 500, "#374151", "start"))
 
     for row in range(rows):
+        row_points = [
+            node_position(index, columns, left, step_x, row_positions)[:2]
+            for index in range(len(papers))
+            if index // columns == row
+        ]
+        if not row_points:
+            continue
         y = row_positions[row]
-        svg.append(f'<line x1="{left}" y1="{y}" x2="{right}" y2="{y}" stroke="#e5e7eb" stroke-width="1"/>')
+        row_left = min(x for x, _ in row_points)
+        row_right = max(x for x, _ in row_points)
+        svg.append(f'<line x1="{row_left}" y1="{y}" x2="{row_right}" y2="{y}" stroke="#e5e7eb" stroke-width="1"/>')
         arrow = "→" if row % 2 == 0 else "←"
-        arrow_x = left - 38 if row % 2 == 0 else right + 38
+        arrow_x = row_left - 38 if row % 2 == 0 else row_right + 38
         svg.append(svg_text(arrow_x, y + 7, arrow, 24, 800, "#525252"))
 
     svg.append(
@@ -150,13 +168,13 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
         'stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
     )
 
-    label_width = 136
-    label_height = 42
+    label_width = 124
+    label_height = 40
     for index, paper in enumerate(papers):
         x, y, row = node_position(index, columns, left, step_x, row_positions)
         scope = paper["scope"]
         color = SCOPE_COLORS.get(scope, "#64748b")
-        label_y = y - 68 if row % 2 == 0 else y + 26
+        label_y = y - 62 if row % 2 == 0 else y + 22
         line_end = label_y + label_height if row % 2 == 0 else label_y
 
         svg.append(f'<line x1="{x}" y1="{y}" x2="{x}" y2="{line_end}" stroke="{color}" stroke-width="2"/>')
@@ -167,8 +185,8 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
             f'<rect x="{x - label_width / 2}" y="{label_y}" width="{label_width}" height="{label_height}" '
             f'rx="8" fill="#ffffff" stroke="{color}" stroke-width="1.4"/>'
         )
-        svg.append(svg_text(x, label_y + 16, timeline_date(paper), 11, 500, "#6b7280"))
-        svg.append(svg_text(x, label_y + 32, paper["name"], 13, 700, "#111827"))
+        svg.append(svg_text(x, label_y + 15, timeline_date(paper), 11, 500, "#6b7280"))
+        svg.append(svg_text(x, label_y + 30, paper["name"], 12, 700, "#111827"))
         svg.append("</a>")
 
     svg.append("</svg>")

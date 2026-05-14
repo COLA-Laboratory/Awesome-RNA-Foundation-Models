@@ -30,9 +30,9 @@ Auto-generated from `data/papers.yaml` for 66 confirmed RNA-relevant model entri
 > Timeline dates use the first public model/preprint release date, not necessarily the formal publication date. Paper List dates below use formal publication/conference dates when available.
 
 > [!TIP]
-> **[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=130e9cc1ae3e)** — model labels in the opened SVG link to source papers.
+> **[Open interactive SVG](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=1e5fcc0d58ae)** — model labels in the opened SVG link to source papers.
 
-[![RNA foundation model timeline](assets/model_timeline.svg?v=130e9cc1ae3e)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=130e9cc1ae3e)
+[![RNA foundation model timeline](assets/model_timeline.svg?v=1e5fcc0d58ae)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=1e5fcc0d58ae)
 
 ---
 
