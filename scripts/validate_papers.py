@@ -43,6 +43,7 @@ PAPER_ALLOWED_SCOPES = {
     "core_rna_fm",
     "specialized_rna_fm",
     "adapted_derived",
+    "rna_inclusive_broad",
 }
 
 CANDIDATE_ALLOWED_SCOPES = {
@@ -60,6 +61,7 @@ PAPER_ALLOWED_CATEGORIES = {
     "Structure-aware FM",
     "Generative FM",
     "General RNA FM",
+    "DNA+RNA FM",
 }
 
 CANDIDATE_ALLOWED_CATEGORIES = {

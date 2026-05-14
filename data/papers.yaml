@@ -728,3 +728,94 @@
   params: 1.3M / 10.1M
   pretraining_data: GENCODE + RefSeq + Zoonomia (32M transcripts)
   table_tokenization: SNT
+- name: LucaOne
+  title: Generalized biological foundation model with unified nucleic acid and protein language
+  paper_url: https://www.nature.com/articles/s42256-025-01044-4
+  date: '2025.06'
+  timeline_date: '2024.05'
+  timeline_url: https://doi.org/10.1101/2024.05.10.592927
+  github_url: https://github.com/LucaOne/LucaOneApp
+  hf_url: https://huggingface.co/LucaGroup/LucaOne-default-step36M
+  scope: rna_inclusive_broad
+  category: DNA+RNA FM
+  abstract: Introduces LucaOne, a unified biological foundation model trained on nucleic acid (DNA and RNA) and protein
+    sequences from 169,861 species, supporting reusable embeddings and downstream tasks involving DNA, RNA, proteins,
+    and their interrelated pairs.
+  architecture: Encoder-only
+  tokenization: SNT
+  table_architecture: Encoder-only
+  params: 1.8B
+  pretraining_data: RefSeq DNA/RNA + UniRef50/UniProt/ColabFoldDB proteins
+  table_tokenization: Nucleotide + amino-acid tokens
+- name: METAGENE-1
+  title: 'METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring'
+  paper_url: https://arxiv.org/abs/2501.02045
+  date: '2025.01'
+  github_url: null
+  hf_url: https://huggingface.co/metagene-ai/METAGENE-1
+  scope: rna_inclusive_broad
+  category: DNA+RNA FM
+  abstract: Introduces METAGENE-1, a 7B autoregressive metagenomic foundation model pre-trained on diverse metagenomic
+    DNA and RNA sequences, supporting genomic sequence embeddings, pathogen detection, biosurveillance, and pandemic
+    monitoring tasks.
+  architecture: Decoder-only
+  tokenization: BPE
+  table_architecture: Decoder-only
+  params: 7B
+  pretraining_data: Metagenomic DNA + RNA sequences (1.5T bp)
+  table_tokenization: BPE
+- name: Life-Code
+  title: 'Life-Code: Central Dogma Modeling with Multi-Omics Sequence Unification'
+  paper_url: https://arxiv.org/abs/2502.07299
+  date: '2025.02'
+  github_url: null
+  hf_url: null
+  scope: rna_inclusive_broad
+  category: DNA+RNA FM
+  abstract: Introduces Life-Code, a central-dogma sequence foundation framework that unifies DNA, RNA/cDNA, amino-acid,
+    and multi-omics information into nucleotide-based sequences with codon tokenization and masked modeling over coding
+    and non-coding regions.
+  architecture: Hybrid/SSM
+  tokenization: Codon
+  table_architecture: Hybrid long-sequence
+  params: '-'
+  pretraining_data: DNA + RNA/cDNA + amino-acid sequences unified into nucleotide-based sequences
+  table_tokenization: Codon-level
+- name: Evo 2
+  title: Genome Modeling and Design Across All Domains of Life with Evo 2
+  paper_url: https://www.nature.com/articles/s41586-026-10176-5
+  date: '2026.03'
+  timeline_date: '2025.02'
+  timeline_url: https://doi.org/10.1101/2025.02.18.638918
+  github_url: https://github.com/ArcInstitute/evo2
+  hf_url: https://huggingface.co/arcinstitute/evo2_40b
+  scope: rna_inclusive_broad
+  category: DNA+RNA FM
+  abstract: Introduces Evo 2, an open biological sequence foundation model trained on OpenGenome2 across all domains of
+    life; the released OpenGenome2 composition includes eukaryotic mRNAs and ncRNA sources such as RNAcentral and Rfam,
+    enabling broad nucleotide-sequence prediction and generation.
+  architecture: Hybrid/SSM
+  tokenization: SNT
+  table_architecture: Hybrid (StripedHyena 2)
+  params: 7B / 40B
+  pretraining_data: OpenGenome2 DNA + eukaryotic mRNA + ncRNA (RNAcentral/Rfam/Ensembl/NCBI)
+  table_tokenization: SNT
+- name: OmniNA
+  title: A foundation model for nucleotide sequences
+  paper_url: https://academic.oup.com/nar/article/54/6/gkag083/8528802
+  date: '2026.03'
+  timeline_date: '2024.01'
+  timeline_url: https://doi.org/10.1101/2024.01.14.575543
+  github_url: https://github.com/xilinshen/OmniNA
+  hf_url: https://huggingface.co/XLS/OmniNA-1.7B
+  scope: rna_inclusive_broad
+  category: DNA+RNA FM
+  abstract: Introduces OmniNA, an annotation-aware generative foundation model for nucleic acid sequences trained on NCBI
+    NT nucleotide sequences and annotations spanning genomic DNA and RNA, with reusable representations for genomics and
+    transcriptomics tasks.
+  architecture: Decoder-only
+  tokenization: BPE
+  table_architecture: Decoder-only
+  params: 66M / 1.7B
+  pretraining_data: NCBI NT DNA + RNA sequences + annotations (91.7M seqs, 1.076T bases)
+  table_tokenization: BPE + annotation prompts

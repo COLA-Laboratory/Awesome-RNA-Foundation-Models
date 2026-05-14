@@ -16,12 +16,14 @@ SCOPE_LABELS = {
     "core_rna_fm": "Core",
     "specialized_rna_fm": "Specialized",
     "adapted_derived": "Adapted",
+    "rna_inclusive_broad": "Broad RNA-inclusive",
 }
 
 SCOPE_COLORS = {
     "core_rna_fm": "#2563eb",
     "specialized_rna_fm": "#16a34a",
     "adapted_derived": "#9333ea",
+    "rna_inclusive_broad": "#f97316",
 }
 
 

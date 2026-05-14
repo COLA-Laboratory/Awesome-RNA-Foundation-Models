@@ -4,13 +4,13 @@
 
 A curated, continuously updated catalog of **RNA sequence foundation models**, covering reusable RNA/mRNA/CDS/UTR sequence backbones and checkpoints, specialized RNA-family or structure-aware sequence models, adapted / derived RNA language models, and generative RNA sequence models.
 
-> **Scope.** Included model entries must introduce or release a reusable RNA sequence model, backbone, or checkpoint pre-trained / large-scale trained on RNA, mRNA, CDS, UTR, or transcript sequences, and support embedding extraction, fine-tuning, generation, or broad transfer to RNA downstream tasks. Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile/RNA-seq feature models, protein-only models, single-cell foundation models, and non-model resources are excluded from model entries; benchmarks and surveys are listed separately.
+> **Scope.** Included model entries must introduce or release a reusable sequence model, backbone, or checkpoint whose pre-training / large-scale training corpus explicitly includes RNA, mRNA, CDS, UTR, transcript, ncRNA, RNA metagenomic, or RNA/transcript-derived sequence data, and must support embedding extraction, fine-tuning, generation, or broad transfer to RNA downstream tasks. Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, DNA/protein/multi-omics FMs with no explicit RNA/transcript sequence pre-training signal, expression-profile/RNA-seq feature models, protein-only models, single-cell foundation models, and non-model resources are excluded from model entries; benchmarks and surveys are listed separately.
 
 ## Table of Contents
 
 - [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries
 - [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys
-- [Detailed Tables](#detailed-tables) — Detailed tables for all 45 model entries, 12 benchmarks, 3 surveys
+- [Detailed Tables](#detailed-tables) — Detailed tables for all 50 model entries, 12 benchmarks, 3 surveys
 - [Abbreviations](#abbreviations)
 - [Contributing](#contributing)
 
@@ -18,27 +18,28 @@ A curated, continuously updated catalog of **RNA sequence foundation models**, c
 
 ## Model Timeline
 
-Timeline of 45 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
+Timeline of 50 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
 
 **Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.
 
-**Interactive view:** [open the SVG timeline](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline.svg?v=459d5c247c93) to click model labels and source papers.
+**Interactive view:** [open the SVG timeline](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline.svg?v=6788ff16a3af) to click model labels and source papers.
 
-[![RNA foundation model timeline](assets/model_timeline.svg?v=459d5c247c93)](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline.svg?v=459d5c247c93)
+[![RNA foundation model timeline](assets/model_timeline.svg?v=6788ff16a3af)](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline.svg?v=6788ff16a3af)
 
 ---
 
 
 ## Paper List
 
-A strict survey list of RNA sequence foundation models included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.
+A survey list of RNA sequence foundation models and RNA-inclusive sequence foundation models included in this survey. Each entry shows the model/resource name separately from the official paper title. Four classification views are provided below — click to expand/collapse each view.
 
 <!-- **Classification rules**:
 
 - **Core RNA Foundation Models**: reusable RNA or mRNA sequence backbones pre-trained on raw nucleotide sequences for broad downstream transfer or generation.
 - **Specialized RNA Foundation Models**: RNA-specific pre-trained models whose scope is limited to a subtype, species, structural modality, or narrow biological question.
 - **Adapted / Derived RNA Models**: models that adapt, extend, or transfer existing pre-trained components but still yield a reusable RNA language model.
-- **Excluded from this strict list**: downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile/RNA-seq feature models, protein-only models, single-cell foundation models, non-model datasets/benchmarks/surveys as model entries, and papers with no reusable RNA sequence model. -->
+- **Broad RNA-Inclusive Foundation Models**: broader nucleotide, biological-sequence, central-dogma, or multi-modal foundation models whose pre-training explicitly includes RNA / transcript sequences and whose checkpoints support reusable sequence representations, fine-tuning, or generation for RNA-relevant tasks.
+- **Excluded from this list**: downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, DNA/protein/multi-omics FMs with no explicit RNA/transcript sequence pre-training signal, expression-profile/RNA-seq feature models, protein-only models, single-cell foundation models, non-model datasets/benchmarks/surveys as model entries, and papers with no reusable sequence model. -->
 
 > **Date convention**: Dates shown in this section use the official publication or conference month when available; otherwise they use the linked preprint month and are marked `preprint`. Workshop-only entries are marked `workshop`.
 
@@ -250,6 +251,33 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **codonGPT** — [codonGPT: reinforcement learning on a generative language model enables scalable mRNA design](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) (2025.12) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NanilTx/codonGPT_pub) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/naniltx/codonGPT)
 
   > Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.
+
+</details>
+
+<details open>
+<summary><b>Broad RNA-Inclusive Foundation Models (5)</b></summary>
+
+The model is not RNA-only, but its pre-training corpus explicitly includes RNA / transcript sequences and the checkpoint supports reusable sequence representations, fine-tuning, or generation relevant to RNA tasks.
+
+- **METAGENE-1** — [METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring](https://arxiv.org/abs/2501.02045) (2025.01, preprint) [![abs](https://img.shields.io/badge/abs-2025.01-b31b1b.svg)](https://arxiv.org/abs/2501.02045) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2501.02045) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/metagene-ai/METAGENE-1)
+
+  > Introduces METAGENE-1, a 7B autoregressive metagenomic foundation model pre-trained on diverse metagenomic DNA and RNA sequences, supporting genomic sequence embeddings, pathogen detection, biosurveillance, and pandemic monitoring tasks.
+
+- **Life-Code** — [Life-Code: Central Dogma Modeling with Multi-Omics Sequence Unification](https://arxiv.org/abs/2502.07299) (2025.02, preprint) [![abs](https://img.shields.io/badge/abs-2025.02-b31b1b.svg)](https://arxiv.org/abs/2502.07299) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2502.07299)
+
+  > Introduces Life-Code, a central-dogma sequence foundation framework that unifies DNA, RNA/cDNA, amino-acid, and multi-omics information into nucleotide-based sequences with codon tokenization and masked modeling over coding and non-coding regions.
+
+- **LucaOne** — [Generalized biological foundation model with unified nucleic acid and protein language](https://www.nature.com/articles/s42256-025-01044-4) (2025.06) [![abs](https://img.shields.io/badge/abs-2025.06-b31b1b.svg)](https://www.nature.com/articles/s42256-025-01044-4) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/LucaOne/LucaOneApp) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LucaGroup/LucaOne-default-step36M)
+
+  > Introduces LucaOne, a unified biological foundation model trained on nucleic acid (DNA and RNA) and protein sequences from 169,861 species, supporting reusable embeddings and downstream tasks involving DNA, RNA, proteins, and their interrelated pairs.
+
+- **Evo 2** — [Genome Modeling and Design Across All Domains of Life with Evo 2](https://www.nature.com/articles/s41586-026-10176-5) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s41586-026-10176-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ArcInstitute/evo2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/arcinstitute/evo2_40b)
+
+  > Introduces Evo 2, an open biological sequence foundation model trained on OpenGenome2 across all domains of life; the released OpenGenome2 composition includes eukaryotic mRNAs and ncRNA sources such as RNAcentral and Rfam, enabling broad nucleotide-sequence prediction and generation.
+
+- **OmniNA** — [A foundation model for nucleotide sequences](https://academic.oup.com/nar/article/54/6/gkag083/8528802) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://academic.oup.com/nar/article/54/6/gkag083/8528802) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/xilinshen/OmniNA) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/XLS/OmniNA-1.7B)
+
+  > Introduces OmniNA, an annotation-aware generative foundation model for nucleic acid sequences trained on NCBI NT nucleotide sequences and annotations spanning genomic DNA and RNA, with reusable representations for genomics and transcriptomics tasks.
 
 </details>
 
@@ -477,6 +505,31 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 
 </details>
 
+<details open>
+<summary><b>Broad RNA-Inclusive Nucleotide / Multi-modal Models (5)</b></summary>
+
+- **METAGENE-1** — [METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring](https://arxiv.org/abs/2501.02045) (2025.01, preprint) [![abs](https://img.shields.io/badge/abs-2025.01-b31b1b.svg)](https://arxiv.org/abs/2501.02045) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2501.02045) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/metagene-ai/METAGENE-1)
+
+  > Introduces METAGENE-1, a 7B autoregressive metagenomic foundation model pre-trained on diverse metagenomic DNA and RNA sequences, supporting genomic sequence embeddings, pathogen detection, biosurveillance, and pandemic monitoring tasks.
+
+- **Life-Code** — [Life-Code: Central Dogma Modeling with Multi-Omics Sequence Unification](https://arxiv.org/abs/2502.07299) (2025.02, preprint) [![abs](https://img.shields.io/badge/abs-2025.02-b31b1b.svg)](https://arxiv.org/abs/2502.07299) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2502.07299)
+
+  > Introduces Life-Code, a central-dogma sequence foundation framework that unifies DNA, RNA/cDNA, amino-acid, and multi-omics information into nucleotide-based sequences with codon tokenization and masked modeling over coding and non-coding regions.
+
+- **LucaOne** — [Generalized biological foundation model with unified nucleic acid and protein language](https://www.nature.com/articles/s42256-025-01044-4) (2025.06) [![abs](https://img.shields.io/badge/abs-2025.06-b31b1b.svg)](https://www.nature.com/articles/s42256-025-01044-4) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/LucaOne/LucaOneApp) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LucaGroup/LucaOne-default-step36M)
+
+  > Introduces LucaOne, a unified biological foundation model trained on nucleic acid (DNA and RNA) and protein sequences from 169,861 species, supporting reusable embeddings and downstream tasks involving DNA, RNA, proteins, and their interrelated pairs.
+
+- **Evo 2** — [Genome Modeling and Design Across All Domains of Life with Evo 2](https://www.nature.com/articles/s41586-026-10176-5) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s41586-026-10176-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ArcInstitute/evo2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/arcinstitute/evo2_40b)
+
+  > Introduces Evo 2, an open biological sequence foundation model trained on OpenGenome2 across all domains of life; the released OpenGenome2 composition includes eukaryotic mRNAs and ncRNA sources such as RNAcentral and Rfam, enabling broad nucleotide-sequence prediction and generation.
+
+- **OmniNA** — [A foundation model for nucleotide sequences](https://academic.oup.com/nar/article/54/6/gkag083/8528802) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://academic.oup.com/nar/article/54/6/gkag083/8528802) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/xilinshen/OmniNA) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/XLS/OmniNA-1.7B)
+
+  > Introduces OmniNA, an annotation-aware generative foundation model for nucleic acid sequences trained on NCBI NT nucleotide sequences and annotations spanning genomic DNA and RNA, with reusable representations for genomics and transcriptomics tasks.
+
+</details>
+
 </blockquote>
 
 </details>
@@ -487,7 +540,7 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 <blockquote>
 
 <details open>
-<summary><b>Encoder-only (BERT-family) (30)</b></summary>
+<summary><b>Encoder-only (BERT-family) (31)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -561,6 +614,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 
   > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
 
+- **LucaOne** — [Generalized biological foundation model with unified nucleic acid and protein language](https://www.nature.com/articles/s42256-025-01044-4) (2025.06) [![abs](https://img.shields.io/badge/abs-2025.06-b31b1b.svg)](https://www.nature.com/articles/s42256-025-01044-4) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/LucaOne/LucaOneApp) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LucaGroup/LucaOne-default-step36M)
+
+  > Introduces LucaOne, a unified biological foundation model trained on nucleic acid (DNA and RNA) and protein sequences from 169,861 species, supporting reusable embeddings and downstream tasks involving DNA, RNA, proteins, and their interrelated pairs.
+
 - **RiNALMo** — [RiNALMo: general-purpose RNA language models can generalize well on structure prediction tasks](https://www.nature.com/articles/s41467-025-60872-5) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://www.nature.com/articles/s41467-025-60872-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
 
   > Presents RiNALMo, a general-purpose RNA language model (up to 650M parameters) pre-trained on 36M ncRNA sequences, demonstrating that large-scale RNA LMs can generalize effectively to secondary and tertiary structure prediction.
@@ -612,7 +669,7 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 </details>
 
 <details open>
-<summary><b>Decoder-only (GPT-family) (5)</b></summary>
+<summary><b>Decoder-only (GPT-family) (7)</b></summary>
 
 - **GenSLM** — [GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics](https://doi.org/10.1177/10943420231201154) (2023.11) [![abs](https://img.shields.io/badge/abs-2023.11-b31b1b.svg)](https://doi.org/10.1177/10943420231201154)
 
@@ -626,6 +683,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 
   > Presents GenerRNA, a 350M-parameter autoregressive language model pre-trained on 16M RNAcentral sequences (~17.4B nucleotides) using BPE tokenization for de novo RNA sequence generation with controllable properties.
 
+- **METAGENE-1** — [METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring](https://arxiv.org/abs/2501.02045) (2025.01, preprint) [![abs](https://img.shields.io/badge/abs-2025.01-b31b1b.svg)](https://arxiv.org/abs/2501.02045) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2501.02045) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/metagene-ai/METAGENE-1)
+
+  > Introduces METAGENE-1, a 7B autoregressive metagenomic foundation model pre-trained on diverse metagenomic DNA and RNA sequences, supporting genomic sequence embeddings, pathogen detection, biosurveillance, and pandemic monitoring tasks.
+
 - **mRNA-GPT** — [Large generative mRNA language foundation model for efficient coding sequence generation and design with mRNA-GPT](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1) (2025.12, preprint) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ZHymLumine/mRNA-GPT/)
 
   > Presents mRNA-GPT, a 302M-parameter autoregressive model pre-trained on 80M bacterial, 83M eukaryotic, and 2M archaeal CDS sequences with codon/nucleotide tokenization for cross-species mRNA understanding and generation.
@@ -633,6 +694,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **codonGPT** — [codonGPT: reinforcement learning on a generative language model enables scalable mRNA design](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) (2025.12) [![abs](https://img.shields.io/badge/abs-2025.12-b31b1b.svg)](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/NanilTx/codonGPT_pub) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/naniltx/codonGPT)
 
   > Introduces codonGPT, a GPT-style generative language model trained exclusively on 338,417 coding mRNA sequences with codon-level tokenization, and demonstrates reinforcement learning for constrained mRNA sequence optimization.
+
+- **OmniNA** — [A foundation model for nucleotide sequences](https://academic.oup.com/nar/article/54/6/gkag083/8528802) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://academic.oup.com/nar/article/54/6/gkag083/8528802) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/xilinshen/OmniNA) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/XLS/OmniNA-1.7B)
+
+  > Introduces OmniNA, an annotation-aware generative foundation model for nucleic acid sequences trained on NCBI NT nucleotide sequences and annotations spanning genomic DNA and RNA, with reusable representations for genomics and transcriptomics tasks.
 
 </details>
 
@@ -650,7 +715,7 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 </details>
 
 <details open>
-<summary><b>Hybrid / SSM (Mamba, StripedHyena) (6)</b></summary>
+<summary><b>Hybrid / SSM (Mamba, StripedHyena) (8)</b></summary>
 
 - **LoRNA SH** — [A long-context RNA foundation model for predicting transcriptome architecture](https://doi.org/10.1101/2024.08.26.609813) (2024.08, preprint) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/2024.08.26.609813) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2024.08.26.609813)
 
@@ -659,6 +724,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **DGRNA** — [DGRNA: a long-context RNA foundation model with bidirectional attention Mamba2](https://doi.org/10.1101/2024.10.31.621427) (2024.10, preprint) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1101/2024.10.31.621427) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2024.10.31.621427)
 
   > Introduces DGRNA, a long-context RNA foundation model based on bidirectional Mamba2 architecture, enabling efficient processing of long RNA sequences up to 100K nucleotides with linear computational complexity.
+
+- **Life-Code** — [Life-Code: Central Dogma Modeling with Multi-Omics Sequence Unification](https://arxiv.org/abs/2502.07299) (2025.02, preprint) [![abs](https://img.shields.io/badge/abs-2025.02-b31b1b.svg)](https://arxiv.org/abs/2502.07299) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2502.07299)
+
+  > Introduces Life-Code, a central-dogma sequence foundation framework that unifies DNA, RNA/cDNA, amino-acid, and multi-omics information into nucleotide-based sequences with codon tokenization and masked modeling over coding and non-coding regions.
 
 - **Helix-mRNA** — [Helix-mRNA: A Hybrid Foundation Model For Full Sequence mRNA Therapeutics](https://openreview.net/forum?id=Ky0CkFiVhu) (2025.03, workshop) [![abs](https://img.shields.io/badge/abs-2025.03-b31b1b.svg)](https://openreview.net/forum?id=Ky0CkFiVhu) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/helical-ai/helix-mRNA)
 
@@ -671,6 +740,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **RNAret** — [Retentive Network promotes efficient RNA language modeling of long sequences](https://www.nature.com/articles/s42003-026-09757-x) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s42003-026-09757-x) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/DrBlackZJU/RNAret/)
 
   > Introduces RNAret, a Retentive Network-based RNA language model pre-trained with masked language modeling on 29.8M RNAcentral sequences, enabling efficient long-sequence RNA representation learning across interaction, structure, and classification tasks.
+
+- **Evo 2** — [Genome Modeling and Design Across All Domains of Life with Evo 2](https://www.nature.com/articles/s41586-026-10176-5) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s41586-026-10176-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ArcInstitute/evo2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/arcinstitute/evo2_40b)
+
+  > Introduces Evo 2, an open biological sequence foundation model trained on OpenGenome2 across all domains of life; the released OpenGenome2 composition includes eukaryotic mRNAs and ncRNA sources such as RNAcentral and Rfam, enabling broad nucleotide-sequence prediction and generation.
 
 - **Orthrus** — [Orthrus: toward evolutionary and functional RNA foundation models](https://www.nature.com/articles/s41592-026-03064-3) (2026.04) [![abs](https://img.shields.io/badge/abs-2026.04-b31b1b.svg)](https://www.nature.com/articles/s41592-026-03064-3) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/quietflamingo/orthrus-large-4-track)
 
@@ -701,7 +774,7 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 <blockquote>
 
 <details open>
-<summary><b>Single Nucleotide Token (SNT) (26)</b></summary>
+<summary><b>Single Nucleotide Token (SNT) (28)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -775,6 +848,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 
   > Introduces OmniGenome (52M/186M parameters), a structure-aware RNA model pre-trained on sequence-structure pairs from the OneKP dataset, aligning RNA sequences with their secondary structures for improved downstream predictions.
 
+- **LucaOne** — [Generalized biological foundation model with unified nucleic acid and protein language](https://www.nature.com/articles/s42256-025-01044-4) (2025.06) [![abs](https://img.shields.io/badge/abs-2025.06-b31b1b.svg)](https://www.nature.com/articles/s42256-025-01044-4) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/LucaOne/LucaOneApp) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LucaGroup/LucaOne-default-step36M)
+
+  > Introduces LucaOne, a unified biological foundation model trained on nucleic acid (DNA and RNA) and protein sequences from 169,861 species, supporting reusable embeddings and downstream tasks involving DNA, RNA, proteins, and their interrelated pairs.
+
 - **RiNALMo** — [RiNALMo: general-purpose RNA language models can generalize well on structure prediction tasks](https://www.nature.com/articles/s41467-025-60872-5) (2025.07) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://www.nature.com/articles/s41467-025-60872-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/lbcb-sci/RiNALMo)
 
   > Presents RiNALMo, a general-purpose RNA language model (up to 650M parameters) pre-trained on 36M ncRNA sequences, demonstrating that large-scale RNA LMs can generalize effectively to secondary and tertiary structure prediction.
@@ -803,6 +880,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 
   > Proposes RNAElectra, applying the ELECTRA-style replaced token detection pre-training objective to RNA sequences, offering more sample-efficient pre-training compared to masked language modeling approaches.
 
+- **Evo 2** — [Genome Modeling and Design Across All Domains of Life with Evo 2](https://www.nature.com/articles/s41586-026-10176-5) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s41586-026-10176-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ArcInstitute/evo2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/arcinstitute/evo2_40b)
+
+  > Introduces Evo 2, an open biological sequence foundation model trained on OpenGenome2 across all domains of life; the released OpenGenome2 composition includes eukaryotic mRNAs and ncRNA sources such as RNAcentral and Rfam, enabling broad nucleotide-sequence prediction and generation.
+
 - **Orthrus** — [Orthrus: toward evolutionary and functional RNA foundation models](https://www.nature.com/articles/s41592-026-03064-3) (2026.04) [![abs](https://img.shields.io/badge/abs-2026.04-b31b1b.svg)](https://www.nature.com/articles/s41592-026-03064-3) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/quietflamingo/orthrus-large-4-track)
 
   > Introduces Orthrus, a Mamba-based mature RNA foundation model using contrastive learning on transcript isoforms and cross-species orthologs to learn evolutionary and functional RNA representations.
@@ -810,7 +891,7 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 </details>
 
 <details open>
-<summary><b>Codon-level Tokenization (9)</b></summary>
+<summary><b>Codon-level Tokenization (10)</b></summary>
 
 - **GenSLM** — [GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics](https://doi.org/10.1177/10943420231201154) (2023.11) [![abs](https://img.shields.io/badge/abs-2023.11-b31b1b.svg)](https://doi.org/10.1177/10943420231201154)
 
@@ -827,6 +908,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **HELM** — [HELM: Hierarchical Encoding for mRNA Language Modeling](https://arxiv.org/abs/2410.12459) (2024.10, preprint) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://arxiv.org/abs/2410.12459) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2410.12459)
 
   > Proposes HELM, a hierarchical encoding approach for mRNA language modeling that captures both nucleotide-level and codon-level information through a multi-scale architecture for improved mRNA property prediction.
+
+- **Life-Code** — [Life-Code: Central Dogma Modeling with Multi-Omics Sequence Unification](https://arxiv.org/abs/2502.07299) (2025.02, preprint) [![abs](https://img.shields.io/badge/abs-2025.02-b31b1b.svg)](https://arxiv.org/abs/2502.07299) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2502.07299)
+
+  > Introduces Life-Code, a central-dogma sequence foundation framework that unifies DNA, RNA/cDNA, amino-acid, and multi-omics information into nucleotide-based sequences with codon tokenization and masked modeling over coding and non-coding regions.
 
 - **Helix-mRNA** — [Helix-mRNA: A Hybrid Foundation Model For Full Sequence mRNA Therapeutics](https://openreview.net/forum?id=Ky0CkFiVhu) (2025.03, workshop) [![abs](https://img.shields.io/badge/abs-2025.03-b31b1b.svg)](https://openreview.net/forum?id=Ky0CkFiVhu) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/helical-ai/helix-mRNA)
 
@@ -868,11 +953,15 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 </details>
 
 <details open>
-<summary><b>Byte Pair Encoding (BPE) (4)</b></summary>
+<summary><b>Byte Pair Encoding (BPE) (6)</b></summary>
 
 - **GenerRNA** — [GenerRNA: A generative pre-trained language model for de novo RNA design](https://doi.org/10.1371/journal.pone.0310814) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1371/journal.pone.0310814) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/pfnet/GenerRNA)
 
   > Presents GenerRNA, a 350M-parameter autoregressive language model pre-trained on 16M RNAcentral sequences (~17.4B nucleotides) using BPE tokenization for de novo RNA sequence generation with controllable properties.
+
+- **METAGENE-1** — [METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring](https://arxiv.org/abs/2501.02045) (2025.01, preprint) [![abs](https://img.shields.io/badge/abs-2025.01-b31b1b.svg)](https://arxiv.org/abs/2501.02045) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2501.02045) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/metagene-ai/METAGENE-1)
+
+  > Introduces METAGENE-1, a 7B autoregressive metagenomic foundation model pre-trained on diverse metagenomic DNA and RNA sequences, supporting genomic sequence embeddings, pathogen detection, biosurveillance, and pandemic monitoring tasks.
 
 - **RNALens** — [RNALens: A Multi-task RNA Foundation Model](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1) (2025.07, preprint) [![abs](https://img.shields.io/badge/abs-2025.07-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/oomics/RNALens)
 
@@ -885,6 +974,10 @@ The work mainly adapts, extends, or composes existing foundation models / pre-tr
 - **EVA** — [A Long-Context Generative Foundation Model Deciphers RNA Design Principles](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)
 
   > Introduces EVA, a Mixture-of-Experts decoder model for long-context RNA sequence generation, trained on 114M+ full-length RNA sequences for generating diverse functional RNA molecules at unprecedented lengths.
+
+- **OmniNA** — [A foundation model for nucleotide sequences](https://academic.oup.com/nar/article/54/6/gkag083/8528802) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://academic.oup.com/nar/article/54/6/gkag083/8528802) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/xilinshen/OmniNA) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/XLS/OmniNA-1.7B)
+
+  > Introduces OmniNA, an annotation-aware generative foundation model for nucleic acid sequences trained on NCBI NT nucleotide sequences and annotations spanning genomic DNA and RNA, with reusable representations for genomics and transcriptomics tasks.
 
 </details>
 
@@ -1119,6 +1212,21 @@ General-purpose RNA models covering multiple RNA types.
 </details>
 
 <details open>
+<summary><b>Broad RNA-Inclusive Nucleotide / Multi-modal Models</b></summary>
+
+Broad sequence foundation models whose pre-training explicitly includes RNA or transcript sequences alongside DNA, protein, or other biological sequence modalities.
+
+| Model <img width=180/> | Scope <img width=190/> | Paper <img width=110/> | Code <img width=110/> | Date / Status <img width=90/> | Architecture <img width=150/> | Params <img width=90/> | Pre-training Data <img width=240/> | Tokenization <img width=130/> |
+|:------|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
+| <nobr>**METAGENE-1**</nobr> | <nobr>Broad RNA-Inclusive Foundation Models</nobr> | <nobr>[Paper](https://arxiv.org/abs/2501.02045)</nobr> | <nobr>[Code](https://huggingface.co/metagene-ai/METAGENE-1)</nobr> | <nobr>2025.01<br><sub>preprint</sub></nobr> | <nobr>Decoder-only</nobr> | <nobr>7B</nobr> | <nobr>Metagenomic DNA + RNA sequences (1.5T bp)</nobr> | <nobr>BPE</nobr> |
+| <nobr>**Life-Code**</nobr> | <nobr>Broad RNA-Inclusive Foundation Models</nobr> | <nobr>[Paper](https://arxiv.org/abs/2502.07299)</nobr> | - | <nobr>2025.02<br><sub>preprint</sub></nobr> | <nobr>Hybrid long-sequence</nobr> | - | <nobr>DNA + RNA/cDNA + amino-acid sequences unified into nucleotide-based sequences</nobr> | <nobr>Codon-level</nobr> |
+| <nobr>**LucaOne**</nobr> | <nobr>Broad RNA-Inclusive Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-025-01044-4)</nobr> | <nobr>[Code](https://github.com/LucaOne/LucaOneApp)</nobr> | <nobr>2025.06</nobr> | <nobr>Encoder-only</nobr> | <nobr>1.8B</nobr> | <nobr>RefSeq DNA/RNA + UniRef50/UniProt/ColabFoldDB proteins</nobr> | <nobr>Nucleotide + amino-acid tokens</nobr> |
+| <nobr>**Evo 2**</nobr> | <nobr>Broad RNA-Inclusive Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s41586-026-10176-5)</nobr> | <nobr>[Code](https://github.com/ArcInstitute/evo2)</nobr> | <nobr>2026.03</nobr> | <nobr>Hybrid (StripedHyena 2)</nobr> | <nobr>7B / 40B</nobr> | <nobr>OpenGenome2 DNA + eukaryotic mRNA + ncRNA (RNAcentral/Rfam/Ensembl/NCBI)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**OmniNA**</nobr> | <nobr>Broad RNA-Inclusive Foundation Models</nobr> | <nobr>[Paper](https://academic.oup.com/nar/article/54/6/gkag083/8528802)</nobr> | <nobr>[Code](https://github.com/xilinshen/OmniNA)</nobr> | <nobr>2026.03</nobr> | <nobr>Decoder-only</nobr> | <nobr>66M / 1.7B</nobr> | <nobr>NCBI NT DNA + RNA sequences + annotations (91.7M seqs, 1.076T bases)</nobr> | <nobr>BPE + annotation prompts</nobr> |
+
+</details>
+
+<details open>
 <summary><b>Other Materials</b></summary>
 
 <blockquote>
@@ -1185,11 +1293,11 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 1. Open an issue with the model/paper details
 2. Or submit a pull request following the existing table format
 
-**What to include**: reusable RNA sequence foundation models with RNA, mRNA, CDS, UTR, or transcript sequence pre-training / large-scale training signal that can support embedding extraction, fine-tuning, generation, or broad transfer to RNA downstream tasks.
+**What to include**: reusable sequence foundation models with explicit RNA, mRNA, CDS, UTR, transcript, ncRNA, RNA metagenomic, or RNA/transcript-derived sequence pre-training / large-scale training signal that can support embedding extraction, fine-tuning, generation, or broad transfer to RNA downstream tasks.
 
-**What NOT to include**: downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile/RNA-seq feature models, single-cell foundation models, protein-only models, non-model datasets/benchmarks/surveys as model entries, or papers with no reusable RNA sequence model.
+**What NOT to include**: downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, DNA/protein/multi-omics FMs with no explicit RNA/transcript sequence pre-training signal, expression-profile/RNA-seq feature models, single-cell foundation models, protein-only models, non-model datasets/benchmarks/surveys as model entries, or papers with no reusable sequence model.
 
-**Metadata workflow**: confirmed entries live in `data/papers.yaml`, temporary discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`. A scheduled GitHub Action scans recent arXiv, bioRxiv, and Crossref metadata, auto-classifies promotable RNA sequence foundation model candidates into draft `data/papers.yaml` records, regenerates `README.md` and `assets/model_timeline.svg`, and opens a review PR. After editing confirmed metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed.
+**Metadata workflow**: confirmed entries live in `data/papers.yaml`, temporary discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`. A scheduled GitHub Action scans recent arXiv, bioRxiv, and Crossref metadata, auto-classifies promotable RNA-sequence or RNA-inclusive sequence foundation model candidates into draft `data/papers.yaml` records, regenerates `README.md` and `assets/model_timeline.svg`, and opens a review PR. After editing confirmed metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed.
 
 
 *Last updated: May 2026*

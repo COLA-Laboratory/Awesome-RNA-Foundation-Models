@@ -388,7 +388,7 @@ def suggest_scope_and_category(candidate: Candidate) -> tuple[str, str]:
     if "rna-seq" in raw_text or any(term in text for term in ("bulk rna", "expression profile", "methylation", "multi omics")):
         return "expression_profile", "Expression FM"
     if any(term in text for term in ("dna and rna", "dna rna", "rna and protein", "nucleic acid", "transcriptome", "transcriptomic", "central dogma", "metagenomic dna and rna")):
-        return "related_nucleotide", "DNA+RNA FM"
+        return "rna_inclusive_broad", "DNA+RNA FM"
     if any(term in text for term in ("inverse folding", "reverse translation", "prime editing", "guide rna", "pegrna", "3d structure", "torsion", "aptamer")):
         if "utr" in text:
             return "task_design", "UTR FM"

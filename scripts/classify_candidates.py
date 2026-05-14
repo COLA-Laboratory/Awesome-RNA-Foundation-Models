@@ -33,6 +33,7 @@ ALLOWED_SCOPES = {
     "core_rna_fm",
     "specialized_rna_fm",
     "adapted_derived",
+    "rna_inclusive_broad",
 }
 
 ALLOWED_CATEGORIES = {
@@ -43,6 +44,7 @@ ALLOWED_CATEGORIES = {
     "Structure-aware FM",
     "Generative FM",
     "General RNA FM",
+    "DNA+RNA FM",
 }
 
 STRICT_MODEL_TERMS = (
@@ -74,15 +76,7 @@ NON_STRICT_TERMS = (
     "single-cell",
     "multi-omics",
     "multi omics",
-    "genome language model",
-    "genomic language model",
     "genomes and transcriptomes",
-    "central dogma",
-    "metagenomic",
-    "nucleic acid",
-    "dna and rna",
-    "dna/rna",
-    "dna rna",
     "protein-conditional",
     "protein conditional",
 )
