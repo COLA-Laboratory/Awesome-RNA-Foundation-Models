@@ -22,12 +22,12 @@ SCOPE_LABELS = {
 }
 
 SCOPE_COLORS = {
-    "core_rna_fm": "#2f6fff",
-    "specialized_rna_fm": "#00c878",
-    "adapted_derived": "#a855ff",
-    "task_design": "#ff6a22",
-    "related_nucleotide": "#7a889b",
-    "expression_profile": "#ff3f7f",
+    "core_rna_fm": "#2563eb",
+    "specialized_rna_fm": "#16a34a",
+    "adapted_derived": "#9333ea",
+    "task_design": "#f97316",
+    "related_nucleotide": "#64748b",
+    "expression_profile": "#db2777",
 }
 
 
@@ -42,7 +42,7 @@ def timeline_date(paper: dict) -> str:
 
 def svg_text(x, y, text, size=16, weight=400, fill="#111827", anchor="middle"):
     return (
-        f'<text x="{x}" y="{y}" font-family="SFMono-Regular, Menlo, Monaco, Consolas, monospace" '
+        f'<text x="{x}" y="{y}" font-family="Inter, Arial, sans-serif" '
         f'font-size="{size}" font-weight="{weight}" fill="{fill}" '
         f'text-anchor="{anchor}">{escape(str(text))}</text>'
     )
@@ -68,17 +68,17 @@ def node_position(index: int, columns: int, left: int, step_x: int, row_position
 def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTPUT_FILE) -> None:
     papers = sorted(load_papers(input_file), key=lambda record: timeline_date(record))
 
-    columns = 9
+    columns = 10
     rows = ceil(len(papers) / columns)
     width = 1400
-    left = 100
-    right = width - 100
-    step_x = (right - left) // (columns - 1)
-    top = 286
-    tight_gap = 104
-    open_gap = 144
+    left = 86
+    right = width - 86
+    step_x = (right - left) / (columns - 1)
+    top = 220
+    tight_gap = 90
+    open_gap = 132
     row_positions = row_y_positions(rows, top, tight_gap, open_gap)
-    bottom_padding = 96
+    bottom_padding = 84
     height = row_positions[-1] + bottom_padding
 
     points = [
@@ -91,86 +91,61 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
         '<?xml version="1.0" encoding="UTF-8"?>',
         f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
         f'width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
-        "<defs>",
-        '<radialGradient id="heroGlow" cx="18%" cy="17%" r="58%">',
-        '<stop offset="0%" stop-color="#2a0509" stop-opacity="0.95"/>',
-        '<stop offset="46%" stop-color="#160305" stop-opacity="0.54"/>',
-        '<stop offset="100%" stop-color="#030303" stop-opacity="0"/>',
-        "</radialGradient>",
-        '<linearGradient id="titleAccent" x1="0%" y1="0%" x2="100%" y2="0%">',
-        '<stop offset="0%" stop-color="#ff7a22"/>',
-        '<stop offset="55%" stop-color="#ff4f7f"/>',
-        '<stop offset="100%" stop-color="#22d3ee"/>',
-        "</linearGradient>",
-        '<filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">',
-        '<feGaussianBlur stdDeviation="3.2" result="blur"/>',
-        '<feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>',
-        "</filter>",
-        "</defs>",
-        '<rect width="100%" height="100%" fill="#030303"/>',
-        '<rect width="100%" height="100%" fill="url(#heroGlow)"/>',
-        '<line x1="0" y1="1" x2="1400" y2="1" stroke="#242424" stroke-width="1"/>',
-        f'<line x1="0" y1="{height - 1}" x2="1400" y2="{height - 1}" stroke="#242424" stroke-width="1"/>',
-        '<text x="96" y="68" font-family="SFMono-Regular, Menlo, Monaco, Consolas, monospace" '
-        'font-size="11" font-weight="500" fill="#7a7a7a" letter-spacing="7" text-anchor="start">MODEL ATLAS</text>',
-        '<text x="96" y="112" font-family="SFMono-Regular, Menlo, Monaco, Consolas, monospace" '
-        'font-size="34" font-weight="700" fill="#f8fafc" text-anchor="start">RNA Foundation</text>',
-        '<text x="96" y="152" font-family="SFMono-Regular, Menlo, Monaco, Consolas, monospace" '
-        'font-size="34" font-weight="700" fill="url(#titleAccent)" text-anchor="start">Model Timeline</text>',
+        '<rect width="100%" height="100%" fill="#fbfbfd"/>',
+        svg_text(34, 42, "RNA Foundation Model Timeline", 30, 800, "#111827", "start"),
         svg_text(
-            96,
-            184,
+            34,
+            72,
             f"Auto-generated from data/papers.yaml • {len(papers)} confirmed RNA-relevant model entries",
-            13,
+            15,
             400,
-            "#a3a3a3",
+            "#6b7280",
             "start",
         ),
     ]
 
-    svg.append('<rect x="96" y="202" width="760" height="44" rx="4" fill="#090909" stroke="#252525"/>')
-    svg.append('<rect x="96" y="202" width="3" height="44" rx="1.5" fill="url(#titleAccent)"/>')
+    svg.append('<rect x="34" y="88" width="980" height="44" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>')
     svg.append(
         svg_text(
-            116,
-            221,
+            52,
+            106,
             "Timeline dates use first public model/preprint release, not necessarily formal publication.",
-            12,
+            13,
             700,
-            "#e5e7eb",
+            "#1d4ed8",
             "start",
         )
     )
     svg.append(
         svg_text(
-            116,
-            237,
+            52,
+            124,
             "Read each row in the arrow direction, then continue to the next row.",
-            12,
+            13,
             700,
-            "#8f8f8f",
+            "#1d4ed8",
             "start",
         )
     )
 
-    legend_x = width - 292
-    legend_y = 54
+    legend_x = width - 330
+    legend_y = 31
     legend_columns = 2
     legend_rows = ceil(len(SCOPE_LABELS) / legend_columns)
-    legend_col_width = 112
+    legend_col_width = 138
     legend_height = 18 + legend_rows * 22
-    legend_width = legend_columns * legend_col_width + 34
+    legend_width = legend_columns * legend_col_width + 12
     svg.append(
-        f'<rect x="{legend_x - 22}" y="{legend_y - 25}" width="{legend_width}" '
-        f'height="{legend_height + 14}" rx="10" fill="#080808" stroke="#222222"/>'
+        f'<rect x="{legend_x - 18}" y="{legend_y - 20}" width="{legend_width}" '
+        f'height="{legend_height}" rx="8" fill="#ffffff" stroke="#e5e7eb"/>'
     )
     for offset, (scope, label) in enumerate(SCOPE_LABELS.items()):
         col = offset // legend_rows
         legend_item_x = legend_x + col * legend_col_width
         y = legend_y + (offset % legend_rows) * 22
         color = SCOPE_COLORS[scope]
-        svg.append(f'<circle cx="{legend_item_x}" cy="{y}" r="5.5" fill="{color}" filter="url(#nodeGlow)"/>')
-        svg.append(svg_text(legend_item_x + 16, y + 5, label, 12, 500, "#d4d4d4", "start"))
+        svg.append(f'<circle cx="{legend_item_x}" cy="{y}" r="6" fill="{color}"/>')
+        svg.append(svg_text(legend_item_x + 14, y + 5, label, 13, 500, "#374151", "start"))
 
     for row in range(rows):
         row_points = [
@@ -183,35 +158,35 @@ def render_timeline_svg(input_file: Path = PAPERS_FILE, output_file: Path = OUTP
         y = row_positions[row]
         row_left = min(x for x, _ in row_points)
         row_right = max(x for x, _ in row_points)
-        svg.append(f'<line x1="{row_left}" y1="{y}" x2="{row_right}" y2="{y}" stroke="#151515" stroke-width="1"/>')
+        svg.append(f'<line x1="{row_left}" y1="{y}" x2="{row_right}" y2="{y}" stroke="#e5e7eb" stroke-width="1"/>')
         arrow = "→" if row % 2 == 0 else "←"
         arrow_x = row_left - 38 if row % 2 == 0 else row_right + 38
-        svg.append(svg_text(arrow_x, y + 7, arrow, 22, 800, "#747474"))
+        svg.append(svg_text(arrow_x, y + 7, arrow, 24, 800, "#525252"))
 
     svg.append(
         f'<polyline points="{path_points}" fill="none" stroke="#404040" '
-        'stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>'
+        'stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
     )
 
-    label_width = 136
-    label_height = 42
+    label_width = 124
+    label_height = 40
     for index, paper in enumerate(papers):
         x, y, row = node_position(index, columns, left, step_x, row_positions)
         scope = paper["scope"]
         color = SCOPE_COLORS.get(scope, "#64748b")
-        label_y = y - 68 if row % 2 == 0 else y + 26
+        label_y = y - 62 if row % 2 == 0 else y + 22
         line_end = label_y + label_height if row % 2 == 0 else label_y
 
         svg.append(f'<line x1="{x}" y1="{y}" x2="{x}" y2="{line_end}" stroke="{color}" stroke-width="2"/>')
-        svg.append(f'<circle cx="{x}" cy="{y}" r="9.5" fill="{color}" stroke="#050505" stroke-width="4" filter="url(#nodeGlow)"/>')
+        svg.append(f'<circle cx="{x}" cy="{y}" r="10" fill="{color}" stroke="#ffffff" stroke-width="4"/>')
         paper_url = escape(paper.get("timeline_url", paper["paper_url"]))
         svg.append(f'<a href="{paper_url}" xlink:href="{paper_url}" target="_blank">')
         svg.append(
             f'<rect x="{x - label_width / 2}" y="{label_y}" width="{label_width}" height="{label_height}" '
-            f'rx="7" fill="#070707" stroke="{color}" stroke-width="1.35"/>'
+            f'rx="8" fill="#ffffff" stroke="{color}" stroke-width="1.4"/>'
         )
-        svg.append(svg_text(x, label_y + 15, timeline_date(paper), 10, 500, "#8f8f8f"))
-        svg.append(svg_text(x, label_y + 31, paper["name"], 12, 700, "#f8fafc"))
+        svg.append(svg_text(x, label_y + 15, timeline_date(paper), 11, 500, "#6b7280"))
+        svg.append(svg_text(x, label_y + 30, paper["name"], 12, 700, "#111827"))
         svg.append("</a>")
 
     svg.append("</svg>")

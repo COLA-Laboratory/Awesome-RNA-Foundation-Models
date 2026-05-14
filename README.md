@@ -22,9 +22,9 @@ Timeline of 66 confirmed RNA-relevant model entries, generated from `data/papers
 
 **Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.
 
-**Interactive view:** [open the SVG timeline](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=677094064e28) to click model labels and source papers.
+**Interactive view:** [open the SVG timeline](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=1e5fcc0d58ae) to click model labels and source papers.
 
-[![RNA foundation model timeline](assets/model_timeline.svg?v=677094064e28)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=677094064e28)
+[![RNA foundation model timeline](assets/model_timeline.svg?v=1e5fcc0d58ae)](https://cdn.jsdelivr.net/gh/YuanLi-X/Awesome-RNA-Foundation-Models@main/assets/model_timeline.svg?v=1e5fcc0d58ae)
 
 ---
 
