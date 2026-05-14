@@ -359,6 +359,7 @@ def candidate_to_record(candidate: Candidate, evidence: list[str]) -> dict:
         "url": candidate.url,
         "source": candidate.source,
         "date": date_value,
+        "abstract": candidate.abstract,
         "status": "pending_review",
         "publication_status": status,
         "suggested_scope": scope,

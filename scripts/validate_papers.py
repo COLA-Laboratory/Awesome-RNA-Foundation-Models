@@ -156,8 +156,8 @@ def validate():
     if candidate_url_overlap:
         errors.append(f"candidates already known by url: {', '.join(candidate_url_overlap)}")
 
-    if len(papers) != 45:
-        errors.append(f"expected 45 confirmed papers, found {len(papers)}")
+    if len(papers) < 45:
+        errors.append(f"expected at least 45 confirmed papers, found {len(papers)}")
 
     if errors:
         for error in errors:

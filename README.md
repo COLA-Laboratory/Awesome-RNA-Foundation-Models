@@ -1197,7 +1197,7 @@ Contributions are welcome! If you find a missing RNA foundation model, benchmark
 
 **What NOT to include**: Downstream-only predictors/designers, reverse-translation or inverse-folding pipelines, RNA 3D prediction systems, broad DNA/nucleotide/multi-omics FMs, expression-profile models, single-cell foundation models, protein-only models, or purely DNA models.
 
-**Metadata workflow**: confirmed entries live in `data/papers.yaml`, pending discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`. A scheduled GitHub Action scans recent arXiv, bioRxiv, and Crossref metadata for candidate RNA foundation models and opens a review PR when it finds new items. After editing confirmed metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed.
+**Metadata workflow**: confirmed entries live in `data/papers.yaml`, temporary discoveries go to `data/candidates.yaml`, and intentionally excluded items are tracked in `data/excluded.yaml`. A scheduled GitHub Action scans recent arXiv, bioRxiv, and Crossref metadata, auto-classifies promotable RNA foundation-model candidates into draft `data/papers.yaml` records, regenerates `README.md` and `assets/model_timeline.svg`, and opens a review PR. After editing confirmed metadata, run `python generate_paper_list.py` and `python scripts/validate_papers.py`; CI also checks that generated README content is committed.
 
 
 *Last updated: May 2026*

@@ -35,6 +35,12 @@ jobs:
           LOOKBACK_DAYS="${{ inputs.lookback_days || '60' }}"
           python scripts/discover_candidates.py --lookback-days "$LOOKBACK_DAYS" --update
 
+      - name: Auto-classify candidates
+        run: python scripts/classify_candidates.py --update
+
+      - name: Regenerate README
+        run: python generate_paper_list.py
+
       - name: Validate metadata
         run: python scripts/validate_papers.py
 
@@ -42,33 +48,34 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet data/candidates.yaml; then
-            echo "No candidate metadata changes."
+          if git diff --quiet data/papers.yaml data/candidates.yaml README.md assets/model_timeline.svg; then
+            echo "No model metadata, candidate, README, or timeline changes."
             exit 0
           fi
 
+          UPDATE_BRANCH="bot/update-rna-models"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B bot/update-rna-candidates
-          git add data/candidates.yaml
-          git commit -m "Update RNA foundation model candidates"
-          git push --force origin HEAD:bot/update-rna-candidates
+          git checkout -B "$UPDATE_BRANCH"
+          git add data/papers.yaml data/candidates.yaml README.md assets/model_timeline.svg
+          git commit -m "Update RNA foundation model metadata"
+          git push --force origin "HEAD:$UPDATE_BRANCH"
 
-          PR_BODY="Automated literature scan found new pending candidates in data/candidates.yaml. Please review before moving any entry into data/papers.yaml."
+          PR_BODY="Automated literature scan found new RNA foundation-model candidates, auto-classified promotable entries into data/papers.yaml, and regenerated README.md plus assets/model_timeline.svg. Please verify the metadata, classification, and strict-scope fit before merging."
 
-          if gh pr view bot/update-rna-candidates --json url --jq .url; then
-            gh pr edit bot/update-rna-candidates \
-              --title "Update RNA foundation model candidates" \
+          if gh pr view "$UPDATE_BRANCH" --json url --jq .url; then
+            gh pr edit "$UPDATE_BRANCH" \
+              --title "Update RNA foundation model metadata" \
               --body "$PR_BODY"
             exit 0
           fi
 
           if gh pr create \
             --base main \
-            --head bot/update-rna-candidates \
-            --title "Update RNA foundation model candidates" \
+            --head "$UPDATE_BRANCH" \
+            --title "Update RNA foundation model metadata" \
             --body "$PR_BODY"; then
             exit 0
           fi
 
-          echo "::warning::Candidate branch was pushed, but this repository does not allow GitHub Actions to create pull requests. Open a PR manually from bot/update-rna-candidates or enable 'Allow GitHub Actions to create and approve pull requests' in repository settings."
+          echo "::warning::Update branch was pushed, but this repository does not allow GitHub Actions to create pull requests. Open a PR manually from $UPDATE_BRANCH or enable 'Allow GitHub Actions to create and approve pull requests' in repository settings."
