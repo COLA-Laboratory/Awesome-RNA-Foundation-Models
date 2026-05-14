@@ -1,4 +1,9 @@
 # Entries intentionally excluded from the strict README scope.
+- name: OPED
+  title: Design of prime-editing guide RNAs with deep transfer learning
+  paper_url: https://www.nature.com/articles/s42256-023-00739-w
+  date: '2023.11'
+  reason: Task-specific pegRNA efficiency predictor/designer for prime editing rather than a reusable RNA language-model backbone.
 - name: GEMORNA
   title: Deep generative models design mRNA sequences with enhanced translational capacity and stability
   paper_url: https://www.science.org/doi/10.1126/science.adr8470
