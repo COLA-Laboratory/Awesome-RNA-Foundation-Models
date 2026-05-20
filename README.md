@@ -10,7 +10,7 @@ A curated, continuously updated catalog of **RNA sequence foundation models**, c
 
 - [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries
 - [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys
-- [Detailed Tables](#detailed-tables) — Detailed tables for all 50 model entries, 12 benchmarks, 3 surveys
+- [Detailed Tables](#detailed-tables) — Detailed tables for all 51 model entries, 12 benchmarks, 3 surveys
 - [Abbreviations](#abbreviations)
 - [Contributing](#contributing)
 
@@ -18,13 +18,13 @@ A curated, continuously updated catalog of **RNA sequence foundation models**, c
 
 ## Model Timeline
 
-Timeline of 50 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
+Timeline of 51 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
 
 **Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.
 
-**Interactive view:** [open the SVG timeline](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-6788ff16a3af.svg) to click model labels and source papers.
+**Interactive view:** [open the SVG timeline](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-ab14f94c485f.svg) to click model labels and source papers.
 
-[![RNA foundation model timeline](assets/model_timeline-6788ff16a3af.svg)](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-6788ff16a3af.svg)
+[![RNA foundation model timeline](assets/model_timeline-ab14f94c485f.svg)](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-ab14f94c485f.svg)
 
 ---
 
@@ -149,7 +149,7 @@ Primary contribution is a reusable RNA or mRNA sequence foundation model pre-tra
 </details>
 
 <details open>
-<summary><b>Specialized RNA Foundation Models (19)</b></summary>
+<summary><b>Specialized RNA Foundation Models (20)</b></summary>
 
 RNA-specific pre-training is present, but the scope is constrained by RNA subtype, species, structural modality, or a narrow biological question.
 
@@ -224,6 +224,10 @@ RNA-specific pre-training is present, but the scope is constrained by RNA subtyp
 - **G4mer** — [G4mer: An RNA language model for transcriptome-wide identification of G-quadruplexes and disease variants from population-scale genetic data](https://www.nature.com/articles/s41467-025-65020-7) (2025.11) [![abs](https://img.shields.io/badge/abs-2025.11-b31b1b.svg)](https://www.nature.com/articles/s41467-025-65020-7) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/Biociphers/g4mer)
 
   > Develops G4mer, a 46M-parameter interpretable transformer model for predicting RNA G-quadruplex structures in the human transcriptome, providing attention-based interpretability for understanding G4-mediated regulation.
+
+- **-** — [miRBind2 enables sequence-only prediction of miRNA binding and transcript repression](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1)
+
+  > MotivationMicroRNAs (miRNAs) regulate gene expression by guiding Argonaute proteins to partially complementary sites on target RNAs.
 
 - **Orthrus** — [Orthrus: toward evolutionary and functional RNA foundation models](https://www.nature.com/articles/s41592-026-03064-3) (2026.04) [![abs](https://img.shields.io/badge/abs-2026.04-b31b1b.svg)](https://www.nature.com/articles/s41592-026-03064-3) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/quietflamingo/orthrus-large-4-track)
 
@@ -409,7 +413,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 </details>
 
 <details open>
-<summary><b>UTR Sequence Models (2)</b></summary>
+<summary><b>UTR Sequence Models (3)</b></summary>
 
 - **UTR-LM** — [A 5′ UTR language model for decoding untranslated regions of mRNA and function predictions](https://www.nature.com/articles/s42256-024-00823-9) (2024.04) [![abs](https://img.shields.io/badge/abs-2024.04-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00823-9) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/utrlm-te_el)
 
@@ -418,6 +422,10 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 - **3UTRBERT** — [Deciphering 3'UTR Mediated Gene Regulation Using Interpretable Deep Representation Learning](https://doi.org/10.1002/advs.202407013) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1002/advs.202407013) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/yangyn533/3UTRBERT)
 
   > Presents 3UTRBERT, a BERT model pre-trained on GENCODE 3'UTR sequences using 3-mer tokenization, capturing regulatory motifs for predicting mRNA stability, polyadenylation, and subcellular localization.
+
+- **-** — [miRBind2 enables sequence-only prediction of miRNA binding and transcript repression](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1)
+
+  > MotivationMicroRNAs (miRNAs) regulate gene expression by guiding Argonaute proteins to partially complementary sites on target RNAs.
 
 </details>
 
@@ -540,7 +548,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 <blockquote>
 
 <details open>
-<summary><b>Encoder-only (BERT-family) (31)</b></summary>
+<summary><b>Encoder-only (BERT-family) (32)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -666,6 +674,10 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 
   > Proposes RNAElectra, applying the ELECTRA-style replaced token detection pre-training objective to RNA sequences, offering more sample-efficient pre-training compared to masked language modeling approaches.
 
+- **-** — [miRBind2 enables sequence-only prediction of miRNA binding and transcript repression](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1)
+
+  > MotivationMicroRNAs (miRNAs) regulate gene expression by guiding Argonaute proteins to partially complementary sites on target RNAs.
+
 </details>
 
 <details open>
@@ -774,7 +786,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 <blockquote>
 
 <details open>
-<summary><b>Single Nucleotide Token (SNT) (28)</b></summary>
+<summary><b>Single Nucleotide Token (SNT) (29)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -883,6 +895,10 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 - **Evo 2** — [Genome Modeling and Design Across All Domains of Life with Evo 2](https://www.nature.com/articles/s41586-026-10176-5) (2026.03) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.nature.com/articles/s41586-026-10176-5) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ArcInstitute/evo2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/arcinstitute/evo2_40b)
 
   > Introduces Evo 2, an open biological sequence foundation model trained on OpenGenome2 across all domains of life; the released OpenGenome2 composition includes eukaryotic mRNAs and ncRNA sources such as RNAcentral and Rfam, enabling broad nucleotide-sequence prediction and generation.
+
+- **-** — [miRBind2 enables sequence-only prediction of miRNA binding and transcript repression](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1)
+
+  > MotivationMicroRNAs (miRNAs) regulate gene expression by guiding Argonaute proteins to partially complementary sites on target RNAs.
 
 - **Orthrus** — [Orthrus: toward evolutionary and functional RNA foundation models](https://www.nature.com/articles/s41592-026-03064-3) (2026.04) [![abs](https://img.shields.io/badge/abs-2026.04-b31b1b.svg)](https://www.nature.com/articles/s41592-026-03064-3) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/quietflamingo/orthrus-large-4-track)
 
@@ -1148,6 +1164,7 @@ Models focused on untranslated regions (5'UTR, 3'UTR).
 |:------|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
 | <nobr>**UTR-LM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00823-9)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/utrlm-te_el)</nobr> | <nobr>2024.04</nobr> | <nobr>Encoder-only</nobr> | <nobr>1M</nobr> | <nobr>Ensembl 5'UTR (>214K seqs + synthetic)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**3UTRBERT**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1002/advs.202407013)</nobr> | <nobr>[Code](https://github.com/yangyn533/3UTRBERT)</nobr> | <nobr>2024.10</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>GENCODE 3'UTR (20K seqs)</nobr> | <nobr>3-mer</nobr> |
+| <nobr>**-**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1)</nobr> | - | <nobr>2026.03<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | - | - | <nobr>SNT</nobr> |
 
 </details>
 
