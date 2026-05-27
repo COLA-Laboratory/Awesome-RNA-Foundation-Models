@@ -361,9 +361,6 @@ def render_model_timeline():
     cache_key = hashlib.sha256(timeline_bytes).hexdigest()[:12]
     versioned_name = f"model_timeline-{cache_key}.svg"
     versioned_svg = assets_dir / versioned_name
-    for old_svg in assets_dir.glob("model_timeline-*.svg"):
-        if old_svg != versioned_svg:
-            old_svg.unlink()
     versioned_svg.write_bytes(timeline_bytes)
     timeline_url = f"{TIMELINE_INTERACTIVE_BASE_URL}/{versioned_name}"
     timeline_image = f"assets/{versioned_name}"
