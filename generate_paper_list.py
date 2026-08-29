@@ -146,6 +146,7 @@ def is_preprint_url(url):
         "biorxiv.org",
         "openreview.net",
         "doi.org/10.1101",
+        "doi.org/10.21203",
         "doi.org/10.64898",
     )
     return any(marker in url for marker in preprint_markers)

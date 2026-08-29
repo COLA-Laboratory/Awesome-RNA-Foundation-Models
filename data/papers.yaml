@@ -630,6 +630,23 @@
   params: '-'
   pretraining_data: 21M seq-structure pairs
   table_tokenization: SNT
+- name: UltraGen
+  title: Decoding the RNA interactome by UltraGen
+  paper_url: https://doi.org/10.21203/rs.3.rs-4461517/v1
+  date: '2024.07'
+  github_url: null
+  hf_url: null
+  scope: specialized_rna_fm
+  category: General RNA FM
+  abstract: Introduces UltraGen, the first RNA language model pre-trained on in vitro-synthesized RNA libraries, using
+    self-supervised learning on 10 million experimentally generated UltraSelex sequences to learn quantitative RNA-target
+    binding properties and transfer across small-molecule, protein, cell, tissue, and viral-interaction tasks.
+  architecture: Encoder-only
+  tokenization: SNT
+  table_architecture: Encoder-only
+  params: 33.5M
+  pretraining_data: UltraSelex SiR (10M in vitro-synthesized RNA seqs)
+  table_tokenization: SNT
 - name: LoRNA SH
   title: A long-context RNA foundation model for predicting transcriptome architecture
   paper_url: https://doi.org/10.1101/2024.08.26.609813
