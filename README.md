@@ -10,7 +10,7 @@ A curated, continuously updated catalog of **RNA sequence foundation models**, c
 
 - [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries
 - [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys
-- [Detailed Tables](#detailed-tables) — Detailed tables for all 51 model entries, 12 benchmarks, 3 surveys
+- [Detailed Tables](#detailed-tables) — Detailed tables for all 52 model entries, 12 benchmarks, 3 surveys
 - [Abbreviations](#abbreviations)
 - [Contributing](#contributing)
 
@@ -18,13 +18,13 @@ A curated, continuously updated catalog of **RNA sequence foundation models**, c
 
 ## Model Timeline
 
-Timeline of 51 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
+Timeline of 52 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
 
 **Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.
 
-**Interactive view:** [open the SVG timeline](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-ab14f94c485f.svg) to click model labels and source papers.
+**Interactive view:** [open the SVG timeline](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-1da1ef0c33c8.svg) to click model labels and source papers.
 
-[![RNA foundation model timeline](assets/model_timeline-ab14f94c485f.svg)](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-ab14f94c485f.svg)
+[![RNA foundation model timeline](assets/model_timeline-1da1ef0c33c8.svg)](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-1da1ef0c33c8.svg)
 
 ---
 
@@ -149,7 +149,7 @@ Primary contribution is a reusable RNA or mRNA sequence foundation model pre-tra
 </details>
 
 <details open>
-<summary><b>Specialized RNA Foundation Models (20)</b></summary>
+<summary><b>Specialized RNA Foundation Models (21)</b></summary>
 
 RNA-specific pre-training is present, but the scope is constrained by RNA subtype, species, structural modality, or a narrow biological question.
 
@@ -188,6 +188,10 @@ RNA-specific pre-training is present, but the scope is constrained by RNA subtyp
 - **RFamLlama** — [RFamLlama: an efficient conditional language model for RNA sequence generation across diverse structural families](https://openreview.net/forum?id=dXnQedxEJD) (2024.06, workshop) [![abs](https://img.shields.io/badge/abs-2024.06-b31b1b.svg)](https://openreview.net/forum?id=dXnQedxEJD) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/jinyuan22/RFamLlama-base)
 
   > Proposes RFamLlama, a Llama-based autoregressive model for conditional RNA sequence generation conditioned on RNA family labels, generating novel functional ncRNA sequences belonging to over 4,000 Rfam families.
+
+- **UltraGen** — [Decoding the RNA interactome by UltraGen](https://doi.org/10.21203/rs.3.rs-4461517/v1) (2024.07, preprint) [![abs](https://img.shields.io/badge/abs-2024.07-b31b1b.svg)](https://doi.org/10.21203/rs.3.rs-4461517/v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.21203/rs.3.rs-4461517/v1)
+
+  > Introduces UltraGen, the first RNA language model pre-trained on in vitro-synthesized RNA libraries, using self-supervised learning on 10 million experimentally generated UltraSelex sequences to learn quantitative RNA-target binding properties and transfer across small-molecule, protein, cell, tissue, and viral-interaction tasks.
 
 - **CodonBERT** — [CodonBERT large language model for mRNA vaccines](https://doi.org/10.1101/gr.278870.123) (2024.08) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/gr.278870.123) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/Sanofi-Public/CodonBERT)
 
@@ -497,11 +501,15 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 </details>
 
 <details open>
-<summary><b>General / Other RNA Models (3)</b></summary>
+<summary><b>General / Other RNA Models (4)</b></summary>
 
 - **Uni-RNA** — [Uni-RNA: Universal Pre-trained Models for RNA across Species](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1) (2023.07, preprint) [![abs](https://img.shields.io/badge/abs-2023.07-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ComDec/unirna_tf)
 
   > Presents Uni-RNA, a 400M-parameter universal RNA model pre-trained on 1B sequences from RNAcentral, MG-RAST, and MGnify, covering RNA across diverse species for general-purpose RNA representation learning.
+
+- **UltraGen** — [Decoding the RNA interactome by UltraGen](https://doi.org/10.21203/rs.3.rs-4461517/v1) (2024.07, preprint) [![abs](https://img.shields.io/badge/abs-2024.07-b31b1b.svg)](https://doi.org/10.21203/rs.3.rs-4461517/v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.21203/rs.3.rs-4461517/v1)
+
+  > Introduces UltraGen, the first RNA language model pre-trained on in vitro-synthesized RNA libraries, using self-supervised learning on 10 million experimentally generated UltraSelex sequences to learn quantitative RNA-target binding properties and transfer across small-molecule, protein, cell, tissue, and viral-interaction tasks.
 
 - **LoRNA SH** — [A long-context RNA foundation model for predicting transcriptome architecture](https://doi.org/10.1101/2024.08.26.609813) (2024.08, preprint) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/2024.08.26.609813) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2024.08.26.609813)
 
@@ -548,7 +556,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 <blockquote>
 
 <details open>
-<summary><b>Encoder-only (BERT-family) (32)</b></summary>
+<summary><b>Encoder-only (BERT-family) (33)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -589,6 +597,10 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 - **RNAErnie** — [Multi-purpose RNA language modelling with motif-aware pretraining and type-guided fine-tuning](https://www.nature.com/articles/s42256-024-00836-4) (2024.05) [![abs](https://img.shields.io/badge/abs-2024.05-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00836-4) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/LLM-EDA/RNAErnie)
 
   > Presents RNAErnie, an RNA-focused pre-trained model that combines motif-aware pretraining with type-guided fine-tuning for diverse RNA sequence analysis tasks.
+
+- **UltraGen** — [Decoding the RNA interactome by UltraGen](https://doi.org/10.21203/rs.3.rs-4461517/v1) (2024.07, preprint) [![abs](https://img.shields.io/badge/abs-2024.07-b31b1b.svg)](https://doi.org/10.21203/rs.3.rs-4461517/v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.21203/rs.3.rs-4461517/v1)
+
+  > Introduces UltraGen, the first RNA language model pre-trained on in vitro-synthesized RNA libraries, using self-supervised learning on 10 million experimentally generated UltraSelex sequences to learn quantitative RNA-target binding properties and transfer across small-molecule, protein, cell, tissue, and viral-interaction tasks.
 
 - **CodonBERT** — [CodonBERT large language model for mRNA vaccines](https://doi.org/10.1101/gr.278870.123) (2024.08) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/gr.278870.123) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/Sanofi-Public/CodonBERT)
 
@@ -786,7 +798,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 <blockquote>
 
 <details open>
-<summary><b>Single Nucleotide Token (SNT) (29)</b></summary>
+<summary><b>Single Nucleotide Token (SNT) (30)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -831,6 +843,10 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 - **RFamLlama** — [RFamLlama: an efficient conditional language model for RNA sequence generation across diverse structural families](https://openreview.net/forum?id=dXnQedxEJD) (2024.06, workshop) [![abs](https://img.shields.io/badge/abs-2024.06-b31b1b.svg)](https://openreview.net/forum?id=dXnQedxEJD) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/jinyuan22/RFamLlama-base)
 
   > Proposes RFamLlama, a Llama-based autoregressive model for conditional RNA sequence generation conditioned on RNA family labels, generating novel functional ncRNA sequences belonging to over 4,000 Rfam families.
+
+- **UltraGen** — [Decoding the RNA interactome by UltraGen](https://doi.org/10.21203/rs.3.rs-4461517/v1) (2024.07, preprint) [![abs](https://img.shields.io/badge/abs-2024.07-b31b1b.svg)](https://doi.org/10.21203/rs.3.rs-4461517/v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.21203/rs.3.rs-4461517/v1)
+
+  > Introduces UltraGen, the first RNA language model pre-trained on in vitro-synthesized RNA libraries, using self-supervised learning on 10 million experimentally generated UltraSelex sequences to learn quantitative RNA-target binding properties and transfer across small-molecule, protein, cell, tissue, and viral-interaction tasks.
 
 - **LoRNA SH** — [A long-context RNA foundation model for predicting transcriptome architecture](https://doi.org/10.1101/2024.08.26.609813) (2024.08, preprint) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/2024.08.26.609813) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2024.08.26.609813)
 
@@ -1219,6 +1235,7 @@ General-purpose RNA models covering multiple RNA types.
 | Model <img width=180/> | Scope <img width=190/> | Paper <img width=110/> | Code <img width=110/> | Date / Status <img width=90/> | Architecture <img width=150/> | Params <img width=90/> | Pre-training Data <img width=240/> | Tokenization <img width=130/> |
 |:------|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
 | <nobr>**Uni-RNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1)</nobr> | <nobr>[Code](https://github.com/ComDec/unirna_tf)</nobr> | <nobr>2023.07<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | <nobr>400M</nobr> | <nobr>RNAcentral + MG-RAST + MGnify (1B seqs)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**UltraGen**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.21203/rs.3.rs-4461517/v1)</nobr> | - | <nobr>2024.07<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | <nobr>33.5M</nobr> | <nobr>UltraSelex SiR (10M in vitro-synthesized RNA seqs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**LoRNA SH**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1101/2024.08.26.609813)</nobr> | - | <nobr>2024.08<br><sub>preprint</sub></nobr> | <nobr>Hybrid (StripedHyena)</nobr> | <nobr>6.5M</nobr> | <nobr>Full-length transcriptome architecture data</nobr> | <nobr>Specialized nt + region</nobr> |
 | <nobr>**RNALens**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1)</nobr> | <nobr>[Code](https://github.com/oomics/RNALens)</nobr> | <nobr>2025.07<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | <nobr>469M</nobr> | <nobr>Multispecies genomic + 5'UTR sequences</nobr> | <nobr>BPE</nobr> |
 

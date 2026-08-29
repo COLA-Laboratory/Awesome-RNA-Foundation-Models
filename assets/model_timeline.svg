@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="838" viewBox="0 0 1400 838">
 <rect width="100%" height="100%" fill="#fbfbfd"/>
 <text x="34" y="42" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#111827" text-anchor="start">RNA Foundation Model Timeline</text>
-<text x="34" y="72" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#6b7280" text-anchor="start">Auto-generated from data/papers.yaml • 51 confirmed RNA sequence foundation model entries</text>
+<text x="34" y="72" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#6b7280" text-anchor="start">Auto-generated from data/papers.yaml • 52 confirmed RNA sequence foundation model entries</text>
 <rect x="34" y="88" width="980" height="44" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
 <text x="52" y="106" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="start">Timeline dates use first public model/preprint release, not necessarily formal publication.</text>
 <text x="52" y="124" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="start">Read each row in the arrow direction, then continue to the next row.</text>
@@ -25,9 +25,9 @@
 <text x="1352.0" y="539" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#525252" text-anchor="middle">←</text>
 <line x1="86.0" y1="664" x2="1314.0" y2="664" stroke="#e5e7eb" stroke-width="1"/>
 <text x="48.0" y="671" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#525252" text-anchor="middle">→</text>
-<line x1="1314.0" y1="754" x2="1314.0" y2="754" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="1177.5555555555557" y1="754" x2="1314.0" y2="754" stroke="#e5e7eb" stroke-width="1"/>
 <text x="1352.0" y="761" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#525252" text-anchor="middle">←</text>
-<polyline points="86.0,220 222.44444444444446,220 358.8888888888889,220 495.33333333333337,220 631.7777777777778,220 768.2222222222223,220 904.6666666666667,220 1041.1111111111113,220 1177.5555555555557,220 1314.0,220 1314.0,310 1177.5555555555557,310 1041.1111111111113,310 904.6666666666667,310 768.2222222222223,310 631.7777777777778,310 495.33333333333337,310 358.8888888888889,310 222.44444444444446,310 86.0,310 86.0,442 222.44444444444446,442 358.8888888888889,442 495.33333333333337,442 631.7777777777778,442 768.2222222222223,442 904.6666666666667,442 1041.1111111111113,442 1177.5555555555557,442 1314.0,442 1314.0,532 1177.5555555555557,532 1041.1111111111113,532 904.6666666666667,532 768.2222222222223,532 631.7777777777778,532 495.33333333333337,532 358.8888888888889,532 222.44444444444446,532 86.0,532 86.0,664 222.44444444444446,664 358.8888888888889,664 495.33333333333337,664 631.7777777777778,664 768.2222222222223,664 904.6666666666667,664 1041.1111111111113,664 1177.5555555555557,664 1314.0,664 1314.0,754" fill="none" stroke="#404040" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="86.0,220 222.44444444444446,220 358.8888888888889,220 495.33333333333337,220 631.7777777777778,220 768.2222222222223,220 904.6666666666667,220 1041.1111111111113,220 1177.5555555555557,220 1314.0,220 1314.0,310 1177.5555555555557,310 1041.1111111111113,310 904.6666666666667,310 768.2222222222223,310 631.7777777777778,310 495.33333333333337,310 358.8888888888889,310 222.44444444444446,310 86.0,310 86.0,442 222.44444444444446,442 358.8888888888889,442 495.33333333333337,442 631.7777777777778,442 768.2222222222223,442 904.6666666666667,442 1041.1111111111113,442 1177.5555555555557,442 1314.0,442 1314.0,532 1177.5555555555557,532 1041.1111111111113,532 904.6666666666667,532 768.2222222222223,532 631.7777777777778,532 495.33333333333337,532 358.8888888888889,532 222.44444444444446,532 86.0,532 86.0,664 222.44444444444446,664 358.8888888888889,664 495.33333333333337,664 631.7777777777778,664 768.2222222222223,664 904.6666666666667,664 1041.1111111111113,664 1177.5555555555557,664 1314.0,664 1314.0,754 1177.5555555555557,754" fill="none" stroke="#404040" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 <line x1="86.0" y1="220" x2="86.0" y2="198" stroke="#16a34a" stroke-width="2"/>
 <circle cx="86.0" cy="220" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
 <a href="https://pubmed.ncbi.nlm.nih.gov/35211670/" xlink:href="https://pubmed.ncbi.nlm.nih.gov/35211670/">
@@ -142,247 +142,254 @@
 </a>
 <line x1="495.33333333333337" y1="310" x2="495.33333333333337" y2="332" stroke="#16a34a" stroke-width="2"/>
 <circle cx="495.33333333333337" cy="310" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://doi.org/10.1101/gr.278870.123" xlink:href="https://doi.org/10.1101/gr.278870.123">
+<a href="https://doi.org/10.21203/rs.3.rs-4461517/v1" xlink:href="https://doi.org/10.21203/rs.3.rs-4461517/v1">
 <rect x="433.33333333333337" y="332" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
-<text x="495.33333333333337" y="347" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.08</text>
-<text x="495.33333333333337" y="362" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">CodonBERT</text>
+<text x="495.33333333333337" y="347" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.07</text>
+<text x="495.33333333333337" y="362" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">UltraGen</text>
 </a>
 <line x1="358.8888888888889" y1="310" x2="358.8888888888889" y2="332" stroke="#16a34a" stroke-width="2"/>
 <circle cx="358.8888888888889" cy="310" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://doi.org/10.1101/2024.08.26.609813" xlink:href="https://doi.org/10.1101/2024.08.26.609813">
+<a href="https://doi.org/10.1101/gr.278870.123" xlink:href="https://doi.org/10.1101/gr.278870.123">
 <rect x="296.8888888888889" y="332" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
 <text x="358.8888888888889" y="347" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.08</text>
-<text x="358.8888888888889" y="362" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">LoRNA SH</text>
+<text x="358.8888888888889" y="362" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">CodonBERT</text>
 </a>
-<line x1="222.44444444444446" y1="310" x2="222.44444444444446" y2="332" stroke="#2563eb" stroke-width="2"/>
-<circle cx="222.44444444444446" cy="310" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://doi.org/10.1101/2024.10.31.621427" xlink:href="https://doi.org/10.1101/2024.10.31.621427">
-<rect x="160.44444444444446" y="332" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="222.44444444444446" y="347" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.10</text>
-<text x="222.44444444444446" y="362" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">DGRNA</text>
+<line x1="222.44444444444446" y1="310" x2="222.44444444444446" y2="332" stroke="#16a34a" stroke-width="2"/>
+<circle cx="222.44444444444446" cy="310" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1101/2024.08.26.609813" xlink:href="https://doi.org/10.1101/2024.08.26.609813">
+<rect x="160.44444444444446" y="332" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="222.44444444444446" y="347" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.08</text>
+<text x="222.44444444444446" y="362" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">LoRNA SH</text>
 </a>
 <line x1="86.0" y1="310" x2="86.0" y2="332" stroke="#2563eb" stroke-width="2"/>
 <circle cx="86.0" cy="310" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://arxiv.org/abs/2410.12459" xlink:href="https://arxiv.org/abs/2410.12459">
+<a href="https://doi.org/10.1101/2024.10.31.621427" xlink:href="https://doi.org/10.1101/2024.10.31.621427">
 <rect x="24.0" y="332" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="86.0" y="347" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.10</text>
-<text x="86.0" y="362" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">HELM</text>
+<text x="86.0" y="362" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">DGRNA</text>
 </a>
-<line x1="86.0" y1="442" x2="86.0" y2="420" stroke="#16a34a" stroke-width="2"/>
-<circle cx="86.0" cy="442" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://doi.org/10.1002/advs.202407013" xlink:href="https://doi.org/10.1002/advs.202407013">
-<rect x="24.0" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<line x1="86.0" y1="442" x2="86.0" y2="420" stroke="#2563eb" stroke-width="2"/>
+<circle cx="86.0" cy="442" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://arxiv.org/abs/2410.12459" xlink:href="https://arxiv.org/abs/2410.12459">
+<rect x="24.0" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="86.0" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.10</text>
-<text x="86.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">3UTRBERT</text>
+<text x="86.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">HELM</text>
 </a>
-<line x1="222.44444444444446" y1="442" x2="222.44444444444446" y2="420" stroke="#2563eb" stroke-width="2"/>
-<circle cx="222.44444444444446" cy="442" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://doi.org/10.1371/journal.pone.0310814" xlink:href="https://doi.org/10.1371/journal.pone.0310814">
-<rect x="160.44444444444446" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+<line x1="222.44444444444446" y1="442" x2="222.44444444444446" y2="420" stroke="#16a34a" stroke-width="2"/>
+<circle cx="222.44444444444446" cy="442" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1002/advs.202407013" xlink:href="https://doi.org/10.1002/advs.202407013">
+<rect x="160.44444444444446" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
 <text x="222.44444444444446" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.10</text>
-<text x="222.44444444444446" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">GenerRNA</text>
+<text x="222.44444444444446" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">3UTRBERT</text>
 </a>
-<line x1="358.8888888888889" y1="442" x2="358.8888888888889" y2="420" stroke="#16a34a" stroke-width="2"/>
-<circle cx="358.8888888888889" cy="442" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://doi.org/10.1101/2024.10.10.617658" xlink:href="https://doi.org/10.1101/2024.10.10.617658">
-<rect x="296.8888888888889" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<line x1="358.8888888888889" y1="442" x2="358.8888888888889" y2="420" stroke="#2563eb" stroke-width="2"/>
+<circle cx="358.8888888888889" cy="442" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1371/journal.pone.0310814" xlink:href="https://doi.org/10.1371/journal.pone.0310814">
+<rect x="296.8888888888889" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="358.8888888888889" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.10</text>
-<text x="358.8888888888889" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Orthrus</text>
+<text x="358.8888888888889" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">GenerRNA</text>
 </a>
-<line x1="495.33333333333337" y1="442" x2="495.33333333333337" y2="420" stroke="#2563eb" stroke-width="2"/>
-<circle cx="495.33333333333337" cy="442" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<line x1="495.33333333333337" y1="442" x2="495.33333333333337" y2="420" stroke="#16a34a" stroke-width="2"/>
+<circle cx="495.33333333333337" cy="442" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1101/2024.10.10.617658" xlink:href="https://doi.org/10.1101/2024.10.10.617658">
+<rect x="433.33333333333337" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="495.33333333333337" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.10</text>
+<text x="495.33333333333337" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Orthrus</text>
+</a>
+<line x1="631.7777777777778" y1="442" x2="631.7777777777778" y2="420" stroke="#2563eb" stroke-width="2"/>
+<circle cx="631.7777777777778" cy="442" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
 <a href="https://doi.org/10.1101/2024.11.28.625345" xlink:href="https://doi.org/10.1101/2024.11.28.625345">
-<rect x="433.33333333333337" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="495.33333333333337" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.11</text>
-<text x="495.33333333333337" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">AIDO.RNA</text>
-</a>
-<line x1="631.7777777777778" y1="442" x2="631.7777777777778" y2="420" stroke="#16a34a" stroke-width="2"/>
-<circle cx="631.7777777777778" cy="442" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://aclanthology.org/2024.findings-emnlp.304/" xlink:href="https://aclanthology.org/2024.findings-emnlp.304/">
-<rect x="569.7777777777778" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<rect x="569.7777777777778" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="631.7777777777778" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.11</text>
-<text x="631.7777777777778" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">MP-RNA</text>
+<text x="631.7777777777778" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">AIDO.RNA</text>
 </a>
-<line x1="768.2222222222223" y1="442" x2="768.2222222222223" y2="420" stroke="#9333ea" stroke-width="2"/>
-<circle cx="768.2222222222223" cy="442" r="10" fill="#9333ea" stroke="#ffffff" stroke-width="4"/>
+<line x1="768.2222222222223" y1="442" x2="768.2222222222223" y2="420" stroke="#16a34a" stroke-width="2"/>
+<circle cx="768.2222222222223" cy="442" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://aclanthology.org/2024.findings-emnlp.304/" xlink:href="https://aclanthology.org/2024.findings-emnlp.304/">
+<rect x="706.2222222222223" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="768.2222222222223" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.11</text>
+<text x="768.2222222222223" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">MP-RNA</text>
+</a>
+<line x1="904.6666666666667" y1="442" x2="904.6666666666667" y2="420" stroke="#9333ea" stroke-width="2"/>
+<circle cx="904.6666666666667" cy="442" r="10" fill="#9333ea" stroke="#ffffff" stroke-width="4"/>
 <a href="https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2" xlink:href="https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2">
-<rect x="706.2222222222223" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#9333ea" stroke-width="1.4"/>
-<text x="768.2222222222223" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.12</text>
-<text x="768.2222222222223" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNAGenesis</text>
-</a>
-<line x1="904.6666666666667" y1="442" x2="904.6666666666667" y2="420" stroke="#16a34a" stroke-width="2"/>
-<circle cx="904.6666666666667" cy="442" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.nature.com/articles/s42256-024-00946-z" xlink:href="https://www.nature.com/articles/s42256-024-00946-z">
-<rect x="842.6666666666667" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<rect x="842.6666666666667" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#9333ea" stroke-width="1.4"/>
 <text x="904.6666666666667" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.12</text>
-<text x="904.6666666666667" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">PlantRNA-FM</text>
+<text x="904.6666666666667" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNAGenesis</text>
 </a>
 <line x1="1041.1111111111113" y1="442" x2="1041.1111111111113" y2="420" stroke="#16a34a" stroke-width="2"/>
 <circle cx="1041.1111111111113" cy="442" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1" xlink:href="https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1">
+<a href="https://www.nature.com/articles/s42256-024-00946-z" xlink:href="https://www.nature.com/articles/s42256-024-00946-z">
 <rect x="979.1111111111113" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
-<text x="1041.1111111111113" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.01</text>
-<text x="1041.1111111111113" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">LncRNA-BERT</text>
+<text x="1041.1111111111113" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2024.12</text>
+<text x="1041.1111111111113" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">PlantRNA-FM</text>
 </a>
-<line x1="1177.5555555555557" y1="442" x2="1177.5555555555557" y2="420" stroke="#f97316" stroke-width="2"/>
-<circle cx="1177.5555555555557" cy="442" r="10" fill="#f97316" stroke="#ffffff" stroke-width="4"/>
-<a href="https://arxiv.org/abs/2501.02045" xlink:href="https://arxiv.org/abs/2501.02045">
-<rect x="1115.5555555555557" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#f97316" stroke-width="1.4"/>
+<line x1="1177.5555555555557" y1="442" x2="1177.5555555555557" y2="420" stroke="#16a34a" stroke-width="2"/>
+<circle cx="1177.5555555555557" cy="442" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1" xlink:href="https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1">
+<rect x="1115.5555555555557" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
 <text x="1177.5555555555557" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.01</text>
-<text x="1177.5555555555557" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">METAGENE-1</text>
+<text x="1177.5555555555557" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">LncRNA-BERT</text>
 </a>
 <line x1="1314.0" y1="442" x2="1314.0" y2="420" stroke="#f97316" stroke-width="2"/>
 <circle cx="1314.0" cy="442" r="10" fill="#f97316" stroke="#ffffff" stroke-width="4"/>
-<a href="https://arxiv.org/abs/2502.07299" xlink:href="https://arxiv.org/abs/2502.07299">
+<a href="https://arxiv.org/abs/2501.02045" xlink:href="https://arxiv.org/abs/2501.02045">
 <rect x="1252.0" y="380" width="124" height="40" rx="8" fill="#ffffff" stroke="#f97316" stroke-width="1.4"/>
-<text x="1314.0" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.02</text>
-<text x="1314.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Life-Code</text>
+<text x="1314.0" y="395" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.01</text>
+<text x="1314.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">METAGENE-1</text>
 </a>
 <line x1="1314.0" y1="532" x2="1314.0" y2="554" stroke="#f97316" stroke-width="2"/>
 <circle cx="1314.0" cy="532" r="10" fill="#f97316" stroke="#ffffff" stroke-width="4"/>
-<a href="https://doi.org/10.1101/2025.02.18.638918" xlink:href="https://doi.org/10.1101/2025.02.18.638918">
+<a href="https://arxiv.org/abs/2502.07299" xlink:href="https://arxiv.org/abs/2502.07299">
 <rect x="1252.0" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#f97316" stroke-width="1.4"/>
 <text x="1314.0" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.02</text>
-<text x="1314.0" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Evo 2</text>
+<text x="1314.0" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Life-Code</text>
 </a>
-<line x1="1177.5555555555557" y1="532" x2="1177.5555555555557" y2="554" stroke="#2563eb" stroke-width="2"/>
-<circle cx="1177.5555555555557" cy="532" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://openreview.net/forum?id=cAiECLDjzF" xlink:href="https://openreview.net/forum?id=cAiECLDjzF">
-<rect x="1115.5555555555557" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="1177.5555555555557" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.03</text>
-<text x="1177.5555555555557" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">ChaRNABERT</text>
+<line x1="1177.5555555555557" y1="532" x2="1177.5555555555557" y2="554" stroke="#f97316" stroke-width="2"/>
+<circle cx="1177.5555555555557" cy="532" r="10" fill="#f97316" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1101/2025.02.18.638918" xlink:href="https://doi.org/10.1101/2025.02.18.638918">
+<rect x="1115.5555555555557" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#f97316" stroke-width="1.4"/>
+<text x="1177.5555555555557" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.02</text>
+<text x="1177.5555555555557" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Evo 2</text>
 </a>
 <line x1="1041.1111111111113" y1="532" x2="1041.1111111111113" y2="554" stroke="#2563eb" stroke-width="2"/>
 <circle cx="1041.1111111111113" cy="532" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://openreview.net/forum?id=Ky0CkFiVhu" xlink:href="https://openreview.net/forum?id=Ky0CkFiVhu">
+<a href="https://openreview.net/forum?id=cAiECLDjzF" xlink:href="https://openreview.net/forum?id=cAiECLDjzF">
 <rect x="979.1111111111113" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="1041.1111111111113" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.03</text>
-<text x="1041.1111111111113" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Helix-mRNA</text>
+<text x="1041.1111111111113" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">ChaRNABERT</text>
 </a>
 <line x1="904.6666666666667" y1="532" x2="904.6666666666667" y2="554" stroke="#2563eb" stroke-width="2"/>
 <circle cx="904.6666666666667" cy="532" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.nature.com/articles/s41467-025-60872-5" xlink:href="https://www.nature.com/articles/s41467-025-60872-5">
+<a href="https://openreview.net/forum?id=Ky0CkFiVhu" xlink:href="https://openreview.net/forum?id=Ky0CkFiVhu">
 <rect x="842.6666666666667" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="904.6666666666667" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.07</text>
-<text x="904.6666666666667" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RiNALMo</text>
+<text x="904.6666666666667" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.03</text>
+<text x="904.6666666666667" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Helix-mRNA</text>
 </a>
 <line x1="768.2222222222223" y1="532" x2="768.2222222222223" y2="554" stroke="#2563eb" stroke-width="2"/>
 <circle cx="768.2222222222223" cy="532" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1" xlink:href="https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1">
+<a href="https://www.nature.com/articles/s41467-025-60872-5" xlink:href="https://www.nature.com/articles/s41467-025-60872-5">
 <rect x="706.2222222222223" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="768.2222222222223" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.07</text>
-<text x="768.2222222222223" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNALens</text>
+<text x="768.2222222222223" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RiNALMo</text>
 </a>
-<line x1="631.7777777777778" y1="532" x2="631.7777777777778" y2="554" stroke="#16a34a" stroke-width="2"/>
-<circle cx="631.7777777777778" cy="532" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<line x1="631.7777777777778" y1="532" x2="631.7777777777778" y2="554" stroke="#2563eb" stroke-width="2"/>
+<circle cx="631.7777777777778" cy="532" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1" xlink:href="https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1">
+<rect x="569.7777777777778" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+<text x="631.7777777777778" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.07</text>
+<text x="631.7777777777778" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNALens</text>
+</a>
+<line x1="495.33333333333337" y1="532" x2="495.33333333333337" y2="554" stroke="#16a34a" stroke-width="2"/>
+<circle cx="495.33333333333337" cy="532" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
 <a href="https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1" xlink:href="https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1">
-<rect x="569.7777777777778" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
-<text x="631.7777777777778" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.08</text>
-<text x="631.7777777777778" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">StructRFM</text>
+<rect x="433.33333333333337" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="495.33333333333337" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.08</text>
+<text x="495.33333333333337" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">StructRFM</text>
 </a>
-<line x1="495.33333333333337" y1="532" x2="495.33333333333337" y2="554" stroke="#2563eb" stroke-width="2"/>
-<circle cx="495.33333333333337" cy="532" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<line x1="358.8888888888889" y1="532" x2="358.8888888888889" y2="554" stroke="#2563eb" stroke-width="2"/>
+<circle cx="358.8888888888889" cy="532" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
 <a href="https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1" xlink:href="https://www.biorxiv.org/content/10.1101/2025.09.05.674445v1">
-<rect x="433.33333333333337" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="495.33333333333337" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.09</text>
-<text x="495.33333333333337" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNA-BERTa</text>
-</a>
-<line x1="358.8888888888889" y1="532" x2="358.8888888888889" y2="554" stroke="#9333ea" stroke-width="2"/>
-<circle cx="358.8888888888889" cy="532" r="10" fill="#9333ea" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.sciencedirect.com/science/article/pii/S2405471225002042" xlink:href="https://www.sciencedirect.com/science/article/pii/S2405471225002042">
-<rect x="296.8888888888889" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#9333ea" stroke-width="1.4"/>
+<rect x="296.8888888888889" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="358.8888888888889" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.09</text>
-<text x="358.8888888888889" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">ProtRNA</text>
+<text x="358.8888888888889" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNA-BERTa</text>
 </a>
-<line x1="222.44444444444446" y1="532" x2="222.44444444444446" y2="554" stroke="#2563eb" stroke-width="2"/>
-<circle cx="222.44444444444446" cy="532" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/" xlink:href="https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/">
-<rect x="160.44444444444446" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="222.44444444444446" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.10</text>
-<text x="222.44444444444446" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">CodonFM</text>
+<line x1="222.44444444444446" y1="532" x2="222.44444444444446" y2="554" stroke="#9333ea" stroke-width="2"/>
+<circle cx="222.44444444444446" cy="532" r="10" fill="#9333ea" stroke="#ffffff" stroke-width="4"/>
+<a href="https://www.sciencedirect.com/science/article/pii/S2405471225002042" xlink:href="https://www.sciencedirect.com/science/article/pii/S2405471225002042">
+<rect x="160.44444444444446" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#9333ea" stroke-width="1.4"/>
+<text x="222.44444444444446" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.09</text>
+<text x="222.44444444444446" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">ProtRNA</text>
 </a>
 <line x1="86.0" y1="532" x2="86.0" y2="554" stroke="#2563eb" stroke-width="2"/>
 <circle cx="86.0" cy="532" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.nature.com/articles/s41467-025-64972-0" xlink:href="https://www.nature.com/articles/s41467-025-64972-0">
+<a href="https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/" xlink:href="https://developer.nvidia.com/blog/introducing-the-codonfm-open-model-for-rna-design-and-analysis/">
 <rect x="24.0" y="554" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="86.0" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.11</text>
-<text x="86.0" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">ERNIE-RNA</text>
+<text x="86.0" y="569" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.10</text>
+<text x="86.0" y="584" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">CodonFM</text>
 </a>
 <line x1="86.0" y1="664" x2="86.0" y2="642" stroke="#2563eb" stroke-width="2"/>
 <circle cx="86.0" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.nature.com/articles/s42003-025-08982-0" xlink:href="https://www.nature.com/articles/s42003-025-08982-0">
+<a href="https://www.nature.com/articles/s41467-025-64972-0" xlink:href="https://www.nature.com/articles/s41467-025-64972-0">
 <rect x="24.0" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="86.0" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.11</text>
-<text x="86.0" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">BiRNA-BERT</text>
+<text x="86.0" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">ERNIE-RNA</text>
 </a>
 <line x1="222.44444444444446" y1="664" x2="222.44444444444446" y2="642" stroke="#2563eb" stroke-width="2"/>
 <circle cx="222.44444444444446" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7" xlink:href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7">
+<a href="https://www.nature.com/articles/s42003-025-08982-0" xlink:href="https://www.nature.com/articles/s42003-025-08982-0">
 <rect x="160.44444444444446" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="222.44444444444446" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.11</text>
-<text x="222.44444444444446" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">HydraRNA</text>
+<text x="222.44444444444446" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">BiRNA-BERT</text>
 </a>
 <line x1="358.8888888888889" y1="664" x2="358.8888888888889" y2="642" stroke="#2563eb" stroke-width="2"/>
 <circle cx="358.8888888888889" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.nature.com/articles/s41467-025-65340-8" xlink:href="https://www.nature.com/articles/s41467-025-65340-8">
+<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7" xlink:href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03853-7">
 <rect x="296.8888888888889" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="358.8888888888889" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.11</text>
-<text x="358.8888888888889" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">mRNABERT</text>
+<text x="358.8888888888889" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">HydraRNA</text>
 </a>
-<line x1="495.33333333333337" y1="664" x2="495.33333333333337" y2="642" stroke="#16a34a" stroke-width="2"/>
-<circle cx="495.33333333333337" cy="664" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.nature.com/articles/s41467-025-65020-7" xlink:href="https://www.nature.com/articles/s41467-025-65020-7">
-<rect x="433.33333333333337" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<line x1="495.33333333333337" y1="664" x2="495.33333333333337" y2="642" stroke="#2563eb" stroke-width="2"/>
+<circle cx="495.33333333333337" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://www.nature.com/articles/s41467-025-65340-8" xlink:href="https://www.nature.com/articles/s41467-025-65340-8">
+<rect x="433.33333333333337" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="495.33333333333337" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.11</text>
-<text x="495.33333333333337" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">G4mer</text>
+<text x="495.33333333333337" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">mRNABERT</text>
 </a>
-<line x1="631.7777777777778" y1="664" x2="631.7777777777778" y2="642" stroke="#2563eb" stroke-width="2"/>
-<circle cx="631.7777777777778" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<line x1="631.7777777777778" y1="664" x2="631.7777777777778" y2="642" stroke="#16a34a" stroke-width="2"/>
+<circle cx="631.7777777777778" cy="664" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://www.nature.com/articles/s41467-025-65020-7" xlink:href="https://www.nature.com/articles/s41467-025-65020-7">
+<rect x="569.7777777777778" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="631.7777777777778" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.11</text>
+<text x="631.7777777777778" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">G4mer</text>
+</a>
+<line x1="768.2222222222223" y1="664" x2="768.2222222222223" y2="642" stroke="#2563eb" stroke-width="2"/>
+<circle cx="768.2222222222223" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
 <a href="https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1" xlink:href="https://www.biorxiv.org/content/10.64898/2025.12.22.695962v1">
-<rect x="569.7777777777778" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="631.7777777777778" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.12</text>
-<text x="631.7777777777778" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">mRNA-GPT</text>
-</a>
-<line x1="768.2222222222223" y1="664" x2="768.2222222222223" y2="642" stroke="#9333ea" stroke-width="2"/>
-<circle cx="768.2222222222223" cy="664" r="10" fill="#9333ea" stroke="#ffffff" stroke-width="4"/>
-<a href="https://academic.oup.com/nar/article/53/22/gkaf1345/8384118" xlink:href="https://academic.oup.com/nar/article/53/22/gkaf1345/8384118">
-<rect x="706.2222222222223" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#9333ea" stroke-width="1.4"/>
+<rect x="706.2222222222223" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="768.2222222222223" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.12</text>
-<text x="768.2222222222223" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">codonGPT</text>
+<text x="768.2222222222223" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">mRNA-GPT</text>
 </a>
-<line x1="904.6666666666667" y1="664" x2="904.6666666666667" y2="642" stroke="#2563eb" stroke-width="2"/>
-<circle cx="904.6666666666667" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3" xlink:href="https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3">
-<rect x="842.6666666666667" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="904.6666666666667" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.02</text>
-<text x="904.6666666666667" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">NUWA</text>
+<line x1="904.6666666666667" y1="664" x2="904.6666666666667" y2="642" stroke="#9333ea" stroke-width="2"/>
+<circle cx="904.6666666666667" cy="664" r="10" fill="#9333ea" stroke="#ffffff" stroke-width="4"/>
+<a href="https://academic.oup.com/nar/article/53/22/gkaf1345/8384118" xlink:href="https://academic.oup.com/nar/article/53/22/gkaf1345/8384118">
+<rect x="842.6666666666667" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#9333ea" stroke-width="1.4"/>
+<text x="904.6666666666667" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2025.12</text>
+<text x="904.6666666666667" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">codonGPT</text>
 </a>
 <line x1="1041.1111111111113" y1="664" x2="1041.1111111111113" y2="642" stroke="#2563eb" stroke-width="2"/>
 <circle cx="1041.1111111111113" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://doi.org/10.64898/2026.03.15.711950" xlink:href="https://doi.org/10.64898/2026.03.15.711950">
+<a href="https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3" xlink:href="https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3">
 <rect x="979.1111111111113" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
-<text x="1041.1111111111113" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.03</text>
-<text x="1041.1111111111113" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNAElectra</text>
+<text x="1041.1111111111113" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.02</text>
+<text x="1041.1111111111113" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">NUWA</text>
 </a>
 <line x1="1177.5555555555557" y1="664" x2="1177.5555555555557" y2="642" stroke="#2563eb" stroke-width="2"/>
 <circle cx="1177.5555555555557" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.nature.com/articles/s42003-026-09757-x" xlink:href="https://www.nature.com/articles/s42003-026-09757-x">
+<a href="https://doi.org/10.64898/2026.03.15.711950" xlink:href="https://doi.org/10.64898/2026.03.15.711950">
 <rect x="1115.5555555555557" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="1177.5555555555557" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.03</text>
-<text x="1177.5555555555557" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNAret</text>
+<text x="1177.5555555555557" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNAElectra</text>
 </a>
 <line x1="1314.0" y1="664" x2="1314.0" y2="642" stroke="#2563eb" stroke-width="2"/>
 <circle cx="1314.0" cy="664" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2" xlink:href="https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2">
+<a href="https://www.nature.com/articles/s42003-026-09757-x" xlink:href="https://www.nature.com/articles/s42003-026-09757-x">
 <rect x="1252.0" y="602" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="1314.0" y="617" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.03</text>
-<text x="1314.0" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">EVA</text>
+<text x="1314.0" y="632" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNAret</text>
 </a>
-<line x1="1314.0" y1="754" x2="1314.0" y2="776" stroke="#16a34a" stroke-width="2"/>
-<circle cx="1314.0" cy="754" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
-<a href="https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1" xlink:href="https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1">
-<rect x="1252.0" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<line x1="1314.0" y1="754" x2="1314.0" y2="776" stroke="#2563eb" stroke-width="2"/>
+<circle cx="1314.0" cy="754" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2" xlink:href="https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2">
+<rect x="1252.0" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="1314.0" y="791" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.03</text>
-<text x="1314.0" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">-</text>
+<text x="1314.0" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">EVA</text>
+</a>
+<line x1="1177.5555555555557" y1="754" x2="1177.5555555555557" y2="776" stroke="#16a34a" stroke-width="2"/>
+<circle cx="1177.5555555555557" cy="754" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1" xlink:href="https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1">
+<rect x="1115.5555555555557" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="1177.5555555555557" y="791" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.03</text>
+<text x="1177.5555555555557" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">-</text>
 </a>
 </svg>
