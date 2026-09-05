@@ -17,6 +17,13 @@ from scripts.render_model_timeline import render_timeline_svg
 DATA_DIR = Path(__file__).resolve().parent / "data"
 PAPERS_FILE = DATA_DIR / "papers.yaml"
 
+# GitHub strips <a> elements when it renders SVG, so the clickable timeline has
+# to be served with an image/svg+xml content type from outside github.com.
+# COLA-Laboratory is the canonical repository for that link: the discovery bot
+# runs there, so its main branch always holds the newest timeline. Mirrors keep
+# pointing here on purpose rather than at whichever fork serves the README.
+TIMELINE_INTERACTIVE_BASE_URL = "https://raw.githack.com/COLA-Laboratory/Awesome-RNA-Foundation-Models/main/assets"
+
 
 def load_papers(path=PAPERS_FILE):
     """Load confirmed RNA foundation-model entries from YAML."""
@@ -362,7 +369,7 @@ def render_model_timeline():
     versioned_svg = assets_dir / versioned_name
     versioned_svg.write_bytes(timeline_bytes)
     timeline_image = f"assets/{versioned_name}"
-    timeline_url = timeline_image
+    timeline_url = f"{TIMELINE_INTERACTIVE_BASE_URL}/{versioned_name}"
     rows = []
     rows.append("## Model Timeline")
     rows.append("")
@@ -370,7 +377,7 @@ def render_model_timeline():
     rows.append("")
     rows.append("**Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.")
     rows.append("")
-    rows.append(f"**Full-size view:** [open the SVG timeline]({timeline_url}). Opened in a browser from a local clone, model labels link straight to their source papers.")
+    rows.append(f"**Interactive view:** [open the SVG timeline]({timeline_url}) to click model labels and source papers.")
     rows.append("")
     rows.append(f"[![RNA foundation model timeline]({timeline_image})]({timeline_url})")
     rows.append("")
