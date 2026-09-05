@@ -738,9 +738,9 @@
   hf_url: https://huggingface.co/LucaGroup/LucaOne-default-step36M
   scope: rna_inclusive_broad
   category: DNA+RNA FM
-  abstract: Introduces LucaOne, a unified biological foundation model trained on nucleic acid (DNA and RNA) and protein
-    sequences from 169,861 species, supporting reusable embeddings and downstream tasks involving DNA, RNA, proteins,
-    and their interrelated pairs.
+  abstract: Introduces LucaOne, a unified biological foundation model trained on nucleic acid (DNA and RNA) and protein sequences
+    from 169,861 species, supporting reusable embeddings and downstream tasks involving DNA, RNA, proteins, and their interrelated
+    pairs.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -755,9 +755,9 @@
   hf_url: https://huggingface.co/metagene-ai/METAGENE-1
   scope: rna_inclusive_broad
   category: DNA+RNA FM
-  abstract: Introduces METAGENE-1, a 7B autoregressive metagenomic foundation model pre-trained on diverse metagenomic
-    DNA and RNA sequences, supporting genomic sequence embeddings, pathogen detection, biosurveillance, and pandemic
-    monitoring tasks.
+  abstract: Introduces METAGENE-1, a 7B autoregressive metagenomic foundation model pre-trained on diverse metagenomic DNA
+    and RNA sequences, supporting genomic sequence embeddings, pathogen detection, biosurveillance, and pandemic monitoring
+    tasks.
   architecture: Decoder-only
   tokenization: BPE
   table_architecture: Decoder-only
@@ -772,9 +772,9 @@
   hf_url: null
   scope: rna_inclusive_broad
   category: DNA+RNA FM
-  abstract: Introduces Life-Code, a central-dogma sequence foundation framework that unifies DNA, RNA/cDNA, amino-acid,
-    and multi-omics information into nucleotide-based sequences with codon tokenization and masked modeling over coding
-    and non-coding regions.
+  abstract: Introduces Life-Code, a central-dogma sequence foundation framework that unifies DNA, RNA/cDNA, amino-acid, and
+    multi-omics information into nucleotide-based sequences with codon tokenization and masked modeling over coding and non-coding
+    regions.
   architecture: Hybrid/SSM
   tokenization: Codon
   table_architecture: Hybrid long-sequence
@@ -791,9 +791,9 @@
   hf_url: https://huggingface.co/arcinstitute/evo2_40b
   scope: rna_inclusive_broad
   category: DNA+RNA FM
-  abstract: Introduces Evo 2, an open biological sequence foundation model trained on OpenGenome2 across all domains of
-    life; the released OpenGenome2 composition includes eukaryotic mRNAs and ncRNA sources such as RNAcentral and Rfam,
-    enabling broad nucleotide-sequence prediction and generation.
+  abstract: Introduces Evo 2, an open biological sequence foundation model trained on OpenGenome2 across all domains of life;
+    the released OpenGenome2 composition includes eukaryotic mRNAs and ncRNA sources such as RNAcentral and Rfam, enabling
+    broad nucleotide-sequence prediction and generation.
   architecture: Hybrid/SSM
   tokenization: SNT
   table_architecture: Hybrid (StripedHyena 2)
@@ -811,11 +811,30 @@
   scope: rna_inclusive_broad
   category: DNA+RNA FM
   abstract: Introduces OmniNA, an annotation-aware generative foundation model for nucleic acid sequences trained on NCBI
-    NT nucleotide sequences and annotations spanning genomic DNA and RNA, with reusable representations for genomics and
-    transcriptomics tasks.
+    NT nucleotide sequences and annotations spanning genomic DNA and RNA, with reusable representations for genomics and transcriptomics
+    tasks.
   architecture: Decoder-only
   tokenization: BPE
   table_architecture: Decoder-only
   params: 66M / 1.7B
   pretraining_data: NCBI NT DNA + RNA sequences + annotations (91.7M seqs, 1.076T bases)
   table_tokenization: BPE + annotation prompts
+- name: '-'
+  title: miRBind2 enables sequence-only prediction of miRNA binding and transcript repression
+  paper_url: https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1
+  date: '2026.03'
+  github_url: null
+  hf_url: null
+  scope: specialized_rna_fm
+  category: UTR FM
+  abstract: MotivationMicroRNAs (miRNAs) regulate gene expression by guiding Argonaute proteins to partially complementary
+    sites on target RNAs.
+  architecture: Encoder-only
+  tokenization: SNT
+  table_architecture: Encoder-only
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: SNT
+  review_status: auto_classified
+  discovered_at: '2026-05-20'
+  timeline_url: https://www.biorxiv.org/content/10.64898/2026.03.19.712027v1
