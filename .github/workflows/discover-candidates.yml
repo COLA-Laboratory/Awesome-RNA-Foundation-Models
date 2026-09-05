@@ -63,10 +63,12 @@ jobs:
 
           PR_BODY="Automated literature scan found new RNA sequence foundation-model candidates, auto-classified only strict-scope promotable entries into data/papers.yaml, and regenerated README.md plus assets/model_timeline.svg. Please verify the metadata, classification, and strict-scope fit before merging."
 
-          if gh pr view "$UPDATE_BRANCH" --json url --jq .url; then
-            gh pr edit "$UPDATE_BRANCH" \
+          OPEN_PR="$(gh pr list --head "$UPDATE_BRANCH" --state open --json url --jq '.[0].url // empty')"
+          if [ -n "$OPEN_PR" ]; then
+            gh pr edit "$OPEN_PR" \
               --title "Update RNA foundation model metadata" \
               --body "$PR_BODY"
+            echo "Updated existing open PR: $OPEN_PR"
             exit 0
           fi
 
