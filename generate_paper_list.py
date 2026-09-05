@@ -16,7 +16,6 @@ from scripts.render_model_timeline import render_timeline_svg
 # structured data rather than Python tuples.
 DATA_DIR = Path(__file__).resolve().parent / "data"
 PAPERS_FILE = DATA_DIR / "papers.yaml"
-TIMELINE_INTERACTIVE_BASE_URL = "https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets"
 
 
 def load_papers(path=PAPERS_FILE):
@@ -362,8 +361,8 @@ def render_model_timeline():
     versioned_name = f"model_timeline-{cache_key}.svg"
     versioned_svg = assets_dir / versioned_name
     versioned_svg.write_bytes(timeline_bytes)
-    timeline_url = f"{TIMELINE_INTERACTIVE_BASE_URL}/{versioned_name}"
     timeline_image = f"assets/{versioned_name}"
+    timeline_url = timeline_image
     rows = []
     rows.append("## Model Timeline")
     rows.append("")
@@ -371,7 +370,7 @@ def render_model_timeline():
     rows.append("")
     rows.append("**Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.")
     rows.append("")
-    rows.append(f"**Interactive view:** [open the SVG timeline]({timeline_url}) to click model labels and source papers.")
+    rows.append(f"**Full-size view:** [open the SVG timeline]({timeline_url}). Opened in a browser from a local clone, model labels link straight to their source papers.")
     rows.append("")
     rows.append(f"[![RNA foundation model timeline]({timeline_image})]({timeline_url})")
     rows.append("")

@@ -22,9 +22,9 @@ Timeline of 51 confirmed RNA sequence foundation model entries, generated from `
 
 **Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.
 
-**Interactive view:** [open the SVG timeline](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-ab14f94c485f.svg) to click model labels and source papers.
+**Full-size view:** [open the SVG timeline](assets/model_timeline-ab14f94c485f.svg). Opened in a browser from a local clone, model labels link straight to their source papers.
 
-[![RNA foundation model timeline](assets/model_timeline-ab14f94c485f.svg)](https://raw.githack.com/YuanLi-X/Awesome-RNA-Foundation-Models/main/assets/model_timeline-ab14f94c485f.svg)
+[![RNA foundation model timeline](assets/model_timeline-ab14f94c485f.svg)](assets/model_timeline-ab14f94c485f.svg)
 
 ---
 
