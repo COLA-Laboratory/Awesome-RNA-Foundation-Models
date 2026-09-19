@@ -827,9 +827,9 @@
   hf_url: https://huggingface.co/SII-GAIR-NLP/RIBOSPAN-FM
   scope: core_rna_fm
   category: General RNA FM
-  abstract: Presents RIBOSPAN, a 1.61B-parameter bidirectional Transformer encoder pre-trained with two-stage masked
-    language modeling on 67.6M RNA sequences (85.7B nucleotides) drawn from RNAcentral and Ensembl, using RoPE and a
-    native 10,240-nt context so full-length transcripts are modelled at single-nucleotide resolution.
+  abstract: Presents RIBOSPAN, a 1.61B-parameter bidirectional Transformer encoder pre-trained with two-stage masked language
+    modeling on 67.6M RNA sequences (85.7B nucleotides) drawn from RNAcentral and Ensembl, using RoPE and a native 10,240-nt
+    context so full-length transcripts are modelled at single-nucleotide resolution.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
@@ -864,8 +864,8 @@
   scope: core_rna_fm
   category: mRNA/CDS FM
   abstract: Presents CodonMamba, a 71M-parameter bidirectional Mamba encoder pre-trained with codon-level masked language
-    modeling on 8.8M coding sequences from 1,544 organisms, serving as a reusable backbone whose frozen representations
-    transfer across 12 mRNA design and property-prediction benchmarks.
+    modeling on 8.8M coding sequences from 1,544 organisms, serving as a reusable backbone whose frozen representations transfer
+    across 12 mRNA design and property-prediction benchmarks.
   architecture: Hybrid/SSM
   tokenization: Codon
   table_architecture: Hybrid (BiMamba)
@@ -882,13 +882,171 @@
   hf_url: null
   scope: specialized_rna_fm
   category: General RNA FM
-  abstract: Presents UltraGen, a 33.5M-parameter BERT-style encoder pre-trained with motif-level span masking and rotary
-    position embeddings on the UltraSelex corpus of over 10M in vitro-synthesized RNA sequences, transferring zero-shot to
-    RNA interaction tasks including virus tropism classification, tissue-specific expression and protein-binding affinity
-    ranking.
+  abstract: Presents UltraGen, a 33.5M-parameter BERT-style encoder pre-trained with motif-level span masking and rotary position
+    embeddings on the UltraSelex corpus of over 10M in vitro-synthesized RNA sequences, transferring zero-shot to RNA interaction
+    tasks including virus tropism classification, tissue-specific expression and protein-binding affinity ranking.
   architecture: Encoder-only
   tokenization: SNT
   table_architecture: Encoder-only
   params: 33.5M
   pretraining_data: UltraSelex (10M in vitro-synthesized RNA seqs)
   table_tokenization: SNT
+- name: RNA
+  title: 'Machine learning and language models for RNA structure prediction: Progress and perspectives'
+  paper_url: https://doi.org/10.1016/j.sbi.2026.103339
+  date: '2026.10'
+  github_url: null
+  hf_url: null
+  scope: specialized_rna_fm
+  category: Structure-aware FM
+  abstract: Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+  architecture: Encoder-only
+  tokenization: SNT
+  table_architecture: Encoder-only
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: SNT
+  review_status: auto_classified
+  discovered_at: '2026-09-19'
+- name: LncPNdeep
+  title: 'LncPNdeep: A long non-coding RNA classifier based on large language model with peptide and nucleotide embedding'
+  paper_url: https://doi.org/10.1016/j.ncrna.2026.06.004
+  date: '2026.10'
+  github_url: null
+  hf_url: null
+  scope: core_rna_fm
+  category: General RNA FM
+  abstract: Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+  architecture: Encoder-only
+  tokenization: SNT
+  table_architecture: Encoder-only
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: SNT
+  review_status: auto_classified
+  discovered_at: '2026-09-19'
+- name: UFold-X
+  title: 'UFold-X: an enhanced Dual &amp; Dynamic U-Mamba model for long-range RNA secondary structure prediction'
+  paper_url: https://doi.org/10.1093/nar/gkag887
+  date: '2026.09'
+  github_url: null
+  hf_url: null
+  scope: specialized_rna_fm
+  category: Structure-aware FM
+  abstract: Abstract RNA secondary structure is essential for understanding the functions of non-coding RNAs, ribosomal RNAs,
+    and viral genomes.
+  architecture: Hybrid/SSM
+  tokenization: SNT
+  table_architecture: Hybrid / SSM
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: SNT
+  review_status: auto_classified
+  discovered_at: '2026-09-19'
+- name: GEPMC-Loc
+  title: 'GEPMC-Loc: a dynamic gated ensemble network fusing pre-trained language models and multi-scale convolution for RNA
+    subcellular localization'
+  paper_url: https://doi.org/10.1186/s12859-026-06646-2
+  date: '2026.09'
+  github_url: null
+  hf_url: null
+  scope: core_rna_fm
+  category: General RNA FM
+  abstract: Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+  architecture: Encoder-only
+  tokenization: SNT
+  table_architecture: Encoder-only
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: SNT
+  review_status: auto_classified
+  discovered_at: '2026-09-19'
+- name: DNA
+  title: Environment-Aware DNA Language Model for Stress-Responsive Genomic Prioritization in Maize
+  paper_url: https://doi.org/10.64898/2026.09.11.749989
+  date: '2026.09'
+  github_url: null
+  hf_url: null
+  scope: specialized_rna_fm
+  category: Specific RNA FM
+  abstract: Abstract Abiotic stresses such as heat and drought severely reduce maize productivity, yet identifying genomic
+    regions that confer stress resilience remains a challenge.
+  architecture: Encoder-only
+  tokenization: SNT
+  table_architecture: Encoder-only
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: SNT
+  review_status: auto_classified
+  discovered_at: '2026-09-19'
+- name: CDS-BART
+  title: 'CDS-BART: A BART-Based Foundation Model for mRNA Sequence Analysis'
+  paper_url: https://doi.org/10.1093/bioadv/vbag259
+  date: '2026.09'
+  github_url: null
+  hf_url: null
+  scope: core_rna_fm
+  category: mRNA/CDS FM
+  abstract: Abstract Summary Recent advancements in artificial intelligence (AI) have led to the development of foundation
+    models that interpret mRNA as a language.
+  architecture: Encoder-Decoder
+  tokenization: Codon
+  table_architecture: Encoder-Decoder
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: Codon-level
+  review_status: auto_classified
+  discovered_at: '2026-09-19'
+- name: GRASSP
+  title: 'GRASSP: RNA language model–enhanced graph attention with adaptive gating for RNA–small molecule binding site prediction'
+  paper_url: https://doi.org/10.1093/bioinformatics/btag638
+  date: '2026.08'
+  github_url: null
+  hf_url: null
+  scope: specialized_rna_fm
+  category: Structure-aware FM
+  abstract: Abstract Motivation RNA–small molecule binding site prediction is crucial for targeted drug discovery.
+  architecture: Encoder-only
+  tokenization: SNT
+  table_architecture: Encoder-only
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: SNT
+  review_status: auto_classified
+  discovered_at: '2026-09-19'
+- name: UTR
+  title: Deciphering the comprehensive relationship between 5′ UTR and 3′ UTR sequences with deep learning
+  paper_url: https://doi.org/10.1093/bioinformatics/btag634
+  date: '2026.08'
+  github_url: null
+  hf_url: null
+  scope: specialized_rna_fm
+  category: UTR FM
+  abstract: Abstract Motivation Recent advances in mRNA therapeutics have driven further research on the untranslated regions
+    (UTRs) of mRNA.
+  architecture: Encoder-only
+  tokenization: SNT
+  table_architecture: Encoder-only
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: SNT
+  review_status: auto_classified
+  discovered_at: '2026-09-19'
+- name: '-'
+  title: Assessing Codon Language Models for Context-Aware Codon Optimization in Nucleic Acid-Based Medicines
+  paper_url: https://doi.org/10.64898/2026.08.11.744178
+  date: '2026.08'
+  github_url: null
+  hf_url: null
+  scope: rna_inclusive_broad
+  category: DNA+RNA FM
+  abstract: Abstract Codon optimization uses synonymous sequence changes to improve the expression and therapeutic performance
+    of nucleic acid-based medicines.
+  architecture: Decoder-only
+  tokenization: Codon
+  table_architecture: Decoder-only
+  params: '-'
+  pretraining_data: '-'
+  table_tokenization: Codon-level
+  review_status: auto_classified
+  discovered_at: '2026-09-19'
