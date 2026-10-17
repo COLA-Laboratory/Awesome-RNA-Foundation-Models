@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="838" viewBox="0 0 1400 838">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="970" viewBox="0 0 1400 970">
 <rect width="100%" height="100%" fill="#fbfbfd"/>
 <text x="34" y="42" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#111827" text-anchor="start">RNA Foundation Model Timeline</text>
-<text x="34" y="72" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#6b7280" text-anchor="start">Auto-generated from data/papers.yaml • 54 confirmed RNA sequence foundation model entries</text>
+<text x="34" y="72" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#6b7280" text-anchor="start">Auto-generated from data/papers.yaml • 65 confirmed RNA sequence foundation model entries</text>
 <rect x="34" y="88" width="980" height="44" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
 <text x="52" y="106" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="start">Timeline dates use first public model/preprint release, not necessarily formal publication.</text>
 <text x="52" y="124" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="start">Read each row in the arrow direction, then continue to the next row.</text>
@@ -25,9 +25,11 @@
 <text x="1352.0" y="539" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#525252" text-anchor="middle">←</text>
 <line x1="86.0" y1="664" x2="1314.0" y2="664" stroke="#e5e7eb" stroke-width="1"/>
 <text x="48.0" y="671" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#525252" text-anchor="middle">→</text>
-<line x1="904.6666666666667" y1="754" x2="1314.0" y2="754" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="86.0" y1="754" x2="1314.0" y2="754" stroke="#e5e7eb" stroke-width="1"/>
 <text x="1352.0" y="761" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#525252" text-anchor="middle">←</text>
-<polyline points="86.0,220 222.44444444444446,220 358.8888888888889,220 495.33333333333337,220 631.7777777777778,220 768.2222222222223,220 904.6666666666667,220 1041.1111111111113,220 1177.5555555555557,220 1314.0,220 1314.0,310 1177.5555555555557,310 1041.1111111111113,310 904.6666666666667,310 768.2222222222223,310 631.7777777777778,310 495.33333333333337,310 358.8888888888889,310 222.44444444444446,310 86.0,310 86.0,442 222.44444444444446,442 358.8888888888889,442 495.33333333333337,442 631.7777777777778,442 768.2222222222223,442 904.6666666666667,442 1041.1111111111113,442 1177.5555555555557,442 1314.0,442 1314.0,532 1177.5555555555557,532 1041.1111111111113,532 904.6666666666667,532 768.2222222222223,532 631.7777777777778,532 495.33333333333337,532 358.8888888888889,532 222.44444444444446,532 86.0,532 86.0,664 222.44444444444446,664 358.8888888888889,664 495.33333333333337,664 631.7777777777778,664 768.2222222222223,664 904.6666666666667,664 1041.1111111111113,664 1177.5555555555557,664 1314.0,664 1314.0,754 1177.5555555555557,754 1041.1111111111113,754 904.6666666666667,754" fill="none" stroke="#404040" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="86.0" y1="886" x2="631.7777777777778" y2="886" stroke="#e5e7eb" stroke-width="1"/>
+<text x="48.0" y="893" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#525252" text-anchor="middle">→</text>
+<polyline points="86.0,220 222.44444444444446,220 358.8888888888889,220 495.33333333333337,220 631.7777777777778,220 768.2222222222223,220 904.6666666666667,220 1041.1111111111113,220 1177.5555555555557,220 1314.0,220 1314.0,310 1177.5555555555557,310 1041.1111111111113,310 904.6666666666667,310 768.2222222222223,310 631.7777777777778,310 495.33333333333337,310 358.8888888888889,310 222.44444444444446,310 86.0,310 86.0,442 222.44444444444446,442 358.8888888888889,442 495.33333333333337,442 631.7777777777778,442 768.2222222222223,442 904.6666666666667,442 1041.1111111111113,442 1177.5555555555557,442 1314.0,442 1314.0,532 1177.5555555555557,532 1041.1111111111113,532 904.6666666666667,532 768.2222222222223,532 631.7777777777778,532 495.33333333333337,532 358.8888888888889,532 222.44444444444446,532 86.0,532 86.0,664 222.44444444444446,664 358.8888888888889,664 495.33333333333337,664 631.7777777777778,664 768.2222222222223,664 904.6666666666667,664 1041.1111111111113,664 1177.5555555555557,664 1314.0,664 1314.0,754 1177.5555555555557,754 1041.1111111111113,754 904.6666666666667,754 768.2222222222223,754 631.7777777777778,754 495.33333333333337,754 358.8888888888889,754 222.44444444444446,754 86.0,754 86.0,886 222.44444444444446,886 358.8888888888889,886 495.33333333333337,886 631.7777777777778,886" fill="none" stroke="#404040" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 <line x1="86.0" y1="220" x2="86.0" y2="198" stroke="#16a34a" stroke-width="2"/>
 <circle cx="86.0" cy="220" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
 <a href="https://pubmed.ncbi.nlm.nih.gov/35211670/" xlink:href="https://pubmed.ncbi.nlm.nih.gov/35211670/">
@@ -405,5 +407,82 @@
 <rect x="842.6666666666667" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
 <text x="904.6666666666667" y="791" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.08</text>
 <text x="904.6666666666667" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">CodonMamba</text>
+</a>
+<line x1="768.2222222222223" y1="754" x2="768.2222222222223" y2="776" stroke="#2563eb" stroke-width="2"/>
+<circle cx="768.2222222222223" cy="754" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.64898/2026.09.17.752258" xlink:href="https://doi.org/10.64898/2026.09.17.752258">
+<rect x="706.2222222222223" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+<text x="768.2222222222223" y="791" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.09</text>
+<text x="768.2222222222223" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">miRstring</text>
+</a>
+<line x1="631.7777777777778" y1="754" x2="631.7777777777778" y2="776" stroke="#2563eb" stroke-width="2"/>
+<circle cx="631.7777777777778" cy="754" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1075/ijcl.24172.pac" xlink:href="https://doi.org/10.1075/ijcl.24172.pac">
+<rect x="569.7777777777778" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+<text x="631.7777777777778" y="791" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.09</text>
+<text x="631.7777777777778" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">GPT</text>
+</a>
+<line x1="495.33333333333337" y1="754" x2="495.33333333333337" y2="776" stroke="#16a34a" stroke-width="2"/>
+<circle cx="495.33333333333337" cy="754" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1093/nar/gkag887" xlink:href="https://doi.org/10.1093/nar/gkag887">
+<rect x="433.33333333333337" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="495.33333333333337" y="791" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.09</text>
+<text x="495.33333333333337" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">UFold-X</text>
+</a>
+<line x1="358.8888888888889" y1="754" x2="358.8888888888889" y2="776" stroke="#f97316" stroke-width="2"/>
+<circle cx="358.8888888888889" cy="754" r="10" fill="#f97316" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.64898/2026.09.24.754173" xlink:href="https://doi.org/10.64898/2026.09.24.754173">
+<rect x="296.8888888888889" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#f97316" stroke-width="1.4"/>
+<text x="358.8888888888889" y="791" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.09</text>
+<text x="358.8888888888889" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNASeek</text>
+</a>
+<line x1="222.44444444444446" y1="754" x2="222.44444444444446" y2="776" stroke="#2563eb" stroke-width="2"/>
+<circle cx="222.44444444444446" cy="754" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1186/s12859-026-06646-2" xlink:href="https://doi.org/10.1186/s12859-026-06646-2">
+<rect x="160.44444444444446" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+<text x="222.44444444444446" y="791" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.09</text>
+<text x="222.44444444444446" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">GEPMC-Loc</text>
+</a>
+<line x1="86.0" y1="754" x2="86.0" y2="776" stroke="#16a34a" stroke-width="2"/>
+<circle cx="86.0" cy="754" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.64898/2026.09.11.749989" xlink:href="https://doi.org/10.64898/2026.09.11.749989">
+<rect x="24.0" y="776" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="86.0" y="791" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.09</text>
+<text x="86.0" y="806" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">DNA</text>
+</a>
+<line x1="86.0" y1="886" x2="86.0" y2="864" stroke="#2563eb" stroke-width="2"/>
+<circle cx="86.0" cy="886" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1093/bioadv/vbag259" xlink:href="https://doi.org/10.1093/bioadv/vbag259">
+<rect x="24.0" y="824" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+<text x="86.0" y="839" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.09</text>
+<text x="86.0" y="854" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">CDS-BART</text>
+</a>
+<line x1="222.44444444444446" y1="886" x2="222.44444444444446" y2="864" stroke="#16a34a" stroke-width="2"/>
+<circle cx="222.44444444444446" cy="886" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="http://arxiv.org/abs/2610.13106v1" xlink:href="http://arxiv.org/abs/2610.13106v1">
+<rect x="160.44444444444446" y="824" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="222.44444444444446" y="839" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.10</text>
+<text x="222.44444444444446" y="854" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNA</text>
+</a>
+<line x1="358.8888888888889" y1="886" x2="358.8888888888889" y2="864" stroke="#2563eb" stroke-width="2"/>
+<circle cx="358.8888888888889" cy="886" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="http://arxiv.org/abs/2610.03098v1" xlink:href="http://arxiv.org/abs/2610.03098v1">
+<rect x="296.8888888888889" y="824" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+<text x="358.8888888888889" y="839" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.10</text>
+<text x="358.8888888888889" y="854" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">-</text>
+</a>
+<line x1="495.33333333333337" y1="886" x2="495.33333333333337" y2="864" stroke="#16a34a" stroke-width="2"/>
+<circle cx="495.33333333333337" cy="886" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.20944/preprints202609.2495.v2" xlink:href="https://doi.org/10.20944/preprints202609.2495.v2">
+<rect x="433.33333333333337" y="824" width="124" height="40" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="495.33333333333337" y="839" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.10</text>
+<text x="495.33333333333337" y="854" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">RNA-FM</text>
+</a>
+<line x1="631.7777777777778" y1="886" x2="631.7777777777778" y2="864" stroke="#2563eb" stroke-width="2"/>
+<circle cx="631.7777777777778" cy="886" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+<a href="https://doi.org/10.1016/j.ncrna.2026.06.004" xlink:href="https://doi.org/10.1016/j.ncrna.2026.06.004">
+<rect x="569.7777777777778" y="824" width="124" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+<text x="631.7777777777778" y="839" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">2026.10</text>
+<text x="631.7777777777778" y="854" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">LncPNdeep</text>
 </a>
 </svg>
