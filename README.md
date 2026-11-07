@@ -10,7 +10,7 @@ A curated, continuously updated catalog of **RNA sequence foundation models**, c
 
 - [Model Timeline](#model-timeline) — Auto-generated timeline for confirmed RNA sequence foundation model entries
 - [Paper List](#paper-list) — RNA sequence foundation models (4 views), Benchmarks, Surveys
-- [Detailed Tables](#detailed-tables) — Detailed tables for all 54 model entries, 12 benchmarks, 3 surveys
+- [Detailed Tables](#detailed-tables) — Detailed tables for all 62 model entries, 12 benchmarks, 3 surveys
 - [Abbreviations](#abbreviations)
 - [Contributing](#contributing)
 
@@ -18,13 +18,13 @@ A curated, continuously updated catalog of **RNA sequence foundation models**, c
 
 ## Model Timeline
 
-Timeline of 54 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
+Timeline of 62 confirmed RNA sequence foundation model entries, generated from `data/papers.yaml` whenever confirmed metadata is refreshed.
 
 **Date note:** timeline dates use each model's first public release or preprint when available; paper-list dates below use formal publication or conference dates when available.
 
-**Interactive view:** [open the SVG timeline](https://raw.githack.com/COLA-Laboratory/Awesome-RNA-Foundation-Models/main/assets/model_timeline-f2ad12e51f40.svg) to click model labels and source papers.
+**Interactive view:** [open the SVG timeline](https://raw.githack.com/COLA-Laboratory/Awesome-RNA-Foundation-Models/main/assets/model_timeline-c016ada73d42.svg) to click model labels and source papers.
 
-[![RNA foundation model timeline](assets/model_timeline-f2ad12e51f40.svg)](https://raw.githack.com/COLA-Laboratory/Awesome-RNA-Foundation-Models/main/assets/model_timeline-f2ad12e51f40.svg)
+[![RNA foundation model timeline](assets/model_timeline-c016ada73d42.svg)](https://raw.githack.com/COLA-Laboratory/Awesome-RNA-Foundation-Models/main/assets/model_timeline-c016ada73d42.svg)
 
 ---
 
@@ -54,7 +54,7 @@ A survey list of RNA sequence foundation models and RNA-inclusive sequence found
 <blockquote>
 
 <details open>
-<summary><b>Core RNA Foundation Models (25)</b></summary>
+<summary><b>Core RNA Foundation Models (31)</b></summary>
 
 Primary contribution is a reusable RNA or mRNA sequence foundation model pre-trained on raw nucleotide sequences and intended for broad downstream transfer or generation.
 
@@ -158,10 +158,34 @@ Primary contribution is a reusable RNA or mRNA sequence foundation model pre-tra
 
   > Presents NucleicBERT, a 404M-parameter encoder pre-trained with masked language modeling on 30M non-coding RNA sequences from MARS, learning structural and functional organisation of RNA sequence space from single sequences without alignments or evolutionary information.
 
+- **-** — [Predictor-Guided Latent Space Codon Optimization for Maximizing Protein Expression](http://arxiv.org/abs/2610.03098v2) (2026.10, preprint) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](http://arxiv.org/abs/2610.03098v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](http://arxiv.org/abs/2610.03098v2)
+
+  > Codon optimization, the process of selecting synonymous codons to improve mRNA translation efficiency and protein expression, is central to therapeutic protein production and mRNA vaccines, yet it remains a hard problem.
+
+- **LncPNdeep** — [LncPNdeep: A long non-coding RNA classifier based on large language model with peptide and nucleotide embedding](https://doi.org/10.1016/j.ncrna.2026.06.004) (2026.10) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.1016/j.ncrna.2026.06.004)
+
+  > Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+
+- **RNAflash** — [RNAflash: Fast and Sensitive Structure-aware RNA Homology Detection and Alignment](https://doi.org/10.21203/rs.3.rs-11489874/v1) (2026.11) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.21203/rs.3.rs-11489874/v1)
+
+  > Abstract RNA homology search plays a crucial role in RNA structure prediction, facing a trade-off between sensitivity and speed.
+
+- **LIMBER** — [LIMBER: A Hybrid RNA Foundation Model for Predicting and Understanding RNA Structure and Function](https://doi.org/10.64898/2026.10.28.762670) (2026.11, preprint) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.64898/2026.10.28.762670) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.10.28.762670)
+
+  > Abstract RNA foundation models offer a promising route to decoding the relationships between RNA sequence, structure and function, yet how model shapes the acquisition and organization of biological information remains poorly understood.
+
+- **Ernie-Switcher** — [Ernie-Switcher: RNA foundation model-guided design of programmable RNA devices in a navigable landscape](https://doi.org/10.1093/bioinformatics/btag774) (2026.11) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.1093/bioinformatics/btag774)
+
+  > Abstract Motivation Recent advances in biological foundation models have enabled new opportunities for data-driven molecular engineering.
+
+- **RNA** — [Large Language Models in RNA–RNA Interaction Prediction](https://doi.org/10.1007/978-1-0716-5567-2_25) (2027) [![abs](https://img.shields.io/badge/abs-2027-b31b1b.svg)](https://doi.org/10.1007/978-1-0716-5567-2_25)
+
+  > Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+
 </details>
 
 <details open>
-<summary><b>Specialized RNA Foundation Models (20)</b></summary>
+<summary><b>Specialized RNA Foundation Models (22)</b></summary>
 
 RNA-specific pre-training is present, but the scope is constrained by RNA subtype, species, structural modality, or a narrow biological question.
 
@@ -244,6 +268,14 @@ RNA-specific pre-training is present, but the scope is constrained by RNA subtyp
 - **Orthrus** — [Orthrus: toward evolutionary and functional RNA foundation models](https://www.nature.com/articles/s41592-026-03064-3) (2026.04) [![abs](https://img.shields.io/badge/abs-2026.04-b31b1b.svg)](https://www.nature.com/articles/s41592-026-03064-3) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/quietflamingo/orthrus-large-4-track)
 
   > Introduces Orthrus, a Mamba-based mature RNA foundation model using contrastive learning on transcript isoforms and cross-species orthologs to learn evolutionary and functional RNA representations.
+
+- **RNA-FM** — [Pairwise Embedding Distance from RNA-FM Predicts siRNA Efficacy Within the PCSK9 3′UTR Hot Spot](https://doi.org/10.20944/preprints202609.2495.v2) (2026.10) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.20944/preprints202609.2495.v2)
+
+  > Motivation.
+
+- **LigRNA** — [LigRNA: High-accuracy prediction of RNA-ligand binding sites via dynamic chemical complementarity and language model encoding](https://doi.org/10.64898/2026.10.15.759315) (2026.10, preprint) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.64898/2026.10.15.759315) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.10.15.759315)
+
+  > Abstract RNA-binding small molecules represent a validated therapeutic modality, yet pinpointing their exact RNA binding sites remains critical for mechanistic understanding and drug optimization.
 
 </details>
 
@@ -380,7 +412,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 </details>
 
 <details open>
-<summary><b>mRNA / CDS Sequence Models (12)</b></summary>
+<summary><b>mRNA / CDS Sequence Models (13)</b></summary>
 
 - **GenSLM** — [GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics](https://doi.org/10.1177/10943420231201154) (2023.11) [![abs](https://img.shields.io/badge/abs-2023.11-b31b1b.svg)](https://doi.org/10.1177/10943420231201154)
 
@@ -430,10 +462,14 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 
   > Presents CodonMamba, a 71M-parameter bidirectional Mamba encoder pre-trained with codon-level masked language modeling on 8.8M coding sequences from 1,544 organisms, serving as a reusable backbone whose frozen representations transfer across 12 mRNA design and property-prediction benchmarks.
 
+- **-** — [Predictor-Guided Latent Space Codon Optimization for Maximizing Protein Expression](http://arxiv.org/abs/2610.03098v2) (2026.10, preprint) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](http://arxiv.org/abs/2610.03098v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](http://arxiv.org/abs/2610.03098v2)
+
+  > Codon optimization, the process of selecting synonymous codons to improve mRNA translation efficiency and protein expression, is central to therapeutic protein production and mRNA vaccines, yet it remains a hard problem.
+
 </details>
 
 <details open>
-<summary><b>UTR Sequence Models (2)</b></summary>
+<summary><b>UTR Sequence Models (3)</b></summary>
 
 - **UTR-LM** — [A 5′ UTR language model for decoding untranslated regions of mRNA and function predictions](https://www.nature.com/articles/s42256-024-00823-9) (2024.04) [![abs](https://img.shields.io/badge/abs-2024.04-b31b1b.svg)](https://www.nature.com/articles/s42256-024-00823-9) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/multimolecule/utrlm-te_el)
 
@@ -442,6 +478,10 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 - **3UTRBERT** — [Deciphering 3'UTR Mediated Gene Regulation Using Interpretable Deep Representation Learning](https://doi.org/10.1002/advs.202407013) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1002/advs.202407013) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/yangyn533/3UTRBERT)
 
   > Presents 3UTRBERT, a BERT model pre-trained on GENCODE 3'UTR sequences using 3-mer tokenization, capturing regulatory motifs for predicting mRNA stability, polyadenylation, and subcellular localization.
+
+- **RNA-FM** — [Pairwise Embedding Distance from RNA-FM Predicts siRNA Efficacy Within the PCSK9 3′UTR Hot Spot](https://doi.org/10.20944/preprints202609.2495.v2) (2026.10) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.20944/preprints202609.2495.v2)
+
+  > Motivation.
 
 </details>
 
@@ -475,7 +515,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 </details>
 
 <details open>
-<summary><b>Structure-aware RNA Models (4)</b></summary>
+<summary><b>Structure-aware RNA Models (5)</b></summary>
 
 - **ATOM-1** — [ATOM-1: A Foundation Model for RNA Structure and Function Built on Chemical Mapping Data](https://doi.org/10.1101/2023.12.13.571579) (2023.12, preprint) [![abs](https://img.shields.io/badge/abs-2023.12-b31b1b.svg)](https://doi.org/10.1101/2023.12.13.571579) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2023.12.13.571579)
 
@@ -493,10 +533,14 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 
   > Presents StructRFM, a structure-guided RNA foundation model pre-trained on 21M sequence-structure pairs, integrating predicted secondary structure information during pre-training for enhanced RNA representation learning.
 
+- **LigRNA** — [LigRNA: High-accuracy prediction of RNA-ligand binding sites via dynamic chemical complementarity and language model encoding](https://doi.org/10.64898/2026.10.15.759315) (2026.10, preprint) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.64898/2026.10.15.759315) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.10.15.759315)
+
+  > Abstract RNA-binding small molecules represent a validated therapeutic modality, yet pinpointing their exact RNA binding sites remains critical for mechanistic understanding and drug optimization.
+
 </details>
 
 <details open>
-<summary><b>RNA Generative Models (3)</b></summary>
+<summary><b>RNA Generative Models (6)</b></summary>
 
 - **GenerRNA** — [GenerRNA: A generative pre-trained language model for de novo RNA design](https://doi.org/10.1371/journal.pone.0310814) (2024.10) [![abs](https://img.shields.io/badge/abs-2024.10-b31b1b.svg)](https://doi.org/10.1371/journal.pone.0310814) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/pfnet/GenerRNA)
 
@@ -510,10 +554,22 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 
   > Introduces EVA, a Mixture-of-Experts decoder model for long-context RNA sequence generation, trained on 114M+ full-length RNA sequences for generating diverse functional RNA molecules at unprecedented lengths.
 
+- **RNAflash** — [RNAflash: Fast and Sensitive Structure-aware RNA Homology Detection and Alignment](https://doi.org/10.21203/rs.3.rs-11489874/v1) (2026.11) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.21203/rs.3.rs-11489874/v1)
+
+  > Abstract RNA homology search plays a crucial role in RNA structure prediction, facing a trade-off between sensitivity and speed.
+
+- **LIMBER** — [LIMBER: A Hybrid RNA Foundation Model for Predicting and Understanding RNA Structure and Function](https://doi.org/10.64898/2026.10.28.762670) (2026.11, preprint) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.64898/2026.10.28.762670) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.10.28.762670)
+
+  > Abstract RNA foundation models offer a promising route to decoding the relationships between RNA sequence, structure and function, yet how model shapes the acquisition and organization of biological information remains poorly understood.
+
+- **Ernie-Switcher** — [Ernie-Switcher: RNA foundation model-guided design of programmable RNA devices in a navigable landscape](https://doi.org/10.1093/bioinformatics/btag774) (2026.11) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.1093/bioinformatics/btag774)
+
+  > Abstract Motivation Recent advances in biological foundation models have enabled new opportunities for data-driven molecular engineering.
+
 </details>
 
 <details open>
-<summary><b>General / Other RNA Models (5)</b></summary>
+<summary><b>General / Other RNA Models (7)</b></summary>
 
 - **Uni-RNA** — [Uni-RNA: Universal Pre-trained Models for RNA across Species](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1) (2023.07, preprint) [![abs](https://img.shields.io/badge/abs-2023.07-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2023.07.11.548588v1) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ComDec/unirna_tf)
 
@@ -534,6 +590,14 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 - **RIBOSPAN** — [RIBOSPAN: A Long-Context RNA Foundation Model for Versatile RNA Modeling](https://arxiv.org/abs/2608.22849v2) (2026.08, preprint) [![abs](https://img.shields.io/badge/abs-2026.08-b31b1b.svg)](https://arxiv.org/abs/2608.22849v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://arxiv.org/abs/2608.22849v2) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/GAIR-NLP/RIBOSPAN-FM) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/SII-GAIR-NLP/RIBOSPAN-FM)
 
   > Presents RIBOSPAN, a 1.61B-parameter bidirectional Transformer encoder pre-trained with two-stage masked language modeling on 67.6M RNA sequences (85.7B nucleotides) drawn from RNAcentral and Ensembl, using RoPE and a native 10,240-nt context so full-length transcripts are modelled at single-nucleotide resolution.
+
+- **LncPNdeep** — [LncPNdeep: A long non-coding RNA classifier based on large language model with peptide and nucleotide embedding](https://doi.org/10.1016/j.ncrna.2026.06.004) (2026.10) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.1016/j.ncrna.2026.06.004)
+
+  > Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+
+- **RNA** — [Large Language Models in RNA–RNA Interaction Prediction](https://doi.org/10.1007/978-1-0716-5567-2_25) (2027) [![abs](https://img.shields.io/badge/abs-2027-b31b1b.svg)](https://doi.org/10.1007/978-1-0716-5567-2_25)
+
+  > Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
 
 </details>
 
@@ -572,7 +636,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 <blockquote>
 
 <details open>
-<summary><b>Encoder-only (BERT-family) (34)</b></summary>
+<summary><b>Encoder-only (BERT-family) (38)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -710,10 +774,26 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 
   > Presents NucleicBERT, a 404M-parameter encoder pre-trained with masked language modeling on 30M non-coding RNA sequences from MARS, learning structural and functional organisation of RNA sequence space from single sequences without alignments or evolutionary information.
 
+- **RNA-FM** — [Pairwise Embedding Distance from RNA-FM Predicts siRNA Efficacy Within the PCSK9 3′UTR Hot Spot](https://doi.org/10.20944/preprints202609.2495.v2) (2026.10) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.20944/preprints202609.2495.v2)
+
+  > Motivation.
+
+- **LncPNdeep** — [LncPNdeep: A long non-coding RNA classifier based on large language model with peptide and nucleotide embedding](https://doi.org/10.1016/j.ncrna.2026.06.004) (2026.10) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.1016/j.ncrna.2026.06.004)
+
+  > Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+
+- **RNAflash** — [RNAflash: Fast and Sensitive Structure-aware RNA Homology Detection and Alignment](https://doi.org/10.21203/rs.3.rs-11489874/v1) (2026.11) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.21203/rs.3.rs-11489874/v1)
+
+  > Abstract RNA homology search plays a crucial role in RNA structure prediction, facing a trade-off between sensitivity and speed.
+
+- **RNA** — [Large Language Models in RNA–RNA Interaction Prediction](https://doi.org/10.1007/978-1-0716-5567-2_25) (2027) [![abs](https://img.shields.io/badge/abs-2027-b31b1b.svg)](https://doi.org/10.1007/978-1-0716-5567-2_25)
+
+  > Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+
 </details>
 
 <details open>
-<summary><b>Decoder-only (GPT-family) (7)</b></summary>
+<summary><b>Decoder-only (GPT-family) (9)</b></summary>
 
 - **GenSLM** — [GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics](https://doi.org/10.1177/10943420231201154) (2023.11) [![abs](https://img.shields.io/badge/abs-2023.11-b31b1b.svg)](https://doi.org/10.1177/10943420231201154)
 
@@ -743,6 +823,14 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 
   > Introduces OmniNA, an annotation-aware generative foundation model for nucleic acid sequences trained on NCBI NT nucleotide sequences and annotations spanning genomic DNA and RNA, with reusable representations for genomics and transcriptomics tasks.
 
+- **-** — [Predictor-Guided Latent Space Codon Optimization for Maximizing Protein Expression](http://arxiv.org/abs/2610.03098v2) (2026.10, preprint) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](http://arxiv.org/abs/2610.03098v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](http://arxiv.org/abs/2610.03098v2)
+
+  > Codon optimization, the process of selecting synonymous codons to improve mRNA translation efficiency and protein expression, is central to therapeutic protein production and mRNA vaccines, yet it remains a hard problem.
+
+- **Ernie-Switcher** — [Ernie-Switcher: RNA foundation model-guided design of programmable RNA devices in a navigable landscape](https://doi.org/10.1093/bioinformatics/btag774) (2026.11) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.1093/bioinformatics/btag774)
+
+  > Abstract Motivation Recent advances in biological foundation models have enabled new opportunities for data-driven molecular engineering.
+
 </details>
 
 <details open>
@@ -759,7 +847,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 </details>
 
 <details open>
-<summary><b>Hybrid / SSM (Mamba, StripedHyena) (9)</b></summary>
+<summary><b>Hybrid / SSM (Mamba, StripedHyena) (10)</b></summary>
 
 - **LoRNA SH** — [A long-context RNA foundation model for predicting transcriptome architecture](https://doi.org/10.1101/2024.08.26.609813) (2024.08, preprint) [![abs](https://img.shields.io/badge/abs-2024.08-b31b1b.svg)](https://doi.org/10.1101/2024.08.26.609813) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.1101/2024.08.26.609813)
 
@@ -797,10 +885,14 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 
   > Presents CodonMamba, a 71M-parameter bidirectional Mamba encoder pre-trained with codon-level masked language modeling on 8.8M coding sequences from 1,544 organisms, serving as a reusable backbone whose frozen representations transfer across 12 mRNA design and property-prediction benchmarks.
 
+- **LIMBER** — [LIMBER: A Hybrid RNA Foundation Model for Predicting and Understanding RNA Structure and Function](https://doi.org/10.64898/2026.10.28.762670) (2026.11, preprint) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.64898/2026.10.28.762670) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.10.28.762670)
+
+  > Abstract RNA foundation models offer a promising route to decoding the relationships between RNA sequence, structure and function, yet how model shapes the acquisition and organization of biological information remains poorly understood.
+
 </details>
 
 <details open>
-<summary><b>Specialized (Diffusion, MoE, GNN, Multimodal) (2)</b></summary>
+<summary><b>Specialized (Diffusion, MoE, GNN, Multimodal) (3)</b></summary>
 
 - **RNAGenesis** — [RNAGenesis: A Generalist Foundation Model for Functional RNA Therapeutics](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) (2024.12, preprint) [![abs](https://img.shields.io/badge/abs-2024.12-b31b1b.svg)](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/Zaixi/RNAGenesis)
 
@@ -809,6 +901,10 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 - **EVA** — [A Long-Context Generative Foundation Model Deciphers RNA Design Principles](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) (2026.03, preprint) [![abs](https://img.shields.io/badge/abs-2026.03-b31b1b.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)
 
   > Introduces EVA, a Mixture-of-Experts decoder model for long-context RNA sequence generation, trained on 114M+ full-length RNA sequences for generating diverse functional RNA molecules at unprecedented lengths.
+
+- **LigRNA** — [LigRNA: High-accuracy prediction of RNA-ligand binding sites via dynamic chemical complementarity and language model encoding](https://doi.org/10.64898/2026.10.15.759315) (2026.10, preprint) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.64898/2026.10.15.759315) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.10.15.759315)
+
+  > Abstract RNA-binding small molecules represent a validated therapeutic modality, yet pinpointing their exact RNA binding sites remains critical for mechanistic understanding and drug optimization.
 
 </details>
 
@@ -822,7 +918,7 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 <blockquote>
 
 <details open>
-<summary><b>Single Nucleotide Token (SNT) (31)</b></summary>
+<summary><b>Single Nucleotide Token (SNT) (38)</b></summary>
 
 - **RNABert** — [Informative RNA base embedding for RNA structural alignment and clustering by deep representation learning](https://doi.org/10.1093/nargab/lqac012) (2022.01) [![abs](https://img.shields.io/badge/abs-2022.01-b31b1b.svg)](https://doi.org/10.1093/nargab/lqac012) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/mana438/RNABERT)
 
@@ -948,10 +1044,38 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 
   > Presents NucleicBERT, a 404M-parameter encoder pre-trained with masked language modeling on 30M non-coding RNA sequences from MARS, learning structural and functional organisation of RNA sequence space from single sequences without alignments or evolutionary information.
 
+- **RNA-FM** — [Pairwise Embedding Distance from RNA-FM Predicts siRNA Efficacy Within the PCSK9 3′UTR Hot Spot](https://doi.org/10.20944/preprints202609.2495.v2) (2026.10) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.20944/preprints202609.2495.v2)
+
+  > Motivation.
+
+- **LncPNdeep** — [LncPNdeep: A long non-coding RNA classifier based on large language model with peptide and nucleotide embedding](https://doi.org/10.1016/j.ncrna.2026.06.004) (2026.10) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.1016/j.ncrna.2026.06.004)
+
+  > Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+
+- **LigRNA** — [LigRNA: High-accuracy prediction of RNA-ligand binding sites via dynamic chemical complementarity and language model encoding](https://doi.org/10.64898/2026.10.15.759315) (2026.10, preprint) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](https://doi.org/10.64898/2026.10.15.759315) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.10.15.759315)
+
+  > Abstract RNA-binding small molecules represent a validated therapeutic modality, yet pinpointing their exact RNA binding sites remains critical for mechanistic understanding and drug optimization.
+
+- **RNAflash** — [RNAflash: Fast and Sensitive Structure-aware RNA Homology Detection and Alignment](https://doi.org/10.21203/rs.3.rs-11489874/v1) (2026.11) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.21203/rs.3.rs-11489874/v1)
+
+  > Abstract RNA homology search plays a crucial role in RNA structure prediction, facing a trade-off between sensitivity and speed.
+
+- **LIMBER** — [LIMBER: A Hybrid RNA Foundation Model for Predicting and Understanding RNA Structure and Function](https://doi.org/10.64898/2026.10.28.762670) (2026.11, preprint) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.64898/2026.10.28.762670) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.10.28.762670)
+
+  > Abstract RNA foundation models offer a promising route to decoding the relationships between RNA sequence, structure and function, yet how model shapes the acquisition and organization of biological information remains poorly understood.
+
+- **Ernie-Switcher** — [Ernie-Switcher: RNA foundation model-guided design of programmable RNA devices in a navigable landscape](https://doi.org/10.1093/bioinformatics/btag774) (2026.11) [![abs](https://img.shields.io/badge/abs-2026.11-b31b1b.svg)](https://doi.org/10.1093/bioinformatics/btag774)
+
+  > Abstract Motivation Recent advances in biological foundation models have enabled new opportunities for data-driven molecular engineering.
+
+- **RNA** — [Large Language Models in RNA–RNA Interaction Prediction](https://doi.org/10.1007/978-1-0716-5567-2_25) (2027) [![abs](https://img.shields.io/badge/abs-2027-b31b1b.svg)](https://doi.org/10.1007/978-1-0716-5567-2_25)
+
+  > Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+
 </details>
 
 <details open>
-<summary><b>Codon-level Tokenization (11)</b></summary>
+<summary><b>Codon-level Tokenization (12)</b></summary>
 
 - **GenSLM** — [GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics](https://doi.org/10.1177/10943420231201154) (2023.11) [![abs](https://img.shields.io/badge/abs-2023.11-b31b1b.svg)](https://doi.org/10.1177/10943420231201154)
 
@@ -996,6 +1120,10 @@ The model is not RNA-only, but its pre-training corpus explicitly includes RNA /
 - **CodonMamba** — [CodonMamba: a foundation model for programmable mRNA coding sequence design](https://doi.org/10.64898/2026.08.24.746601) (2026.08, preprint) [![abs](https://img.shields.io/badge/abs-2026.08-b31b1b.svg)](https://doi.org/10.64898/2026.08.24.746601) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](https://doi.org/10.64898/2026.08.24.746601) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/meilanglang/CodonMamba) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow)](https://huggingface.co/langmei/CodonMamba)
 
   > Presents CodonMamba, a 71M-parameter bidirectional Mamba encoder pre-trained with codon-level masked language modeling on 8.8M coding sequences from 1,544 organisms, serving as a reusable backbone whose frozen representations transfer across 12 mRNA design and property-prediction benchmarks.
+
+- **-** — [Predictor-Guided Latent Space Codon Optimization for Maximizing Protein Expression](http://arxiv.org/abs/2610.03098v2) (2026.10, preprint) [![abs](https://img.shields.io/badge/abs-2026.10-b31b1b.svg)](http://arxiv.org/abs/2610.03098v2) [![preprint](https://img.shields.io/badge/preprint-gray.svg)](http://arxiv.org/abs/2610.03098v2)
+
+  > Codon optimization, the process of selecting synonymous codons to improve mRNA translation efficiency and protein expression, is central to therapeutic protein production and mRNA vaccines, yet it remains a hard problem.
 
 </details>
 
@@ -1202,6 +1330,7 @@ Models focused on messenger RNA coding sequences or full mRNA sequences.
 | <nobr>**codonGPT**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>[Paper](https://academic.oup.com/nar/article/53/22/gkaf1345/8384118)</nobr> | <nobr>[Code](https://github.com/NanilTx/codonGPT_pub)</nobr> | <nobr>2025.12</nobr> | <nobr>Decoder-only</nobr> | <nobr>GPT-2 based</nobr> | <nobr>Model-organism CDS (338K seqs)</nobr> | <nobr>Codon-level</nobr> |
 | <nobr>**NUWA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.11.01.686058v3)</nobr> | <nobr>[Code](https://github.com/zysxmu/NUWA)</nobr> | <nobr>2026.02<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | - | <nobr>Multi-species mRNA CDS (115M seqs)</nobr> | <nobr>Codon tokens</nobr> |
 | <nobr>**CodonMamba**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.64898/2026.08.24.746601)</nobr> | <nobr>[Code](https://github.com/meilanglang/CodonMamba)</nobr> | <nobr>2026.08<br><sub>preprint</sub></nobr> | <nobr>Hybrid (BiMamba)</nobr> | <nobr>71M</nobr> | <nobr>CaLM/ENA (8.8M CDS, 1544 organisms)</nobr> | <nobr>Codon-level</nobr> |
+| <nobr>**-**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](http://arxiv.org/abs/2610.03098v2)</nobr> | - | <nobr>2026.10<br><sub>preprint</sub></nobr> | <nobr>Decoder-only</nobr> | - | - | <nobr>Codon-level</nobr> |
 
 </details>
 
@@ -1214,6 +1343,7 @@ Models focused on untranslated regions (5'UTR, 3'UTR).
 |:------|:------|:-----:|:----:|:----:|:-------------|:-------|:------------------|:-------------|
 | <nobr>**UTR-LM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://www.nature.com/articles/s42256-024-00823-9)</nobr> | <nobr>[Code](https://huggingface.co/multimolecule/utrlm-te_el)</nobr> | <nobr>2024.04</nobr> | <nobr>Encoder-only</nobr> | <nobr>1M</nobr> | <nobr>Ensembl 5'UTR (>214K seqs + synthetic)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**3UTRBERT**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1002/advs.202407013)</nobr> | <nobr>[Code](https://github.com/yangyn533/3UTRBERT)</nobr> | <nobr>2024.10</nobr> | <nobr>Encoder-only</nobr> | <nobr>86M</nobr> | <nobr>GENCODE 3'UTR (20K seqs)</nobr> | <nobr>3-mer</nobr> |
+| <nobr>**RNA-FM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.20944/preprints202609.2495.v2)</nobr> | - | <nobr>2026.10</nobr> | <nobr>Encoder-only</nobr> | - | - | <nobr>SNT</nobr> |
 
 </details>
 
@@ -1244,6 +1374,7 @@ Models incorporating RNA secondary or tertiary structure information during pre-
 | <nobr>**MP-RNA**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://aclanthology.org/2024.findings-emnlp.304/)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/MP-RNA)</nobr> | <nobr>2024.11</nobr> | <nobr>Encoder-only</nobr> | <nobr>52-186M</nobr> | <nobr>OneKP (seq + structure)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**OmniGenome**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://ojs.aaai.org/index.php/AAAI/article/view/35500)</nobr> | <nobr>[Code](https://huggingface.co/yangheng/OmniGenome-186M)</nobr> | <nobr>2025.04</nobr> | <nobr>Encoder-only</nobr> | <nobr>52M / 186M</nobr> | <nobr>OneKP (seq-structure pairs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**StructRFM**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1)</nobr> | <nobr>[Code](https://github.com/heqin-zhu/structRFM)</nobr> | <nobr>2025.08<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | - | <nobr>21M seq-structure pairs</nobr> | <nobr>SNT</nobr> |
+| <nobr>**LigRNA**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.64898/2026.10.15.759315)</nobr> | - | <nobr>2026.10<br><sub>preprint</sub></nobr> | <nobr>Specialized</nobr> | - | - | <nobr>SNT</nobr> |
 
 </details>
 
@@ -1257,6 +1388,9 @@ Models focused on RNA sequence generation or generative transcript modeling.
 | <nobr>**GenerRNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1371/journal.pone.0310814)</nobr> | <nobr>[Code](https://huggingface.co/pfnet/GenerRNA)</nobr> | <nobr>2024.10</nobr> | <nobr>Decoder-only</nobr> | <nobr>350M</nobr> | <nobr>RNAcentral (16.09M seqs, ~17.4B nt)</nobr> | <nobr>BPE</nobr> |
 | <nobr>**RNAGenesis**</nobr> | <nobr>Adapted / Derived RNA Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2024.12.30.630826v2)</nobr> | <nobr>[Code](https://huggingface.co/Zaixi/RNAGenesis)</nobr> | <nobr>2024.12<br><sub>preprint</sub></nobr> | <nobr>Encoder + Diffusion</nobr> | <nobr>1B</nobr> | <nobr>RNAcentral clustered ncRNA</nobr> | <nobr>Hybrid N-gram</nobr> |
 | <nobr>**EVA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.64898/2026.03.17.712398v2)</nobr> | - | <nobr>2026.03<br><sub>preprint</sub></nobr> | <nobr>Decoder-only (MoE)</nobr> | - | <nobr>114M+ full-length RNA seqs</nobr> | - |
+| <nobr>**RNAflash**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.21203/rs.3.rs-11489874/v1)</nobr> | - | <nobr>2026.11</nobr> | <nobr>Encoder-only</nobr> | - | - | <nobr>SNT</nobr> |
+| <nobr>**LIMBER**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.64898/2026.10.28.762670)</nobr> | - | <nobr>2026.11<br><sub>preprint</sub></nobr> | <nobr>Hybrid / SSM</nobr> | - | - | <nobr>SNT</nobr> |
+| <nobr>**Ernie-Switcher**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1093/bioinformatics/btag774)</nobr> | - | <nobr>2026.11</nobr> | <nobr>Decoder-only</nobr> | - | - | <nobr>SNT</nobr> |
 
 </details>
 
@@ -1272,6 +1406,8 @@ General-purpose RNA models covering multiple RNA types.
 | <nobr>**UltraGen**</nobr> | <nobr>Specialized RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.21203/rs.3.rs-4461517/v2)</nobr> | - | <nobr>2025.05</nobr> | <nobr>Encoder-only</nobr> | <nobr>33.5M</nobr> | <nobr>UltraSelex (10M in vitro-synthesized RNA seqs)</nobr> | <nobr>SNT</nobr> |
 | <nobr>**RNALens**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://www.biorxiv.org/content/10.1101/2025.07.20.665722v1)</nobr> | <nobr>[Code](https://github.com/oomics/RNALens)</nobr> | <nobr>2025.07<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | <nobr>469M</nobr> | <nobr>Multispecies genomic + 5'UTR sequences</nobr> | <nobr>BPE</nobr> |
 | <nobr>**RIBOSPAN**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://arxiv.org/abs/2608.22849v2)</nobr> | <nobr>[Code](https://github.com/GAIR-NLP/RIBOSPAN-FM)</nobr> | <nobr>2026.08<br><sub>preprint</sub></nobr> | <nobr>Encoder-only</nobr> | <nobr>1.61B</nobr> | <nobr>RNAcentral v26 + Ensembl (67.6M seqs, 85.7B nt)</nobr> | <nobr>SNT</nobr> |
+| <nobr>**LncPNdeep**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1016/j.ncrna.2026.06.004)</nobr> | - | <nobr>2026.10</nobr> | <nobr>Encoder-only</nobr> | - | - | <nobr>SNT</nobr> |
+| <nobr>**RNA**</nobr> | <nobr>Core RNA Foundation Models</nobr> | <nobr>[Paper](https://doi.org/10.1007/978-1-0716-5567-2_25)</nobr> | - | <nobr>2027</nobr> | <nobr>Encoder-only</nobr> | - | - | <nobr>SNT</nobr> |
 
 </details>
 
