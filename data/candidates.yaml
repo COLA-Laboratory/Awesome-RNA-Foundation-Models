@@ -1,2 +1,35 @@
-# Newly discovered candidates pending manual review.
-[]
+- name: HMB-Net
+  title: 'HMB-Net: Synergizing Latent Sequential Dynamics and Local Sequence Motifs for Robust RNA Methylation Prediction'
+  url: https://doi.org/10.3390/biology15212028
+  source: Crossref
+  date: '2026.11'
+  abstract: Accurate site-level identification of RNA post-transcriptional modifications is essential for deciphering epitranscriptomic
+    regulation. However, existing deep learning predictors typically rely on either convolutional filters with limited receptive
+    fields or self-attention mechanisms with quadratic complexity, while parallel hybrid networks often struggle to coordinate
+    global sequence context with local motif sensitivity. Here, we present HMB-Net, an interpretable hybrid framework that
+    couples a Selective State Space Model (Mamba) with a deep Bidirectional Long Short-Term Memory (Bi-LSTM) network in a
+    sequential “Latent-to-Motif” hierarchy. Rather than extracting features in parallel, HMB-Net first employs a Mamba encoder
+    to capture long-range sequence dependencies in linear time, which then guides a multi-layer Bi-LSTM to resolve fine-grained
+    motif boundaries, followed by a bidirectional cross-attention module to integrate multi-scale representations. Comprehensive
+    benchmarking across 20 mammalian datasets spanning N6-methyladenosine (m6A), 5-methylcytosine (m5C), and N1-methyladenosine
+    (m1A) modifications in human, mouse, and rat demonstrates that HMB-Net consistently outperforms representative convolutional,
+    recurrent, and Transformer-based baselines. Ablation experiments further confirm the benefit of the global-to-local encoding
+    order over single-branch, reverse-ordered, and parallel dual-branch variants. Moreover, dimensionality reduction and integrated-gradient
+    saliency analyses show that HMB-Net learns well-separated feature representations and autonomously focuses on conserved
+    flanking consensus motifs (such as RRACH) without predefined biochemical rules, providing a reliable computational tool
+    for transcriptome-wide modification mapping.
+  status: pending_review
+  publication_status: published_or_indexed
+  suggested_scope: expression_profile
+  suggested_category: Expression FM
+  reason: Matched RNA sequence and language/foundation-model terms; needs manual review before README inclusion.
+  matched_terms:
+  - encoder
+  - mamba
+  - rna
+  - state space
+  - transcript
+  - transformer
+  discovery_query: RNA sequence pretraining
+  discovered_at: '2026-11-14'
+  score: 12
